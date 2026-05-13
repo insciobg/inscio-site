@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+const industries = [
+  {
+    id: 'distribution',
+    letter: 'D',
+    title: 'Wholesale Distribution',
+    subtitle: 'Turn Inventory Complexity into Competitive Advantage',
+    body: 'Distributors live and die by inventory accuracy, fill rates, and margin management. Yet most ERPs force spreadsheet workarounds the moment you add a second warehouse. Inscio configures NetSuite so your system reflects the way distribution actually works.',
+    cta: 'Get a Distribution Assessment',
+    bullets: [
+      'Real-time inventory across all locations',
+      'Demand-driven replenishment, fewer stockouts',
+      'Automated POs with supplier portals',
+      'Intelligent pick/pack/ship with fewer errors',
+      'Multi-location inventory with bin-level tracking',
+      'EDI and 3PL integrations built in',
+    ],
+  },
+  {
+    id: 'manufacturing',
+    letter: 'M',
+    title: 'Manufacturing',
+    subtitle: 'Connect the Shop Floor to the Balance Sheet',
+    body: 'Most manufacturers run operations on one system and financials on another. When those systems don\'t talk, you can\'t quote accurately, see true cost of goods, or promise delivery dates with confidence.',
+    cta: 'Get a Manufacturing Assessment',
+    bullets: [
+      'Work orders linked to real-time material availability',
+      'Accurate cost of goods with full BOM visibility',
+      'Production schedules that reflect actual capacity',
+      'Quality and compliance built into every workflow',
+      'Shop floor to financial reporting in one system',
+      'Routing, scheduling, and WIP tracking',
+    ],
+  },
+  {
+    id: 'services',
+    letter: 'P',
+    title: 'Professional Services',
+    subtitle: 'Run Every Engagement Like a Business',
+    body: 'Services firms bleed margin through write-offs, billing delays, and underutilized consultants. NetSuite gives you the infrastructure to see exactly where you are profitable and where you are not.',
+    cta: 'Get a Services Assessment',
+    bullets: [
+      'Project-based billing with milestone and T&M support',
+      'Resource utilization dashboards by person and project',
+      'Automated revenue recognition, ASC 606 compliant',
+      'Integrated CRM-to-delivery pipeline',
+      'Real-time project profitability and margin tracking',
+      'Time and expense capture with approval workflows',
+    ],
+  },
+  {
+    id: 'lifesciences',
+    letter: 'L',
+    title: 'Life Sciences',
+    subtitle: 'Traceability and Compliance Without the Overhead',
+    body: 'In life sciences, a failed audit or a recalled lot can end a company. Inscio configures NetSuite with the lot tracking, serialization, and quality workflows that meet FDA, GMP, and ISO requirements without adding compliance overhead.',
+    cta: 'Get a Life Sciences Assessment',
+    bullets: [
+      'Lot and serial number tracking across the supply chain',
+      'Quality hold and deviation workflows',
+      'Audit-ready documentation and electronic records',
+      '21 CFR Part 11 and GMP compliance support',
+      'Serialized inventory with forward and backward traceability',
+      'Regulatory submission and change control workflows',
+    ],
+  },
+  {
+    id: 'energy',
+    letter: 'E',
+    title: 'Energy',
+    subtitle: 'Manage Complex Projects Across Sites and Jurisdictions',
+    body: 'Energy businesses face a uniquely complex mix of field operations, project accounting, regulatory reporting, and multi-entity structures. Inscio deploys NetSuite to bring all of it together from field service dispatch to consolidated financial reporting.',
+    cta: 'Get an Energy Assessment',
+    bullets: [
+      'Project costing and job profitability tracking',
+      'Multi-entity and intercompany consolidation',
+      'Field service and asset management integration',
+      'Regulatory and environmental compliance reporting',
+      'Multi-currency and multi-jurisdictional tax handling',
+      'Joint venture and production sharing accounting',
+    ],
+  },
+];
+---
+<Layout
+  title="NetSuite for Your Industry | Inscio"
+  description="Inscio brings deep industry expertise to NetSuite implementations across wholesale distribution, manufacturing, professional services, life sciences, and energy."
+>
+
+  <!-- Hero -->
+  <section class="bg-[#0D1235] text-white py-28 px-4">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-6">NETSUITE FOR YOUR INDUSTRY</p>
+      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-8 max-w-3xl">
+        NetSuite, Built for Your Industry
+      </h1>
+      <p class="text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
+        Generic ERP implementations fail because every industry has its own rhythms. We've spent two decades learning the ones that matter — distribution, manufacturing, professional services, life sciences, and energy.
+      </p>
+      <a href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session" target="_blank" rel="noopener noreferrer"
+        class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded transition-colors">
+        Schedule a Strategy Call
+      </a>
+    </div>
+  </section>
+
+  <!-- Industry grid overview -->
+  <section class="bg-white py-24 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-2xl mb-14">
+        <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-3">DEEP EXPERTISE</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Deep Expertise Where It Counts</h2>
+        <p class="text-gray-600 text-lg">Inscio's team includes former operations leaders and NetSuite architects who have lived the challenges of your industry. We don't learn on your dime.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        {industries.map(ind => (
+          <a href={`#${ind.id}`} class="bg-gray-50 border border-gray-200 rounded-lg p-6 hover:border-blue-300 hover:shadow-md transition-all group">
+            <div class="w-10 h-10 bg-[#0D1235] text-white rounded-full flex items-center justify-center font-bold text-lg mb-4 group-hover:bg-blue-600 transition-colors">{ind.letter}</div>
+            <h3 class="font-bold text-gray-900 text-sm">{ind.title}</h3>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Industry details -->
+  {industries.map((ind, i) => (
+    <section id={ind.id} class={`py-24 px-4 ${i % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+        <div>
+          <div class="w-12 h-12 bg-[#0D1235] text-white rounded-full flex items-center justify-center font-bold text-xl mb-6">{ind.letter}</div>
+          <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-3">{ind.title.toUpperCase()}</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{ind.subtitle}</h2>
+          <p class="text-gray-600 text-lg leading-relaxed mb-8">{ind.body}</p>
+          <a href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session" target="_blank" rel="noopener noreferrer"
+            class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded transition-colors">
+            {ind.cta}
+          </a>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-8">
+          <ul class="space-y-3">
+            {ind.bullets.map(b => (
+              <li class="flex items-start gap-3 text-gray-700">
+                <span class="text-blue-600 font-bold mt-0.5">+</span>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- CTA -->
+  <section class="bg-blue-600 py-20 px-4">
+    <div class="max-w-3xl mx-auto text-center text-white">
+      <p class="text-blue-100 text-sm font-semibold uppercase tracking-wider mb-4">GET STARTED</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to See What Is Possible?</h2>
+      <p class="text-blue-100 text-lg mb-10">A great NetSuite implementation is not just about turning on the right modules. It is about configuring workflows that match how your people work, your customers buy, and your business reports.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session" target="_blank" rel="noopener noreferrer"
+          class="bg-white text-blue-600 font-bold px-8 py-4 rounded hover:bg-blue-50 transition-colors">
+          Schedule a Strategy Call
+        </a>
+        <a href="/services" class="border border-white text-white hover:bg-white hover:text-blue-600 font-semibold px-8 py-4 rounded transition-colors">
+          View Our Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
