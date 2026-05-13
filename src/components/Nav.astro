@@ -1,13 +1,24 @@
 ---
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/services', label: 'Services' },
-  { href: '/industries', label: 'Industries' },
-  { href: '/dealercloud', label: 'DealerCloud' },
-  { href: '/resources', label: 'Resources' },
-  { href: '/about', label: 'Company' },
-];
 const currentPath = Astro.url.pathname;
+
+const servicesDropdown = [
+  { href: '/services#evaluation', label: 'Evaluation & Licensing' },
+  { href: '/services#implementation', label: 'Implementation' },
+  { href: '/services#training', label: 'Training' },
+  { href: '/services#development', label: 'Development & Customization' },
+  { href: '/services#integration', label: 'Integration' },
+  { href: '/services#analytics', label: 'Analytics & Reporting' },
+  { href: '/services#ai', label: 'AI & Automation' },
+  { href: '/services#support', label: 'Support & Remediation' },
+  { href: '/services#navigator', label: 'Navigator Plans' },
+];
+
+const resourcesDropdown = [
+  { href: '/blog', label: 'Blog' },
+  { href: '/videos', label: 'Videos' },
+  { href: '/library', label: 'Resource Library' },
+  { href: '/estimator', label: 'ROI Estimator' },
+];
 ---
 
 <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
@@ -25,18 +36,60 @@ const currentPath = Astro.url.pathname;
 
       <!-- Desktop nav -->
       <div class="hidden md:flex items-center gap-8">
-        {navLinks.map(link => (
-          <a
-            href={link.href}
-            class={`text-sm font-medium transition-colors ${
-              currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
-                ? 'text-blue-600'
-                : 'text-gray-700 hover:text-gray-900'
-            }`}
-          >
-            {link.label}
+
+        <!-- Home -->
+        <a href="/" class={`text-sm font-medium transition-colors ${currentPath === '/' ? 'text-blue-600' : 'text-gray-700 hover:text-gray-900'}`}>Home</a>
+
+        <!-- Services dropdown -->
+        <div class="relative group">
+          <a href="/services" class={`flex items-center gap-1 text-sm font-medium transition-colors ${currentPath.startsWith('/services') ? 'text-blue-600' : 'text-gray-700 hover:text-gray-900'}`}>
+            Services
+            <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+            </svg>
           </a>
-        ))}
+          <div class="absolute left-0 top-full pt-1 hidden group-hover:block z-50">
+            <div class="bg-white shadow-xl rounded-lg w-56 py-2 border border-gray-100">
+              {servicesDropdown.map(item => (
+                <a href={item.href} class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Industries -->
+        <a href="/industries" class={`text-sm font-medium transition-colors ${currentPath.startsWith('/industries') ? 'text-blue-600' : 'text-gray-700 hover:text-gray-900'}`}>Industries</a>
+
+        <!-- DealerCloud -->
+        <a href="/dealercloud" class={`text-sm font-medium transition-colors ${currentPath.startsWith('/dealercloud') ? 'text-blue-600' : 'text-gray-700 hover:text-gray-900'}`}>DealerCloud</a>
+
+        <!-- Resources dropdown -->
+        <div class="relative group">
+          <a href="/resources" class={`flex items-center gap-1 text-sm font-medium transition-colors ${currentPath.startsWith('/resources') || currentPath.startsWith('/blog') || currentPath.startsWith('/videos') || currentPath.startsWith('/library') || currentPath.startsWith('/estimator') ? 'text-blue-600' : 'text-gray-700 hover:text-gray-900'}`}>
+            Resources
+            <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </a>
+          <div class="absolute left-0 top-full pt-1 hidden group-hover:block z-50">
+            <div class="bg-white shadow-xl rounded-lg w-48 py-2 border border-gray-100">
+              {resourcesDropdown.map(item => (
+                <a href={item.href} class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Company -->
+        <a href="/about" class={`text-sm font-medium transition-colors ${currentPath.startsWith('/about') ? 'text-blue-600' : 'text-gray-700 hover:text-gray-900'}`}>Company</a>
+
+        <!-- Contact -->
+        <a href="/contact" class={`text-sm font-medium transition-colors ${currentPath.startsWith('/contact') ? 'text-blue-600' : 'text-gray-700 hover:text-gray-900'}`}>Contact</a>
+
       </div>
 
       <!-- CTA -->
@@ -65,22 +118,50 @@ const currentPath = Astro.url.pathname;
 
   <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white">
-    <div class="px-4 py-4 flex flex-col gap-4">
-      {navLinks.map(link => (
-        <a
-          href={link.href}
-          class={`text-sm font-medium ${
-            currentPath === link.href ? 'text-blue-600' : 'text-gray-700'
-          }`}
-        >
-          {link.label}
-        </a>
-      ))}
+    <div class="px-4 py-4 flex flex-col gap-1">
+      <a href="/" class="text-sm font-medium text-gray-700 px-2 py-2.5 rounded hover:bg-gray-50">Home</a>
+
+      <!-- Mobile Services section -->
+      <div>
+        <button id="mobile-services-toggle" class="w-full flex items-center justify-between text-sm font-medium text-gray-700 px-2 py-2.5 rounded hover:bg-gray-50">
+          Services
+          <svg id="mobile-services-icon" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div id="mobile-services-menu" class="hidden pl-4 flex flex-col gap-1 mt-1">
+          {servicesDropdown.map(item => (
+            <a href={item.href} class="text-sm text-gray-600 px-2 py-2 rounded hover:bg-gray-50 hover:text-blue-600">{item.label}</a>
+          ))}
+        </div>
+      </div>
+
+      <a href="/industries" class="text-sm font-medium text-gray-700 px-2 py-2.5 rounded hover:bg-gray-50">Industries</a>
+      <a href="/dealercloud" class="text-sm font-medium text-gray-700 px-2 py-2.5 rounded hover:bg-gray-50">DealerCloud</a>
+
+      <!-- Mobile Resources section -->
+      <div>
+        <button id="mobile-resources-toggle" class="w-full flex items-center justify-between text-sm font-medium text-gray-700 px-2 py-2.5 rounded hover:bg-gray-50">
+          Resources
+          <svg id="mobile-resources-icon" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div id="mobile-resources-menu" class="hidden pl-4 flex flex-col gap-1 mt-1">
+          {resourcesDropdown.map(item => (
+            <a href={item.href} class="text-sm text-gray-600 px-2 py-2 rounded hover:bg-gray-50 hover:text-blue-600">{item.label}</a>
+          ))}
+        </div>
+      </div>
+
+      <a href="/about" class="text-sm font-medium text-gray-700 px-2 py-2.5 rounded hover:bg-gray-50">Company</a>
+      <a href="/contact" class="text-sm font-medium text-gray-700 px-2 py-2.5 rounded hover:bg-gray-50">Contact</a>
+
       <a
         href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-block bg-[#0D1235] text-white text-sm font-semibold px-5 py-3 rounded text-center"
+        class="mt-2 inline-block bg-[#0D1235] text-white text-sm font-semibold px-5 py-3 rounded text-center"
       >
         Schedule a Strategy Call
       </a>
@@ -89,6 +170,7 @@ const currentPath = Astro.url.pathname;
 </nav>
 
 <script>
+  // Hamburger toggle
   const toggle = document.getElementById('menu-toggle');
   const menu = document.getElementById('mobile-menu');
   const iconOpen = document.getElementById('icon-open');
@@ -97,5 +179,23 @@ const currentPath = Astro.url.pathname;
     menu?.classList.toggle('hidden');
     iconOpen?.classList.toggle('hidden');
     iconClose?.classList.toggle('hidden');
+  });
+
+  // Mobile Services accordion
+  const servicesToggle = document.getElementById('mobile-services-toggle');
+  const servicesMenu = document.getElementById('mobile-services-menu');
+  const servicesIcon = document.getElementById('mobile-services-icon');
+  servicesToggle?.addEventListener('click', () => {
+    servicesMenu?.classList.toggle('hidden');
+    servicesIcon?.classList.toggle('rotate-180');
+  });
+
+  // Mobile Resources accordion
+  const resourcesToggle = document.getElementById('mobile-resources-toggle');
+  const resourcesMenu = document.getElementById('mobile-resources-menu');
+  const resourcesIcon = document.getElementById('mobile-resources-icon');
+  resourcesToggle?.addEventListener('click', () => {
+    resourcesMenu?.classList.toggle('hidden');
+    resourcesIcon?.classList.toggle('rotate-180');
   });
 </script>
