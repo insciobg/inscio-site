@@ -1,228 +1,181 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-const services = [
-  {
-    icon: '🔍',
-    title: 'Evaluation & Licensing',
-    description: 'We help you determine if NetSuite is the right fit, build the business case, and negotiate licensing to get you the best deal.',
-    href: '/services#evaluation',
-  },
-  {
-    icon: '⚙️',
-    title: 'Implementation',
-    description: 'Expert-led NetSuite implementations on time and on budget — with a process built from dozens of successful projects.',
-    href: '/services#implementation',
-  },
-  {
-    icon: '📈',
-    title: 'Optimization',
-    description: 'Already on NetSuite? We identify gaps, fix workflows, and unlock features you are not using so you get full ROI.',
-    href: '/services#optimization',
-  },
-  {
-    icon: '🤝',
-    title: 'Support & Training',
-    description: 'Ongoing support plans and user training to keep your team confident and your system running smoothly.',
-    href: '/services#support',
-  },
-];
-
-const stats = [
-  { value: '150+', label: 'NetSuite Projects' },
-  { value: '98%', label: 'Client Satisfaction' },
-  { value: '12+', label: 'Years Experience' },
-  { value: '40+', label: 'Industries Served' },
-];
-
-const testimonials = [
-  {
-    quote: 'Inscio made our NetSuite implementation smooth and stress-free. Their expertise saved us months of work.',
-    author: 'CFO, Manufacturing Company',
-  },
-  {
-    quote: 'We tried another partner first. Switching to Inscio was the best decision we made. Night and day difference.',
-    author: 'VP Operations, Distribution Co.',
-  },
-  {
-    quote: 'Brian and the team truly understand both the technology and the business side. Rare combination.',
-    author: 'CEO, Professional Services Firm',
-  },
-];
 ---
-
 <Layout
-  title="Inscio | NetSuite Experts"
-  description="Inscio is a NetSuite Alliance Partner helping growing businesses evaluate, implement, optimize, and get maximum value from NetSuite ERP."
+  title="NetSuite Implementation & Consulting | Inscio"
+  description="We help companies evaluate, implement, and optimize NetSuite so it supports growth, improves visibility, and runs the business the way it should."
 >
+
   <!-- Hero -->
-  <section class="bg-gradient-to-br from-[#1A1F36] to-[#2d3561] text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-      <div class="max-w-3xl">
-        <p class="section-eyebrow text-blue-400">NetSuite Alliance Partner</p>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-          NetSuite experts who make your ERP work for you
-        </h1>
-        <p class="text-lg sm:text-xl text-gray-300 mb-10 leading-relaxed">
-          From evaluation and licensing through implementation, optimization, and ongoing support — Inscio is the partner that grows with your business.
+  <section class="bg-[#0D1235] text-white py-28 px-4">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-6">HOME</p>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-8 max-w-3xl">
+        Run Your Business Better on NetSuite.
+      </h1>
+      <p class="text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
+        We help companies evaluate, implement, and optimize NetSuite so it supports growth, improves visibility, and runs the business the way it should. We bring clarity to financials, discipline to operations, and long-term value to your NetSuite investment.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session" target="_blank" rel="noopener noreferrer"
+          class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded transition-colors">
+          Evaluate NetSuite for Your Business
+        </a>
+        <a href="/services"
+          class="border border-white text-white hover:bg-white hover:text-[#0D1235] font-semibold px-8 py-4 rounded transition-colors">
+          Already Using NetSuite? Improve It
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proven Experience -->
+  <section class="bg-white py-24 px-4">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Proven Experience Across NetSuite Engagements</h2>
+        <p class="text-gray-600 text-lg leading-relaxed mb-6">
+          Since 2005, we have partnered with companies from growth stage to enterprise, delivering ERP projects that demand reliability, discipline, and long term thinking.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a
-            href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
-            target="_blank"
-            rel="noopener"
-            class="btn-white"
-          >
-            Book a Free Strategy Call
-          </a>
-          <a href="/services" class="btn-secondary border-white text-white hover:bg-white hover:text-blue-800">
-            See Our Services
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats -->
-  <section class="bg-blue-600 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-        {stats.map((stat) => (
-          <div>
-            <p class="text-4xl font-bold mb-1">{stat.value}</p>
-            <p class="text-blue-200 text-sm">{stat.label}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <p class="section-eyebrow">What We Do</p>
-        <h2 class="section-heading">End-to-end NetSuite services</h2>
-        <p class="mt-4 text-gray-500 max-w-2xl mx-auto">
-          Whether you are evaluating NetSuite for the first time or looking to get more out of an existing system, we have the expertise to help.
+        <p class="text-gray-600 text-lg leading-relaxed">
+          Today, our work is exclusively focused on NetSuite, where we help organizations implement and optimize the platform with confidence.
         </p>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {services.map((svc) => (
-          <a href={svc.href} class="card group hover:border-blue-200">
-            <div class="text-3xl mb-4">{svc.icon}</div>
-            <h3 class="font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-              {svc.title}
-            </h3>
-            <p class="text-sm text-gray-500 leading-relaxed">{svc.description}</p>
-          </a>
+      <div class="grid grid-cols-2 gap-8">
+        {[
+          { stat: '20+', label: 'Years ERP consulting experience' },
+          { stat: '200+', label: 'Companies supported' },
+          { stat: '300+', label: 'ERP and NetSuite projects delivered' },
+          { stat: '2012', label: 'NetSuite focus begins' },
+        ].map(item => (
+          <div class="text-center">
+            <div class="text-4xl md:text-5xl font-extrabold text-[#0D1235] mb-2">{item.stat}</div>
+            <div class="text-gray-500 text-sm">{item.label}</div>
+          </div>
         ))}
       </div>
-      <div class="text-center mt-10">
-        <a href="/services" class="btn-primary">View All Services</a>
+    </div>
+
+    <!-- Client logos -->
+    <div class="max-w-7xl mx-auto mt-16 pt-12 border-t border-gray-100">
+      <p class="text-center text-gray-400 text-sm uppercase tracking-wider mb-10">Trusted by organizations across industries</p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 items-center opacity-60">
+        {['Thermo King Michigan', 'RNWBL', 'Rowley', 'PMG', 'Carlton Industrial Solutions', 'Safe Harbor Marinas', 'Oranomed', 'Xenopsi'].map(name => (
+          <div class="text-center text-gray-500 font-semibold text-sm">{name}</div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Why Inscio -->
-  <section class="py-24 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <p class="section-eyebrow">Why Inscio</p>
-          <h2 class="section-heading mb-6">We have done this hundreds of times</h2>
-          <div class="space-y-6">
-            <div class="flex gap-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-sm">1</div>
-              <div>
-                <h3 class="font-semibold text-gray-900 mb-1">No junior consultants learning on your dime</h3>
-                <p class="text-sm text-gray-500">Your project is led by experienced NetSuite practitioners, not entry-level staff.</p>
-              </div>
-            </div>
-            <div class="flex gap-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-sm">2</div>
-              <div>
-                <h3 class="font-semibold text-gray-900 mb-1">Fixed-scope options so you know your cost upfront</h3>
-                <p class="text-sm text-gray-500">Use our project estimator to get a realistic budget range before any commitment.</p>
-              </div>
-            </div>
-            <div class="flex gap-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-sm">3</div>
-              <div>
-                <h3 class="font-semibold text-gray-900 mb-1">We stay after go-live</h3>
-                <p class="text-sm text-gray-500">Our support plans mean you always have an expert on call, not just during implementation.</p>
-              </div>
-            </div>
+  <!-- How We Help -->
+  <section class="bg-gray-50 py-24 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-2xl mb-14">
+        <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-3">WHAT WE DO</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">How We Help You Run Better On NetSuite</h2>
+        <p class="text-gray-600 text-lg">
+          We help companies navigate NetSuite with confidence, from evaluation and licensing through implementation and long term optimization, supported by our Navigator services.
+        </p>
+        <a href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session" target="_blank" rel="noopener noreferrer"
+          class="inline-block mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded transition-colors">
+          Start a Conversation
+        </a>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { title: 'Evaluate & Plan', desc: 'Understand NetSuite\'s fit, define requirements, plan a roadmap' },
+          { title: 'Implement with Confidence', desc: 'Ensure a tailored, low-risk rollout aligned to your business' },
+          { title: 'Enable Your Team', desc: 'Training that drives adoption and helps teams use NetSuite effectively' },
+          { title: 'Strengthen & Scale', desc: 'Improve processes, reporting, automation and performance' },
+          { title: 'AI Services', desc: 'AI services for NetSuite focused on practical adoption, governance, and measurable business impact.' },
+          { title: 'Navigator Services', desc: 'Three support tiers — Day Trip, Road Trip, and Expedition — keeping NetSuite aligned as your business evolves.' },
+        ].map(item => (
+          <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">{item.title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
           </div>
-          <div class="mt-8 flex gap-4">
-            <a href="/about" class="btn-primary">Meet the Team</a>
-            <a href="/estimator" class="btn-secondary">Try the Estimator</a>
-          </div>
-        </div>
-        <div class="bg-[#1A1F36] rounded-2xl p-8 text-white">
-          <p class="text-blue-400 font-semibold text-sm uppercase tracking-wider mb-6">Quick Links</p>
-          <div class="space-y-4">
-            <a href="/estimator" class="flex items-center gap-4 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-colors">
-              <span class="text-2xl">🧮</span>
-              <div>
-                <p class="font-semibold">Project Estimator</p>
-                <p class="text-sm text-gray-400">Get a budget estimate in minutes</p>
-              </div>
-            </a>
-            <a href="/videos" class="flex items-center gap-4 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-colors">
-              <span class="text-2xl">🎥</span>
-              <div>
-                <p class="font-semibold">Video Library</p>
-                <p class="text-sm text-gray-400">Watch NetSuite explainer videos</p>
-              </div>
-            </a>
-            <a href="/library" class="flex items-center gap-4 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-colors">
-              <span class="text-2xl">📚</span>
-              <div>
-                <p class="font-semibold">Resource Library</p>
-                <p class="text-sm text-gray-400">Fact sheets, guides & templates</p>
-              </div>
-            </a>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <p class="section-eyebrow">Client Stories</p>
-        <h2 class="section-heading">What our clients say</h2>
+  <!-- Our Approach -->
+  <section class="bg-[#0D1235] text-white py-24 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <p class="text-blue-400 text-sm font-semibold uppercase tracking-wider mb-3">OUR APPROACH TO NETSUITE</p>
+        <p class="text-gray-300 text-lg leading-relaxed mb-4">
+          Inscio was built to deliver the depth and rigor of a large consulting firm with the focus and accountability of a specialized firm. We work closely with clients, adapting our approach to how their teams operate while maintaining the structure and discipline required for complex NetSuite engagements.
+        </p>
+        <p class="text-gray-300 text-lg leading-relaxed">
+          Our methodology has been refined through years of real-world delivery and is flexible enough to support growing organizations, yet proven in large, multi-entity environments. With national reach and deep relationships across the NetSuite ecosystem, we help clients move forward with clarity, transparency, and confidence.
+        </p>
+        <p class="text-blue-300 text-lg font-medium mt-6">
+          We believe NetSuite delivers the most value when it is implemented thoughtfully and guided over time as the business evolves.
+        </p>
+        <a href="/about" class="inline-block mt-8 border border-white text-white hover:bg-white hover:text-[#0D1235] font-semibold px-6 py-3 rounded transition-colors">
+          Learn About Inscio
+        </a>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {testimonials.map((t) => (
-          <div class="bg-gray-50 rounded-2xl p-8">
-            <div class="text-blue-400 text-4xl mb-4">"</div>
-            <p class="text-gray-700 leading-relaxed mb-6">{t.quote}</p>
-            <p class="text-sm font-semibold text-gray-500">{t.author}</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          {
+            step: '01',
+            title: 'Discover & Align',
+            desc: 'We start by mapping your current processes, understanding your goals, and defining what success looks like — so NetSuite is configured around your business from day one.'
+          },
+          {
+            step: '02',
+            title: 'Configure & Enable',
+            desc: 'Working alongside your team, we configure NetSuite to fit your actual workflows — not the other way around. Go-live is a milestone, not the finish line.'
+          },
+          {
+            step: '03',
+            title: 'Optimize & Scale',
+            desc: 'With a stable foundation in place, we help you extend NetSuite\'s value — adding modules, automating manual work, and building the reporting visibility your leadership team needs.'
+          },
+        ].map(item => (
+          <div class="border border-white/20 rounded-lg p-8">
+            <div class="text-blue-400 font-bold text-sm mb-4">{item.step}</div>
+            <h3 class="text-xl font-bold mb-4">{item.title}</h3>
+            <p class="text-gray-300 leading-relaxed">{item.desc}</p>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Inscio -->
+  <section class="bg-white py-24 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-2xl mb-14">
+        <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-3">WHY COMPANIES CHOOSE INSCIO</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">We work differently than most NetSuite partners</h2>
+        <p class="text-gray-600 text-lg">With deeper expertise, longer commitment, and a relentless focus on outcomes over deliverables.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gray-50 rounded-lg p-8">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">NetSuite-Exclusive Focus</h3>
+          <p class="text-gray-600 leading-relaxed">Every consultant on our team works exclusively in NetSuite. No generalists, no divided attention — just deep, practiced expertise across your industry.</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-8">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Engaged Beyond Go-Live</h3>
+          <p class="text-gray-600 leading-relaxed">Once you're live, we stay close. We help you measure outcomes, refine processes, and keep NetSuite aligned with where your business is going.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="bg-blue-600 text-white py-20">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to get more from NetSuite?</h2>
-      <p class="text-blue-200 mb-8 text-lg">
-        Book a free 30-minute strategy call. No pressure, no sales pitch — just expert advice.
-      </p>
-      <a
-        href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
-        target="_blank"
-        rel="noopener"
-        class="btn-white"
-      >
-        Book Your Free Call
+  <section class="bg-blue-600 py-20 px-4">
+    <div class="max-w-3xl mx-auto text-center text-white">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Get More From NetSuite?</h2>
+      <p class="text-blue-100 text-lg mb-10">Book a free strategy call and find out where NetSuite can work harder for your business.</p>
+      <a href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session" target="_blank" rel="noopener noreferrer"
+        class="inline-block bg-white text-blue-600 font-bold px-10 py-4 rounded hover:bg-blue-50 transition-colors">
+        Get in touch
       </a>
     </div>
   </section>
+
 </Layout>
