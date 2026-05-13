@@ -66,6 +66,22 @@ const industries = [
     ],
   },
   {
+    id: 'dealerships',
+    letter: 'D',
+    title: 'Equipment Dealerships',
+    subtitle: 'One System for Every Corner of the Dealership',
+    body: 'Equipment dealers run some of the most operationally complex businesses in any industry — managing sales, service, rental, parts, and financing across multiple locations and brands. Generic ERPs weren\'t built for this. DealerCloud was.',
+    cta: 'See DealerCloud',
+    bullets: [
+      'Service work order management with technician scheduling',
+      'Parts inventory with automated reorder and supplier catalog integration',
+      'Rental fleet management: contracts, utilization, and billing',
+      'Sales and CRM built for equipment sales cycles',
+      'Financial consolidation across multiple locations',
+      'Mobile tools for service technicians in the field',
+    ],
+  },
+  {
     id: 'energy',
     letter: 'E',
     title: 'Energy',
@@ -85,7 +101,7 @@ const industries = [
 ---
 <Layout
   title="NetSuite for Your Industry | Inscio"
-  description="Inscio brings deep industry expertise to NetSuite implementations across wholesale distribution, manufacturing, professional services, life sciences, and energy."
+  description="Inscio brings deep industry expertise to NetSuite implementations across wholesale distribution, manufacturing, professional services, life sciences, energy, and equipment dealerships."
 >
 
   <!-- Hero -->
@@ -113,7 +129,7 @@ const industries = [
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Deep Expertise Where It Counts</h2>
         <p class="text-gray-600 text-lg">Inscio's team includes former operations leaders and NetSuite architects who have lived the challenges of your industry. We don't learn on your dime.</p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-6 gap-4">
         {industries.map(ind => (
           <a href={`#${ind.id}`} class="bg-gray-50 border border-gray-200 rounded-lg p-6 hover:border-blue-300 hover:shadow-md transition-all group">
             <div class="w-10 h-10 bg-[#0D1235] text-white rounded-full flex items-center justify-center font-bold text-lg mb-4 group-hover:bg-blue-600 transition-colors">{ind.letter}</div>
@@ -151,6 +167,37 @@ const industries = [
       </div>
     </section>
   ))}
+
+
+  <!-- Broader Industries -->
+  <section class="bg-[#0D1235] text-white py-24 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-2xl mb-12">
+        <p class="text-blue-400 text-sm font-semibold uppercase tracking-wider mb-3">BROADER REACH</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">We've worked across a wide range of industries.</h2>
+        <p class="text-gray-300 text-lg leading-relaxed">Our experience extends well beyond our core verticals. If you're a growth-stage company, a multi-entity organization, or operate in a specialized market, chances are we've worked in your space.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+        {[
+          { label: 'Medical Device & Life Sciences', note: 'FDA, GMP, lot traceability' },
+          { label: 'Health, Beauty & Nutraceuticals', note: 'Ghost Lifestyle, Botanical Science, Dymatize' },
+          { label: 'Consumer Packaged Goods', note: 'Multi-channel, retail, D2C' },
+          { label: 'Software & SaaS', note: 'ASC 606, subscription billing, ARR reporting' },
+          { label: 'Hospitality', note: 'Multi-location, property-level reporting' },
+          { label: 'Hyper-Growth & Scale-Ups', note: 'Rapid expansion, M&A, new entity standup' },
+          { label: 'Multi-Entity & Multinational', note: 'Intercompany, consolidation, multi-currency' },
+          { label: 'Cosmetics & Personal Care', note: 'Lot tracking, compliance, D2C and wholesale' },
+          { label: 'Industrial & Commercial Services', note: 'Project accounting, field service, job costing' },
+        ].map(ind => (
+          <div class="bg-white/10 border border-white/20 rounded-lg p-5">
+            <p class="font-semibold text-white mb-1">{ind.label}</p>
+            <p class="text-gray-400 text-sm">{ind.note}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-gray-400 text-sm">Don't see your industry? <a href="/contact" class="text-blue-400 hover:text-blue-300 underline">Reach out</a> — if you're running on NetSuite or evaluating it, we've likely seen your challenges before.</p>
+    </div>
+  </section>
 
   <!-- CTA -->
   <section class="bg-blue-600 py-20 px-4">
