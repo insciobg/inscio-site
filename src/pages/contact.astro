@@ -26,20 +26,14 @@ import Layout from '../layouts/Layout.astro';
       <!-- Contact Info -->
       <div>
         <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-4">GET IN TOUCH</p>
-        <div class="mb-8">
-          <svg viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md rounded-xl border border-gray-100 bg-gray-50">
-            <!-- Simplified US outline -->
-            <path d="M120,160 L160,120 L220,110 L280,100 L340,95 L400,90 L460,88 L520,90 L580,95 L640,100 L700,105 L750,110 L790,120 L820,140 L840,165 L850,190 L845,220 L830,250 L810,275 L790,300 L770,320 L750,340 L730,355 L710,365 L690,370 L670,368 L650,360 L630,345 L610,325 L590,310 L570,300 L545,295 L520,295 L495,300 L470,310 L445,320 L420,330 L395,338 L370,342 L345,342 L320,338 L295,330 L270,318 L248,305 L228,290 L210,272 L192,252 L175,230 L158,207 L140,185 Z" fill="#dbeafe" stroke="#93c5fd" stroke-width="2"/>
-            <!-- Texas shape approximate -->
-            <path d="M430,310 L490,305 L530,310 L545,330 L540,360 L530,385 L515,405 L500,418 L485,420 L468,415 L452,402 L440,385 L433,365 L428,342 Z" fill="#bfdbfe" stroke="#60a5fa" stroke-width="1.5"/>
-            <!-- Pin at Plano TX (approx 490, 355) -->
-            <circle cx="490" cy="350" r="8" fill="#2563eb"/>
-            <circle cx="490" cy="350" r="4" fill="white"/>
-            <line x1="490" y1="358" x2="490" y2="370" stroke="#2563eb" stroke-width="2"/>
-            <!-- Label -->
-            <text x="502" y="355" font-family="system-ui, sans-serif" font-size="11" fill="#1e40af" font-weight="600">Plano, TX</text>
-            <text x="150" y="430" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Serving clients across North America</text>
+        <div class="mb-8 bg-gradient-to-br from-[#0D1235] to-[#1a2060] rounded-xl p-8 flex flex-col items-center justify-center text-center">
+          <svg class="w-14 h-14 text-blue-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
           </svg>
+          <p class="text-2xl font-bold text-white mb-1">Plano, TX</p>
+          <p class="text-blue-300 text-sm font-medium mb-3">Dallas–Fort Worth Metroplex</p>
+          <p class="text-gray-400 text-sm">Serving clients across North America</p>
         </div>
         <h2 class="text-2xl font-bold text-gray-900 mb-6">Headquartered in Plano, TX.<br/>Working across North America.</h2>
 
@@ -91,7 +85,6 @@ import Layout from '../layouts/Layout.astro';
               'Response within one business day',
               'Free 30-minute strategy call — no commitment required',
               'Honest assessment of whether NetSuite is the right fit',
-              'We move at your pace — we want to be the call you actually want to take.',
             ].map(item => (
               <li class="flex items-start gap-2 text-sm text-gray-600">
                 <span class="text-blue-600 font-bold mt-0.5">✓</span>
