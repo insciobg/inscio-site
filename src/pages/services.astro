@@ -1,139 +1,169 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-const services = [
-  {
-    id: 'evaluation',
-    icon: '🔍',
-    eyebrow: 'Phase 1',
-    title: 'Evaluation & Licensing',
-    description: 'Before you buy, you need honest advice. We help you assess whether NetSuite is the right ERP for your business, build a compelling business case, and negotiate licensing so you get the right modules at the right price.',
-    bullets: [
-      'Unbiased NetSuite fit assessment',
-      'Business case development',
-      'License negotiation support',
-      'Implementation roadmap planning',
-      'Vendor comparison (if needed)',
-    ],
-  },
-  {
-    id: 'implementation',
-    icon: '⚙️',
-    eyebrow: 'Phase 2',
-    title: 'Implementation',
-    description: 'A successful NetSuite implementation requires experience, structure, and communication. Our proven methodology keeps projects on scope, on time, and on budget — with your team fully trained and confident at go-live.',
-    bullets: [
-      'Requirements gathering & design',
-      'Configuration and customization',
-      'Data migration from legacy systems',
-      'Integrations with third-party tools',
-      'User training and go-live support',
-    ],
-  },
-  {
-    id: 'optimization',
-    icon: '📈',
-    eyebrow: 'Phase 3',
-    title: 'Optimization',
-    description: 'Most companies use less than half of what NetSuite can do. We audit your current setup, identify gaps and workarounds, and systematically unlock the features and automation that will give you the biggest return.',
-    bullets: [
-      'System health audit',
-      'Workflow and process automation',
-      'Custom report and dashboard buildout',
-      'Module expansion (e.g., WMS, SuitePeople)',
-      'Performance tuning',
-    ],
-  },
-  {
-    id: 'support',
-    icon: '🤝',
-    eyebrow: 'Ongoing',
-    title: 'Support & Training',
-    description: 'NetSuite evolves — twice a year with major releases, plus ongoing changes from your business. Our support plans give you a dedicated expert to call on for day-to-day questions, new hire training, and future projects.',
-    bullets: [
-      'Monthly and annual support retainers',
-      'New user onboarding and training',
-      'NetSuite release review and impact assessment',
-      'Ad-hoc troubleshooting and fixes',
-      'Strategic NetSuite roadmap planning',
-    ],
-  },
-];
 ---
 
-<Layout
-  title="NetSuite Services | Inscio"
-  description="Inscio offers end-to-end NetSuite services: evaluation and licensing, implementation, optimization, and ongoing support. See how we can help."
->
-  <!-- Hero -->
-  <section class="bg-gradient-to-br from-[#1A1F36] to-[#2d3561] text-white py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="section-eyebrow text-blue-400">What We Do</p>
-      <h1 class="text-4xl sm:text-5xl font-bold mb-4">NetSuite Services</h1>
-      <p class="text-lg text-gray-300 max-w-2xl">
-        Whether you are evaluating NetSuite for the first time or trying to get more out of a system you already have, we cover every phase.
-      </p>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
-      {services.map((svc, i) => (
-        <div id={svc.id} class={`grid lg:grid-cols-2 gap-12 items-start ${i % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
-          <div class={i % 2 === 1 ? 'lg:col-start-2' : ''}>
-            <p class="section-eyebrow">{svc.eyebrow}</p>
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">
-              <span class="mr-3">{svc.icon}</span>{svc.title}
-            </h2>
-            <p class="text-gray-500 leading-relaxed mb-6">{svc.description}</p>
-            <a
-              href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
-              target="_blank"
-              rel="noopener"
-              class="btn-primary"
-            >
-              Discuss This Service
-            </a>
-          </div>
-          <div class={`bg-gray-50 rounded-2xl p-8 ${i % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
-            <h3 class="font-semibold text-gray-900 mb-4">What's included</h3>
-            <ul class="space-y-3">
-              {svc.bullets.map((b) => (
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span class="text-sm text-gray-600">{b}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="bg-blue-600 text-white py-20">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Not sure where to start?</h2>
-      <p class="text-blue-200 mb-8 text-lg">
-        Book a free strategy call and we will tell you exactly what your situation needs.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
-          target="_blank"
-          rel="noopener"
-          class="btn-white"
-        >
-          Book a Free Strategy Call
-        </a>
-        <a href="/estimator" class="btn-secondary border-white text-white hover:bg-white hover:text-blue-800">
-          Try the Project Estimator
-        </a>
+<Layout title="NetSuite Services | Inscio">
+  <!-- Hero Section -->
+  <section class="bg-[#0D1235] text-white py-24 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <div class="inline-block bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-full mb-6 uppercase tracking-widest">
+        Our Services
       </div>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-8 max-w-3xl mx-auto">
+        NetSuite Services Built Around Your Business
+      </h1>
+      <p class="text-xl md:text-2xl text-blue-200 max-w-2xl mx-auto mb-10">
+        From initial implementation to long-term optimization, Inscio provides the expertise and support you need to get the most from NetSuite.
+      </p>
+      <a href="/contact" class="inline-block bg-white text-[#0D1235] font-bold px-8 py-4 rounded-lg text-lg hover:bg-blue-50 transition-colors">
+        Talk to an Expert
+      </a>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-4xl font-bold text-[#0D1235] mb-4">What We Do</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Every engagement is tailored to where you are today and where you want to go.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+        <!-- Implementation -->
+        <div class="bg-white rounded-2xl p-10 shadow-sm border border-gray-100">
+          <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-[#0D1235] mb-4">NetSuite Implementation</h3>
+          <p class="text-gray-600 mb-6">
+            We deploy NetSuite the right way — configuring the system to match your actual workflows, not the other way around. Our structured methodology minimizes risk and gets you to go-live faster without sacrificing quality.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> Business process discovery and mapping</li>
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> System configuration and customization</li>
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> Data migration from legacy systems</li>
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> Integration with third-party tools</li>
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> User training and change management</li>
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> Go-live support and hypercare</li>
+          </ul>
+        </div>
+
+        <!-- Managed Services -->
+        <div class="bg-white rounded-2xl p-10 shadow-sm border border-gray-100">
+          <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-[#0D1235] mb-4">Managed Services & Support</h3>
+          <p class="text-gray-600 mb-6">
+            After go-live, your needs don't stop. Inscio provides ongoing managed services so your team always has access to expert NetSuite support — without the overhead of a full-time internal admin.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> Dedicated support team, not a help desk ticket queue</li>
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> System enhancements and new module rollouts</li>
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> User training for new hires and teams</li>
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> Monthly system health reviews</li>
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> Release management and upgrade guidance</li>
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> Proactive optimization recommendations</li>
+          </ul>
+        </div>
+
+        <!-- Optimization -->
+        <div class="bg-white rounded-2xl p-10 shadow-sm border border-gray-100">
+          <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-[#0D1235] mb-4">NetSuite Optimization</h3>
+          <p class="text-gray-600 mb-6">
+            Already on NetSuite but not getting the most from it? We audit your current setup, identify gaps, and implement improvements that drive real business value — faster processes, better reporting, and fewer manual workarounds.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> NetSuite health assessment and audit</li>
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> Workflow automation and SuiteFlow builds</li>
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> Custom reporting and saved searches</li>
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> SuiteScript customizations</li>
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> Dashboard and KPI setup</li>
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> Role and permission restructuring</li>
+          </ul>
+        </div>
+
+        <!-- Integrations -->
+        <div class="bg-white rounded-2xl p-10 shadow-sm border border-gray-100">
+          <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-[#0D1235] mb-4">Integrations & Customization</h3>
+          <p class="text-gray-600 mb-6">
+            NetSuite works best when it's connected to the rest of your tech stack. We design and build integrations that automate data flows, eliminate manual entry, and give you a single source of truth across your business.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> REST and SOAP web services integrations</li>
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> EDI and supply chain connectivity</li>
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> eCommerce platform integrations (Shopify, Magento)</li>
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> CRM and marketing tool connections</li>
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> Custom SuiteScript development</li>
+            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">✓</span> iPaaS and middleware solutions (Celigo, Boomi)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-4xl font-bold text-[#0D1235] mb-4">Our Approach</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Every engagement follows a clear process — so you always know where things stand and what comes next.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-[#0D1235] rounded-full flex items-center justify-center text-white text-2xl font-extrabold mx-auto mb-4">1</div>
+          <h3 class="text-lg font-bold text-[#0D1235] mb-2">Discover</h3>
+          <p class="text-gray-600 text-sm">We learn your business — your processes, your pain points, your goals — before we write a single line of configuration.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-[#0D1235] rounded-full flex items-center justify-center text-white text-2xl font-extrabold mx-auto mb-4">2</div>
+          <h3 class="text-lg font-bold text-[#0D1235] mb-2">Design</h3>
+          <p class="text-gray-600 text-sm">We document the solution design and get your sign-off before building. No surprises at go-live.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-[#0D1235] rounded-full flex items-center justify-center text-white text-2xl font-extrabold mx-auto mb-4">3</div>
+          <h3 class="text-lg font-bold text-[#0D1235] mb-2">Build & Test</h3>
+          <p class="text-gray-600 text-sm">We configure, build, and test thoroughly in a sandbox environment — with your team involved at key milestones.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-[#0D1235] rounded-full flex items-center justify-center text-white text-2xl font-extrabold mx-auto mb-4">4</div>
+          <h3 class="text-lg font-bold text-[#0D1235] mb-2">Launch & Grow</h3>
+          <p class="text-gray-600 text-sm">We go live together and stay close post-launch — then help you grow into the platform as your business evolves.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-[#0D1235] text-white py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-6">Not Sure Where to Start?</h2>
+      <p class="text-xl text-blue-200 mb-10">
+        We'll help you figure it out. A 30-minute call is all it takes to understand your situation and point you in the right direction — with no pressure and no sales pitch.
+      </p>
+      <a href="/contact" class="inline-block bg-white text-[#0D1235] font-bold px-10 py-4 rounded-lg text-lg hover:bg-blue-50 transition-colors">
+        Book a Free Strategy Call
+      </a>
     </div>
   </section>
 </Layout>
