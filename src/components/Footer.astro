@@ -1,112 +1,63 @@
 ---
-const services = [
-  { label: 'Evaluation & Licensing', href: '/services#evaluation' },
-  { label: 'Implementation', href: '/services#implementation' },
-  { label: 'Optimization', href: '/services#optimization' },
-  { label: 'Support & Training', href: '/services#support' },
-];
-
-const resources = [
-  { label: 'Project Estimator', href: '/estimator' },
-  { label: 'Video Library', href: '/videos' },
-  { label: 'Resource Library', href: '/library' },
-  { label: 'Blog', href: '/blog' },
-];
-
-const company = [
-  { label: 'About Inscio', href: '/about' },
-  { label: 'Book a Strategy Call', href: 'https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session' },
-];
+const year = new Date().getFullYear();
 ---
-
-<footer class="bg-[#1A1F36] text-gray-300">
+<footer class="bg-[#0D1235] text-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
 
-      <!-- Brand column -->
-      <div class="lg:col-span-1">
+      <!-- Brand -->
+      <div class="md:col-span-1">
         <a href="/">
           <img
-            src="https://cdn.prod.website-files.com/670669af02de9c68ed0ce9aa/6706a1ab7db7ccba08a1eb0b_Inscio%20Logo%20Light%20Background.svg"
+            src="https://cdn.prod.website-files.com/685efaa4c673486389582cef/6866e4ea24473711f3502fe5_InscioLogo%20with%20stripes.png"
             alt="Inscio"
-            class="h-8 w-auto brightness-0 invert mb-4"
+            class="h-12 w-auto brightness-0 invert mb-4"
           />
         </a>
-        <p class="text-sm text-gray-400 leading-relaxed mb-6">
-          NetSuite experts helping growing businesses implement, optimize, and get the most from their ERP investment.
-        </p>
-        <a
-          href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
-          target="_blank"
-          rel="noopener"
-          class="inline-block bg-blue-600 text-white font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-blue-700 transition-colors"
-        >
-          Book a Strategy Call
-        </a>
+        <p class="text-gray-400 text-sm leading-relaxed">NetSuite implementation &amp; optimization partner</p>
       </div>
 
       <!-- Services -->
       <div>
-        <h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Services</h3>
-        <ul class="space-y-3">
-          {services.map((link) => (
-            <li>
-              <a href={link.href} class="text-sm text-gray-400 hover:text-white transition-colors">
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <!-- Resources -->
-      <div>
-        <h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Resources</h3>
-        <ul class="space-y-3">
-          {resources.map((link) => (
-            <li>
-              <a href={link.href} class="text-sm text-gray-400 hover:text-white transition-colors">
-                {link.label}
-              </a>
-            </li>
-          ))}
+        <h4 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Services</h4>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li><a href="/services#evaluation" class="hover:text-white transition-colors">Evaluation &amp; Licensing</a></li>
+          <li><a href="/services#implementation" class="hover:text-white transition-colors">Implementation</a></li>
+          <li><a href="/services#training" class="hover:text-white transition-colors">Training</a></li>
+          <li><a href="/services#development" class="hover:text-white transition-colors">Development</a></li>
+          <li><a href="/services#analytics" class="hover:text-white transition-colors">Analytics &amp; Reporting</a></li>
+          <li><a href="/services#navigator" class="hover:text-white transition-colors">Navigator Plans</a></li>
         </ul>
       </div>
 
       <!-- Company -->
       <div>
-        <h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Company</h3>
-        <ul class="space-y-3">
-          {company.map((link) => (
-            <li>
-              <a
-                href={link.href}
-                class="text-sm text-gray-400 hover:text-white transition-colors"
-                target={link.href.startsWith('http') ? '_blank' : undefined}
-                rel={link.href.startsWith('http') ? 'noopener' : undefined}
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
+        <h4 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Company</h4>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li><a href="/about" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="/industries" class="hover:text-white transition-colors">Industries</a></li>
+          <li><a href="/dealercloud" class="hover:text-white transition-colors">DealerCloud</a></li>
+          <li><a href="/blog" class="hover:text-white transition-colors">Blog</a></li>
+          <li><a href="/resources" class="hover:text-white transition-colors">Resources</a></li>
         </ul>
-        <div class="mt-8">
-          <p class="text-xs text-gray-500 mb-1">Email us</p>
-          <a href="mailto:brian@inscio.com" class="text-sm text-gray-400 hover:text-white transition-colors">
-            brian@inscio.com
-          </a>
-        </div>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Contact</h4>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li><a href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Schedule a Call</a></li>
+          <li><a href="/estimator" class="hover:text-white transition-colors">Project Estimator</a></li>
+        </ul>
       </div>
     </div>
 
-    <!-- Bottom bar -->
-    <div class="mt-16 pt-8 border-t border-gray-700 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p class="text-xs text-gray-500">
-        &copy; {new Date().getFullYear()} Inscio. All rights reserved.
-      </p>
-      <p class="text-xs text-gray-500">
-        NetSuite Alliance Partner
-      </p>
+    <div class="mt-12 pt-8 border-t border-gray-700 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-gray-500 text-sm">&copy; {year} Inscio. All rights reserved.</p>
+      <div class="flex gap-6 text-sm text-gray-500">
+        <a href="/privacy" class="hover:text-white transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-white transition-colors">Terms</a>
+      </div>
     </div>
   </div>
 </footer>
