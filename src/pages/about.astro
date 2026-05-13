@@ -1,0 +1,128 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const values = [
+  {
+    icon: '🎯',
+    title: 'Honest advice first',
+    description: 'We tell you when NetSuite is not the right fit. Our reputation matters more than any single sale.',
+  },
+  {
+    icon: '🔬',
+    title: 'Depth over breadth',
+    description: 'We specialize exclusively in NetSuite. That focus means deeper expertise and better outcomes for clients.',
+  },
+  {
+    icon: '🤝',
+    title: 'Long-term relationships',
+    description: 'Most of our clients have worked with us for years. We are built for partnerships, not transactions.',
+  },
+  {
+    icon: '📐',
+    title: 'Process-driven delivery',
+    description: 'Our implementation methodology is proven across 150+ projects. No reinventing the wheel on your dime.',
+  },
+];
+---
+
+<Layout
+  title="About Inscio | NetSuite Alliance Partner"
+  description="Inscio is a NetSuite Alliance Partner with 12+ years of experience helping growing businesses implement and optimize NetSuite ERP. Meet our team."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-[#1A1F36] to-[#2d3561] text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="section-eyebrow text-blue-400">About Inscio</p>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">We are NetSuite people</h1>
+      <p class="text-lg text-gray-300 max-w-2xl">
+        Inscio was built on a simple idea: companies deserve a NetSuite partner that gives them straight answers and stays invested in their success long after go-live.
+      </p>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="section-eyebrow">Our Story</p>
+          <h2 class="section-heading mb-6">Built by practitioners, not salespeople</h2>
+          <div class="space-y-4 text-gray-500 leading-relaxed">
+            <p>
+              Inscio was founded after seeing too many companies struggle with NetSuite implementations that went over budget, ran long, and left teams under-trained. The problem was not NetSuite — it was a delivery model that prioritized selling licenses over client outcomes.
+            </p>
+            <p>
+              We built Inscio around a different approach: senior-led engagements, fixed-scope options, and a genuine commitment to your team being self-sufficient after we leave.
+            </p>
+            <p>
+              Today we work with growing companies across manufacturing, distribution, professional services, and technology — helping them get the operational clarity that a well-configured NetSuite system delivers.
+            </p>
+          </div>
+          <div class="mt-8">
+            <a
+              href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
+              target="_blank"
+              rel="noopener"
+              class="btn-primary"
+            >
+              Book a Strategy Call
+            </a>
+          </div>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <div class="grid grid-cols-2 gap-6 text-center">
+            {[
+              { value: '150+', label: 'Projects Delivered' },
+              { value: '12+', label: 'Years in NetSuite' },
+              { value: '40+', label: 'Industries Served' },
+              { value: '98%', label: 'Client Satisfaction' },
+            ].map((stat) => (
+              <div class="bg-white rounded-xl p-6 shadow-sm">
+                <p class="text-3xl font-bold text-blue-600 mb-1">{stat.value}</p>
+                <p class="text-sm text-gray-500">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-eyebrow">How We Work</p>
+        <h2 class="section-heading">Our values in practice</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {values.map((v) => (
+          <div class="card">
+            <div class="text-3xl mb-4">{v.icon}</div>
+            <h3 class="font-bold text-gray-900 mb-2">{v.title}</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">{v.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner badge -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="section-eyebrow">Credentials</p>
+      <h2 class="section-heading mb-4">NetSuite Alliance Partner</h2>
+      <p class="text-gray-500 mb-8">
+        Inscio is an official Oracle NetSuite Alliance Partner, which means we are recognized for our expertise, have access to dedicated NetSuite resources, and can offer licensing directly.
+      </p>
+      <a
+        href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
+        target="_blank"
+        rel="noopener"
+        class="btn-primary"
+      >
+        Talk to Us
+      </a>
+    </div>
+  </section>
+</Layout>

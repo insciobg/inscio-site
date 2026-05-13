@@ -1,0 +1,128 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+
+<Layout
+  title={post.data.title}
+  description={post.data.description}
+>
+  <!-- Article Hero -->
+  <section class="bg-gradient-to-br from-[#1A1F36] to-[#2d3561] text-white py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-4">
+        <a href="/blog" class="text-blue-400 text-sm hover:text-blue-300 transition-colors">
+          ← Back to Blog
+        </a>
+      </div>
+      <div class="flex items-center gap-2 mb-4">
+        <span class="bg-blue-500/30 text-blue-200 text-xs font-semibold px-3 py-1 rounded-full">
+          {post.data.category}
+        </span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">{post.data.title}</h1>
+      <p class="text-gray-300 text-lg mb-6">{post.data.description}</p>
+      <div class="flex items-center gap-4 text-sm text-gray-400">
+        <span>{post.data.author}</span>
+        <span>·</span>
+        <span>{formatDate(post.data.pubDate)}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-[1fr_280px] gap-12">
+        <!-- Main content -->
+        <article class="prose prose-lg prose-gray max-w-none
+          prose-headings:font-bold prose-headings:text-gray-900
+          prose-p:text-gray-600 prose-p:leading-relaxed
+          prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
+          prose-strong:text-gray-900
+          prose-li:text-gray-600
+          prose-table:text-sm
+          prose-th:bg-gray-50 prose-th:font-semibold
+          prose-code:bg-gray-100 prose-code:px-1 prose-code:rounded
+        ">
+          <Content />
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="space-y-6">
+          <div class="bg-[#1A1F36] text-white rounded-2xl p-6">
+            <h3 class="font-bold text-lg mb-2">Get expert advice</h3>
+            <p class="text-gray-400 text-sm mb-4">
+              Book a free 30-minute call with a NetSuite expert. No sales pitch.
+            </p>
+            <a
+              href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
+              target="_blank"
+              rel="noopener"
+              class="block text-center bg-blue-600 text-white font-semibold text-sm px-4 py-2.5 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Book a Free Strategy Call
+            </a>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-6">
+            <h3 class="font-bold text-gray-900 mb-3">Quick Tools</h3>
+            <div class="space-y-3">
+              <a href="/estimator" class="flex items-center gap-3 text-sm text-gray-600 hover:text-blue-600 transition-colors">
+                <span>🧮</span> Project Estimator
+              </a>
+              <a href="/videos" class="flex items-center gap-3 text-sm text-gray-600 hover:text-blue-600 transition-colors">
+                <span>🎥</span> Video Library
+              </a>
+              <a href="/library" class="flex items-center gap-3 text-sm text-gray-600 hover:text-blue-600 transition-colors">
+                <span>📚</span> Resource Library
+              </a>
+            </div>
+          </div>
+
+          {post.data.tags && post.data.tags.length > 0 && (
+            <div>
+              <h3 class="font-bold text-gray-900 mb-3 text-sm">Tags</h3>
+              <div class="flex flex-wrap gap-2">
+                {post.data.tags.map((tag) => (
+                  <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">{tag}</span>
+                ))}
+              </div>
+            </div>
+          )}
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bg-blue-600 text-white py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-3">Ready to talk about your project?</h2>
+      <p class="text-blue-200 mb-6">Get personalized advice from a NetSuite expert — free, no obligation.</p>
+      <a
+        href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
+        target="_blank"
+        rel="noopener"
+        class="btn-white"
+      >
+        Book a Free Strategy Call
+      </a>
+    </div>
+  </section>
+</Layout>

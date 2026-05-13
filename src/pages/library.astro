@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const resources = [
+  {
+    category: 'Evaluation',
+    items: [
+      { title: 'NetSuite Fit Assessment Checklist', type: 'PDF', pages: '2 pages', description: 'A structured checklist to evaluate whether NetSuite meets your business requirements.' },
+      { title: 'ERP Comparison Guide: NetSuite vs. Competitors', type: 'PDF', pages: '8 pages', description: 'Feature-by-feature comparison of NetSuite, Microsoft Dynamics, Sage Intacct, and SAP B1.' },
+      { title: 'How to Build a NetSuite Business Case', type: 'PDF', pages: '4 pages', description: 'Template and guidance for building an ROI-based case for NetSuite investment.' },
+    ],
+  },
+  {
+    category: 'Implementation',
+    items: [
+      { title: 'NetSuite Implementation Project Plan Template', type: 'XLSX', pages: 'Spreadsheet', description: 'A ready-to-use project plan covering all phases from kickoff through go-live.' },
+      { title: 'Data Migration Readiness Checklist', type: 'PDF', pages: '3 pages', description: 'Everything you need to prepare your data for migration to NetSuite.' },
+      { title: 'Go-Live Readiness Checklist', type: 'PDF', pages: '2 pages', description: 'The 30-point checklist we use with every client before flipping the switch.' },
+    ],
+  },
+  {
+    category: 'Module Guides',
+    items: [
+      { title: 'NetSuite Financial Management Overview', type: 'PDF', pages: '5 pages', description: 'A plain-English guide to what NetSuite Financials covers and what it replaces.' },
+      { title: 'NetSuite Inventory & WMS Fact Sheet', type: 'PDF', pages: '3 pages', description: 'How NetSuite handles inventory management and when you need the WMS module.' },
+      { title: 'NetSuite CRM vs. Salesforce', type: 'PDF', pages: '4 pages', description: 'When to use NetSuite CRM, when to keep Salesforce, and how to integrate them.' },
+    ],
+  },
+];
+
+const typeColors: Record<string, string> = {
+  PDF: 'bg-red-100 text-red-700',
+  XLSX: 'bg-green-100 text-green-700',
+};
+---
+
+<Layout
+  title="NetSuite Resource Library | Inscio"
+  description="Free NetSuite fact sheets, checklists, guides, and templates from Inscio. Download resources to help you evaluate, implement, and optimize NetSuite."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-[#1A1F36] to-[#2d3561] text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="section-eyebrow text-blue-400">Resources</p>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">Resource Library</h1>
+      <p class="text-lg text-gray-300 max-w-2xl">
+        NetSuite fact sheets, checklists, comparison guides, and templates — free to download, no form required.
+      </p>
+    </div>
+  </section>
+
+  <!-- Resources -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      {resources.map((cat) => (
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-8 pb-4 border-b border-gray-100">{cat.category}</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {cat.items.map((item) => (
+              <div class="card flex flex-col">
+                <div class="flex items-center gap-2 mb-3">
+                  <span class={`text-xs font-bold px-2 py-0.5 rounded ${typeColors[item.type] || 'bg-gray-100 text-gray-700'}`}>
+                    {item.type}
+                  </span>
+                  <span class="text-xs text-gray-400">{item.pages}</span>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p class="text-sm text-gray-500 leading-relaxed flex-1 mb-4">{item.description}</p>
+                <a
+                  href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
+                  target="_blank"
+                  rel="noopener"
+                  class="text-sm font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1"
+                >
+                  Download Free
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="section-heading mb-4">Need something specific?</h2>
+      <p class="text-gray-500 mb-8">Tell us what you are working on and we will point you to the right resource — or create one.</p>
+      <a
+        href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
+        target="_blank"
+        rel="noopener"
+        class="btn-primary"
+      >
+        Book a Free Strategy Call
+      </a>
+    </div>
+  </section>
+</Layout>

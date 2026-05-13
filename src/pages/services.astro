@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    id: 'evaluation',
+    icon: '🔍',
+    eyebrow: 'Phase 1',
+    title: 'Evaluation & Licensing',
+    description: 'Before you buy, you need honest advice. We help you assess whether NetSuite is the right ERP for your business, build a compelling business case, and negotiate licensing so you get the right modules at the right price.',
+    bullets: [
+      'Unbiased NetSuite fit assessment',
+      'Business case development',
+      'License negotiation support',
+      'Implementation roadmap planning',
+      'Vendor comparison (if needed)',
+    ],
+  },
+  {
+    id: 'implementation',
+    icon: '⚙️',
+    eyebrow: 'Phase 2',
+    title: 'Implementation',
+    description: 'A successful NetSuite implementation requires experience, structure, and communication. Our proven methodology keeps projects on scope, on time, and on budget — with your team fully trained and confident at go-live.',
+    bullets: [
+      'Requirements gathering & design',
+      'Configuration and customization',
+      'Data migration from legacy systems',
+      'Integrations with third-party tools',
+      'User training and go-live support',
+    ],
+  },
+  {
+    id: 'optimization',
+    icon: '📈',
+    eyebrow: 'Phase 3',
+    title: 'Optimization',
+    description: 'Most companies use less than half of what NetSuite can do. We audit your current setup, identify gaps and workarounds, and systematically unlock the features and automation that will give you the biggest return.',
+    bullets: [
+      'System health audit',
+      'Workflow and process automation',
+      'Custom report and dashboard buildout',
+      'Module expansion (e.g., WMS, SuitePeople)',
+      'Performance tuning',
+    ],
+  },
+  {
+    id: 'support',
+    icon: '🤝',
+    eyebrow: 'Ongoing',
+    title: 'Support & Training',
+    description: 'NetSuite evolves — twice a year with major releases, plus ongoing changes from your business. Our support plans give you a dedicated expert to call on for day-to-day questions, new hire training, and future projects.',
+    bullets: [
+      'Monthly and annual support retainers',
+      'New user onboarding and training',
+      'NetSuite release review and impact assessment',
+      'Ad-hoc troubleshooting and fixes',
+      'Strategic NetSuite roadmap planning',
+    ],
+  },
+];
+---
+
+<Layout
+  title="NetSuite Services | Inscio"
+  description="Inscio offers end-to-end NetSuite services: evaluation and licensing, implementation, optimization, and ongoing support. See how we can help."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-[#1A1F36] to-[#2d3561] text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="section-eyebrow text-blue-400">What We Do</p>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">NetSuite Services</h1>
+      <p class="text-lg text-gray-300 max-w-2xl">
+        Whether you are evaluating NetSuite for the first time or trying to get more out of a system you already have, we cover every phase.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+      {services.map((svc, i) => (
+        <div id={svc.id} class={`grid lg:grid-cols-2 gap-12 items-start ${i % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
+          <div class={i % 2 === 1 ? 'lg:col-start-2' : ''}>
+            <p class="section-eyebrow">{svc.eyebrow}</p>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">
+              <span class="mr-3">{svc.icon}</span>{svc.title}
+            </h2>
+            <p class="text-gray-500 leading-relaxed mb-6">{svc.description}</p>
+            <a
+              href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
+              target="_blank"
+              rel="noopener"
+              class="btn-primary"
+            >
+              Discuss This Service
+            </a>
+          </div>
+          <div class={`bg-gray-50 rounded-2xl p-8 ${i % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+            <h3 class="font-semibold text-gray-900 mb-4">What's included</h3>
+            <ul class="space-y-3">
+              {svc.bullets.map((b) => (
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-sm text-gray-600">{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-blue-600 text-white py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Not sure where to start?</h2>
+      <p class="text-blue-200 mb-8 text-lg">
+        Book a free strategy call and we will tell you exactly what your situation needs.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
+          target="_blank"
+          rel="noopener"
+          class="btn-white"
+        >
+          Book a Free Strategy Call
+        </a>
+        <a href="/estimator" class="btn-secondary border-white text-white hover:bg-white hover:text-blue-800">
+          Try the Project Estimator
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const cards = [
+  {
+    icon: '🧮',
+    title: 'NetSuite Project Estimator',
+    description: 'Get a realistic budget range for your NetSuite implementation in minutes. Answer a few questions about your business and we will generate a scope and cost estimate.',
+    href: '/estimator',
+    cta: 'Start Estimating',
+    badge: 'Free Tool',
+  },
+  {
+    icon: '🎥',
+    title: 'Video Library',
+    description: 'Short, practical videos explaining how NetSuite works, how to evaluate it, and what to expect during implementation. No fluff, no sales pitch.',
+    href: '/videos',
+    cta: 'Watch Videos',
+    badge: 'Free',
+  },
+  {
+    icon: '📚',
+    title: 'Resource Library',
+    description: 'Fact sheets, checklists, comparison guides, and templates to help you make informed decisions about NetSuite and your ERP journey.',
+    href: '/library',
+    cta: 'Browse Library',
+    badge: 'Free Download',
+  },
+  {
+    icon: '✍️',
+    title: 'Blog',
+    description: 'In-depth articles on NetSuite features, implementation best practices, industry-specific tips, and lessons learned from 150+ projects.',
+    href: '/blog',
+    cta: 'Read Articles',
+    badge: 'Free',
+  },
+];
+---
+
+<Layout
+  title="NetSuite Resources | Inscio"
+  description="Free NetSuite resources from Inscio: project estimator, video library, fact sheets, and blog articles to help you succeed with NetSuite ERP."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-[#1A1F36] to-[#2d3561] text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="section-eyebrow text-blue-400">Resources</p>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">Everything you need to know about NetSuite</h1>
+      <p class="text-lg text-gray-300 max-w-2xl">
+        Free tools, videos, and guides to help you evaluate, implement, and optimize NetSuite — whether you are a prospect or an existing customer.
+      </p>
+    </div>
+  </section>
+
+  <!-- Resource Cards -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        {cards.map((card) => (
+          <div class="card flex flex-col">
+            <div class="flex items-start justify-between mb-4">
+              <span class="text-4xl">{card.icon}</span>
+              <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">{card.badge}</span>
+            </div>
+            <h2 class="text-xl font-bold text-gray-900 mb-3">{card.title}</h2>
+            <p class="text-gray-500 leading-relaxed flex-1 mb-6">{card.description}</p>
+            <a href={card.href} class="btn-primary self-start">{card.cta} →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="section-heading mb-4">Still have questions?</h2>
+      <p class="text-gray-500 mb-8">Book a free strategy call and get answers from a real NetSuite expert.</p>
+      <a
+        href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
+        target="_blank"
+        rel="noopener"
+        class="btn-primary"
+      >
+        Book a Free Strategy Call
+      </a>
+    </div>
+  </section>
+</Layout>

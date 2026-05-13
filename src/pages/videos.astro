@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const categories = [
+  {
+    title: 'NetSuite Basics',
+    videos: [
+      { title: 'What is NetSuite? A Plain-English Overview', duration: '8 min', description: 'A clear explanation of what NetSuite does, who it is for, and how it compares to QuickBooks, Sage, and other systems.' },
+      { title: 'Is NetSuite Right for My Business?', duration: '6 min', description: 'Key questions to ask before committing to NetSuite — and honest guidance on when it is and is not a good fit.' },
+      { title: 'NetSuite Modules Explained', duration: '10 min', description: 'A walkthrough of the core NetSuite modules: Financials, CRM, Inventory, Manufacturing, and more.' },
+    ],
+  },
+  {
+    title: 'Evaluation & Buying',
+    videos: [
+      { title: 'How NetSuite Licensing Works', duration: '7 min', description: 'Understand user licenses, module add-ons, and how to avoid overpaying. What is negotiable and what is not.' },
+      { title: 'NetSuite vs. Competitors', duration: '9 min', description: 'A side-by-side look at NetSuite vs. Microsoft Dynamics, Sage Intacct, and SAP Business One.' },
+      { title: 'How to Build a NetSuite Business Case', duration: '11 min', description: 'How to structure an ROI analysis and present the case to your leadership team or board.' },
+    ],
+  },
+  {
+    title: 'Implementation',
+    videos: [
+      { title: 'What a NetSuite Implementation Actually Looks Like', duration: '12 min', description: 'A realistic walkthrough of the phases, timelines, and what your team needs to be prepared for.' },
+      { title: 'Data Migration Do\'s and Don\'ts', duration: '8 min', description: 'The mistakes companies make when migrating data to NetSuite and how to avoid them.' },
+      { title: 'Go-Live: What to Expect on Day One', duration: '6 min', description: 'How to prepare your team for the first week live on NetSuite, and how to handle the inevitable surprises.' },
+    ],
+  },
+];
+---
+
+<Layout
+  title="NetSuite Video Library | Inscio"
+  description="Free NetSuite videos from Inscio covering basics, evaluation, licensing, implementation, and optimization. Short, practical, no sales pitch."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-[#1A1F36] to-[#2d3561] text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="section-eyebrow text-blue-400">Resources</p>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">NetSuite Video Library</h1>
+      <p class="text-lg text-gray-300 max-w-2xl">
+        Short, practical videos on every aspect of NetSuite. No jargon, no sales pitch — just useful information from people who have done this hundreds of times.
+      </p>
+    </div>
+  </section>
+
+  <!-- Video Categories -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+      {categories.map((cat) => (
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-8 pb-4 border-b border-gray-100">{cat.title}</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {cat.videos.map((v) => (
+              <div class="card group cursor-pointer">
+                <!-- Thumbnail placeholder -->
+                <div class="bg-gray-100 rounded-xl aspect-video mb-4 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
+                  <div class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center group-hover:bg-blue-700 transition-colors">
+                    <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-0.5 rounded-full">{v.duration}</span>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{v.title}</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">{v.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="section-heading mb-4">Want a personalized walkthrough?</h2>
+      <p class="text-gray-500 mb-8">Book a live demo tailored to your specific business and industry.</p>
+      <a
+        href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
+        target="_blank"
+        rel="noopener"
+        class="btn-primary"
+      >
+        Book a Free Strategy Call
+      </a>
+    </div>
+  </section>
+</Layout>

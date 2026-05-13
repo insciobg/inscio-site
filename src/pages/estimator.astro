@@ -1,0 +1,619 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="NetSuite Project Estimator | Inscio"
+  description="Get a free, realistic budget estimate for your NetSuite implementation in minutes. Answer a few questions about your business and we generate a cost range."
+>
+<style>
+:root {
+  --navy:       #1A1F36;
+  --blue:       #467AFF;
+  --blue-light: #8EE3FE;
+  --body:       #666E82;
+  --bg:         #FFFFFF;
+  --bg-alt:     #F3F7FD;
+  --border:     #D5DFF0;
+  --font:       "Mona Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --radius:     8px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font); background: var(--bg); color: var(--body); font-size: 15px; font-weight: 500; line-height: 1.6; }
+
+/* ── NAV ── */
+.est-nav {
+  background: var(--bg); border-bottom: 1px solid var(--border);
+  padding: 0 48px; display: flex; align-items: center;
+  justify-content: space-between; height: 72px;
+  position: sticky; top: 0; z-index: 100;
+}
+.est-nav-logo img { height: 36px; width: auto; display: block; }
+.est-nav-links { display: flex; gap: 28px; list-style: none; }
+.est-nav-links a { text-decoration: none; color: var(--body); font-size: 14px; font-weight: 600; transition: color .15s; }
+.est-nav-links a:hover { color: var(--navy); }
+.est-nav-cta {
+  padding: 10px 20px; background: var(--navy); color: #fff !important;
+  font-family: var(--font); font-size: 14px; font-weight: 700;
+  border-radius: 6px; text-decoration: none; white-space: nowrap; transition: opacity .15s;
+}
+.est-nav-cta:hover { opacity: .86; }
+
+/* ── HERO ── */
+.est-hero { background: var(--navy); padding: 64px 48px 60px; }
+.est-hero-inner { max-width: 860px; margin: 0 auto; }
+.est-hero .eyebrow {
+  font-size: 12px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .1em; color: var(--blue-light); margin-bottom: 12px;
+}
+.est-hero h1 {
+  font-size: 42px; font-weight: 800; color: #fff;
+  letter-spacing: -.5px; line-height: 1.12; margin-bottom: 12px;
+}
+.est-hero p { font-size: 17px; color: rgba(255,255,255,.65); max-width: 520px; }
+
+/* ── LAYOUT ── */
+.est-content { max-width: 860px; margin: 0 auto; padding: 36px 48px 72px; }
+
+/* ── CARDS ── */
+.est-card {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 12px; padding: 28px 32px; margin-bottom: 18px;
+}
+.est-card-title {
+  font-size: 16px; font-weight: 800; color: var(--navy);
+  margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--border);
+}
+
+/* ── FIELDS ── */
+.field-row { display: flex; flex-direction: column; gap: 5px; margin-bottom: 18px; }
+.field-row:last-child { margin-bottom: 0; }
+.field-row label { font-size: 13px; font-weight: 700; color: var(--navy); }
+.field-row select,
+.field-row input[type="number"] {
+  width: 100%; padding: 10px 14px; border: 1px solid var(--border);
+  border-radius: var(--radius); font-family: var(--font); font-size: 14px;
+  font-weight: 500; color: var(--navy); background: var(--bg);
+  appearance: none; -webkit-appearance: none; transition: border-color .15s, box-shadow .15s;
+}
+.field-row select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666E82' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px;
+}
+.field-row select:focus,
+.field-row input[type="number"]:focus {
+  outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(70,122,255,.12);
+}
+.field-hint { font-size: 12px; color: var(--body); margin-top: 3px; line-height: 1.5; }
+
+/* Three-column grid for numeric inputs */
+.field-trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 0; }
+.field-trio .field-row { margin-bottom: 0; }
+
+/* ── MODULES ── */
+.module-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.module-section-label {
+  grid-column: 1 / -1; font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em;
+  color: var(--body); margin-top: 10px; margin-bottom: 2px;
+}
+.module-section-label:first-child { margin-top: 0; }
+.module-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 10px 14px; border: 1px solid var(--border);
+  border-radius: var(--radius); cursor: pointer;
+  transition: border-color .15s, background .15s; user-select: none;
+}
+.module-item:hover { border-color: var(--blue); background: var(--bg-alt); }
+.module-item input[type="checkbox"] {
+  accent-color: var(--blue); width: 15px; height: 15px;
+  flex-shrink: 0; cursor: pointer; margin-top: 2px;
+}
+.module-item span { font-size: 13px; font-weight: 600; color: var(--navy); line-height: 1.35; }
+.module-item.is-checked { border-color: var(--blue); background: rgba(70,122,255,.05); }
+
+/* ── CALCULATE BUTTON ── */
+.calc-btn {
+  display: block; width: 100%; padding: 16px;
+  background: var(--blue); color: #fff; font-family: var(--font);
+  font-size: 15px; font-weight: 800; border: none;
+  border-radius: var(--radius); cursor: pointer;
+  transition: opacity .15s; margin-top: 4px; letter-spacing: .01em;
+}
+.calc-btn:hover { opacity: .88; }
+
+/* ── EDI NOTE ── */
+.edi-note {
+  background: rgba(70,122,255,.08); border: 1px solid rgba(70,122,255,.25);
+  border-radius: 8px; padding: 12px 16px; margin-top: 16px;
+  font-size: 13px; color: var(--navy); line-height: 1.5; display: none;
+}
+.edi-note strong { font-weight: 700; }
+
+/* ── RESULTS ── */
+.results-card {
+  background: var(--navy); border-radius: 12px;
+  padding: 32px 36px; margin-bottom: 18px;
+}
+.results-title { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+.results-meta { font-size: 13px; color: rgba(255,255,255,.48); margin-bottom: 24px; }
+.results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 22px; }
+.res-item {
+  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px; padding: 18px 16px;
+}
+.res-label {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .07em; color: rgba(255,255,255,.5); margin-bottom: 6px;
+}
+.res-value { font-size: 21px; font-weight: 800; color: #fff; letter-spacing: -.3px; line-height: 1.2; }
+.res-sub { font-size: 11px; color: rgba(255,255,255,.42); margin-top: 5px; line-height: 1.4; }
+.results-disclaimer { font-size: 12px; color: rgba(255,255,255,.36); line-height: 1.7; }
+
+/* ── CTA BANNER ── */
+.cta-banner {
+  background: var(--bg-alt); border: 1px solid var(--border);
+  border-radius: 12px; padding: 30px 36px;
+  display: flex; align-items: center; justify-content: space-between; gap: 28px;
+}
+.cta-text h3 { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+.cta-text p  { font-size: 14px; color: var(--body); }
+.cta-btn {
+  flex-shrink: 0; padding: 14px 22px; background: var(--navy);
+  color: #fff !important; font-family: var(--font); font-size: 14px;
+  font-weight: 700; border-radius: var(--radius); text-decoration: none;
+  transition: opacity .15s; white-space: nowrap;
+}
+.cta-btn:hover { opacity: .88; }
+
+/* ── FOOTER ── */
+.est-foot {
+  background: #1A1F36;
+  border-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 820px) {
+  .est-nav { padding: 0 24px; }
+  .est-nav-links { display: none; }
+  .est-hero { padding: 48px 24px 40px; }
+  .est-content { padding: 24px 20px 48px; }
+  .est-card { padding: 20px; }
+  .field-trio { grid-template-columns: 1fr; }
+  .module-grid { grid-template-columns: 1fr; }
+  .results-grid { grid-template-columns: 1fr 1fr; }
+  .cta-banner { flex-direction: column; text-align: center; }
+  /* .est-foot responsive handled by inner flex */
+}
+@media (max-width: 480px) {
+  .est-hero h1 { font-size: 30px; }
+  .results-grid { grid-template-columns: 1fr; }
+}
+</style>
+<div class="est-hero">
+  <div class="est-hero-inner">
+    <div class="eyebrow">Resources → Free Tool</div>
+    <h1>NetSuite Project Estimator</h1>
+    <p>Answer a few questions about your business and get a ballpark range for a new NetSuite implementation — no email required.</p>
+  </div>
+</div>
+
+<!-- ── FORM ── -->
+<div class="est-content">
+
+  <!-- 1. Company Profile -->
+  <div class="est-card">
+    <div class="est-card-title">Company Profile</div>
+
+    <div class="field-row">
+      <label for="industry">Industry</label>
+      <select id="industry" onchange="this.classList.remove('placeholder')">
+        <option value="" disabled selected class="placeholder-opt">Select Industry</option>
+        <option value="profServices">Professional Services</option>
+        <option value="software">Software / SaaS</option>
+        <option value="manufacturing">Manufacturing</option>
+        <option value="distribution">Wholesale Distribution</option>
+        <option value="medicalDevice">Medical Device</option>
+        <option value="dealer">Dealer / OEM Networks</option>
+        <option value="energy">Energy</option>
+        <option value="lifeSciences">Life Sciences</option>
+        <option value="general">General / Other</option>
+      </select>
+    </div>
+
+    <div class="field-trio">
+      <div class="field-row">
+        <label for="users">Named Users</label>
+        <input type="number" id="users" value="15" min="1" max="2000">
+        <div class="field-hint">Anyone who needs regular NetSuite access.</div>
+      </div>
+      <div class="field-row">
+        <label for="entities">Legal Entities</label>
+        <input type="number" id="entities" value="1" min="1" max="500">
+        <div class="field-hint">Separate subsidiary companies in your corporate structure.</div>
+      </div>
+      <div class="field-row">
+        <label for="countries">Additional Countries</label>
+        <input type="number" id="countries" value="0" min="0" max="99">
+        <div class="field-hint">US assumed as base. Enter the number of additional countries that need separate currency or tax rules.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Modules -->
+  <div class="est-card">
+    <div class="est-card-title">Modules Needed</div>
+    <div class="module-grid" id="moduleGrid">
+
+      <div class="module-section-label">Finance</div>
+      <label class="module-item is-checked">
+        <input type="checkbox" value="financials" checked>
+        <span>Core Financials (GL, AP, AR, Bank Rec)</span>
+      </label>
+      <label class="module-item">
+        <input type="checkbox" value="revRec">
+        <span>Revenue Management</span>
+      </label>
+      <label class="module-item">
+        <input type="checkbox" value="fixedAssets">
+        <span>Fixed Assets</span>
+      </label>
+
+      <div class="module-section-label">Sales &amp; Projects</div>
+      <label class="module-item">
+        <input type="checkbox" value="crm">
+        <span>CRM &amp; Sales Force Automation</span>
+      </label>
+      <label class="module-item">
+        <input type="checkbox" value="projects">
+        <span>Project Management (SuiteProjects)</span>
+      </label>
+      <label class="module-item">
+        <input type="checkbox" value="ecommerce">
+        <span>SuiteCommerce / E-Commerce</span>
+      </label>
+
+      <div class="module-section-label">Inventory &amp; Supply Chain</div>
+      <label class="module-item">
+        <input type="checkbox" value="inventory">
+        <span>Inventory Management</span>
+      </label>
+      <label class="module-item">
+        <input type="checkbox" value="purchasing">
+        <span>Purchasing &amp; Procurement</span>
+      </label>
+      <label class="module-item">
+        <input type="checkbox" value="demandPlanning">
+        <span>Demand Planning</span>
+      </label>
+      <label class="module-item">
+        <input type="checkbox" value="wms">
+        <span>Warehouse Management (WMS)</span>
+      </label>
+      <label class="module-item">
+        <input type="checkbox" value="edi">
+        <span>EDI</span>
+        <span style="font-size:11px;font-weight:500;color:var(--body);margin-left:4px;">(pricing by trading partners &amp; mappings)</span>
+      </label>
+
+      <div class="module-section-label">Manufacturing</div>
+      <label class="module-item">
+        <input type="checkbox" value="lightMfg">
+        <span>Manufacturing – Light (Work Orders, Assemblies)</span>
+      </label>
+      <label class="module-item">
+        <input type="checkbox" value="advManufacturing">
+        <span>Advanced Manufacturing (WIP, BOM, Routing)</span>
+      </label>
+      <label class="module-item">
+        <input type="checkbox" value="capacityPlanning">
+        <span>Capacity Planning</span>
+      </label>
+
+      <div class="module-section-label">People</div>
+      <label class="module-item">
+        <input type="checkbox" value="hr">
+        <span>HR &amp; Payroll (SuitePeople)</span>
+      </label>
+
+    </div>
+  </div>
+
+  <!-- 3. Project Complexity -->
+  <div class="est-card">
+    <div class="est-card-title">Project Complexity</div>
+
+    <div class="field-row">
+      <label for="dataVolume">Data Migration Volume</label>
+      <select id="dataVolume">
+        <option value="light" selected>Light — clean data, minimal history to bring over</option>
+        <option value="moderate">Moderate — some cleanup needed, 2–3 years of history</option>
+        <option value="heavy">Heavy — complex or dirty data, multiple legacy systems</option>
+      </select>
+    </div>
+
+    <div class="field-row">
+      <label for="integrations">Number of Integrations</label>
+      <select id="integrations">
+        <option value="0" selected>None — NetSuite will be standalone</option>
+        <option value="1">1–2 integrations</option>
+        <option value="3">3–5 integrations</option>
+        <option value="6">6+ integrations</option>
+      </select>
+    </div>
+
+    <div class="field-row">
+      <label for="customization">Customization Level</label>
+      <select id="customization">
+        <option value="low" selected>Low — mostly out-of-the-box NetSuite</option>
+        <option value="medium">Medium — some custom workflows &amp; reports</option>
+        <option value="high">High — scripting, custom forms, advanced automation</option>
+      </select>
+    </div>
+
+    <button class="calc-btn" onclick="calculate()">Calculate My Estimate →</button>
+  </div>
+
+  <!-- 4. Results (hidden until calculated) -->
+  <div class="results-card" id="resultsCard" style="display:none">
+    <div class="results-title">Your Estimated Investment Range</div>
+    <div class="results-meta" id="resultsMeta"></div>
+    <div class="results-grid">
+      <div class="res-item">
+        <div class="res-label">Annual License</div>
+        <div class="res-value" id="licenseVal">—</div>
+        <div class="res-sub" id="licenseSub">Recurring / year</div>
+      </div>
+      <div class="res-item">
+        <div class="res-label">Implementation Services</div>
+        <div class="res-value" id="implVal">—</div>
+        <div class="res-sub" id="implSub">One-time</div>
+      </div>
+      <div class="res-item">
+        <div class="res-label">Total Year-One Cost</div>
+        <div class="res-value" id="totalVal">—</div>
+        <div class="res-sub">License + Services</div>
+      </div>
+    </div>
+    <div class="edi-note" id="ediNote">
+      <strong>EDI selected:</strong> EDI costs are not included in the estimates above. Pricing depends on the number of trading partners and required document mappings — contact us for a custom EDI assessment.
+    </div>
+    <div class="results-disclaimer">
+      Estimates are ranges based on Inscio project experience and are intended as a rough order of magnitude only. Actual costs depend on your specific requirements, data quality, and final license negotiation. Schedule a strategy call for a detailed assessment.
+    </div>
+  </div>
+
+  <!-- 5. CTA -->
+  <div class="cta-banner">
+    <div class="cta-text">
+      <h3>Want a precise quote?</h3>
+      <p>Talk to an Inscio advisor — we'll review your requirements and give you real numbers.</p>
+    </div>
+    <a href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session" class="cta-btn">Schedule a Free Strategy Call →</a>
+  </div>
+
+</div><!-- /est-content -->
+
+<!-- ── FOOTER ── -->
+<script>
+// ── MODULE CHECKBOX STYLING ────────────────────────────────────────────────
+document.querySelectorAll('.module-item input[type="checkbox"]').forEach(function(cb) {
+  cb.addEventListener('change', function() {
+    cb.closest('.module-item').classList.toggle('is-checked', cb.checked);
+  });
+});
+
+// ── FORMATTING HELPERS ─────────────────────────────────────────────────────
+function fmt(n) {
+  if (n >= 1000000) return '$' + (n / 1000000).toFixed(1) + 'M';
+  return '$' + Math.round(n / 1000) + 'K';
+}
+function fmtRange(lo, hi) { return fmt(lo) + ' – ' + fmt(hi); }
+function roundTo(n, step) { return Math.round(n / step) * step; }
+
+// ── VERTICAL / LICENSE DATA ────────────────────────────────────────────────
+var VERTICAL_MAP = {
+  profServices:  'services',
+  software:      'software',
+  manufacturing: 'products',
+  distribution:  'products',
+  medicalDevice: 'products',
+  dealer:        'products',
+  energy:        'products',
+  lifeSciences:  'products',
+  general:       'financials'
+};
+
+// SuiteSuccess list prices per month [Standard, Premium]
+var PLATFORM_PRICES = {
+  services:   [3299, 5999],
+  software:   [3299, 7999],
+  products:   [3299, 5499],
+  financials: [1899, 3999]
+};
+
+var INDUSTRY_LABELS = {
+  profServices:  'Professional Services',
+  software:      'Software / SaaS',
+  manufacturing: 'Manufacturing',
+  distribution:  'Wholesale Distribution',
+  medicalDevice: 'Medical Device',
+  dealer:        'Dealer / OEM Networks',
+  energy:        'Energy',
+  lifeSciences:  'Life Sciences',
+  general:       'General / Other'
+};
+
+// ── MAIN CALCULATION ────────────────────────────────────────────────────────
+function calculate() {
+  var industry     = document.getElementById('industry').value;
+  var users        = Math.max(1, parseInt(document.getElementById('users').value)        || 15);
+  var entities     = Math.max(1, parseInt(document.getElementById('entities').value)     || 1);
+  var addlCountries= Math.max(0, parseInt(document.getElementById('countries').value)    || 0);
+  var totalCountries = addlCountries + 1;                    // US base + additional
+  var dataVol      = document.getElementById('dataVolume').value;
+  var intCount     = document.getElementById('integrations').value;
+  var custom       = document.getElementById('customization').value;
+
+  // Require industry selection
+  if (!industry) {
+    document.getElementById('industry').focus();
+    document.getElementById('industry').style.borderColor = '#E53E3E';
+    return;
+  }
+  document.getElementById('industry').style.borderColor = '';
+
+  var modules = [];
+  document.querySelectorAll('#moduleGrid input[type="checkbox"]:checked').forEach(function(cb) {
+    modules.push(cb.value);
+  });
+  function has(m) { return modules.indexOf(m) !== -1; }
+
+  // ── LICENSE ──────────────────────────────────────────────────────────────
+
+  var vertical   = VERTICAL_MAP[industry];
+  var isPremium  = users > 30;                               // Standard caps at 30 users
+  var tierIdx    = isPremium ? 1 : 0;
+  var tierLabel  = isPremium ? 'Premium' : 'Standard';
+
+  // Platform monthly + Fixed Assets add-on ($599/mo) + per-user fee
+  var platformMo = PLATFORM_PRICES[vertical][tierIdx];
+  if (has('fixedAssets')) platformMo += 599;
+  var annualList = (platformMo + users * 120) * 12;
+
+  // OneWorld: $1,999/mo for 1st additional country; $799/mo each country after that
+  var oneWorldAnnual = 0;
+  if (totalCountries > 1) {
+    oneWorldAnnual = 1999 * 12;                              // enables multi-country
+    if (totalCountries > 2) oneWorldAnnual += (totalCountries - 2) * 799 * 12;
+  }
+
+  // DealerCloud add-on for Dealer / OEM
+  var dcLo = (industry === 'dealer') ? 25000 : 0;
+  var dcHi = (industry === 'dealer') ? 32000 : 0;
+
+  // Module license add-ons (fixed amounts, not subject to negotiated discount)
+  var suiteCommerceLic = has('ecommerce') ? 30000 : 0;
+  var revMgmtLic       = (has('revRec') && industry !== 'software') ? 20000 : 0;
+  var wmsLic           = has('wms') ? 12000 : 0;
+  var moduleLicAddon   = suiteCommerceLic + revMgmtLic + wmsLic;
+
+  // License range: 65–80% of negotiated base + fixed add-ons
+  var licLo = roundTo(annualList * 0.65 + oneWorldAnnual + dcLo + moduleLicAddon, 500);
+  var licHi = roundTo(annualList * 0.80 + oneWorldAnnual + dcHi + moduleLicAddon, 500);
+
+  // ── IMPLEMENTATION HOURS ─────────────────────────────────────────────────
+  // Base hours by industry × size tier [small, medium, large]
+  var HOURS_TABLE = {
+    general:       [200, 250, 300],
+    dealer:        [300, 400, 500],
+    manufacturing: [400, 500, 600],
+    distribution:  [300, 400, 500],
+    medicalDevice: [300, 400, 500],
+    profServices:  [300, 400, 500],
+    software:      [300, 400, 500],
+    energy:        [200, 250, 300],
+    lifeSciences:  [200, 250, 300]
+  };
+
+  // User tiers: small ≤10, medium 11–30, large 31+
+  var userTier = users <= 10 ? 0 : users <= 30 ? 1 : 2;
+
+  var baseHours;
+
+  if (industry === 'manufacturing') {
+    // Module complexity drives tier; user count is floor
+    var modTier = (has('capacityPlanning') || has('advManufacturing')) ? 2
+                : (has('demandPlanning')   || has('wms'))               ? 1
+                : 0;
+    baseHours = HOURS_TABLE.manufacturing[Math.max(modTier, userTier)];
+
+  } else if (industry === 'distribution' || industry === 'medicalDevice') {
+    var modTier = has('wms')            ? 2
+                : has('demandPlanning') ? 1
+                : 0;
+    baseHours = HOURS_TABLE[industry][Math.max(modTier, userTier)];
+
+  } else {
+    // All other industries — tier by user count
+    baseHours = HOURS_TABLE[industry][userTier];
+  }
+
+  // Module add-ons
+  if (has('revRec'))      baseHours += 60;                   // Revenue Recognition
+  if (has('fixedAssets')) baseHours += 60;                   // Fixed Assets (midpoint of 40–80)
+  if (has('crm'))         baseHours += 40;                   // CRM & Sales Force Automation
+  if (has('ecommerce'))   baseHours += 120;                  // SuiteCommerce / E-Commerce
+  if (has('hr'))          baseHours += 40;                   // HR & Payroll (SuitePeople)
+
+  // Multi-entity / international add-ons
+  if (totalCountries > 1) {
+    baseHours += 100 + Math.min((totalCountries - 2) * 40, 160);
+  } else if (entities > 1) {
+    baseHours += 75;                                         // domestic consolidation
+    if (entities > 5) baseHours += 50;
+  }
+
+  // Data migration multiplier
+  var dataMult = {light: 1.0, moderate: 1.15, heavy: 1.30}[dataVol];
+
+  // Integration hours — ranges per Inscio data (midpoints used; ±20% covers the spread)
+  //   1–2 integrations: 20–40 hrs → midpoint 30
+  //   3–5 integrations: 40–80 hrs → midpoint 60
+  //   6+  integrations: 60–120 hrs → midpoint 90
+  var intHours = {'0': 0, '1': 30, '3': 60, '6': 90}[intCount];
+
+  // Customization multiplier
+  var customMult = {low: 1.0, medium: 1.10, high: 1.25}[custom];
+
+  // Total hours then ±20% range at $200/hr
+  var totalHours = Math.round((baseHours * dataMult * customMult) + intHours);
+  var hoursLo    = Math.round(totalHours * 0.8);
+  var hoursHi    = Math.round(totalHours * 1.2);
+  var implLo     = roundTo(hoursLo * 200, 1000);
+  var implHi     = roundTo(hoursHi * 200, 1000);
+
+  // ── TOTALS ───────────────────────────────────────────────────────────────
+  var totalLo = licLo + implLo;
+  var totalHi = licHi + implHi;
+
+  // ── DISPLAY ──────────────────────────────────────────────────────────────
+
+  // Meta summary
+  var metaParts = [INDUSTRY_LABELS[industry], users + ' users · ' + tierLabel];
+  if (entities > 1) metaParts.push(entities + ' entities');
+  if (addlCountries > 0) metaParts.push((addlCountries + 1) + ' countries · OneWorld');
+  document.getElementById('resultsMeta').textContent = metaParts.join(' · ');
+
+  // License cell
+  document.getElementById('licenseVal').textContent = fmtRange(licLo, licHi);
+  var licSubParts = [tierLabel];
+  if (has('fixedAssets'))                             licSubParts.push('incl. Fixed Assets');
+  if (suiteCommerceLic > 0)                           licSubParts.push('incl. SuiteCommerce');
+  if (revMgmtLic > 0)                                licSubParts.push('incl. Rev Mgmt');
+  if (wmsLic > 0)                                    licSubParts.push('incl. WMS');
+  if (addlCountries > 0)                             licSubParts.push('incl. OneWorld');
+  if (industry === 'dealer')                          licSubParts.push('incl. DealerCloud');
+  document.getElementById('licenseSub').textContent = licSubParts.join(' · ') + ' · recurring/yr';
+
+  // Implementation cell
+  document.getElementById('implVal').textContent = fmtRange(implLo, implHi);
+  document.getElementById('implSub').textContent = 'One-time';
+
+  // Total cell
+  document.getElementById('totalVal').textContent = fmtRange(totalLo, totalHi);
+
+  // EDI note
+  document.getElementById('ediNote').style.display = has('edi') ? 'block' : 'none';
+
+  // Show results and scroll
+  var card = document.getElementById('resultsCard');
+  card.style.display = 'block';
+  setTimeout(function() { card.scrollIntoView({behavior: 'smooth', block: 'start'}); }, 50);
+}
+</script>
+
+
+</Layout>
