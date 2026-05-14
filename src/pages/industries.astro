@@ -178,7 +178,7 @@ const industries = [
         <h2 class="text-3xl md:text-4xl font-bold mb-4">We've worked across a wide range of industries.</h2>
         <p class="text-gray-300 text-lg leading-relaxed">Our experience extends well beyond our core verticals. If you're a growth-stage company, a multi-entity organization, or operate in a specialized market, chances are we've worked in your space.</p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
         {[
           { label: 'Professional Services', note: 'Project billing, utilization, revenue recognition' },
           { label: 'Life Sciences', note: 'Biotech, pharma, FDA and GMP compliance' },
@@ -190,6 +190,8 @@ const industries = [
           { label: 'Private Label Manufacturing', note: 'Contract production, co-manufacturing, multi-SKU ops' },
           { label: 'Industrial & Commercial Services', note: 'Project accounting, field service, job costing' },
           { label: 'Advertising, Digital & Media', note: 'Agency billing, project margins, multi-client reporting' },
+          { label: 'Direct to Consumer', note: 'D2C brands, subscription commerce, omnichannel fulfillment' },
+          { label: 'PE-Backed Portfolio Companies', note: 'Multi-entity rollups, rapid standup, investor reporting' },
         ].map(ind => (
           <div class="bg-white/10 border border-white/20 rounded-lg p-5">
             <p class="font-semibold text-white mb-1">{ind.label}</p>
