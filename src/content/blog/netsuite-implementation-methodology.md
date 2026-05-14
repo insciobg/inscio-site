@@ -1,5 +1,5 @@
 ---
-title: "Why Most ERP Projects Fail — And the Four Phases That Prevent It"
+title: "Why ERP Projects Fail — And the Four Phases That Prevent It"
 description: "Methodology isn't a word consultants use to sound important. It's the difference between a go-live you celebrate and one you survive. Here's how structure protects your project."
 pubDate: 2026-05-14
 category: "Implementation"
