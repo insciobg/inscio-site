@@ -105,18 +105,38 @@ import Layout from '../layouts/Layout.astro';
           <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-4">SEND A MESSAGE</p>
           <h3 class="text-xl font-bold text-gray-900 mb-6">Prefer to write? We'll get back to you within one business day.</h3>
 
+          <!-- Success banner (shown when ?sent=1 is in the URL) -->
+          <div id="form-success" class="hidden mb-6 bg-green-50 border border-green-200 rounded-lg p-5">
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <div>
+                <p class="font-semibold text-green-800">Message sent!</p>
+                <p class="text-green-700 text-sm mt-1">Thanks for reaching out. We'll get back to you within one business day.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Error banner (shown when ?error=1 is in the URL) -->
+          <div id="form-error" class="hidden mb-6 bg-red-50 border border-red-200 rounded-lg p-5">
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <div>
+                <p class="font-semibold text-red-800">Something went wrong.</p>
+                <p class="text-red-700 text-sm mt-1">Your message couldn't be sent. Please email us directly at <a href="mailto:info@inscio.com" class="underline">info@inscio.com</a> or call 972-521-7324.</p>
+              </div>
+            </div>
+          </div>
+
           <form
-            name="contact"
+            id="contact-form"
+            action="/api/contact"
             method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
             class="space-y-5"
           >
-            <input type="hidden" name="form-name" value="contact" />
-            <p class="hidden">
-              <label>Don't fill this out: <input name="bot-field" /></label>
-            </p>
-
             <div class="grid grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1" for="first-name">First Name</label>
@@ -163,5 +183,19 @@ import Layout from '../layouts/Layout.astro';
 
     </div>
   </section>
+
+  <script>
+    // Show success or error banner based on URL query param after form redirect
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('sent') === '1') {
+      document.getElementById('form-success')?.classList.remove('hidden');
+      document.getElementById('contact-form')?.classList.add('hidden');
+      // Clean up the URL without a page reload
+      history.replaceState({}, '', '/contact');
+    } else if (params.get('error') === '1') {
+      document.getElementById('form-error')?.classList.remove('hidden');
+      history.replaceState({}, '', '/contact');
+    }
+  </script>
 
 </Layout>
