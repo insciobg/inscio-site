@@ -3,90 +3,191 @@ import Layout from '../layouts/Layout.astro';
 
 const categories = [
   {
-    title: 'NetSuite Basics',
+    title: 'AI & Automation',
     videos: [
-      { title: 'What is NetSuite? A Plain-English Overview', duration: '8 min', description: 'A clear explanation of what NetSuite does, who it is for, and how it compares to QuickBooks, Sage, and other systems.' },
-      { title: 'Is NetSuite Right for My Business?', duration: '6 min', description: 'Key questions to ask before committing to NetSuite — and honest guidance on when it is and is not a good fit.' },
-      { title: 'NetSuite Modules Explained', duration: '10 min', description: 'A walkthrough of the core NetSuite modules: Financials, CRM, Inventory, Manufacturing, and more.' },
+      { id: 'w_KMdOlgGBM', title: 'NetSuite AI Connector Service for Claude' },
+      { id: 'IJXMXOehRWY', title: 'NetSuite AI Connector Service Companion Overview' },
+      { id: 'hDqq_vXcHys', title: 'AI Coding with SuiteCloud Developer Assistant' },
+      { id: 'EYX-x5G5jL0', title: 'NetSuite Intelligent Payment Automation' },
+      { id: 'gGtKl-gR0GA', title: 'AI Capabilities in NetSuite Analytics Warehouse' },
+      { id: 'gnBJzDRBTh4', title: 'NetSuite Exception Management for Faster Financial Close' },
+      { id: 'By2ZH8CJGQc', title: 'NetSuite Intelligent Performance Management' },
+      { id: '905KO-RA9mE', title: 'NetSuite Text Enhance: Item Description' },
+      { id: 'd2jXR29aB-w', title: 'NetSuite Text Enhance: Job Description' },
+      { id: 'LOriIPsgLPY', title: 'NetSuite Text Enhance: Email' },
     ],
   },
   {
-    title: 'Evaluation & Buying',
+    title: 'Financial Management',
     videos: [
-      { title: 'How NetSuite Licensing Works', duration: '7 min', description: 'Understand user licenses, module add-ons, and how to avoid overpaying. What is negotiable and what is not.' },
-      { title: 'NetSuite vs. Competitors', duration: '9 min', description: 'A side-by-side look at NetSuite vs. Microsoft Dynamics, Sage Intacct, and SAP Business One.' },
-      { title: 'How to Build a NetSuite Business Case', duration: '11 min', description: 'How to structure an ROI analysis and present the case to your leadership team or board.' },
+      { id: 'FSCBJA7_2nU', title: 'NetSuite Account Reconciliation' },
+      { id: 'mBvGmg93zcg', title: 'NetSuite Multi-Book Accounting' },
+      { id: 'yJEkvIszheM', title: 'NetSuite Advanced Revenue Management' },
+      { id: '_Os_2VIfRTE', title: 'NetSuite SuiteBilling' },
+      { id: 'uFR8dzLNNW8', title: 'NetSuite Global Financials' },
+      { id: '7VLIHV1vyeE', title: 'NetSuite Advanced Financials' },
+      { id: '2j8GratDxqY', title: 'NetSuite Bill Capture' },
+      { id: 'UgPPJFoSJho', title: 'NetSuite Invoice Grouping' },
+      { id: 'WYXzgHFExuY', title: 'NetSuite Dunning Letters' },
+      { id: 'JpRceWyejbY', title: 'NetSuite Pay' },
+      { id: 'GOVzyOqqLP4', title: 'NetSuite Payment Link' },
+      { id: '_ya2K7r9cWw', title: 'NetSuite Cash 360 Dashboard' },
     ],
   },
   {
-    title: 'Implementation',
+    title: 'Analytics, Planning & Reporting',
     videos: [
-      { title: 'What a NetSuite Implementation Actually Looks Like', duration: '12 min', description: 'A realistic walkthrough of the phases, timelines, and what your team needs to be prepared for.' },
-      { title: 'Data Migration Do\'s and Don\'ts', duration: '8 min', description: 'The mistakes companies make when migrating data to NetSuite and how to avoid them.' },
-      { title: 'Go-Live: What to Expect on Day One', duration: '6 min', description: 'How to prepare your team for the first week live on NetSuite, and how to handle the inevitable surprises.' },
+      { id: '17_iRnmGZIw', title: 'NetSuite Analytics Warehouse' },
+      { id: 'yjB1YTcPRUs', title: 'Analytics Warehouse: Trend, Historical & NetSuite Data' },
+      { id: 'wBgI3p9YLvQ', title: 'Analytics Warehouse: SaaS Metrics' },
+      { id: '6zHJrCs1jK4', title: 'Analytics Warehouse: Data Visualizations' },
+      { id: '25XoIfyeCdo', title: 'NetSuite Narrative Reporting' },
+      { id: 'oC43DwIoEVs', title: 'NetSuite Planning & Budgeting: Workforce Planning' },
+      { id: '7PQ321EBvrg', title: 'NetSuite Planning & Budgeting: Scenario Planning' },
+      { id: '0nQjn3PSKEU', title: 'NetSuite Planning & Budgeting: Demand Forecasting' },
+      { id: 'mOvpqOODXCA', title: 'NetSuite Planning & Budgeting: Reporting Overview' },
+      { id: 'gRhsYbJ_GvA', title: 'NetSuite Planning & Budgeting: Smart View for Office' },
+      { id: 'eOkf2Z-MvpE', title: 'NetSuite EPM Task Management' },
+      { id: 'RiLWgCPBQD4', title: 'NetSuite Project 360 Dashboard' },
+    ],
+  },
+  {
+    title: 'Supply Chain & Operations',
+    videos: [
+      { id: 'f9WY_IcRfdI', title: 'NetSuite Supply Planning Workbench' },
+      { id: '3D-5soeHips', title: 'NetSuite Procurement' },
+      { id: 'zp-9WalivEM', title: 'NetSuite SuiteProcurement' },
+      { id: 'po_l2CY6_Gc', title: 'NetSuite Advanced Order Management: Auto Location Assignment' },
+      { id: 'iJiPpRuE5mI', title: 'NetSuite Rebates and Trade Promotions' },
+      { id: 'J5_ASHVvUVA', title: 'NetSuite Smart Count' },
+      { id: '18QUasMMY_o', title: 'NetSuite Ship Central' },
+      { id: 'Kxr9pN2ZIxg', title: 'NetSuite WMS: Mobile Receipt & Putaway' },
+      { id: 'Fw402KGjsvA', title: 'NetSuite WMS: Picking Work Orders & Assemblies' },
+      { id: 'bxmKd12pFws', title: 'NetSuite WMS: Cycle Counting on Mobile' },
+      { id: 'Tc-GLv-dE5s', title: 'NetSuite WMS: Outbound Multi-Order Picking' },
+      { id: 'YBzmk0GpAUE', title: 'NetSuite WMS: Outbound Release Orders' },
+    ],
+  },
+  {
+    title: 'CRM, Sales & Commerce',
+    videos: [
+      { id: 'ynk0A_NUF6M', title: 'NetSuite CRM: Sales' },
+      { id: 'qqEQQ9xQiAs', title: 'NetSuite CRM: Marketing' },
+      { id: 'c37efNrkpRY', title: 'NetSuite CRM: Customer Support' },
+      { id: 'HhdAomfqfB4', title: 'NetSuite CPQ: Configure, Price, Quote' },
+      { id: '0cBgdq411PE', title: 'NetSuite CPQ: Guided Selling' },
+      { id: 'JzdGlvbTLcQ', title: 'NetSuite SuiteCommerce MyAccount: Customers' },
+      { id: 'lDo8j7VHAyY', title: 'NetSuite SuiteCommerce MyAccount: Merchants' },
+      { id: 'K2mEousCOn8', title: 'NetSuite Dashboards, Reporting & Customer Records' },
+    ],
+  },
+  {
+    title: 'Project Management',
+    videos: [
+      { id: 'zOHWUzNkDTc', title: 'NetSuite SuiteProjects' },
+      { id: 'XmtZzjL4T6k', title: 'NetSuite SuiteProjects: Managing Internal Projects' },
+      { id: 'KFJ0r3S3JBA', title: 'OpenAir: Project and Resource Management' },
+      { id: 'xsT8XISInzQ', title: 'NetSuite OpenAir: OneView' },
+      { id: '1fP7o9QNSfc', title: 'NetSuite SuiteSuccess Starter: Projects Edition' },
+    ],
+  },
+  {
+    title: 'Integrations & Connectors',
+    videos: [
+      { id: '49EOZCwjKVI', title: 'NetSuite Integration Platform' },
+      { id: 'fY_6v6jixGs', title: 'NetSuite Shopify Connector' },
+      { id: 'JNkLpPUB-iw', title: 'NetSuite Amazon Connector' },
+      { id: '1cmK8sXOlGM', title: 'NetSuite eBay Connector' },
+      { id: 'BlBMT9lGOQQ', title: 'NetSuite ShipStation Connector' },
+      { id: 'bA_UfLsrXLQ', title: 'NetSuite Electronic Invoicing' },
+      { id: 'Uijn437S_yM', title: 'NetSuite Amex Corporate Card Integration' },
+    ],
+  },
+  {
+    title: 'Industry Solutions',
+    videos: [
+      { id: 't57oGAWjQBU', title: 'NetSuite SuiteSuccess Starter Edition' },
+      { id: 'w4o5oGK-qJo', title: 'NetSuite SuiteSuccess Starter: Inventory Edition' },
+      { id: 'ijdI_g_ACxM', title: 'NetSuite Field Service Management' },
+      { id: 'ULu5tPpOeYY', title: 'NetSuite SuitePeople Workforce Management' },
+      { id: '5EB0AhMApOY', title: 'SuiteSuccess for Advertising Agencies: Overview' },
+      { id: 'anuEy1ciTqQ', title: 'SuiteSuccess for Advertising Agencies: Pitching & Forecasting' },
+      { id: 'Hoh-XWFP4To', title: 'SuiteSuccess for Advertising Agencies: Resource, Time & Expense' },
+      { id: 'zsm5sZt7sSs', title: 'SuiteSuccess for Advertising Agencies: Billing & Revenue Recognition' },
+      { id: 'YPSTkshzbTM', title: 'SuiteSuccess for Media Companies: Overview' },
+      { id: 'q1VlbPmShWQ', title: 'NetSuite Grant Management' },
     ],
   },
 ];
 ---
 
 <Layout
-  title="NetSuite Video Library | Inscio"
-  description="Free NetSuite videos from Inscio covering basics, evaluation, licensing, implementation, and optimization. Short, practical, no sales pitch."
+  title="NetSuite Product Demo Videos | Inscio"
+  description="Watch NetSuite product demos covering financials, analytics, AI, supply chain, CRM, integrations, and industry solutions — curated by Inscio."
 >
-  <!-- Hero -->
-  <section class="bg-[#0D1235] text-white py-28 px-4">
-    <div class="max-w-5xl mx-auto">
-      <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-6">VIDEO LIBRARY</p>
-      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-8 max-w-3xl">NetSuite videos — practical, no jargon.</h1>
-      <p class="text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed">
-        Short, practical videos on every aspect of NetSuite. No jargon, no sales pitch — just useful information from people who have done this hundreds of times.
-      </p>
-    </div>
-  </section>
 
-  <!-- Video Categories -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
-      {categories.map((cat) => (
-        <div>
-          <h2 class="text-2xl font-bold text-gray-900 mb-8 pb-4 border-b border-gray-100">{cat.title}</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {cat.videos.map((v) => (
-              <div class="card group cursor-pointer">
-                <!-- Thumbnail placeholder -->
-                <div class="bg-gray-100 rounded-xl aspect-video mb-4 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
-                  <div class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center group-hover:bg-blue-700 transition-colors">
-                    <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
+<style is:inline>
+.video-thumb { position: relative; cursor: pointer; background: #000; border-radius: 0.75rem; overflow: hidden; aspect-ratio: 16/9; }
+.video-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.2s; }
+.video-thumb:hover img { opacity: 0.85; }
+.play-btn { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.play-btn svg { width: 56px; height: 56px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5)); transition: transform 0.2s; }
+.video-thumb:hover .play-btn svg { transform: scale(1.1); }
+.video-thumb iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; border-radius: 0.75rem; }
+</style>
+
+<!-- Hero -->
+<section class="bg-[#0D1235] text-white py-28 px-4">
+  <div class="max-w-5xl mx-auto">
+    <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-6">VIDEO LIBRARY</p>
+    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-8 max-w-3xl">NetSuite product demos — see it in action.</h1>
+    <p class="text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed">
+      Official NetSuite product demonstrations covering every major module and capability. Click any video to play.
+    </p>
+  </div>
+</section>
+
+<!-- Video Categories -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+    {categories.map((cat) => (
+      <div>
+        <h2 class="text-2xl font-bold text-gray-900 mb-8 pb-4 border-b border-gray-100">{cat.title}</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {cat.videos.map((v) => (
+            <div>
+              <div class="video-thumb mb-3" onclick={`this.innerHTML='<iframe src="https://www.youtube.com/embed/${v.id}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>'`}>
+                <img src={`https://img.youtube.com/vi/${v.id}/hqdefault.jpg`} alt={v.title} loading="lazy" />
+                <div class="play-btn">
+                  <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#FF0000"/>
+                    <path d="M45 24 27 14v20" fill="#fff"/>
+                  </svg>
                 </div>
-                <div class="flex items-center gap-2 mb-2">
-                  <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-0.5 rounded-full">{v.duration}</span>
-                </div>
-                <h3 class="font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{v.title}</h3>
-                <p class="text-sm text-gray-500 leading-relaxed">{v.description}</p>
               </div>
-            ))}
-          </div>
+              <p class="text-sm font-semibold text-gray-900 leading-snug">{v.title}</p>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-  </section>
+      </div>
+    ))}
+  </div>
+</section>
 
-  <!-- CTA -->
-  <section class="bg-gray-50 py-16">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="section-heading mb-4">Want a personalized walkthrough?</h2>
-      <p class="text-gray-500 mb-8">Book a live demo tailored to your specific business and industry.</p>
-      <a
-        href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
-        target="_blank"
-        rel="noopener"
-        class="btn-primary"
-      >
-        Book a Free Strategy Call
-      </a>
-    </div>
-  </section>
+<!-- CTA -->
+<section class="bg-gray-50 py-16">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-bold text-gray-900 mb-4">Want a personalized walkthrough?</h2>
+    <p class="text-gray-500 mb-8">Book a live demo tailored to your specific business and industry.</p>
+    <a
+      href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
+      target="_blank"
+      rel="noopener"
+      class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded transition-colors"
+    >
+      Book a Free Strategy Call
+    </a>
+  </div>
+</section>
+
 </Layout>
