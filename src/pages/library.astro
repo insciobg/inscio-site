@@ -3,48 +3,79 @@ import Layout from '../layouts/Layout.astro';
 
 const resources = [
   {
-    category: 'Evaluation',
+    category: 'Financials & Accounting',
     items: [
-      { title: 'NetSuite Fit Assessment Checklist', type: 'PDF', pages: '2 pages', description: 'A structured checklist to evaluate whether NetSuite meets your business requirements.' },
-      { title: 'ERP Comparison Guide: NetSuite vs. Competitors', type: 'PDF', pages: '8 pages', description: 'Feature-by-feature comparison of NetSuite, Microsoft Dynamics, Sage Intacct, and SAP B1.' },
-      { title: 'How to Build a NetSuite Business Case', type: 'PDF', pages: '4 pages', description: 'Template and guidance for building an ROI-based case for NetSuite investment.' },
+      { title: 'NetSuite Account Reconciliation', description: 'Automate period-end close with real-time match rates and a full audit trail.', url: 'https://www.netsuite.com/portal/assets/public-pdf/ds-netsuite-account-reconciliation.pdf' },
+      { title: 'NetSuite Advanced Financials', description: 'Multi-currency, multi-subsidiary financial consolidation and reporting.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-advanced-financials.pdf' },
+      { title: 'NetSuite Multi-Book Accounting', description: 'Simultaneous reporting under multiple accounting standards (GAAP, IFRS, and more).', url: 'https://www.netsuite.com/portal/assets/pdf/ds-netsuite-multi-book-accounting.pdf' },
+      { title: 'NetSuite Revenue Management', description: 'ASC 606 / IFRS 15-compliant revenue recognition, allocation, and forecasting.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-netsuite-revenue-recognition.pdf' },
+      { title: 'NetSuite Fixed Assets Management', description: 'Asset lifecycle, depreciation schedules, and disposal tracking.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-ns-fixed-asset-management.pdf' },
+      { title: 'NetSuite SuiteBilling', description: 'Subscription, usage, and milestone billing with automated invoice generation.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-ns-suitebilling.pdf' },
+      { title: 'NetSuite SuiteTax', description: 'Global tax engine for VAT, GST, and sales tax calculation and filing.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-ns-suitetax.pdf' },
     ],
   },
   {
-    category: 'Implementation',
+    category: 'Analytics & Planning',
     items: [
-      { title: 'NetSuite Implementation Project Plan Template', type: 'XLSX', pages: 'Spreadsheet', description: 'A ready-to-use project plan covering all phases from kickoff through go-live.' },
-      { title: 'Data Migration Readiness Checklist', type: 'PDF', pages: '3 pages', description: 'Everything you need to prepare your data for migration to NetSuite.' },
-      { title: 'Go-Live Readiness Checklist', type: 'PDF', pages: '2 pages', description: 'The 30-point checklist we use with every client before flipping the switch.' },
+      { title: 'NetSuite SuiteAnalytics', description: 'Role-based reporting, saved searches, and embedded analytics across all modules.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-ns-suiteanalytics.pdf' },
+      { title: 'NetSuite Analytics Warehouse', description: 'Pre-built data warehouse with out-of-the-box dashboards and ad-hoc analysis.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-ns-analytics-warehouse.pdf' },
+      { title: 'NetSuite Planning and Budgeting', description: 'Driver-based planning, what-if modeling, and automated budget consolidation.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-ns-planning-and-budgeting.pdf' },
+      { title: 'NetSuite Enterprise Performance Management', description: 'Budgeting, forecasting, and narrative reporting across the enterprise.', url: 'https://www.netsuite.com/portal/assets/public-pdf/ds-ns-enterprise-performance-management.pdf' },
     ],
   },
   {
-    category: 'Module Guides',
+    category: 'Supply Chain & Operations',
     items: [
-      { title: 'NetSuite Financial Management Overview', type: 'PDF', pages: '5 pages', description: 'A plain-English guide to what NetSuite Financials covers and what it replaces.' },
-      { title: 'NetSuite Inventory & WMS Fact Sheet', type: 'PDF', pages: '3 pages', description: 'How NetSuite handles inventory management and when you need the WMS module.' },
-      { title: 'NetSuite CRM vs. Salesforce', type: 'PDF', pages: '4 pages', description: 'When to use NetSuite CRM, when to keep Salesforce, and how to integrate them.' },
+      { title: 'NetSuite Advanced Inventory', description: 'Demand-driven replenishment, lot/serial tracking, and multi-location inventory.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-netsuite-advanced-inventory.pdf' },
+      { title: 'NetSuite Advanced Manufacturing', description: 'Work orders, routings, and shop-floor control for discrete manufacturers.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-ns-advanced-manufacturing.pdf' },
+      { title: 'NetSuite WMS', description: 'Warehouse management with directed put-away, pick/pack/ship, and mobile scanning.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-netsuite-wms.pdf' },
+      { title: 'NetSuite Demand Planning', description: 'Statistical forecasting and supply/demand balancing to cut carrying costs.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-ns-supply-demand-planning.pdf' },
+      { title: 'NetSuite Order Management', description: 'Omnichannel order capture, fulfillment orchestration, and returns management.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-order-management-system.pdf' },
+      { title: 'NetSuite Procurement', description: 'Purchase requests, vendor management, and three-way match in one workflow.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-ns-procurement.pdf' },
+      { title: 'NetSuite Field Service Management', description: 'Scheduling, dispatch, and mobile work-order completion for field technicians.', url: 'https://www.netsuite.com/portal/assets/public-pdf/ds-ns-field-service-management.pdf' },
+    ],
+  },
+  {
+    category: 'CRM & Commerce',
+    items: [
+      { title: 'NetSuite CRM', description: 'Sales force automation, marketing campaigns, and customer support in one system.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-netsuite-crm-plus.pdf' },
+      { title: 'NetSuite CPQ', description: 'Configure, price, and quote complex products with guided selling and approvals.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-netsuite-cpq.pdf' },
+      { title: 'NetSuite SuiteCommerce', description: 'B2B/B2C e-commerce storefront natively connected to ERP inventory and orders.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-suitecommerce.pdf' },
+      { title: 'NetSuite SuiteCommerce MyAccount', description: 'Self-service customer portal for orders, invoices, returns, and account info.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-suitecommerce-myaccount.pdf' },
+    ],
+  },
+  {
+    category: 'HR, Projects & Platform',
+    items: [
+      { title: 'NetSuite SuitePeople Overview', description: 'Core HR, employee records, org charts, and workforce analytics.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-ns-suitepeople-driving-business-performance.pdf' },
+      { title: 'NetSuite SuitePeople Payroll', description: 'Full-service US payroll processing integrated with HR and general ledger.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-ns-suitepeople-payroll-service.pdf' },
+      { title: 'NetSuite SuiteProjects', description: 'Professional services automation with project accounting and resource management.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-ns-suiteprojects.pdf' },
+      { title: 'NetSuite Project Management', description: 'Resource scheduling, time/expense tracking, and project profitability reporting.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-ns-project-management.pdf' },
+      { title: 'NetSuite SuiteCloud Platform', description: 'Low-code customization, SuiteScript APIs, and third-party integration tools.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-suitecloud-platform-development-tools.pdf' },
+      { title: 'NetSuite Connector', description: 'Pre-built integrations linking NetSuite to Shopify, Amazon, and other platforms.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-netsuite-connector.pdf' },
+    ],
+  },
+  {
+    category: 'Global & Infrastructure',
+    items: [
+      { title: 'NetSuite OneWorld', description: 'Global business management across subsidiaries, currencies, and tax regimes.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-netsuite-oneworld.pdf' },
+      { title: 'NetSuite Data Center', description: 'Private data center deployment option for regulated industries.', url: 'https://www.netsuite.com/portal/assets/pdf/ds-netsuite-data-center.pdf' },
     ],
   },
 ];
-
-const typeColors: Record<string, string> = {
-  PDF: 'bg-red-100 text-red-700',
-  XLSX: 'bg-green-100 text-green-700',
-};
 ---
 
 <Layout
   title="NetSuite Resource Library | Inscio"
-  description="Free NetSuite fact sheets, checklists, guides, and templates from Inscio. Download resources to help you evaluate, implement, and optimize NetSuite."
+  description="Free NetSuite fact sheets and datasheets from Oracle NetSuite. Download resources to help you evaluate, implement, and optimize NetSuite — no form required."
 >
   <!-- Hero -->
   <section class="bg-[#0D1235] text-white py-28 px-4">
     <div class="max-w-5xl mx-auto">
       <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-6">RESOURCE LIBRARY</p>
-      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-8 max-w-3xl">Guides, templates, and tools — free to download.</h1>
+      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-8 max-w-3xl">NetSuite datasheets — free to download.</h1>
       <p class="text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed">
-        NetSuite fact sheets, checklists, comparison guides, and templates — no form required.
+        Official NetSuite fact sheets for every module, organized by function. No form required.
       </p>
     </div>
   </section>
@@ -59,20 +90,20 @@ const typeColors: Record<string, string> = {
             {cat.items.map((item) => (
               <div class="card flex flex-col">
                 <div class="flex items-center gap-2 mb-3">
-                  <span class={`text-xs font-bold px-2 py-0.5 rounded ${typeColors[item.type] || 'bg-gray-100 text-gray-700'}`}>
-                    {item.type}
+                  <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-50 text-blue-700">
+                    Fact Sheet
                   </span>
-                  <span class="text-xs text-gray-400">{item.pages}</span>
+                  <span class="text-xs text-gray-400">PDF</span>
                 </div>
                 <h3 class="font-bold text-gray-900 mb-2">{item.title}</h3>
                 <p class="text-sm text-gray-500 leading-relaxed flex-1 mb-4">{item.description}</p>
                 <a
-                  href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
+                  href={item.url}
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                   class="text-sm font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1"
                 >
-                  Download Free
+                  Download PDF
                   <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                   </svg>
