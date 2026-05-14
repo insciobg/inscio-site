@@ -1,0 +1,107 @@
+# ============================================================
+# WordPress → Astro 301 redirects
+# Preserves page-level SEO equity on DNS cutover
+# Each rule appears twice: with and without trailing slash
+# ============================================================
+
+# Home (no redirect needed — domain authority is automatic)
+
+# Contact / Support
+/contact-us                     /contact                    301
+/contact-us/                    /contact                    301
+/netsuite-support-request       /contact                    301
+/netsuite-support-request/      /contact                    301
+/support                        /services                   301
+/support/                       /services                   301
+
+# Services — general
+/netsuite-products              /services                   301
+/netsuite-products/             /services                   301
+/product                        /services                   301
+/product/                       /services                   301
+/what-is-netsuite               /services                   301
+/what-is-netsuite/              /services                   301
+/suite-apps                     /services                   301
+/suite-apps/                    /services                   301
+/digital-engagement             /services                   301
+/digital-engagement/            /services                   301
+
+# Services — specific
+/licensing                      /services                   301
+/licensing/                     /services                   301
+/netsuite-pricing               /services                   301
+/netsuite-pricing/              /services                   301
+/evaluation                     /services                   301
+/evaluation/                    /services                   301
+/implementation                 /services                   301
+/implementation/                /services                   301
+/training                       /services                   301
+/training/                      /services                   301
+/optimization                   /services                   301
+/optimization/                  /services                   301
+/custom-development             /services                   301
+/custom-development/            /services                   301
+/custom-development-2           /services                   301
+/custom-development-2/          /services                   301
+/analytics-reporting            /services                   301
+/analytics-reporting/           /services                   301
+/integrationj                   /services                   301
+/integrationj/                  /services                   301
+/process-automation             /services                   301
+/process-automation/            /services                   301
+/inscio-methodology             /services                   301
+/inscio-methodology/            /services                   301
+
+# About
+/about-inscio                   /about                      301
+/about-inscio/                  /about                      301
+/team                           /about                      301
+/team/                          /about                      301
+/customer-success-stories       /about                      301
+/customer-success-stories/      /about                      301
+
+# Industries
+/wholesale-distribution         /industries                 301
+/wholesale-distribution/        /industries                 301
+/manufacturing                  /industries                 301
+/manufacturing/                 /industries                 301
+/energy                         /industries                 301
+/energy/                        /industries                 301
+/professional-services          /industries                 301
+/professional-services/         /industries                 301
+/life-sciences                  /industries                 301
+/life-sciences/                 /industries                 301
+/software-internet-companies    /industries                 301
+/software-internet-companies/   /industries                 301
+/medical-device-management      /industries                 301
+/medical-device-management/     /industries                 301
+/associations                   /industries                 301
+/associations/                  /industries                 301
+
+# DealerCloud
+/dealer-cloud                   /dealercloud                301
+/dealer-cloud/                  /dealercloud                301
+/dealer-management              /dealercloud                301
+/dealer-management/             /dealercloud                301
+
+# Resources / Library / Videos
+/netsuite-white-papers          /library                    301
+/netsuite-white-papers/         /library                    301
+/netsuite-role-based-demos      /library                    301
+/netsuite-role-based-demos/     /library                    301
+/netsuite-videos                /videos                     301
+/netsuite-videos/               /videos                     301
+/blog                           /resources                  301
+/blog/                          /resources                  301
+
+# Privacy policy (new page TBD — redirect home for now)
+/privacy-policy                 /                           301
+/privacy-policy/                /                           301
+
+# Misc / stale pages with no equivalent
+/medtech-playbook-event         /                           301
+/medtech-playbook-event/        /                           301
+/botanical-science              /                           301
+/botanical-science/             /                           301
+/passcode                       /                           301
+/passcode/                      /                           301
