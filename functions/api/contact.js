@@ -64,7 +64,7 @@ export async function onRequestPost(context) {
     `;
 
     const resendPayload = {
-      from: 'Inscio Website <no-reply@inscio.com>',
+      from: 'Inscio Website <no-reply@mail.inscio.com>',
       to:   ['info@inscio.com'],
       reply_to: email,
       subject: subjectLine,
