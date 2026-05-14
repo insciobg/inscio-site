@@ -21,7 +21,7 @@ const industries = [
     id: 'manufacturing',
     letter: 'M',
     title: 'Manufacturing',
-    subtitle: 'Connect the Shop Floor to the Balance Sheet',
+    subtitle: 'Real-Time Shop Floor Visibility',
     body: "Most manufacturers run operations on one system and financials on another. When those systems don't talk, you can't quote accurately, see true cost of goods, or promise delivery dates with confidence.",
     cta: 'Get a Manufacturing Assessment',
     bullets: [
@@ -155,7 +155,7 @@ const industries = [
             {ind.cta}
           </a>
         </div>
-        <div class="bg-white border border-gray-200 rounded-xl p-8">
+        <div class="bg-white border border-gray-200 rounded-xl p-8 md:mt-[72px]">
           <ul class="space-y-3">
             {ind.bullets.map(b => (
               <li class="flex items-start gap-3 text-gray-700">
@@ -182,7 +182,7 @@ const industries = [
         {[
           { label: 'Professional Services', note: 'Project billing, utilization, revenue recognition' },
           { label: 'Life Sciences', note: 'Biotech, pharma, FDA and GMP compliance' },
-          { label: 'Medical Device & Life Sciences', note: 'Lot traceability, serialization, 21 CFR Part 11' },
+          { label: 'Medical Device', note: 'Lot traceability, serialization, 21 CFR Part 11' },
           { label: 'Sports Nutrition & Energy Drinks', note: 'Supplements, functional beverages, D2C and wholesale' },
           { label: 'Consumer Packaged Goods', note: 'Multi-channel, retail, D2C' },
           { label: 'Hospitality', note: 'Multi-location, property-level reporting' },
