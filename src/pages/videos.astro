@@ -127,14 +127,72 @@ const categories = [
 >
 
 <style is:inline>
-.video-thumb { position: relative; cursor: pointer; background: #000; border-radius: 0.75rem; overflow: hidden; aspect-ratio: 16/9; }
-.video-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.2s; }
-.video-thumb:hover img { opacity: 0.85; }
-.play-btn { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
-.play-btn svg { width: 56px; height: 56px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5)); transition: transform 0.2s; }
-.video-thumb:hover .play-btn svg { transform: scale(1.1); }
-.video-thumb iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; border-radius: 0.75rem; }
+.video-thumb {
+  position: relative;
+  cursor: pointer;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  background: #000;
+}
+.video-thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: opacity 0.2s;
+}
+.video-thumb:hover img { opacity: 0.8; }
+.play-btn {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.play-btn svg { width: 52px; height: 52px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5)); transition: transform 0.2s; }
+.video-thumb:hover .play-btn svg { transform: scale(1.12); }
+
+/* Lightbox */
+#video-lightbox {
+  display: none;
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.85);
+  align-items: center; justify-content: center;
+  padding: 1rem;
+}
+#video-lightbox.open { display: flex; }
+#lightbox-inner {
+  position: relative;
+  width: 100%; max-width: 960px;
+  aspect-ratio: 16/9;
+}
+#lightbox-inner iframe {
+  width: 100%; height: 100%;
+  border: none; border-radius: 0.75rem;
+}
+#lightbox-close {
+  position: absolute;
+  top: -2.5rem; right: 0;
+  background: none; border: none;
+  color: #fff; font-size: 2rem;
+  cursor: pointer; line-height: 1;
+  opacity: 0.8;
+}
+#lightbox-close:hover { opacity: 1; }
+#lightbox-title {
+  position: absolute;
+  bottom: -2.25rem; left: 0;
+  color: #fff; font-size: 0.85rem;
+  opacity: 0.7; white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
+  max-width: 100%;
+}
 </style>
+
+<!-- Lightbox -->
+<div id="video-lightbox" onclick="closeLightbox(event)">
+  <div id="lightbox-inner">
+    <button id="lightbox-close" onclick="closeLightbox()">✕</button>
+    <iframe id="lightbox-iframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <div id="lightbox-title"></div>
+  </div>
+</div>
 
 <!-- Hero -->
 <section class="bg-[#0D1235] text-white py-28 px-4">
@@ -156,7 +214,7 @@ const categories = [
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {cat.videos.map((v) => (
             <div>
-              <div class="video-thumb mb-3" onclick={`this.innerHTML='<iframe src="https://www.youtube.com/embed/${v.id}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>'`}>
+              <div class="video-thumb mb-3" onclick={`openLightbox('${v.id}', '${v.title.replace(/'/g, "\\'")}')`}>
                 <img src={`https://img.youtube.com/vi/${v.id}/hqdefault.jpg`} alt={v.title} loading="lazy" />
                 <div class="play-btn">
                   <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg">
@@ -179,15 +237,29 @@ const categories = [
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2 class="text-3xl font-bold text-gray-900 mb-4">Want a personalized walkthrough?</h2>
     <p class="text-gray-500 mb-8">Book a live demo tailored to your specific business and industry.</p>
-    <a
-      href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
-      target="_blank"
-      rel="noopener"
-      class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded transition-colors"
-    >
+    <a href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session" target="_blank" rel="noopener"
+      class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded transition-colors">
       Book a Free Strategy Call
     </a>
   </div>
 </section>
+
+<script is:inline>
+function openLightbox(videoId, title) {
+  document.getElementById('lightbox-iframe').src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+  document.getElementById('lightbox-title').textContent = title;
+  document.getElementById('video-lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(e) {
+  if (e && e.target !== document.getElementById('video-lightbox') && e.target !== document.getElementById('lightbox-close')) return;
+  document.getElementById('lightbox-iframe').src = '';
+  document.getElementById('video-lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
 
 </Layout>
