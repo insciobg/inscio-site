@@ -1,0 +1,70 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const stories = (await getCollection('case-studies', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout
+  title="Customer Stories | Inscio NetSuite Consulting"
+  description="Real NetSuite implementation stories from Inscio clients. See how we've helped distributors, manufacturers, and growing companies get real value from NetSuite."
+>
+  <!-- Hero -->
+  <section class="bg-[#0D1235] text-white py-28 px-4">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-6">CUSTOMER STORIES</p>
+      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-8 max-w-3xl">Real companies. Real results.</h1>
+      <p class="text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed">
+        We let the work speak for itself. These are the stories of companies that came to us with hard problems and left with a NetSuite environment that actually runs their business.
+      </p>
+    </div>
+  </section>
+
+  <!-- Story cards -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {stories.map((story) => (
+          <a href={`/case-studies/${story.slug}`} class="card group flex flex-col">
+            <div class="flex items-center gap-2 mb-3 flex-wrap">
+              {story.data.industries.slice(0, 1).map(ind => (
+                <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-0.5 rounded-full">{ind}</span>
+              ))}
+            </div>
+            <h2 class="font-bold text-gray-900 text-lg mb-2 group-hover:text-blue-600 transition-colors flex-1 leading-snug">
+              {story.data.title}
+            </h2>
+            <p class="text-sm text-gray-500 leading-relaxed mb-5">{story.data.intro}</p>
+            <div class="flex gap-6 pt-4 border-t border-gray-100 mt-auto">
+              <div>
+                <div class="text-2xl font-extrabold text-[#0D1235]">{story.data.stat1Value}</div>
+                <div class="text-gray-400 text-xs leading-tight">{story.data.stat1Label}</div>
+              </div>
+              <div>
+                <div class="text-2xl font-extrabold text-[#0D1235]">{story.data.stat2Value}</div>
+                <div class="text-gray-400 text-xs leading-tight">{story.data.stat2Label}</div>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="section-heading mb-4">See yourself in one of these stories?</h2>
+      <p class="text-gray-500 mb-8">Let's talk about where you are and what it would take to get you to the same place.</p>
+      <a
+        href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
+        target="_blank"
+        rel="noopener"
+        class="btn-primary"
+      >
+        Book a Free Strategy Call
+      </a>
+    </div>
+  </section>
+</Layout>
