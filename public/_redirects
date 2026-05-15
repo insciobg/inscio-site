@@ -57,8 +57,8 @@
 /about-inscio/                  /about                      301
 /team                           /about                      301
 /team/                          /about                      301
-/customer-success-stories       /about                      301
-/customer-success-stories/      /about                      301
+/customer-success-stories       /case-studies                      301
+/customer-success-stories/      /case-studies                      301
 
 # Industries
 /wholesale-distribution         /industries                 301

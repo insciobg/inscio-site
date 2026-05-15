@@ -1,0 +1,160 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const stories = [
+  {
+    slug: 'hunt-textiles',
+    company: 'Hunt Textiles',
+    industry: 'Wholesale Distribution',
+    headline: 'How Hunt Textiles Went Live in 90 Days After a Year-Long ERP Failure',
+    subheading: 'One Year Lost. Ninety Days to Win It Back.',
+    callout: { value: '90 Days', label: 'to go-live' },
+    stat: { value: '29%', label: 'reduction in days sales outstanding' },
+    intro: 'A wholesale linen distributor spent a year on an ERP that never went live. Three months after calling Inscio, they were live on NetSuite with every channel unified and invoicing automated.',
+  },
+];
+---
+<Layout
+  title="Customer Stories | Inscio NetSuite Consulting"
+  description="Real NetSuite implementation stories from Inscio clients. See how we've helped distributors, manufacturers, and growing companies get real value from NetSuite."
+>
+
+  <!-- Hero -->
+  <section class="bg-[#0D1235] text-white py-28 px-4">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-6">CUSTOMER STORIES</p>
+      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-8 max-w-3xl">
+        Real companies. Real results.
+      </h1>
+      <p class="text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed">
+        We let the work speak for itself. These are the stories of companies that came to us with hard problems and left with a NetSuite environment that actually runs their business.
+      </p>
+    </div>
+  </section>
+
+  <!-- Story index cards (scales as more stories are added) -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {stories.map(story => (
+          <a href={`#${story.slug}`} class="bg-white border border-gray-200 rounded-xl p-7 hover:shadow-md hover:border-blue-300 transition-all group">
+            <p class="text-blue-600 text-xs font-semibold uppercase tracking-wider mb-3">{story.industry}</p>
+            <h2 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors leading-snug mb-3">{story.headline}</h2>
+            <p class="text-gray-500 text-sm leading-relaxed mb-5">{story.intro}</p>
+            <div class="flex gap-6">
+              <div>
+                <div class="text-2xl font-extrabold text-[#0D1235]">{story.callout.value}</div>
+                <div class="text-gray-400 text-xs">{story.callout.label}</div>
+              </div>
+              <div>
+                <div class="text-2xl font-extrabold text-[#0D1235]">{story.stat.value}</div>
+                <div class="text-gray-400 text-xs">{story.stat.label}</div>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Hunt Textiles Full Story -->
+  <article id="hunt-textiles" class="bg-white py-24 px-4">
+    <div class="max-w-3xl mx-auto">
+
+      <!-- Label -->
+      <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-4">Wholesale Distribution</p>
+
+      <!-- Headline -->
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
+        How Hunt Textiles Went Live in 90 Days After a Year-Long ERP Failure
+      </h2>
+      <p class="text-xl text-gray-500 font-medium mb-12">One Year Lost. Ninety Days to Win It Back.</p>
+
+      <!-- Body -->
+      <div class="prose-inscio">
+
+        <p>Hunt Textiles had already tried this once. It didn't work.</p>
+
+        <p>They sell wholesale linens to hotels, hospitals, resorts, and distributors across the country. Towels, bed linen, tablecloths, uniforms. Nationwide, from one warehouse in Irving, Texas. The business had grown. Sage 100 hadn't grown with it.</p>
+
+        <p>They made a smart call: move to a modern ERP. They chose Acumatica. They spent a year in implementation.</p>
+
+        <p>It never went live.</p>
+
+        <p>Twelve months of meetings, data prep, and configuration work, and they were no further along than when they started. Still running on Sage. Still processing sales orders by hand. Still reconciling spreadsheets at month end. Behind, frustrated, and out of runway with a vendor who couldn't deliver.</p>
+
+        <p>That's when they called Inscio.</p>
+
+      </div>
+
+      <!-- Callout stat -->
+      <div class="my-12 bg-[#0D1235] text-white rounded-2xl p-10 flex flex-col sm:flex-row items-center gap-8">
+        <div class="text-center sm:text-left">
+          <div class="text-6xl font-extrabold text-blue-400 leading-none mb-2">90</div>
+          <div class="text-lg font-bold text-white">Days to Go-Live</div>
+          <div class="text-gray-400 text-sm mt-1">from kickoff to production</div>
+        </div>
+        <div class="hidden sm:block w-px bg-white/20 self-stretch"></div>
+        <div class="text-center sm:text-left">
+          <div class="text-6xl font-extrabold text-blue-400 leading-none mb-2">29%</div>
+          <div class="text-lg font-bold text-white">Reduction in DSO</div>
+          <div class="text-gray-400 text-sm mt-1">from automated invoicing</div>
+        </div>
+      </div>
+
+      <div class="prose-inscio">
+
+        <h3>Start with what has to work on day one.</h3>
+
+        <p>Not everything. Not the perfect system. Just the core: orders in, inventory tracked, invoices out, money collected. Build from there.</p>
+
+        <p>We scoped a phased implementation around their real priorities. Full order-to-cash and procure-to-pay. GL, AR, AP, banking, purchasing, sales, and advanced inventory. And the things costing them the most time in Sage: manual invoicing, manual shipping notifications, and the constant effort of managing two BigCommerce storefronts and Amazon as three separate systems.</p>
+
+        <p>Three months later, Hunt Textiles went live.</p>
+
+        <p>FedEx and UPS integrations sent tracking numbers to customers automatically the moment an order shipped. Both BigCommerce sites and Amazon synced directly to NetSuite inventory in real time. Sales orders flowed to invoices without anyone touching them. Customers received confirmations, shipping notifications, and invoices electronically without any staff intervention.</p>
+
+        <p>And the data they had spent years building in Sage came with them. Customer history, purchase orders, invoices, item records, all migrated directly from a legacy terminal server into NetSuite. Not archived somewhere. Actually usable.</p>
+
+        <h3>The results followed immediately.</h3>
+
+        <p>Automated invoicing cut days sales outstanding by 29%. Every order, every channel, every payment flowing through one system. A business that had been stuck finally had the infrastructure to grow.</p>
+
+        <h3>The story didn't stop at go-live.</h3>
+
+        <p>That's where most implementations end. For Hunt Textiles, it was the starting line. They have continued to expand what NetSuite does for their business year over year. Today they are running NetSuite's MCP connector, using AI to query their own operational data in plain language and surface insights that used to take hours to pull manually. A capability that wasn't on anyone's roadmap when they first went live.</p>
+
+        <p>That's what it looks like when an implementation actually takes hold.</p>
+
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-14 bg-gray-50 border border-gray-200 rounded-xl p-8">
+        <p class="text-xl font-bold text-gray-900 mb-3">If your ERP never crossed the finish line, we can get you there.</p>
+        <p class="text-gray-600 mb-6">No pressure, no pitch deck. Just an honest conversation about where you are and what comes next.</p>
+        <a href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session" target="_blank" rel="noopener noreferrer"
+          class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded transition-colors">
+          Schedule a Free Strategy Call
+        </a>
+      </div>
+
+    </div>
+  </article>
+
+</Layout>
+
+<style>
+  .prose-inscio p {
+    color: #4b5563;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  .prose-inscio h3 {
+    color: #111827;
+    font-size: 1.375rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+</style>
