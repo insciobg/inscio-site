@@ -13,9 +13,6 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await post.render();
 
-function formatDate(date: Date) {
-  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-}
 ---
 
 <Layout
@@ -37,11 +34,7 @@ function formatDate(date: Date) {
       </div>
       <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-8 max-w-3xl">{post.data.title}</h1>
       <p class="text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed mb-6">{post.data.description}</p>
-      <div class="flex items-center gap-4 text-sm text-gray-400">
-        <span>{post.data.author}</span>
-        <span>·</span>
-        <span>{formatDate(post.data.pubDate)}</span>
-      </div>
+
     </div>
   </section>
 
