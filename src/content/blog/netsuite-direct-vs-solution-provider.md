@@ -26,9 +26,9 @@ Oracle tracks what these partners deliver. Customer satisfaction, implementation
 
 Inscio is a NetSuite Solution Provider. We sell the licenses and implement the software. The license is Oracle's product, governed by Oracle's pricing and terms. What we bring is the implementation and the relationship.
 
-## NetSuite vs. NetSuite plus a partner
+## The same software, the same price — so what changes?
 
-Oracle's guidance to buyers is clear: focus on implementation and ongoing account management as your primary decision factors.
+Oracle's guidance to buyers is clear: focus on implementation methodology and approach to ongoing account management. The partner you choose shapes both.
 
 Think of it this way. Buying direct gives you NetSuite. Working with a Solution Provider gives you NetSuite plus the partner.
 
