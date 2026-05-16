@@ -8,64 +8,66 @@ author: "Brian Gallagher"
 draft: false
 ---
 
-When companies start evaluating NetSuite, one of the first questions that comes up is whether to buy through Oracle's direct sales team or through a Solution Provider partner. And the first assumption most people make — that going direct will get them a better price — turns out not to be true.
+You're evaluating NetSuite. You're talking to Oracle's direct sales team and maybe a partner or two. And somewhere in the back of your mind, you're wondering: does going direct get me a better deal?
+
+It doesn't. The price is the same either way.
 
 Here's how Oracle NetSuite's own team puts it:
 
 > *"Oracle NetSuite manages all license pricing approvals, and we endeavor to ensure all teams involved are able to provide the same terms and conditions. So whether you decide to work with the Direct Sales organization or with a Solution Provider, consistent licensing terms and conditions will be available."*
 
-Pricing is the same. So what are you actually choosing between?
+So the real question isn't about price. It's about what you actually need to succeed with this software.
 
 ## What is a NetSuite Solution Provider?
 
-A Solution Provider is a company that has been vetted and authorized by Oracle to sell NetSuite licenses and deliver implementations. Solution Providers aren't resellers in the traditional sense — they're implementation partners who are also licensed to transact the software.
+A Solution Provider is a company authorized by Oracle to sell NetSuite licenses and deliver implementations. They're not just resellers. They're implementation partners who have been vetted, trained, and certified by Oracle to configure and deploy the system.
 
-The authorization matters. Oracle doesn't let anyone become a Solution Provider. Partners go through training, certification, and performance reviews. Oracle tracks customer satisfaction, implementation quality, and renewal rates. A Solution Provider that consistently delivers bad outcomes loses the program.
+Oracle tracks what these partners deliver. Customer satisfaction, implementation quality, renewal rates. A Solution Provider that consistently leaves customers in bad shape loses the program. That accountability is baked into the structure.
 
-Inscio is a NetSuite Solution Provider. We sell the licenses and implement the software — but the license itself is Oracle's product, governed by Oracle's pricing and terms.
+Inscio is a NetSuite Solution Provider. We sell the licenses and implement the software. The license is Oracle's product, governed by Oracle's pricing and terms. What we bring is the implementation and the relationship.
 
-## The same software, the same price — so what changes?
+## NetSuite vs. NetSuite plus a partner
 
-Oracle's team puts it plainly: with that in mind, they encourage buyers to focus on **implementation and ongoing account management methodology** as the primary decision factors.
+Oracle's guidance to buyers is clear: focus on implementation and ongoing account management as your primary decision factors.
 
-Think of it this way: buying NetSuite direct gives you NetSuite. Working with a Solution Provider gives you NetSuite *plus* the partner.
+Think of it this way. Buying direct gives you NetSuite. Working with a Solution Provider gives you NetSuite plus the partner.
 
-That "plus" is the implementation — the work of configuring the system to fit your business, migrating your data, training your team, and getting you live. And it's the ongoing relationship after go-live: who you call when something isn't working, who helps you plan the next phase, who knows your business well enough to give you useful advice.
+That "plus" is the work of configuring the system around your business, migrating your data, training your people, and getting you live. It's also the ongoing relationship after go-live: who you call when something breaks, who helps you plan what comes next, who knows your environment well enough to give you real advice.
 
-With direct sales, the person who sells you the license typically hands you off to a separate implementation team — often a third-party partner anyway — once the contract is signed. The sales relationship and the implementation relationship are usually different people with different priorities.
+With direct sales, the person who sells you the license typically hands you off to a separate team once the contract is signed. The sales relationship and the implementation relationship are two different things with two different groups of people.
 
-With a Solution Provider, the same team that earns your business is accountable for the outcome. We don't get paid to put you live and disappear. The license renewal, the expansion, the referrals — those depend on whether your implementation actually worked.
+With a Solution Provider, the team that earns your business is accountable for the outcome. There's no handoff. The success of your project and the ongoing health of your account are the same job.
 
 ## Where the real differences show up
 
-**Single point of accountability.** When something goes wrong mid-implementation — and something always does — you shouldn't have to figure out whether it's a software issue or an implementation issue and route your complaint accordingly. With a Solution Provider, there's one team responsible for the whole thing.
+**Single point of accountability.** When something goes wrong mid-project, you shouldn't need to figure out whether it's a software issue or an implementation issue and route your complaint accordingly. With a partner, one team owns the whole thing.
 
-**Business context, not just technical configuration.** Oracle's direct team is excellent at selling and licensing the product. What they're not structured to do is spend months understanding how your specific business runs and configuring the system around it. That's the implementation partner's job, and it requires people who have done it dozens or hundreds of times in your industry.
+**Industry and process knowledge.** Oracle's direct team is excellent at selling and licensing NetSuite. Configuring it around your specific operations, your workflows, your data, your team structure requires a different kind of expertise. A good implementation partner has done this in your industry before, often dozens or hundreds of times.
 
-**Continuity after go-live.** A good Solution Provider relationship doesn't end at go-live. Your business changes — new subsidiaries, new revenue models, new compliance requirements. Having a partner who knows your configuration and your history is genuinely valuable. That's harder to replicate when your post-go-live support is routed through a generic Oracle support queue.
+**Continuity after go-live.** Your business will change. New subsidiaries, new revenue models, new compliance requirements. A partner who knows your configuration and your history is genuinely useful when those moments arrive. That's harder to replicate through a generic support queue.
 
-**Honest guidance before you buy.** A Solution Provider has an incentive to make sure NetSuite is actually the right fit for your business. Recommending the wrong software is a bad implementation, a frustrated client, and a damaged reputation. Oracle's direct team is selling NetSuite; a good partner is helping you decide whether NetSuite is the right answer.
+**Guidance before you buy.** A good Solution Provider will tell you if NetSuite isn't the right fit. Recommending the wrong software means a bad project and a damaged reputation. That's an incentive to be honest with you that Oracle's direct sales team, focused on closing the deal, isn't structured to have.
 
 ## When might direct make sense?
 
-There are scenarios where going direct is reasonable. If your organization has deep in-house NetSuite expertise — former admins, existing SuiteScript developers — and you're essentially buying licenses to self-implement or extend an existing system, the partner layer may add cost without adding much value.
+If your organization already has deep NetSuite expertise in-house, former admins, existing developers, and you're buying licenses to extend or maintain a system you already know how to run, the partner relationship may not add much.
 
-For most companies evaluating NetSuite for the first time, or scaling a deployment they haven't fully optimized, the implementation and ongoing relationship are where the value is created or destroyed. The software is the same. The difference is who's sitting across the table from you when it gets hard.
+For most companies doing a first implementation, or trying to get more value from a deployment that never quite landed, the implementation partner is where outcomes are made or broken. The software is the same. The difference is who helps you use it.
 
 ## What to look for in a Solution Provider
 
-Not all Solution Providers are equal. A few questions worth asking:
+Not all partners are equal. A few questions worth asking:
 
-How many implementations have they done in your industry, and how recently? Industry experience matters because every sector has its own process quirks, compliance requirements, and data structures.
+How many implementations have they done in your industry? Every sector has its own process quirks, compliance requirements, and data structures. Experience in your space matters.
 
-Who actually does the work? Some partners sell at the executive level and staff implementations with junior consultants. Find out who will be in the configuration sessions.
+Who actually does the work? Some partners sell at the executive level and staff projects with junior consultants. Find out who will be in the room during configuration sessions.
 
-What does post-go-live support look like? Is it a retainer? Hourly? A dedicated contact or a shared queue? The go-live is the beginning, not the end.
+What does support look like after go-live? Is it a retainer? Hourly? A dedicated contact or a shared queue? Go-live is the beginning, not the finish line.
 
-Can they show you references — not just logos, but actual clients willing to have a real conversation?
+Can they give you references? Not logos. Actual clients willing to have a real conversation about what it was like to work with them.
 
 ---
 
-The choice between direct and a Solution Provider isn't really about price. It's about what kind of relationship you want during and after the implementation. Oracle has made the licensing consistent so that question is off the table. What's left is figuring out who you want in your corner when the project gets complicated — because it will.
+The decision isn't about price. Oracle has made sure of that. It's about what kind of project you want to run and what kind of relationship you want on the other side of it. When things get hard, and they always do, you want to know exactly who is responsible for helping you through it.
 
-*Curious how we approach it? [Book a strategy session](https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session) — no pressure, just a straight conversation.*
+*Want to talk through what that looks like in practice? [Book a strategy session](https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session). No pitch. Just a straight conversation.*
