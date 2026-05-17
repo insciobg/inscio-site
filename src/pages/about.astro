@@ -49,36 +49,57 @@ import Layout from '../layouts/Layout.astro';
     <div class="max-w-7xl mx-auto">
       <div class="max-w-2xl mb-14">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our values</h2>
-        <p class="text-gray-600 text-lg">The principles we bring to every engagement and every relationship.</p>
+        <p class="text-gray-600 text-lg">Twenty years in, these aren't aspirational. They're how we actually operate.</p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {[
-          {
-            title: 'Hard Work',
-            desc: 'We do the unglamorous parts of NetSuite work — the data migrations, edge-case testing, and boring configuration — because that\'s what separates a rollout that actually works from one that just launches.'
-          },
-          {
-            title: 'Transparency',
-            desc: 'We tell you what\'s hard before it becomes a surprise. Scope risks, timeline slippage, licensing tradeoffs — you hear about them early, not at go-live.'
-          },
-          {
-            title: 'Innovation',
-            desc: 'We build reusable accelerators — like DealerCloud for equipment dealers — so you don\'t pay to solve the same problem from scratch. Proven patterns, faster time-to-value.'
-          },
-          {
-            title: 'Teamwork',
-            desc: "The best implementations happen when it feels like one team, not two. We bring the NetSuite expertise, you bring the business knowledge, and together we build something that works for the people using it every day."
-          },
-          {
-            title: 'Growth',
-            desc: 'Good NetSuite work compounds. We scope each phase so your next acquisition, new subsidiary, or product line lands on a foundation that\'s already built to grow.'
-          },
-        ].map(value => (
-          <div class="bg-gray-50 border border-gray-200 rounded-xl p-8">
-            <h3 class="text-xl font-bold text-gray-900 mb-4">{value.title}</h3>
-            <p class="text-gray-600 leading-relaxed">{value.desc}</p>
-          </div>
-        ))}
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="border border-gray-100 rounded-xl p-7 hover:border-blue-200 hover:shadow-sm transition-all">
+          <h3 class="text-base font-bold text-gray-900 mb-2">Partnership</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We partner with clients, not just for them. When we align on goals early and stay in it together, the outcomes follow.</p>
+        </div>
+        <div class="border border-gray-100 rounded-xl p-7 hover:border-blue-200 hover:shadow-sm transition-all">
+          <h3 class="text-base font-bold text-gray-900 mb-2">Integrity</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Transparent and ethical even when it's uncomfortable. We'd rather have a hard conversation early than a bad surprise at go-live.</p>
+        </div>
+        <div class="border border-gray-100 rounded-xl p-7 hover:border-blue-200 hover:shadow-sm transition-all">
+          <h3 class="text-base font-bold text-gray-900 mb-2">Collaboration</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">The best implementations happen when client expertise and our NetSuite knowledge combine. We recognize what each side brings.</p>
+        </div>
+        <div class="border border-gray-100 rounded-xl p-7 hover:border-blue-200 hover:shadow-sm transition-all">
+          <h3 class="text-base font-bold text-gray-900 mb-2">Accountability</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We own our work, start to finish. No finger-pointing, no scope excuses. We are accountable for outcomes, not just deliverables.</p>
+        </div>
+        <div class="border border-gray-100 rounded-xl p-7 hover:border-blue-200 hover:shadow-sm transition-all">
+          <h3 class="text-base font-bold text-gray-900 mb-2">Responsibility</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We treat your time, money, and resources with the same care we'd give our own. Your success and ours are the same thing.</p>
+        </div>
+        <div class="border border-gray-100 rounded-xl p-7 hover:border-blue-200 hover:shadow-sm transition-all">
+          <h3 class="text-base font-bold text-gray-900 mb-2">Learn &amp; Grow</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">NetSuite evolves. We do too. A culture of continuous learning means our team stays ahead so you don't have to catch us up.</p>
+        </div>
+        <div class="border border-gray-100 rounded-xl p-7 hover:border-blue-200 hover:shadow-sm transition-all">
+          <h3 class="text-base font-bold text-gray-900 mb-2">Flexibility</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Responding quickly to changing requirements has been central to our success for twenty years. It's a differentiator, not a given.</p>
+        </div>
+        <div class="border border-gray-100 rounded-xl p-7 hover:border-blue-200 hover:shadow-sm transition-all">
+          <h3 class="text-base font-bold text-gray-900 mb-2">Poise</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Confident without being arrogant. We push back when we see a better path, and we do it with respect, clarity, and data.</p>
+        </div>
+        <div class="border border-gray-100 rounded-xl p-7 hover:border-blue-200 hover:shadow-sm transition-all">
+          <h3 class="text-base font-bold text-gray-900 mb-2">Innovation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We build reusable solutions like DealerCloud so you don't pay to solve problems we've already solved. Proven patterns, faster value.</p>
+        </div>
+        <div class="border border-gray-100 rounded-xl p-7 hover:border-blue-200 hover:shadow-sm transition-all">
+          <h3 class="text-base font-bold text-gray-900 mb-2">Long-Term Value</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We're not optimizing for the current statement of work. We're building a foundation your business can grow on for the next decade.</p>
+        </div>
+        <div class="border border-gray-100 rounded-xl p-7 hover:border-blue-200 hover:shadow-sm transition-all">
+          <h3 class="text-base font-bold text-gray-900 mb-2">Gratitude</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We don't take for granted what we get to do. Helping a company transform through technology is genuinely fulfilling, and we remember that.</p>
+        </div>
+        <div class="border border-gray-100 rounded-xl p-7 hover:border-blue-200 hover:shadow-sm transition-all">
+          <h3 class="text-base font-bold text-gray-900 mb-2">Generosity</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Giving back is baked into how we operate, to our community, our clients, and each other. It's not a program. It's just who we are.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -226,6 +247,26 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
+      <!-- Give Back stats -->
+      <div id="giveback-stats" class="hidden mt-6 grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="bg-white border border-gray-100 rounded-xl p-6 text-center">
+          <div class="text-2xl font-bold text-gray-900">103,000 lbs</div>
+          <div class="text-sm text-gray-500 mt-1">food donated annually</div>
+        </div>
+        <div class="bg-white border border-gray-100 rounded-xl p-6 text-center">
+          <div class="text-2xl font-bold text-gray-900">85,000+</div>
+          <div class="text-sm text-gray-500 mt-1">meals provided</div>
+        </div>
+        <div class="bg-white border border-gray-100 rounded-xl p-6 text-center">
+          <div class="text-2xl font-bold text-gray-900">7,500+</div>
+          <div class="text-sm text-gray-500 mt-1">families helped each year</div>
+        </div>
+        <div class="bg-white border border-gray-100 rounded-xl p-6 text-center">
+          <div class="text-2xl font-bold text-gray-900">200</div>
+          <div class="text-sm text-gray-500 mt-1">people with clean water in Ethiopia</div>
+        </div>
+      </div>
+
       <!-- Stat strip -->
       <div class="mt-8 grid grid-cols-3 gap-4">
         <div class="bg-white border border-gray-200 rounded-xl p-6 text-center">
@@ -275,6 +316,8 @@ import Layout from '../layouts/Layout.astro';
 
       panels.forEach(p => p.classList.add('hidden'));
       document.getElementById('panel-' + target)?.classList.remove('hidden');
+      const gbs = document.getElementById('giveback-stats');
+      if (gbs) { if (target === 'giveback') { gbs.classList.remove('hidden'); } else { gbs.classList.add('hidden'); } }
     });
   });
 
