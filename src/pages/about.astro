@@ -83,6 +83,179 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- Life at Inscio -->
+  <section class="bg-gray-50 py-24 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-2xl mb-12">
+        <p class="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-3">Our culture</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Life at Inscio</h2>
+        <p class="text-gray-600 text-lg leading-relaxed">Twenty years in, we still show up like it's the best job we've ever had. Here's proof.</p>
+      </div>
+
+      <!-- Tab buttons -->
+      <div class="flex gap-3 mb-8" id="culture-tabs">
+        <button
+          class="culture-tab active-tab px-5 py-2.5 rounded-lg text-sm font-medium border transition-all"
+          data-panel="celebrate"
+        >🏆 Celebrate</button>
+        <button
+          class="culture-tab px-5 py-2.5 rounded-lg text-sm font-medium border transition-all"
+          data-panel="fun"
+        >🎉 Have fun</button>
+        <button
+          class="culture-tab px-5 py-2.5 rounded-lg text-sm font-medium border transition-all"
+          data-panel="giveback"
+        >❤️ Give back</button>
+      </div>
+
+      <!-- Celebrate panel -->
+      <div id="panel-celebrate" class="culture-panel">
+        <div class="grid grid-cols-3 gap-3" style="grid-template-rows: 280px 220px;">
+          <!-- Big feature photo -->
+          <div class="col-span-2 row-span-2 rounded-xl overflow-hidden relative bg-[#0D1235] group">
+            <img src="/images/culture/anniversary-celebration.jpg" alt="Inscio 20th anniversary celebration" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="absolute inset-0 hidden flex-col items-center justify-center text-white/30 text-sm gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+              <span>20th anniversary party</span>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-5">
+              <span class="text-white text-sm font-medium">Inscio | 20 years</span>
+            </div>
+          </div>
+          <!-- Smaller photos right column -->
+          <div class="rounded-xl overflow-hidden relative bg-[#0D1235] group">
+            <img src="/images/culture/inc500-winner.jpg" alt="Inc 500 Top 100 winner" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="absolute inset-0 hidden flex-col items-center justify-center text-white/30 text-sm gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+              <span>Inc 500 — Top 100</span>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-xs font-medium">Inc 500 — Winner Top 100</span>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#152060] group">
+            <img src="/images/culture/anniversary-team.jpg" alt="Inscio team at 20th anniversary" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="absolute inset-0 hidden flex-col items-center justify-center text-white/30 text-sm gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+              <span>The whole crew</span>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-xs font-medium">The whole crew</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Have fun panel -->
+      <div id="panel-fun" class="culture-panel hidden">
+        <div class="grid grid-cols-3 gap-3" style="grid-template-rows: 280px 220px;">
+          <div class="rounded-xl overflow-hidden relative bg-[#2d1060] group">
+            <img src="/images/culture/team-laughing.jpg" alt="Team laughing at dinner" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="absolute inset-0 hidden flex-col items-center justify-center text-white/30 text-sm gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+              <span>Team dinner — laughing</span>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Never a dull lunch</span>
+            </div>
+          </div>
+          <div class="col-span-2 rounded-xl overflow-hidden relative bg-[#1a0a40] group">
+            <img src="/images/culture/live-music-night.jpg" alt="Team at live music night" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="absolute inset-0 hidden flex-col items-center justify-center text-white/30 text-sm gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+              <span>Live music — Tolbert's</span>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Team night out</span>
+            </div>
+          </div>
+          <div class="col-span-2 rounded-xl overflow-hidden relative bg-[#0D1235] group">
+            <img src="/images/culture/holiday-party.jpg" alt="Holiday party at Bad Santa's Boathouse" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="absolute inset-0 hidden flex-col items-center justify-center text-white/30 text-sm gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+              <span>Holiday party</span>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Annual holiday party</span>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#0a2060] group">
+            <img src="/images/culture/dance-moves.jpg" alt="Team member celebrating" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="absolute inset-0 hidden flex-col items-center justify-center text-white/30 text-sm gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+              <span>Good vibes</span>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Someone had a good time</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Give back panel -->
+      <div id="panel-giveback" class="culture-panel hidden">
+        <div class="grid grid-cols-2 gap-3" style="grid-template-rows: 280px 220px;">
+          <div class="rounded-xl overflow-hidden relative bg-[#0a3020] group">
+            <img src="/images/culture/volunteer-sports.jpg" alt="Volunteering at youth sports facility" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="absolute inset-0 hidden flex-col items-center justify-center text-white/30 text-sm gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+              <span>Youth sports day</span>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Youth sports day</span>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#1a3010] group">
+            <img src="/images/culture/volunteer-lawn-games.jpg" alt="Team at community outdoor event" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="absolute inset-0 hidden flex-col items-center justify-center text-white/30 text-sm gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+              <span>Community event</span>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Community event</span>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#0a2810] group">
+            <img src="/images/culture/volunteer-kids.jpg" alt="Team with kids at facility" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="absolute inset-0 hidden flex-col items-center justify-center text-white/30 text-sm gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+              <span>Playing hard, giving back</span>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Giving back, playing hard</span>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#102810] group">
+            <img src="/images/culture/volunteer-group.jpg" alt="Whole team at community event" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="absolute inset-0 hidden flex-col items-center justify-center text-white/30 text-sm gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+              <span>The whole team pitches in</span>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">The whole team pitches in</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stat strip -->
+      <div class="mt-8 grid grid-cols-3 gap-4">
+        <div class="bg-white border border-gray-200 rounded-xl p-6 text-center">
+          <div class="text-2xl font-bold text-gray-900 mb-1">20 Years</div>
+          <div class="text-sm text-gray-500">together as a team</div>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6 text-center">
+          <div class="text-2xl font-bold text-gray-900 mb-1">Inc 500</div>
+          <div class="text-sm text-gray-500">recognized growth company</div>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6 text-center">
+          <div class="text-2xl font-bold text-gray-900 mb-1">People First</div>
+          <div class="text-sm text-gray-500">always, in everything we do</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="bg-[#0D1235] text-white py-20 px-4">
     <div class="max-w-3xl mx-auto text-center">
@@ -96,3 +269,33 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
 </Layout>
+
+<script>
+  const tabs = document.querySelectorAll('.culture-tab');
+  const panels = document.querySelectorAll('.culture-panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.panel;
+
+      tabs.forEach(t => {
+        t.classList.remove('active-tab', 'bg-white', 'text-gray-900', 'border-gray-300', 'shadow-sm');
+        t.classList.add('text-gray-500', 'border-gray-200', 'hover:border-gray-300', 'hover:text-gray-700');
+      });
+      tab.classList.add('active-tab', 'bg-white', 'text-gray-900', 'border-gray-300', 'shadow-sm');
+      tab.classList.remove('text-gray-500', 'border-gray-200');
+
+      panels.forEach(p => p.classList.add('hidden'));
+      document.getElementById('panel-' + target)?.classList.remove('hidden');
+    });
+  });
+
+  // Set initial tab styles
+  tabs.forEach((tab, i) => {
+    if (i === 0) {
+      tab.classList.add('bg-white', 'text-gray-900', 'border-gray-300', 'shadow-sm');
+    } else {
+      tab.classList.add('text-gray-500', 'border-gray-200', 'hover:border-gray-300', 'hover:text-gray-700');
+    }
+  });
+</script>
