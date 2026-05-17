@@ -86,86 +86,90 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <!-- Tab buttons -->
-      <div class="flex gap-3 mb-8" id="culture-tabs">
-        <button class="culture-tab active-tab px-5 py-2.5 rounded-lg text-sm font-medium border transition-all flex items-center gap-2" data-panel="celebrate">
+      <div class="flex flex-wrap gap-3 mb-8" id="culture-tabs">
+        <button class="culture-tab active-tab px-5 py-2.5 rounded-lg text-sm font-medium border transition-all flex items-center gap-2" data-panel="work">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z" /></svg>
+          Work
+        </button>
+        <button class="culture-tab px-5 py-2.5 rounded-lg text-sm font-medium border transition-all flex items-center gap-2" data-panel="play">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" /></svg>
+          Play
+        </button>
+        <button class="culture-tab px-5 py-2.5 rounded-lg text-sm font-medium border transition-all flex items-center gap-2" data-panel="celebrate">
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-3.044 0" /></svg>
           Celebrate
         </button>
-        <button class="culture-tab px-5 py-2.5 rounded-lg text-sm font-medium border transition-all flex items-center gap-2" data-panel="fun">
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" /></svg>
-          Have fun
-        </button>
         <button class="culture-tab px-5 py-2.5 rounded-lg text-sm font-medium border transition-all flex items-center gap-2" data-panel="giveback">
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
-          Give back
+          Give Back
         </button>
       </div>
 
-      <!-- Celebrate panel -->
-      <div id="panel-celebrate" class="culture-panel">
-        <div class="grid grid-cols-3 gap-3" style="height: 420px;">
+      <!-- Work panel -->
+      <div id="panel-work" class="culture-panel">
+        <div class="grid grid-cols-3 gap-3" style="grid-template-rows: 280px 220px;">
           <div class="col-span-2 rounded-xl overflow-hidden relative bg-[#0D1235] group">
-            <img src="/images/culture/anniversary-celebration.jpg" alt="Inscio 20th anniversary celebration" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-            <div class="absolute inset-0 hidden flex-col items-center justify-center text-white/30 text-sm gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-              <span>20th anniversary party</span>
-            </div>
-            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-5">
-              <span class="text-white text-sm font-medium">Inscio | 20 years</span>
+            <img src="/images/culture/work-team-1.jpg" alt="Inscio team at work" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">The work we love</span>
             </div>
           </div>
           <div class="rounded-xl overflow-hidden relative bg-[#152060] group">
-            <img src="/images/culture/anniversary-team.jpg" alt="Inscio team at 20th anniversary" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-            <div class="absolute inset-0 hidden flex-col items-center justify-center text-white/30 text-sm gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-              <span>The whole crew</span>
-            </div>
+            <img src="/images/culture/work-team-2.jpg" alt="Inscio consultant working" class="w-full h-full object-cover" />
             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-              <span class="text-white text-sm font-medium">The whole crew</span>
+              <span class="text-white text-sm font-medium">Deep in the details</span>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#1a2060] group">
+            <img src="/images/culture/work-team-3.jpg" alt="Team collaboration" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">One team</span>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#0d1a50] group">
+            <img src="/images/culture/work-team-4.jpg" alt="Inscio team meeting" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Aligned on what matters</span>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#0a1840] group">
+            <img src="/images/culture/work-team-5.jpg" alt="Inscio consultant at client site" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">On-site, in it together</span>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#0f1e4a] group">
+            <img src="/images/culture/work-team-6.jpg" alt="Team problem solving" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Problem solvers</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Have fun panel -->
-      <div id="panel-fun" class="culture-panel hidden">
+      <!-- Play panel -->
+      <div id="panel-play" class="culture-panel hidden">
         <div class="grid grid-cols-3 gap-3" style="grid-template-rows: 280px 220px;">
           <div class="rounded-xl overflow-hidden relative bg-[#2d1060] group">
-            <img src="/images/culture/team-laughing.jpg" alt="Team laughing at dinner" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-            <div class="absolute inset-0 hidden flex-col items-center justify-center text-white/30 text-sm gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-              <span>Team dinner — laughing</span>
-            </div>
+            <img src="/images/culture/team-laughing.jpg" alt="Team laughing at dinner" class="w-full h-full object-cover" />
             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
               <span class="text-white text-sm font-medium">Never a dull lunch</span>
             </div>
           </div>
           <div class="col-span-2 rounded-xl overflow-hidden relative bg-[#1a0a40] group">
-            <img src="/images/culture/live-music-night.jpg" alt="Team at live music night" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-            <div class="absolute inset-0 hidden flex-col items-center justify-center text-white/30 text-sm gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-              <span>Live music — Tolbert's</span>
-            </div>
+            <img src="/images/culture/live-music-night.jpg" alt="Team at live music night" class="w-full h-full object-cover" />
             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
               <span class="text-white text-sm font-medium">Team night out</span>
             </div>
           </div>
           <div class="col-span-2 rounded-xl overflow-hidden relative bg-[#0D1235] group">
-            <img src="/images/culture/holiday-party.jpg" alt="Holiday party at Bad Santa's Boathouse" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-            <div class="absolute inset-0 hidden flex-col items-center justify-center text-white/30 text-sm gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-              <span>Holiday party</span>
-            </div>
+            <img src="/images/culture/holiday-party.jpg" alt="Annual holiday party" class="w-full h-full object-cover" />
             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
               <span class="text-white text-sm font-medium">Annual holiday party</span>
             </div>
           </div>
           <div class="rounded-xl overflow-hidden relative bg-[#0a2060] group">
-            <img src="/images/culture/dance-moves.jpg" alt="Team member celebrating" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-            <div class="absolute inset-0 hidden flex-col items-center justify-center text-white/30 text-sm gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-              <span>Good vibes</span>
-            </div>
+            <img src="/images/culture/dance-moves.jpg" alt="Team member celebrating" class="w-full h-full object-cover" />
             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
               <span class="text-white text-sm font-medium">Someone had a good time</span>
             </div>
@@ -173,47 +177,61 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
-      <!-- Give back panel -->
-      <div id="panel-giveback" class="culture-panel hidden">
-        <div class="grid grid-cols-2 gap-3" style="grid-template-rows: 280px 220px;">
-          <div class="rounded-xl overflow-hidden relative bg-[#0a3020] group">
-            <img src="/images/culture/volunteer-sports.jpg" alt="Volunteering at youth sports facility" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-            <div class="absolute inset-0 hidden flex-col items-center justify-center text-white/30 text-sm gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-              <span>Youth sports day</span>
+      <!-- Celebrate panel -->
+      <div id="panel-celebrate" class="culture-panel hidden">
+        <div class="grid grid-cols-3 gap-3" style="height: 420px;">
+          <div class="col-span-2 rounded-xl overflow-hidden relative bg-[#0D1235] group">
+            <img src="/images/culture/anniversary-celebration.jpg" alt="Inscio 20th anniversary celebration" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-5">
+              <span class="text-white text-sm font-medium">Inscio | 20 years</span>
             </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#152060] group">
+            <img src="/images/culture/anniversary-team.jpg" alt="Inscio team at 20th anniversary" class="w-full h-full object-cover" />
             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-              <span class="text-white text-sm font-medium">Youth sports day</span>
+              <span class="text-white text-sm font-medium">The whole crew</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Give Back panel -->
+      <div id="panel-giveback" class="culture-panel hidden">
+        <div class="grid grid-cols-3 gap-3" style="grid-template-rows: 280px 220px;">
+          <div class="col-span-2 rounded-xl overflow-hidden relative bg-[#0a3020] group">
+            <img src="/images/culture/giveback-volunteer-1.jpg" alt="Inscio team volunteering" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Hands on</span>
             </div>
           </div>
           <div class="rounded-xl overflow-hidden relative bg-[#1a3010] group">
-            <img src="/images/culture/volunteer-lawn-games.jpg" alt="Team at community outdoor event" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-            <div class="absolute inset-0 hidden flex-col items-center justify-center text-white/30 text-sm gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-              <span>Community event</span>
-            </div>
+            <img src="/images/culture/giveback-volunteer-2.jpg" alt="Volunteering in the community" class="w-full h-full object-cover" />
             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-              <span class="text-white text-sm font-medium">Community event</span>
+              <span class="text-white text-sm font-medium">Showing up</span>
             </div>
           </div>
           <div class="rounded-xl overflow-hidden relative bg-[#0a2810] group">
-            <img src="/images/culture/volunteer-kids.jpg" alt="Team with kids at facility" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-            <div class="absolute inset-0 hidden flex-col items-center justify-center text-white/30 text-sm gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-              <span>Playing hard, giving back</span>
+            <img src="/images/culture/giveback-volunteer-3.jpg" alt="Team at community event" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">In the community</span>
             </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#102810] group">
+            <img src="/images/culture/volunteer-group.jpg" alt="Whole team at community event" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">The whole team pitches in</span>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#0a3020] group">
+            <img src="/images/culture/volunteer-kids.jpg" alt="Team with kids at facility" class="w-full h-full object-cover" />
             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
               <span class="text-white text-sm font-medium">Giving back, playing hard</span>
             </div>
           </div>
-          <div class="rounded-xl overflow-hidden relative bg-[#102810] group">
-            <img src="/images/culture/volunteer-group.jpg" alt="Whole team at community event" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-            <div class="absolute inset-0 hidden flex-col items-center justify-center text-white/30 text-sm gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-              <span>The whole team pitches in</span>
-            </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#1a3010] group">
+            <img src="/images/culture/volunteer-sports.jpg" alt="Volunteering at youth sports" class="w-full h-full object-cover" />
             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-              <span class="text-white text-sm font-medium">The whole team pitches in</span>
+              <span class="text-white text-sm font-medium">Youth sports day</span>
             </div>
           </div>
         </div>
