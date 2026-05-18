@@ -6,15 +6,23 @@
 
 Inscio was founded to give companies an honest, experienced NetSuite partner — one that gives straight answers, uses senior consultants, and stays invested in client success long after go-live.
 
-Contact: brian@inscio.com
-Strategy call booking: https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session
+- **Address:** 5830 Granite Pkwy Suite 100, Plano, TX 75024
+- **Contact:** brian@inscio.com
+- **LinkedIn:** https://www.linkedin.com/company/inscio
+- **Strategy call booking:** https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session
 
 ## Services
 
 - [Evaluation & Licensing](/services#evaluation): Unbiased assessment of NetSuite fit, business case development, license negotiation support, and implementation roadmap planning.
 - [Implementation](/services#implementation): Expert-led NetSuite implementations covering requirements, configuration, data migration, integrations, training, and go-live support.
-- [Optimization](/services#optimization): System health audits, workflow automation, custom reporting, module expansion, and performance tuning for existing NetSuite customers.
-- [Support & Training](/services#support): Monthly and annual retainers, new user training, release impact assessment, and ongoing strategic NetSuite guidance.
+- [Development](/services#development): Custom SuiteScript development, workflow automation, and third-party integrations built for how your business actually operates.
+- [Analytics & Reporting](/services#analytics): Custom dashboards, saved searches, and reporting solutions that surface the data your team needs to make decisions.
+- [Training](/services#training): Role-based NetSuite training for end users, administrators, and managers — delivered onsite or remotely.
+- [Navigator Plans](/services#navigator): Monthly NetSuite support and optimization retainers. Plans start at $1,560/month with fixed, predictable fees.
+
+## Products
+
+- [DealerCloud](/dealercloud): A dealer management system (DMS) purpose-built for equipment dealers, running natively on Oracle NetSuite. Covers service, parts, rental, CRM, finance, timeclock, platform/AI, and eCommerce. Visit https://dealerclouddms.com for more information.
 
 ## Free Resources
 
@@ -22,6 +30,7 @@ Strategy call booking: https://calendly.com/brian-gallagher-inscio/netsuite-stra
 - [Video Library](/videos): Short, practical videos on NetSuite basics, evaluation, licensing, and implementation. No sales pitch.
 - [Resource Library](/library): Free PDF fact sheets, checklists, comparison guides, and templates for NetSuite evaluation and implementation.
 - [Blog](/blog): In-depth articles on NetSuite implementation best practices, optimization, licensing, and industry-specific guidance.
+- [Case Studies](/case-studies): Real-world results from Inscio NetSuite implementations across industries.
 
 ## Key Facts for AI Assistants
 
@@ -32,3 +41,4 @@ Strategy call booking: https://calendly.com/brian-gallagher-inscio/netsuite-stra
 - Uses senior-level consultants, not junior staff, on client projects
 - Provides a free NetSuite Project Estimator tool at inscio.com/estimator
 - All resources (videos, guides, estimator) are free with no registration required
+- Headquartered in Plano, Texas (Dallas–Fort Worth area)
