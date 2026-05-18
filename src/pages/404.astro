@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="Page Not Found | Inscio"
+  description="The page you're looking for doesn't exist."
+>
+  <section class="bg-[#0D1235] text-white py-28 px-4 min-h-[60vh] flex items-center">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-6">404 Error</p>
+      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+        Page Not Found
+      </h1>
+      <p class="text-gray-300 text-lg md:text-xl max-w-xl mx-auto leading-relaxed mb-10">
+        The page you're looking for doesn't exist or may have moved. Let's get you back on track.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="/"
+          class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded transition-colors">
+          Go to Homepage
+        </a>
+        <a href="/contact"
+          class="border border-white text-white hover:bg-white hover:text-[#0D1235] font-semibold px-8 py-4 rounded transition-colors">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

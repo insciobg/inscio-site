@@ -93,8 +93,8 @@
 /netsuite-videos/               /videos                     301
 
 # Privacy policy (new page TBD — redirect home for now)
-/privacy-policy                 /                           301
-/privacy-policy/                /                           301
+/privacy-policy                 /privacy                    301
+/privacy-policy/                /privacy                    301
 
 # Misc / stale pages with no equivalent
 /medtech-playbook-event         /                           301
