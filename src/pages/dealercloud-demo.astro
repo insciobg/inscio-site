@@ -64,7 +64,7 @@ import Layout from '../layouts/Layout.astro';
             <div id="form-error" class="hidden text-red-600 text-sm">Please fill in all required fields.</div>
 
             <button type="submit"
-              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 rounded-lg transition-colors text-sm uppercase tracking-wider">
+              id="demo-submit-btn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 rounded-lg transition-colors text-sm uppercase tracking-wider">
               View the Demo
             </button>
           </form>
@@ -114,8 +114,9 @@ import Layout from '../layouts/Layout.astro';
   const formSection = document.getElementById('demo-form-section') as HTMLElement;
   const demoSection = document.getElementById('demo-section') as HTMLElement;
   const formError = document.getElementById('form-error') as HTMLElement;
+  const submitBtn = document.getElementById('demo-submit-btn') as HTMLButtonElement;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const firstName = (document.getElementById('firstName') as HTMLInputElement).value.trim();
@@ -129,6 +130,19 @@ import Layout from '../layouts/Layout.astro';
     }
 
     formError.classList.add('hidden');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Loading...';
+
+    try {
+      await fetch('https://formspree.io/f/xeedqzrd', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstName, lastName, email, phone: (document.getElementById('phone') as HTMLInputElement).value.trim(), company }),
+      });
+    } catch (_) {
+      // Still show the demo even if submission fails
+    }
+
     formSection.classList.add('hidden');
     demoSection.classList.remove('hidden');
     window.scrollTo({ top: 0, behavior: 'smooth' });
