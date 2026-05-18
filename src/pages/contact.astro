@@ -137,7 +137,6 @@ import Layout from '../layouts/Layout.astro';
             method="POST"
             class="space-y-5"
           >
-            <input type="hidden" name="_next" value="https://inscio.com/contact?sent=1" />
             <div class="grid grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1" for="first-name">First Name</label>
@@ -174,7 +173,7 @@ import Layout from '../layouts/Layout.astro';
                 placeholder="Tell us what you're working on or where you're stuck..."></textarea>
             </div>
 
-            <button type="submit"
+            <button id="contact-submit-btn" type="submit"
               class="w-full bg-[#0D1235] hover:bg-[#1a2050] text-white font-semibold px-8 py-4 rounded transition-colors">
               Send Message
             </button>
@@ -186,17 +185,36 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <script>
-    // Show success or error banner based on URL query param after form redirect
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('sent') === '1') {
-      document.getElementById('form-success')?.classList.remove('hidden');
-      document.getElementById('contact-form')?.classList.add('hidden');
-      // Clean up the URL without a page reload
-      history.replaceState({}, '', '/contact');
-    } else if (params.get('error') === '1') {
-      document.getElementById('form-error')?.classList.remove('hidden');
-      history.replaceState({}, '', '/contact');
-    }
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const submitBtn = document.getElementById('contact-submit-btn') as HTMLButtonElement;
+    const successBanner = document.getElementById('form-success') as HTMLElement;
+    const errorBanner = document.getElementById('form-error') as HTMLElement;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      errorBanner.classList.add('hidden');
+
+      try {
+        const res = await fetch('https://formspree.io/f/xykvypnl', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form),
+        });
+
+        if (res.ok) {
+          form.classList.add('hidden');
+          successBanner.classList.remove('hidden');
+        } else {
+          throw new Error('submission failed');
+        }
+      } catch (_) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+        errorBanner.classList.remove('hidden');
+      }
+    });
   </script>
 
 </Layout>
