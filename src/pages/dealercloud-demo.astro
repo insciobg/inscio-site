@@ -1,0 +1,136 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="DealerCloud Interactive Demo | Inscio"
+  description="See DealerCloud in action. Fill out the form to access interactive click-throughs and pre-recorded demonstrations."
+>
+
+  <!-- Form Section (shown by default) -->
+  <div id="demo-form-section">
+    <section class="relative bg-[#0D1235] text-white py-24 px-4 overflow-hidden">
+      <!-- Background texture -->
+      <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, #3b82f6 0%, transparent 50%), radial-gradient(circle at 80% 20%, #1d4ed8 0%, transparent 40%);"></div>
+      <div class="relative max-w-2xl mx-auto text-center">
+        <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-4">INTERACTIVE DEMO</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+          See DealerCloud in Action
+        </h1>
+        <p class="text-gray-300 text-lg leading-relaxed">
+          Learn more about DealerCloud and NetSuite with interactive click-throughs and pre-recorded demonstrations.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-gray-50 py-16 px-4">
+      <div class="max-w-xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-lg p-8 md:p-10">
+          <h2 class="text-2xl font-bold text-gray-900 mb-2">Get Instant Access</h2>
+          <p class="text-gray-500 text-sm mb-8">Fill in the form below and we'll show you the interactive demo right away.</p>
+
+          <form id="demo-form" class="space-y-5" novalidate>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">First Name <span class="text-red-500">*</span></label>
+                <input type="text" id="firstName" name="firstName" required autocomplete="given-name"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+              </div>
+              <div>
+                <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Last Name <span class="text-red-500">*</span></label>
+                <input type="text" id="lastName" name="lastName" required autocomplete="family-name"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email <span class="text-red-500">*</span></label>
+                <input type="email" id="email" name="email" required autocomplete="email"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+              </div>
+            </div>
+
+            <div>
+              <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company Name <span class="text-red-500">*</span></label>
+              <input type="text" id="company" name="company" required autocomplete="organization"
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+            </div>
+
+            <div id="form-error" class="hidden text-red-600 text-sm">Please fill in all required fields.</div>
+
+            <button type="submit"
+              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 rounded-lg transition-colors text-sm uppercase tracking-wider">
+              View the Demo
+            </button>
+          </form>
+
+          <p class="text-center text-gray-400 text-xs mt-6">By submitting, you agree to our <a href="/privacy" class="text-blue-500 hover:underline">Privacy Policy</a>.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Demo Section (hidden until form submitted) -->
+  <div id="demo-section" class="hidden">
+    <section class="bg-[#0D1235] text-white py-16 px-4 text-center">
+      <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-4">INTERACTIVE DEMO</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-4">DealerCloud in Action</h2>
+      <p class="text-gray-300 text-lg max-w-2xl mx-auto">Explore DealerCloud with interactive click-throughs and pre-recorded demonstrations below.</p>
+    </section>
+    <section class="bg-gray-50 py-12 px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="rounded-2xl overflow-hidden shadow-2xl" style="position: relative; padding-bottom: calc(56.25% + 26px); height: 0; width: 100%;">
+          <iframe
+            src="https://app.storylane.io/share/ehhyyj8wasec"
+            name="sl-embed"
+            allow="fullscreen"
+            allowfullscreen
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 1rem;"
+          ></iframe>
+        </div>
+        <div class="text-center mt-10">
+          <a href="https://dealerclouddms.com" target="_blank" rel="noopener noreferrer"
+            class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded transition-colors mr-4">
+            Visit DealerCloud
+          </a>
+          <a href="/contact"
+            class="inline-block border border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-600 font-semibold px-8 py-4 rounded transition-colors">
+            Talk to an Expert
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</Layout>
+
+<script>
+  const form = document.getElementById('demo-form') as HTMLFormElement;
+  const formSection = document.getElementById('demo-form-section') as HTMLElement;
+  const demoSection = document.getElementById('demo-section') as HTMLElement;
+  const formError = document.getElementById('form-error') as HTMLElement;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const firstName = (document.getElementById('firstName') as HTMLInputElement).value.trim();
+    const lastName = (document.getElementById('lastName') as HTMLInputElement).value.trim();
+    const email = (document.getElementById('email') as HTMLInputElement).value.trim();
+    const company = (document.getElementById('company') as HTMLInputElement).value.trim();
+
+    if (!firstName || !lastName || !email || !company) {
+      formError.classList.remove('hidden');
+      return;
+    }
+
+    formError.classList.add('hidden');
+    formSection.classList.add('hidden');
+    demoSection.classList.remove('hidden');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
