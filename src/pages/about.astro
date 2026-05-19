@@ -49,36 +49,266 @@ import Layout from '../layouts/Layout.astro';
     <div class="max-w-7xl mx-auto">
       <div class="max-w-2xl mb-14">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our values</h2>
-        <p class="text-gray-600 text-lg">The principles we bring to every engagement and every relationship.</p>
+        <p class="text-gray-600 text-lg">Twenty years in, these aren't aspirational. They're how we actually operate.</p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {[
-          {
-            title: 'Hard Work',
-            desc: 'We do the unglamorous parts of NetSuite work — the data migrations, edge-case testing, and boring configuration — because that\'s what separates a rollout that actually works from one that just launches.'
-          },
-          {
-            title: 'Transparency',
-            desc: 'We tell you what\'s hard before it becomes a surprise. Scope risks, timeline slippage, licensing tradeoffs — you hear about them early, not at go-live.'
-          },
-          {
-            title: 'Innovation',
-            desc: 'We build reusable accelerators — like DealerCloud for equipment dealers — so you don\'t pay to solve the same problem from scratch. Proven patterns, faster time-to-value.'
-          },
-          {
-            title: 'Teamwork',
-            desc: "The best implementations happen when it feels like one team, not two. We bring the NetSuite expertise, you bring the business knowledge, and together we build something that works for the people using it every day."
-          },
-          {
-            title: 'Growth',
-            desc: 'Good NetSuite work compounds. We scope each phase so your next acquisition, new subsidiary, or product line lands on a foundation that\'s already built to grow.'
-          },
-        ].map(value => (
-          <div class="bg-gray-50 border border-gray-200 rounded-xl p-8">
-            <h3 class="text-xl font-bold text-gray-900 mb-4">{value.title}</h3>
-            <p class="text-gray-600 leading-relaxed">{value.desc}</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="border border-gray-100 rounded-xl p-7 hover:border-blue-200 hover:shadow-sm transition-all">
+          <h3 class="text-base font-bold text-gray-900 mb-2">Integrity</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Doing the right thing sometimes costs us. We're okay with that. It's the only way to build the kind of client relationships worth having.</p>
+        </div>
+        <div class="border border-gray-100 rounded-xl p-7 hover:border-blue-200 hover:shadow-sm transition-all">
+          <h3 class="text-base font-bold text-gray-900 mb-2">Partnership</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We don't just work for our clients. We work with them. That means aligning on goals early, staying in it through the hard parts, and making sure success means the same thing to both sides.</p>
+        </div>
+        <div class="border border-gray-100 rounded-xl p-7 hover:border-blue-200 hover:shadow-sm transition-all">
+          <h3 class="text-base font-bold text-gray-900 mb-2">Accountability</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We own our work from kickoff to go-live. When something doesn't go as planned, we don't look for someone to blame. We fix it.</p>
+        </div>
+        <div class="border border-gray-100 rounded-xl p-7 hover:border-blue-200 hover:shadow-sm transition-all">
+          <h3 class="text-base font-bold text-gray-900 mb-2">Long-Term Value</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We're not optimizing for the current statement of work. We're thinking about where your business will be in five years and building something that gets you there. The best clients we have came back after their first project because we earned it.</p>
+        </div>
+        <div class="border border-gray-100 rounded-xl p-7 hover:border-blue-200 hover:shadow-sm transition-all">
+          <h3 class="text-base font-bold text-gray-900 mb-2">Generosity</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">For every hour our consultants bill, one dollar goes to a charity of their choosing. Each person picks what matters to them. It adds up, and it keeps giving back personal rather than just a policy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Life at Inscio -->
+  <section class="bg-gray-50 py-24 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-2xl mb-12">
+        <p class="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-3">Our culture</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Life at Inscio</h2>
+        <p class="text-gray-600 text-lg leading-relaxed">Twenty years in, we still show up like it's the best job we've ever had. Here's proof.</p>
+      </div>
+
+      <!-- Tab buttons -->
+      <div class="flex flex-wrap gap-3 mb-8" id="culture-tabs">
+        <button class="culture-tab active-tab px-5 py-2.5 rounded-lg text-sm font-medium border transition-all flex items-center gap-2" data-panel="work">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z" /></svg>
+          Work
+        </button>
+        <button class="culture-tab px-5 py-2.5 rounded-lg text-sm font-medium border transition-all flex items-center gap-2" data-panel="play">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" /></svg>
+          Play
+        </button>
+        <button class="culture-tab px-5 py-2.5 rounded-lg text-sm font-medium border transition-all flex items-center gap-2" data-panel="celebrate">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-3.044 0" /></svg>
+          Celebrate
+        </button>
+        <button class="culture-tab px-5 py-2.5 rounded-lg text-sm font-medium border transition-all flex items-center gap-2" data-panel="giveback">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+          Give Back
+        </button>
+      </div>
+
+      <!-- Work panel -->
+      <!-- Work panel -->
+      <div id="panel-work" class="culture-panel">
+        <div class="grid grid-cols-4 gap-3" style="grid-template-rows: 280px 240px;">
+          <!-- Row 1 -->
+          <div class="col-span-2 rounded-xl overflow-hidden relative bg-[#152060] group">
+            <img src="/images/culture/work-new-4.jpg" alt="Inscio team on-site with client" class="w-full h-full object-cover" style="object-position: center 35%;" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">On-site, in it together</span>
+            </div>
           </div>
-        ))}
+          <div class="rounded-xl overflow-hidden relative bg-[#1a1040] group">
+            <img src="/images/culture/work-new-2.jpg" alt="Hey Y'all neon sign" class="w-full h-full object-cover" style="object-position: center 50%;" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Hey y'all</span>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#0D1235] group">
+            <img src="/images/culture/work-new-3.jpg" alt="Michael at whiteboard with team" class="w-full h-full object-cover" style="object-position: center 25%;" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Deep in the details</span>
+            </div>
+          </div>
+          <!-- Row 2 -->
+          <div class="rounded-xl overflow-hidden relative bg-[#0D1235] group">
+            <img src="/images/culture/work-new-6b.jpg" alt="Inscio consultant deep in the work" class="w-full h-full object-cover" style="object-position: center 15%;" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">The work we love</span>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#0a1840] group">
+            <img src="/images/culture/work-new-5b.jpg" alt="Remote team collaboration" class="w-full h-full object-cover" style="object-position: center 40%;" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Remote, connected</span>
+            </div>
+          </div>
+          <div class="col-span-2 rounded-xl overflow-hidden relative bg-[#0D1235] group">
+            <img src="/images/culture/work-new-1c.jpg" alt="Inscio team aligned on client work" class="w-full h-full object-cover" style="object-position: center 20%;" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Aligned on what matters</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Play panel -->
+      <div id="panel-play" class="culture-panel hidden">
+        <div class="grid grid-cols-4 gap-3" style="grid-template-rows: 280px 220px;">
+          <div class="col-span-2 rounded-xl overflow-hidden relative bg-[#1a0a40] group">
+            <img src="/images/culture/play-1.jpg" alt="Team event" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">No mercy on the track</span>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#2d1060] group">
+            <img src="/images/culture/play-2.jpg" alt="Axe throwing" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Good people</span>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#0a2060] group">
+            <img src="/images/culture/play-3.jpg" alt="Team outing" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Off the clock</span>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#1a0a40] group">
+            <img src="/images/culture/play-4.jpg" alt="Team event" class="w-full h-full object-cover object-top" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Team time</span>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#2d1060] group">
+            <img src="/images/culture/play-16.jpg" alt="Team hangout" class="w-full h-full object-cover" style="object-position: center 55%;" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Always something going on</span>
+            </div>
+          </div>
+          <div class="col-span-2 rounded-xl overflow-hidden relative bg-[#1a0a40] group">
+            <img src="/images/culture/play-12.jpg" alt="Mini golf outing" class="w-full h-full object-cover" style="object-position: center 22%;" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Mini golf championship</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Celebrate panel -->
+      <div id="panel-celebrate" class="culture-panel hidden">
+        <div class="grid grid-cols-4 gap-3" style="grid-template-rows: 280px 240px;">
+          <div class="col-span-2 rounded-xl overflow-hidden relative bg-[#0D1235] group">
+            <img src="/images/culture/anniversary-celebration.jpg" alt="Inscio 20th anniversary party" class="w-full h-full object-cover" style="object-position: center 40%;" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-5">
+              <span class="text-white text-sm font-medium">Inscio | 20 years</span>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#1a1040] group">
+            <img src="/images/culture/celebrate-1.jpg" alt="Team dinner celebration" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Good company</span>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#0D1235] group">
+            <img src="/images/culture/inc5000-tux.jpg" alt="Inc 5000 gala" class="w-full h-full object-cover" style="object-position: center 20%;" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Inc 5000 gala</span>
+            </div>
+          </div>
+          <!-- Row 2: two equal landscape tiles -->
+          <div class="col-span-2 rounded-xl overflow-hidden relative bg-[#1a1040] group">
+            <img src="/images/culture/bookshelf-bar.webp" alt="Team gathering at bookshelf bar" class="w-full h-full object-cover" style="object-position: center 80%;" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">The whole crew</span>
+            </div>
+          </div>
+          <div class="col-span-2 rounded-xl overflow-hidden relative bg-[#0a1840] group">
+            <img src="/images/culture/suiteworld-team.jpg" alt="Team at SuiteWorld" class="w-full h-full object-cover" style="object-position: center 65%;" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">SuiteWorld</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Give Back panel -->
+      <div id="panel-giveback" class="culture-panel hidden">
+        <div class="grid grid-cols-4 gap-3" style="grid-template-rows: 280px 240px;">
+          <!-- Row 1 -->
+          <div class="col-span-2 rounded-xl overflow-hidden relative bg-[#0a3020] group">
+            <img src="/images/culture/giveback-volunteer-1.jpg" alt="Inscio team volunteering" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Hands on</span>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#1a3010] group">
+            <img src="/images/culture/giveback-volunteer-2.jpg" alt="Volunteering in the community" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Showing up</span>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#0a2810] group">
+            <img src="/images/culture/giveback-new-1.jpg" alt="Giving back in the community" class="w-full h-full object-cover" style="object-position: center 40%;" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">In the community</span>
+            </div>
+          </div>
+          <!-- Row 2: food pantry | charities (wide, middle) | water -->
+          <div class="rounded-xl overflow-hidden relative bg-[#102810] group">
+            <img src="/images/culture/giveback-fp-photo.jpg" alt="Food pantry shelves" class="w-full h-full object-cover" style="object-position: center 50%;" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+              <p class="text-white text-xl font-bold leading-tight">85,000+ meals</p>
+              <p class="text-white text-sm font-medium opacity-90">7,500+ families served</p>
+            </div>
+          </div>
+          <div class="col-span-2 rounded-xl overflow-hidden relative bg-[#131313] group">
+            <img src="/images/culture/giveback-new-4b.jpg" alt="Charities we support" class="w-full h-full object-contain" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+              <span class="text-white text-sm font-medium">Charities we support</span>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden relative bg-[#0a3020] group">
+            <img src="/images/culture/giveback-water-photo.jpg" alt="Girl getting clean water" class="w-full h-full object-cover" style="object-position: center 40%;" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+              <p class="text-white text-xl font-bold leading-tight">Clean water</p>
+              <p class="text-white text-sm font-medium opacity-90">for 200 people</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Give Back stats -->
+      <div id="giveback-stats" class="hidden mt-6 grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="bg-white border border-gray-100 rounded-xl p-6 text-center">
+          <div class="text-2xl font-bold text-gray-900">103,000 lbs</div>
+          <div class="text-sm text-gray-500 mt-1">food donated annually</div>
+        </div>
+        <div class="bg-white border border-gray-100 rounded-xl p-6 text-center">
+          <div class="text-2xl font-bold text-gray-900">85,000+</div>
+          <div class="text-sm text-gray-500 mt-1">meals provided</div>
+        </div>
+        <div class="bg-white border border-gray-100 rounded-xl p-6 text-center">
+          <div class="text-2xl font-bold text-gray-900">7,500+</div>
+          <div class="text-sm text-gray-500 mt-1">families helped each year</div>
+        </div>
+        <div class="bg-white border border-gray-100 rounded-xl p-6 text-center">
+          <div class="text-2xl font-bold text-gray-900">200</div>
+          <div class="text-sm text-gray-500 mt-1">people with clean water in Ethiopia</div>
+        </div>
+      </div>
+
+      <!-- Stat strip -->
+      <div class="mt-8 grid grid-cols-3 gap-4">
+        <div class="bg-white border border-gray-200 rounded-xl p-6 text-center">
+          <div class="text-2xl font-bold text-gray-900 mb-1">20 Years</div>
+          <div class="text-sm text-gray-500">together as a team</div>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6 text-center">
+          <div class="text-2xl font-bold text-gray-900 mb-1">Inc 500</div>
+          <div class="text-sm text-gray-500">recognized growth company</div>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6 text-center">
+          <div class="text-2xl font-bold text-gray-900 mb-1">People First</div>
+          <div class="text-sm text-gray-500">always, in everything we do</div>
+        </div>
       </div>
     </div>
   </section>
@@ -96,3 +326,35 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
 </Layout>
+
+<script>
+  const tabs = document.querySelectorAll('.culture-tab');
+  const panels = document.querySelectorAll('.culture-panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.panel;
+
+      tabs.forEach(t => {
+        t.classList.remove('active-tab', 'bg-white', 'text-gray-900', 'border-gray-300', 'shadow-sm');
+        t.classList.add('text-gray-500', 'border-gray-200', 'hover:border-gray-300', 'hover:text-gray-700');
+      });
+      tab.classList.add('active-tab', 'bg-white', 'text-gray-900', 'border-gray-300', 'shadow-sm');
+      tab.classList.remove('text-gray-500', 'border-gray-200');
+
+      panels.forEach(p => p.classList.add('hidden'));
+      document.getElementById('panel-' + target)?.classList.remove('hidden');
+      const gbs = document.getElementById('giveback-stats');
+      if (gbs) { if (target === 'giveback') { gbs.classList.remove('hidden'); } else { gbs.classList.add('hidden'); } }
+    });
+  });
+
+  // Set initial tab styles
+  tabs.forEach((tab, i) => {
+    if (i === 0) {
+      tab.classList.add('bg-white', 'text-gray-900', 'border-gray-300', 'shadow-sm');
+    } else {
+      tab.classList.add('text-gray-500', 'border-gray-200', 'hover:border-gray-300', 'hover:text-gray-700');
+    }
+  });
+</script>
