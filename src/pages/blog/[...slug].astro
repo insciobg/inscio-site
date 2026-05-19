@@ -13,6 +13,9 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await post.render();
 
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
 ---
 
 <Layout
@@ -34,7 +37,11 @@ const { Content } = await post.render();
       </div>
       <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-8 max-w-3xl">{post.data.title}</h1>
       <p class="text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed mb-6">{post.data.description}</p>
-
+      <div class="flex items-center gap-4 text-sm text-gray-400">
+        <span>{post.data.author}</span>
+        <span>·</span>
+        <span>{formatDate(post.data.pubDate)}</span>
+      </div>
     </div>
   </section>
 
@@ -56,7 +63,7 @@ const { Content } = await post.render();
               Book a free 30-minute call with a NetSuite expert. No sales pitch.
             </p>
             <a
-              href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
+              href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session?hide_gdpr_banner=1"
               target="_blank"
               rel="noopener"
               class="block text-center bg-blue-600 text-white font-semibold text-sm px-4 py-2.5 rounded-lg hover:bg-blue-700 transition-colors"
@@ -110,7 +117,7 @@ const { Content } = await post.render();
       <h2 class="text-2xl sm:text-3xl font-bold mb-3">Ready to talk about your project?</h2>
       <p class="text-blue-200 mb-6">Get personalized advice from a NetSuite expert — free, no obligation.</p>
       <a
-        href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session"
+        href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session?hide_gdpr_banner=1"
         target="_blank"
         rel="noopener"
         class="btn-white"

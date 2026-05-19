@@ -1,0 +1,261 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const stories = [
+  {
+    slug: 'hunt-textiles',
+    company: 'Hunt Textiles',
+    industry: 'Wholesale Distribution',
+    headline: 'How Hunt Textiles Went Live in 90 Days After a Year-Long ERP Failure',
+    subheading: 'One Year Lost. Ninety Days to Win It Back.',
+    callout: { value: '90 Days', label: 'to go-live' },
+    stat: { value: '29%', label: 'reduction in days sales outstanding' },
+    intro: 'A wholesale linen distributor spent a year on an ERP that never went live. Three months after calling Inscio, they were live on NetSuite with every channel unified and invoicing automated.',
+  },
+  {
+    slug: 'postle-industries',
+    company: 'Postle Industries',
+    industry: 'Industrial Manufacturing',
+    headline: 'How Postle Industries Replaced a Dying System Before It Took the Business Down',
+    subheading: 'A Custom Unix ERP. No Upgrade Path. No Support. A Business That Could Not Wait.',
+    callout: { value: '4', label: 'process areas live at go-live' },
+    stat: { value: '19', label: 'users fully migrated to NetSuite' },
+    intro: 'A Cleveland manufacturer running on an unsupported custom Unix system had no clear path forward and no margin for failure. They replaced the entire business on NetSuite Manufacturing before the clock ran out.',
+  },
+];
+---
+<Layout
+  title="Customer Stories | Inscio NetSuite Consulting"
+  description="Real NetSuite implementation stories from Inscio clients. See how we've helped distributors, manufacturers, and growing companies get real value from NetSuite."
+>
+
+  <!-- Hero -->
+  <section class="bg-[#0D1235] text-white py-28 px-4">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-6">CUSTOMER STORIES</p>
+      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-8 max-w-3xl">
+        Real companies. Real results.
+      </h1>
+      <p class="text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed">
+        We let the work speak for itself. These are the stories of companies that came to us with hard problems and left with a NetSuite environment that actually runs their business.
+      </p>
+    </div>
+  </section>
+
+  <!-- Story index cards (scales as more stories are added) -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {stories.map(story => (
+          <a href={`#${story.slug}`} class="bg-white border border-gray-200 rounded-xl p-7 hover:shadow-md hover:border-blue-300 transition-all group">
+            <p class="text-blue-600 text-xs font-semibold uppercase tracking-wider mb-3">{story.industry}</p>
+            <h2 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors leading-snug mb-3">{story.headline}</h2>
+            <p class="text-gray-500 text-sm leading-relaxed mb-5">{story.intro}</p>
+            <div class="flex gap-6">
+              <div>
+                <div class="text-2xl font-extrabold text-[#0D1235]">{story.callout.value}</div>
+                <div class="text-gray-400 text-xs">{story.callout.label}</div>
+              </div>
+              <div>
+                <div class="text-2xl font-extrabold text-[#0D1235]">{story.stat.value}</div>
+                <div class="text-gray-400 text-xs">{story.stat.label}</div>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Hunt Textiles Full Story -->
+  <article id="hunt-textiles" class="bg-white py-24 px-4">
+    <div class="max-w-3xl mx-auto">
+
+      <!-- Label -->
+      <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-4">Wholesale Distribution</p>
+
+      <!-- Headline -->
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
+        How Hunt Textiles Went Live in 90 Days After a Year-Long ERP Failure
+      </h2>
+      <p class="text-xl text-gray-500 font-medium mb-12">One Year Lost. Ninety Days to Win It Back.</p>
+
+      <!-- Body -->
+      <div class="prose-inscio">
+
+        <p>Hunt Textiles had already tried this once. It didn't work.</p>
+
+        <p>They sell wholesale linens to hotels, hospitals, resorts, and distributors across the country. Towels, bed linen, tablecloths, uniforms. Nationwide, from one warehouse in Irving, Texas. The business had grown. Sage 100 hadn't grown with it.</p>
+
+        <p>They made a smart call: move to a modern ERP. They chose Acumatica. They spent a year in implementation.</p>
+
+        <p>It never went live.</p>
+
+        <p>Twelve months of meetings, data prep, and configuration work, and they were no further along than when they started. Still running on Sage. Still processing sales orders by hand. Still reconciling spreadsheets at month end. Behind, frustrated, and out of runway with a vendor who couldn't deliver.</p>
+
+        <p>That's when they called Inscio.</p>
+
+      </div>
+
+      <!-- Callout stat -->
+      <div class="my-12 bg-[#0D1235] text-white rounded-2xl p-10 flex flex-col sm:flex-row items-center gap-8">
+        <div class="text-center sm:text-left">
+          <div class="text-6xl font-extrabold text-blue-400 leading-none mb-2">90</div>
+          <div class="text-lg font-bold text-white">Days to Go-Live</div>
+          <div class="text-gray-400 text-sm mt-1">from kickoff to production</div>
+        </div>
+        <div class="hidden sm:block w-px bg-white/20 self-stretch"></div>
+        <div class="text-center sm:text-left">
+          <div class="text-6xl font-extrabold text-blue-400 leading-none mb-2">29%</div>
+          <div class="text-lg font-bold text-white">Reduction in DSO</div>
+          <div class="text-gray-400 text-sm mt-1">from automated invoicing</div>
+        </div>
+      </div>
+
+      <div class="prose-inscio">
+
+        <h3>Start with what has to work on day one.</h3>
+
+        <p>Not everything. Not the perfect system. Just the core: orders in, inventory tracked, invoices out, money collected. Build from there.</p>
+
+        <p>We scoped a phased implementation around their real priorities. Full order-to-cash and procure-to-pay. GL, AR, AP, banking, purchasing, sales, and advanced inventory. And the things costing them the most time in Sage: manual invoicing, manual shipping notifications, and the constant effort of managing two BigCommerce storefronts and Amazon as three separate systems.</p>
+
+        <p>Three months later, Hunt Textiles went live.</p>
+
+        <p>FedEx and UPS integrations sent tracking numbers to customers automatically the moment an order shipped. Both BigCommerce sites and Amazon synced directly to NetSuite inventory in real time. Sales orders flowed to invoices without anyone touching them. Customers received confirmations, shipping notifications, and invoices electronically without any staff intervention.</p>
+
+        <p>And the data they had spent years building in Sage came with them. Customer history, purchase orders, invoices, item records, all migrated directly from a legacy terminal server into NetSuite. Not archived somewhere. Actually usable.</p>
+
+        <h3>The results followed immediately.</h3>
+
+        <p>Automated invoicing cut days sales outstanding by 29%. Every order, every channel, every payment flowing through one system. A business that had been stuck finally had the infrastructure to grow.</p>
+
+        <h3>The story didn't stop at go-live.</h3>
+
+        <p>That's where most implementations end. For Hunt Textiles, it was the starting line. They have continued to expand what NetSuite does for their business year over year. Today they are running NetSuite's MCP connector, using AI to query their own operational data in plain language and surface insights that used to take hours to pull manually. A capability that wasn't on anyone's roadmap when they first went live.</p>
+
+        <p>That's what it looks like when an implementation actually takes hold.</p>
+
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-14 bg-gray-50 border border-gray-200 rounded-xl p-8">
+        <p class="text-xl font-bold text-gray-900 mb-3">If your ERP never crossed the finish line, we can get you there.</p>
+        <p class="text-gray-600 mb-6">No pressure, no pitch deck. Just an honest conversation about where you are and what comes next.</p>
+        <a href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session?hide_gdpr_banner=1" target="_blank" rel="noopener noreferrer"
+          class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded transition-colors">
+          Schedule a Free Strategy Call
+        </a>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- Divider -->
+  <div class="bg-gray-100 h-2"></div>
+
+  <!-- Postle Industries Full Story -->
+  <article id="postle-industries" class="bg-white py-24 px-4">
+    <div class="max-w-3xl mx-auto">
+
+      <!-- Label -->
+      <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-4">Industrial Manufacturing</p>
+
+      <!-- Headline -->
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
+        How Postle Industries Replaced a Dying System Before It Took the Business Down
+      </h2>
+      <p class="text-xl text-gray-500 font-medium mb-12">A Custom Unix ERP. No Upgrade Path. No Support. A Business That Could Not Wait.</p>
+
+      <!-- Body -->
+      <div class="prose-inscio">
+
+        <p>Postle Industries knows what happens when the thing you depend on fails.</p>
+
+        <p>Their business is built on that premise. From their facility in Cleveland, Ohio, they manufacture hardfacing and hardbanding products, the welding materials applied to drill bits and pipes to protect them from extreme wear in oil and gas operations. The entire value proposition is protecting equipment from breakdown in conditions where failure is not an option.</p>
+
+        <p>The irony was not lost on anyone. Because the system running their own business had no protection at all.</p>
+
+        <p>For years, Postle had operated on a custom Unix system. Built for a different era, maintained by a shrinking number of people who understood it, and running without any upgrade path or vendor support. It worked, until it didn't, and when it stopped working there would be no one to call.</p>
+
+        <p>This was not a future problem. It was a present one.</p>
+
+        <p>The question was whether they would get to replace it on their terms, or get forced into it at the worst possible moment.</p>
+
+        <p>They called Inscio.</p>
+
+      </div>
+
+      <!-- Callout stat -->
+      <div class="my-12 bg-[#0D1235] text-white rounded-2xl p-10 flex flex-col sm:flex-row items-center gap-8">
+        <div class="text-center sm:text-left">
+          <div class="text-6xl font-extrabold text-blue-400 leading-none mb-2">4</div>
+          <div class="text-lg font-bold text-white">Process Areas at Go-Live</div>
+          <div class="text-gray-400 text-sm mt-1">record to report, design to build, procure to pay, order to cash</div>
+        </div>
+        <div class="hidden sm:block w-px bg-white/20 self-stretch"></div>
+        <div class="text-center sm:text-left">
+          <div class="text-6xl font-extrabold text-blue-400 leading-none mb-2">19</div>
+          <div class="text-lg font-bold text-white">Users on NetSuite</div>
+          <div class="text-gray-400 text-sm mt-1">the entire organization, migrated at once</div>
+        </div>
+      </div>
+
+      <div class="prose-inscio">
+
+        <h3>This was not a partial implementation.</h3>
+
+        <p>Postle did not have the option of a phased approach that left half the business on the old system. The Unix platform was the business. Finance, manufacturing, purchasing, sales. Everything.</p>
+
+        <p>We scoped a full NetSuite SuiteSuccess Manufacturing implementation across all four core process areas. Record to Report covered the full financial picture: chart of accounts, journal entries, bank reconciliation, electronic banking, budgets, and financial reporting. Design to Build handled the complexity of their manufacturing operation: inventory by lot number, serialized equipment, work orders and assemblies, contract manufacturing, FIFO and lot costing, multi-location inventory, and advanced fulfillment. Procure to Pay brought vendor management, purchase orders, three-way matching, and approval workflows. Order to Cash covered the full customer lifecycle from quotes through invoicing, payments, and returns, with multiple price levels and credit management throughout.</p>
+
+        <p>Quality Management was added on top of it all.</p>
+
+        <p>Nineteen users. One go-live. Everything moved at once.</p>
+
+        <h3>The risk was in staying put.</h3>
+
+        <p>The hardest part of a legacy replacement is often convincing people to move before the crisis arrives. Nobody feels the urgency of a system that is still technically running. But the risk compounds quietly. The person who knows how to restart the server retires. The hardware ages out. A routine update breaks something no one knows how to fix.</p>
+
+        <p>Postle had seen this clearly enough to act. They did not wait for a failure to force their hand.</p>
+
+        <p>What they got in return was not just a modern ERP. It was a system built for where they are going, not just where they have been. Lot traceability for quality and compliance. Manufacturing cost visibility at the job level. A financial close process that doesn't depend on anyone knowing which shell script to run.</p>
+
+        <h3>The foundation is in place.</h3>
+
+        <p>Go-live is not the finish line. For Postle, it's the point where they stopped managing around their system and started managing with it. The infrastructure is there now to add demand planning as their history accumulates, to tighten up their Scotland entity, and to keep expanding what the system does as the business grows.</p>
+
+        <p>That's the difference between replacing a system and actually modernizing the business.</p>
+
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-14 bg-gray-50 border border-gray-200 rounded-xl p-8">
+        <p class="text-xl font-bold text-gray-900 mb-3">Running on software your team can't support forever?</p>
+        <p class="text-gray-600 mb-6">The right time to replace a legacy system is before you have to. Let's talk about what that looks like for your business.</p>
+        <a href="https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session?hide_gdpr_banner=1" target="_blank" rel="noopener noreferrer"
+          class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded transition-colors">
+          Schedule a Free Strategy Call
+        </a>
+      </div>
+
+    </div>
+  </article>
+
+</Layout>
+
+<style>
+  .prose-inscio p {
+    color: #4b5563;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  .prose-inscio h3 {
+    color: #111827;
+    font-size: 1.375rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+</style>
