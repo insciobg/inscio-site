@@ -150,7 +150,8 @@ const industries = [
           <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-3">{ind.title.toUpperCase()}</p>
           <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{ind.subtitle}</h2>
           <p class="text-gray-600 text-lg leading-relaxed mb-8">{ind.body}</p>
-          <a href={ind.ctaHref || 'https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session'} target={ind.ctaHref ? '_self' : '_blank'} rel="noopener noreferrer"
+          <a href={ind.ctaHref || 'javascript:void(0)'}
+            onclick={ind.ctaHref ? undefined : "Calendly.initPopupWidget({url: 'https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session?hide_gdpr_banner=1'});return false;"}
             class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded transition-colors">
             {ind.cta}
           </a>
