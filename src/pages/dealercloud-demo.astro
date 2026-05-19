@@ -144,6 +144,7 @@ import Layout from '../layouts/Layout.astro';
     }
 
     formSection.classList.add('hidden');
+    if (typeof gtag !== 'undefined') gtag('event', 'generate_lead', { event_category: 'demo_form', event_label: 'DealerCloud Demo Page' });
     demoSection.classList.remove('hidden');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });

@@ -206,6 +206,7 @@ import Layout from '../layouts/Layout.astro';
         if (res.ok) {
           form.classList.add('hidden');
           successBanner.classList.remove('hidden');
+          if (typeof gtag !== 'undefined') gtag('event', 'generate_lead', { event_category: 'contact_form', event_label: 'Contact Page' });
         } else {
           throw new Error('submission failed');
         }
