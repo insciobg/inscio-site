@@ -46,7 +46,7 @@ Inscio has been inside the Carlton NetSuite environment through all of it.
 
 When the entity count grew, we implemented NetSuite OneWorld to manage multiple subsidiaries in a single unified system. When field service became a larger part of the business, we helped integrate field service management tooling directly into NetSuite so that dispatch, time tracking, and billing stayed connected rather than operating in a separate silo. When the team grew to 105 users, the system absorbed them without rebuilding from scratch.
 
-Over nine years, the environment now includes hundreds of customizations covering everything from transaction processing and data validation to financial controls and cross-entity automation. Not technical debt. Purpose-built logic that reflects how Carlton actually operates.
+Over nine years, the environment now includes customizations covering everything from transaction processing and data validation to financial controls and cross-entity automation. Not technical debt. Purpose-built logic that reflects how Carlton actually operates.
 
 When Reynolda Equity Partners backed Carlton, they were investing in a company that had already proven it could absorb growth without losing operational control. The infrastructure was there. The data was clean. The system was running the business, not just recording it.
 
