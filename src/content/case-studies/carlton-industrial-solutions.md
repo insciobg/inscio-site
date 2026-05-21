@@ -6,9 +6,9 @@ intro: "A precision weighing company partnered with Inscio in 2017. Through year
 industries: ["Industrial Distribution & Services", "Field Service"]
 softwareReplaced: ["Legacy ERP"]
 modules: ["NetSuite OneWorld", "Advanced Inventory", "Advanced Procurement", "Demand Planning", "SuiteProjects", "Incentive Compensation", "Fixed Assets", "Field Service Integration", "Avalara", "SuiteCommerce"]
-stat1Value: "5"
-stat1Label: "Operating Companies"
-stat1Sub: "on a single, unified NetSuite platform"
+stat1Value: "9+"
+stat1Label: "Years of Continuous Platform Evolution"
+stat1Sub: "through acquisitions, new entities, and expanding service lines"
 stat2Value: "105"
 stat2Label: "Users on NetSuite"
 stat2Sub: "across multiple entities, branches, and service lines"
@@ -22,7 +22,7 @@ Carlton Scale has been in the precision business since 1933.
 
 They are one of the top three Mettler Toledo distributors in the country. Industrial weighing solutions: the equipment, calibration, service, and compliance infrastructure that food manufacturers, pharmaceutical companies, logistics operations, and transportation companies depend on to stay accurate and certified. When something has to be measured correctly, Carlton Scale is who you call.
 
-In 2017, they called Inscio.
+When the complexity of the business started outrunning the tools they had, they called Inscio.
 
 They needed a modern ERP that could handle a distribution business with real complexity. Field service operations dispatching technicians every day. Multi-location inventory to manage. A full order-to-cash cycle. The operational visibility to run the business without spreadsheets filling the gaps that software should be closing.
 
