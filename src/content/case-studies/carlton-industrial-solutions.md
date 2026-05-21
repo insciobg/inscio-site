@@ -2,7 +2,7 @@
 title: "How Carlton Scale Grew Into a Regional Industrial Platform Without Outgrowing NetSuite"
 company: "Carlton Industrial Solutions"
 subheading: "Nine Years. Five Companies. One Platform That Kept Up."
-intro: "A precision weighing company partnered with Inscio in 2017. Through years of strategic acquisition and expansion, they became Carlton Industrial Solutions — a PE-backed industrial platform operating across five companies, eleven branches, and six states. The NetSuite foundation grew right alongside them."
+intro: "A precision weighing company that outgrew its tools called Inscio. Through years of strategic acquisition and expansion, they became Carlton Industrial Solutions, a PE-backed industrial platform operating across five companies, eleven branches, and six states. The NetSuite foundation grew right alongside them."
 industries: ["Industrial Distribution & Services", "Field Service"]
 softwareReplaced: ["Legacy ERP"]
 modules: ["NetSuite OneWorld", "Advanced Inventory", "Advanced Procurement", "Demand Planning", "SuiteProjects", "Incentive Compensation", "Fixed Assets", "Field Service Integration", "Avalara", "SuiteCommerce"]
@@ -46,7 +46,7 @@ Inscio has been inside the Carlton NetSuite environment through all of it.
 
 When the entity count grew, we implemented NetSuite OneWorld to manage multiple subsidiaries in a single unified system. When field service became a larger part of the business, we helped integrate field service management tooling directly into NetSuite so that dispatch, time tracking, and billing stayed connected rather than operating in a separate silo. When the team grew to 105 users, the system absorbed them without rebuilding from scratch.
 
-Over nine years, the environment now includes 143 customizations covering everything from transaction processing and data validation to financial controls and cross-entity automation. Not technical debt. Purpose-built logic that reflects how Carlton actually operates.
+Over nine years, the environment now includes hundreds of customizations covering everything from transaction processing and data validation to financial controls and cross-entity automation. Not technical debt. Purpose-built logic that reflects how Carlton actually operates.
 
 When Reynolda Equity Partners backed Carlton, they were investing in a company that had already proven it could absorb growth without losing operational control. The infrastructure was there. The data was clean. The system was running the business, not just recording it.
 
@@ -54,7 +54,7 @@ When Reynolda Equity Partners backed Carlton, they were investing in a company t
 
 That is the point.
 
-Carlton is still growing. Still acquiring. Still expanding what their field teams can do and what the system needs to support. What does not change is that the foundation they built in 2017 has been flexible enough to carry everything they have put on it since.
+Carlton is still growing. Still acquiring. Still expanding what their field teams can do and what the system needs to support. What does not change is that the foundation they built at the start has been flexible enough to carry everything they have put on it since.
 
 Most companies that grow this fast find their ERP becoming the constraint. The system was designed for a company that no longer exists. Every acquisition means manual reconciliation, duplicate data, or a system running alongside NetSuite that should be inside it.
 
