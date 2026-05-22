@@ -14,11 +14,11 @@ We were talking about AI, about tools, about how the job has changed.
 
 At some point the CFO lit up. He had just implemented DataRails for his FP&A team. Raved about it. Faster close. Cleaner reporting. His team finally out of the spreadsheet chaos that had been slowing them down.
 
-It was a genuine, unprompted endorsement from someone who knows what he is talking about.
+It was a genuine, well-earned endorsement. And it made me want to make sure our clients know what they already have access to.
 
-And it got me thinking. We spend a lot of time at Inscio helping companies get the most out of NetSuite. Oracle sells a native FP&A layer called NetSuite EPM. So the question is worth asking honestly.
+Because if you are on NetSuite, there is a native FP&A layer built specifically for you. It is called NetSuite EPM. And a lot of companies do not fully understand what it does — or how it compares to a tool like DataRails.
 
-How does DataRails actually compare?
+That is worth clearing up.
 
 ## First: they are not the same kind of tool
 
