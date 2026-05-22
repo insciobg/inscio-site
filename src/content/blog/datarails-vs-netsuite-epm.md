@@ -56,43 +56,53 @@ No ETL. No connector. No 6 a.m. troubleshooting.
 
 When something does not tie out, you are debugging a variance, not a data pipeline.
 
-NetSuite EPM handles planning and budgeting, multi-entity financial consolidation with intercompany eliminations, account reconciliation, and narrative reporting. For a company with three to twenty entities and a finance team of four to fifteen people, that is a meaningful combination. It is the sweet spot Oracle designed for.
+And before we go further — EPM is not just planning and budgeting. That is one module. The full suite covers financial consolidation with intercompany eliminations and currency translation, account reconciliation, narrative reporting, and tax reporting. For a multi-entity company, those are not nice-to-haves. They are the job.
+
+DataRails does not do those things. It handles planning, budgeting, and reporting. If your team also needs to automate IC eliminations, run a structured month-end reconciliation workflow, or produce a board book that pulls live from your actuals, you are looking at EPM-only territory.
 
 Approved budgets push back into NetSuite, which means your budget-versus-actual reporting is live and in the same system where transactions happen. That is a meaningful operational advantage.
 
 The AI has also matured. The planning module now analyzes historical actuals to suggest forecast drivers and flag anomalies. The narrative reporting module generates commentary that explains why numbers changed, not just that they did.
 
+One more thing the DataRails comparison often misses: Smart View for Office. EPM ships with a native Excel add-in that lets your team retrieve data, plan, and submit inputs directly from Excel — connected live to your EPM environment. Finance teams that love Excel do not have to abandon it to use EPM. They can stay in Excel and have the full power of EPM behind it.
+
+That changes the calculus on the "Excel-heavy team" argument considerably.
+
 ## Where it falls short
 
-NetSuite EPM is not a lightweight tool. Implementation takes four to sixteen weeks depending on scope. The interface assumes a certain level of technical comfort. Business users who live in Excel will have a learning curve.
+NetSuite EPM is not a lightweight tool. Implementation takes four to sixteen weeks depending on scope. Customization beyond standard configurations requires technical comfort — Groovy scripting or Smart View expertise.
 
-Report formatting is rigid. If your CFO has strong opinions about how a board deck looks, you will find the narrative module frustrating for anything beyond standard layouts.
+Report formatting is rigid. If your CFO has strong opinions about how a board deck looks, you will find the narrative module frustrating for anything beyond standard layouts. Many teams end up with a hybrid: EPM generates the data-heavy pages, and someone manually finishes the executive summary slides.
 
-And the planning add-on has real limitations for teams that need highly flexible, iterative, driver-based modeling. Some respected independent analysts are direct about this: for modern FP&A — rolling forecasts, scenario modeling, rapid reforecast cycles — the native planning module can feel constrained. That is a fair criticism worth acknowledging.
+And the planning module has real limitations for teams that need highly flexible, iterative, driver-based modeling. Some respected independent analysts are direct about this: for modern FP&A — rolling forecasts, scenario modeling, rapid reforecast cycles — the native planning module can feel constrained. That is worth knowing going in.
 
 ## So which one wins?
 
-The honest answer: it depends on your situation.
+With the full picture, the answer is clearer than I thought going in.
 
-DataRails is the right choice if your finance team is Excel-native and wants to stay that way, if you have a single ERP or multiple data sources you need to consolidate, or if you need fast time-to-value without a major project. The CFO at dinner is running a $250M consumer products company. Complex Excel models. High-volume reporting. DataRails is likely the right tool for that team.
+DataRails wins for a specific company: one that wants fast time-to-value, runs a simpler entity structure, has an Excel-native team, and does not need consolidated financial statements with IC eliminations or a structured reconciliation process. For that company, DataRails is genuinely excellent. The CFO at dinner is a good example. One entity, complex Excel models, high-volume reporting. It is the right tool.
 
-NetSuite EPM is the right choice if you are already on NetSuite, if you have multiple entities requiring consolidated reporting with intercompany eliminations, and if you have a finance team mature enough to invest in setup. The native integration advantage is real, and for companies at that level of complexity, the TCO often favors the native solution once you add up the cost of middleware, connector maintenance, and ongoing reconciliation work.
+But for a NetSuite company with multiple entities — and most growing mid-market companies have them — DataRails is not really a substitute for EPM. It does not do intercompany eliminations. It does not run account reconciliation workflows. It does not produce narrative reports from live data. It does not handle tax provision. Those capabilities live in EPM, and there is no DataRails version of them.
 
-There is also a data integrity argument that mirrors what we see in ERP discussions more broadly. The more of your financial story that lives in one system, with clean history, the better positioned you are for investor diligence, a capital event, or a lender conversation. Two systems means two stories that need to tie out every time.
+Add Smart View to the picture, and the Excel argument largely disappears. Finance teams that want to stay in spreadsheets can stay in spreadsheets. EPM will meet them there.
+
+The native integration advantage is real too. The more of your financial story that lives in one system — actuals, budgets, consolidated statements, reconciliations — the better positioned you are for investor diligence, a capital event, or a lender conversation. Two systems means two stories that need to tie out every time.
 
 ## The question worth asking first
 
 Before you evaluate either tool, ask your team a more fundamental question.
 
-What problem are you actually trying to solve?
+What does your finance function actually need to do?
 
-If the answer is "our spreadsheets are out of control and we need to consolidate data faster," DataRails is a serious contender.
+If the answer is fast planning and reporting on top of your existing ERP, with minimal disruption to how your team works today, DataRails deserves a serious look.
 
-If the answer is "we need a planning and consolidation layer that is fully integrated with our NetSuite instance and does not require a separate system," EPM deserves a close look.
+If the answer involves multi-entity consolidation, a structured close process, board reporting, or tax compliance — and you are already on NetSuite — EPM is not just the better option. It may be the only one that covers the full job.
 
-Both tools have genuine fans. Both deliver real results in the right context. The mistake is choosing based on a demo rather than a clear-eyed read of how your team actually operates.
+That is exactly the conversation we help companies have before they sign anything.
 
-If you are trying to figure out which one fits your situation, that is exactly the kind of conversation we help companies think through before they commit.
+---
+
+Not sure which FP&A approach fits your NetSuite environment? [Book a strategy session.](https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session)
 
 ---
 
