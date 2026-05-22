@@ -94,11 +94,13 @@ Before you evaluate either tool, ask your team a more fundamental question.
 
 What does your finance function actually need to do?
 
-If the answer is fast planning and reporting, with minimal disruption to how your team works today, and you have a single entity or simple structure — DataRails deserves a serious look. The implementation is fast, the cost is lower, and the overhead is real with EPM. For the right company, DataRails is genuinely the better answer.
+One thing worth saying directly: we have seen EPM work extremely well at smaller companies too. The assumption that it is only for large, complex organizations is not accurate. What Smart View does is remove the adoption friction. Finance teams that live in Excel do not have to change how they work. They stay in Excel. EPM handles the governance, the actuals connection, and the data push behind the scenes. That is a genuine fit at almost any company size.
 
-If the answer involves multi-entity consolidation, intercompany eliminations, a structured close process, board reporting, or tax compliance — and you are already on NetSuite — EPM is not just the better option. It may be the only one that covers the full job.
+The real question is not how big you are. It is whether the investment makes sense for your finance function's complexity. A $40M company running multiple entities with a serious close process can be a great EPM candidate. A company with two people in finance and very simple planning needs may not be ready for it yet — regardless of revenue.
 
-Being on NetSuite alone does not automatically make EPM the right call. The question is what your finance team is actually being asked to do.
+If the answer involves multi-entity consolidation, intercompany eliminations, a structured close process, board reporting, or tax compliance — and you are already on NetSuite — EPM covers the full job in a way no standalone tool can match.
+
+And if you are a smaller NetSuite company that assumed EPM was out of reach, it may be worth a closer look than you think.
 
 That is exactly the conversation we help companies have before they sign anything.
 
