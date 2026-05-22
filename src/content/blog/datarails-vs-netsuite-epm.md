@@ -8,13 +8,13 @@ author: "Brian Gallagher"
 draft: false
 ---
 
-I was at dinner recently with two finance leaders I respect. One is the CFO of a $250M consumer products company. The other runs finance for a $4B organization.
+I was at dinner recently with two finance leaders I respect. One is the CFO of a $250M CPG company. The other is VP of Finance for a $4B CPG company.
 
 We were talking about AI, about tools, about how the job has changed.
 
-At some point the CFO lit up. She had just implemented DataRails for her FP&A team. Raved about it. Faster close. Cleaner reporting. Her team finally out of the spreadsheet chaos that had been slowing them down.
+At some point the CFO lit up. He had just implemented DataRails for his FP&A team. Raved about it. Faster close. Cleaner reporting. His team finally out of the spreadsheet chaos that had been slowing them down.
 
-It was a genuine, unprompted endorsement from someone who knows what she is talking about.
+It was a genuine, unprompted endorsement from someone who knows what he is talking about.
 
 And it got me thinking. We spend a lot of time at Inscio helping companies get the most out of NetSuite. Oracle sells a native FP&A layer called NetSuite EPM. So the question is worth asking honestly.
 
@@ -80,7 +80,7 @@ And the planning module has real limitations for teams that need highly flexible
 
 With the full picture, the answer is clearer than I thought going in.
 
-DataRails wins for a specific company: one that wants fast time-to-value, runs a simpler entity structure, has an Excel-native team, and does not need consolidated financial statements with IC eliminations or a structured reconciliation process. For that company, DataRails is genuinely excellent. The CFO at dinner is a good example. One entity, complex Excel models, high-volume reporting. It is the right tool.
+DataRails wins for a specific company: one that wants fast time-to-value, runs a simpler entity structure, has an Excel-native team, and does not need consolidated financial statements with IC eliminations or a structured reconciliation process. For that company, DataRails is genuinely excellent. The CFO at dinner is a good example. A $250M CPG company, complex Excel models, high-volume reporting. It is the right tool.
 
 But for a NetSuite company with multiple entities — and most growing mid-market companies have them — DataRails is not really a substitute for EPM. It does not do intercompany eliminations. It does not run account reconciliation workflows. It does not produce narrative reports from live data. It does not handle tax provision. Those capabilities live in EPM, and there is no DataRails version of them.
 
