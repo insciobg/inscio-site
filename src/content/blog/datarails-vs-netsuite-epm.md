@@ -84,7 +84,7 @@ DataRails wins for a specific company: one that wants fast time-to-value, runs a
 
 But for a NetSuite company with multiple entities — and most growing mid-market companies have them — DataRails is not really a substitute for EPM. It does not do intercompany eliminations. It does not run account reconciliation workflows. It does not produce narrative reports from live data. It does not handle tax provision. Those capabilities live in EPM, and there is no DataRails version of them.
 
-Add Smart View to the picture, and the Excel argument largely disappears. Finance teams that want to stay in spreadsheets can stay in spreadsheets. EPM will meet them there.
+Smart View narrows the Excel gap too. Finance teams that want to plan and analyze in Excel can do that inside EPM. It is not as frictionless as DataRails' native Excel experience, but it is a capable add-in — and the data stays in one system.
 
 The native integration advantage is real too. The more of your financial story that lives in one system — actuals, budgets, consolidated statements, reconciliations — the better positioned you are for investor diligence, a capital event, or a lender conversation. Two systems means two stories that need to tie out every time.
 
@@ -94,15 +94,13 @@ Before you evaluate either tool, ask your team a more fundamental question.
 
 What does your finance function actually need to do?
 
-If the answer is fast planning and reporting on top of your existing ERP, with minimal disruption to how your team works today, DataRails deserves a serious look.
+If the answer is fast planning and reporting, with minimal disruption to how your team works today, and you have a single entity or simple structure — DataRails deserves a serious look. The implementation is fast, the cost is lower, and the overhead is real with EPM. For the right company, DataRails is genuinely the better answer.
 
-If the answer involves multi-entity consolidation, a structured close process, board reporting, or tax compliance — and you are already on NetSuite — EPM is not just the better option. It may be the only one that covers the full job.
+If the answer involves multi-entity consolidation, intercompany eliminations, a structured close process, board reporting, or tax compliance — and you are already on NetSuite — EPM is not just the better option. It may be the only one that covers the full job.
+
+Being on NetSuite alone does not automatically make EPM the right call. The question is what your finance team is actually being asked to do.
 
 That is exactly the conversation we help companies have before they sign anything.
-
----
-
-Not sure which FP&A approach fits your NetSuite environment? [Book a strategy session.](https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session)
 
 ---
 
