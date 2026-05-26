@@ -25,5 +25,30 @@ const { title, description, canonical, ogImage } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <script is:inline>
+      // Calendly → GA4 event bridge
+      window.addEventListener('message', function(e) {
+        if (e.origin !== 'https://calendly.com') return;
+        if (!e.data || !e.data.event) return;
+
+        var calendlyEvent = e.data.event;
+
+        // Fired when the Calendly popup opens
+        if (calendlyEvent === 'calendly.event_type_viewed') {
+          window.gtag && window.gtag('event', 'calendly_opened', {
+            event_category: 'CTA',
+            event_label: 'Schedule a Strategy Call'
+          });
+        }
+
+        // Fired when a booking is confirmed — the conversion event
+        if (calendlyEvent === 'calendly.event_scheduled') {
+          window.gtag && window.gtag('event', 'calendly_booked', {
+            event_category: 'Conversion',
+            event_label: 'Strategy Call Booked'
+          });
+        }
+      });
+    </script>
   </body>
 </html>
