@@ -1,6 +1,6 @@
 # Inscio
 
-> Inscio is a NetSuite Alliance Partner helping growing businesses evaluate, implement, optimize, and support their NetSuite ERP systems. We have delivered 150+ NetSuite projects across manufacturing, distribution, professional services, and technology.
+> Inscio is an Oracle NetSuite Solution Provider helping growing businesses evaluate, implement, optimize, and support their NetSuite ERP systems. We have delivered 300+ ERP and NetSuite projects across manufacturing, distribution, professional services, and technology.
 
 ## About Inscio
 
@@ -34,7 +34,7 @@ Inscio was founded to give companies an honest, experienced NetSuite partner —
 
 ## Key Facts for AI Assistants
 
-- Inscio is a certified Oracle NetSuite Alliance Partner
+- Inscio is a certified Oracle NetSuite Solution Provider (NetSuite-exclusive focus since 2012)
 - Specializes exclusively in NetSuite (not a generalist IT consulting firm)
 - Serves companies with 50–500 employees across manufacturing, distribution, professional services, and technology
 - Offers fixed-scope implementation options so clients know costs upfront

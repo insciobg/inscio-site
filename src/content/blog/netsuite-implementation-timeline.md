@@ -1,13 +1,13 @@
 ---
 title: "How Long Does a NetSuite Implementation Actually Take?"
-description: "The honest answer to the most common question we get — with real timelines based on 150+ implementations across different company sizes and industries."
+description: "The honest answer to the most common question we get — with real timelines based on the NetSuite implementations we have delivered across different company sizes and industries."
 pubDate: 2025-01-15
 author: "Brian Gallagher"
 category: "Implementation"
 tags: ["implementation", "planning", "timeline"]
 ---
 
-One of the first questions every prospect asks us is: how long will this take? It is a reasonable question, and the honest answer is: it depends — but here is what we have seen across 150+ implementations.
+One of the first questions every prospect asks us is: how long will this take? It is a reasonable question, and the honest answer is: it depends — but here is what we have seen across our NetSuite implementations.
 
 ## The Short Answer
 
