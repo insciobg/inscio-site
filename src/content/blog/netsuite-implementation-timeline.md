@@ -53,6 +53,6 @@ The most common reasons projects run long:
 
 ## How to Keep Your Project on Track
 
-Use our [free project estimator](/estimator) to get a realistic scope and timeline based on your specific situation. Then book a strategy call to talk through the plan before you commit.
+Use our [free pricing calculator](/netsuite-pricing-calculator) to get a realistic scope and timeline based on your specific situation. Then book a strategy call to talk through the plan before you commit.
 
 A realistic timeline upfront is always better than an aggressive one that slips.

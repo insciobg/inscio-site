@@ -29,8 +29,8 @@
 # Services — specific
 /licensing                      /services                   301
 /licensing/                     /services                   301
-/netsuite-pricing               /services                   301
-/netsuite-pricing/              /services                   301
+/netsuite-pricing                /netsuite-pricing-calculator      301
+/netsuite-pricing/              /netsuite-pricing-calculator      301
 /evaluation                     /services                   301
 /evaluation/                    /services                   301
 /implementation                 /services                   301
@@ -103,3 +103,7 @@
 /botanical-science/             /                           301
 /passcode                       /                           301
 /passcode/                      /                           301
+
+# Project Estimator → NetSuite Pricing Calculator rename (May 2026)
+/estimator                      /netsuite-pricing-calculator               301
+/estimator/                     /netsuite-pricing-calculator               301

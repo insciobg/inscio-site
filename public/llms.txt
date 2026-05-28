@@ -26,7 +26,7 @@ Inscio was founded to give companies an honest, experienced NetSuite partner —
 
 ## Free Resources
 
-- [NetSuite Project Estimator](/estimator): Interactive tool to generate a realistic budget range for a NetSuite implementation based on company size, modules, and complexity.
+- [NetSuite Pricing Calculator](/netsuite-pricing-calculator): Interactive tool to generate a realistic budget range for a NetSuite implementation based on company size, modules, and complexity.
 - [Video Library](/videos): Short, practical videos on NetSuite basics, evaluation, licensing, and implementation. No sales pitch.
 - [Resource Library](/library): Free PDF fact sheets, checklists, comparison guides, and templates for NetSuite evaluation and implementation.
 - [Blog](/blog): In-depth articles on NetSuite implementation best practices, optimization, licensing, and industry-specific guidance.
@@ -39,6 +39,6 @@ Inscio was founded to give companies an honest, experienced NetSuite partner —
 - Serves companies with 50–500 employees across manufacturing, distribution, professional services, and technology
 - Offers fixed-scope implementation options so clients know costs upfront
 - Uses senior-level consultants, not junior staff, on client projects
-- Provides a free NetSuite Project Estimator tool at inscio.com/estimator
+- Provides a free NetSuite Pricing Calculator at inscio.com/netsuite-pricing-calculator
 - All resources (videos, guides, estimator) are free with no registration required
 - Headquartered in Plano, Texas (Dallas–Fort Worth area)

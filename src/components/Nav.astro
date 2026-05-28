@@ -14,7 +14,7 @@ const servicesDropdown = [
 ];
 
 const resourcesDropdown = [
-  { href: '/estimator', label: 'Project Estimator' },
+  { href: '/netsuite-pricing-calculator', label: 'Pricing Calculator' },
   { href: '/blog/', label: 'Blog' },
   { href: '/videos', label: 'Videos' },
   { href: '/library', label: 'Resource Library' },
@@ -68,7 +68,7 @@ const resourcesDropdown = [
 
         <!-- Resources dropdown -->
         <div class="relative group">
-          <a href="/resources" class={`flex items-center gap-1 text-sm font-medium transition-colors ${currentPath.startsWith('/resources') || currentPath.startsWith('/blog') || currentPath.startsWith('/videos') || currentPath.startsWith('/library') || currentPath.startsWith('/estimator') || currentPath.startsWith('/case-studies') ? 'text-blue-600' : 'text-gray-700 hover:text-gray-900'}`}>
+          <a href="/resources" class={`flex items-center gap-1 text-sm font-medium transition-colors ${currentPath.startsWith('/resources') || currentPath.startsWith('/blog') || currentPath.startsWith('/videos') || currentPath.startsWith('/library') || currentPath.startsWith('/netsuite-pricing-calculator') || currentPath.startsWith('/case-studies') ? 'text-blue-600' : 'text-gray-700 hover:text-gray-900'}`}>
             Resources
             <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>

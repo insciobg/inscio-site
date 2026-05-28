@@ -3,9 +3,94 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout
-  title="NetSuite Project Estimator | Inscio"
-  description="Get a free, realistic budget estimate for your NetSuite implementation in minutes. Answer a few questions about your business and we generate a cost range."
+  title="NetSuite Pricing Calculator: Free Project & Implementation Cost Estimator"
+  description="Free NetSuite pricing calculator. Get a realistic license + implementation cost range in 60 seconds — no email required. Built by an Oracle NetSuite Alliance Partner with 150+ implementations."
 >
+
+<!-- Schema.org: SoftwareApplication + HowTo + FAQPage + BreadcrumbList -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "NetSuite Pricing Calculator",
+      "url": "https://inscio.com/netsuite-pricing-calculator",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Free interactive calculator that estimates NetSuite license and implementation costs based on industry, users, modules, and project complexity.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "provider": {
+        "@type": "Organization",
+        "name": "Inscio",
+        "url": "https://inscio.com"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to estimate the cost of a NetSuite implementation",
+      "description": "A four-step framework for arriving at a realistic NetSuite budget before talking to Oracle.",
+      "step": [
+        { "@type": "HowToStep", "name": "Profile your company", "text": "Choose your industry, count your named users, list your legal entities, and note any additional countries that need separate currency or tax handling." },
+        { "@type": "HowToStep", "name": "Select the modules you need", "text": "Pick the core financials and any operational modules (CRM, projects, inventory, manufacturing, e-commerce, HR) you'll need to run on NetSuite." },
+        { "@type": "HowToStep", "name": "Score project complexity", "text": "Rate your data migration volume, the number of integrations you need, and how much customization you expect." },
+        { "@type": "HowToStep", "name": "Calculate", "text": "Use the calculator to produce a defensible annual license + one-time implementation range." }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does NetSuite cost?",
+          "acceptedAnswer": { "@type": "Answer", "text": "NetSuite is sold as an annual subscription. Most mid-market companies pay $60K–$180K per year for the license plus a one-time implementation that typically ranges from about $75K to $300K or more. Small businesses with fewer users and simpler needs typically come in at $25K–$60K per year in license fees plus $40K–$75K for implementation." }
+        },
+        {
+          "@type": "Question",
+          "name": "How is NetSuite priced?",
+          "acceptedAnswer": { "@type": "Answer", "text": "NetSuite pricing has three components: a base platform license that varies by industry edition and service tier, per-user fees, and optional modules. Implementation services are quoted separately and are typically a one-time cost. Oracle does not publish a price list — every contract is negotiated." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does NetSuite cost per user?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Full users are typically priced in the low-three-figures per user per month on top of the base platform. Self-service or employee-center users cost significantly less. The total depends on your user count and access level mix." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does NetSuite implementation cost?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Implementation is a one-time services cost separate from the license. Smaller, single-entity rollouts start in the tens of thousands of dollars. Complex deployments — manufacturing, multi-country, multiple integrations, heavy data migration — can reach several hundred thousand. The main drivers are user count, modules, data quality, integrations, and customization." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the cheapest version of NetSuite?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The SuiteSuccess Financials configuration with a small number of users is the entry point. A small business with 5–10 users and core financials only can land in the mid-five-figure range per year in license fees, plus implementation." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does NetSuite OneWorld cost?",
+          "acceptedAnswer": { "@type": "Answer", "text": "NetSuite OneWorld enables multi-subsidiary and multi-country operations and adds a meaningful annual premium on top of the base platform — both a base OneWorld fee and an incremental fee per additional country. The exact figures are part of every NetSuite quote and vary by negotiation. The calculator on this page accounts for OneWorld in its range." }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there hidden NetSuite costs?",
+          "acceptedAnswer": { "@type": "Answer", "text": "There are no hidden costs in the literal sense, but the line items that surprise buyers are: SuiteCloud Plus licenses for integrations, sandbox accounts, premium support, storage overages, and the 5–10% annual renewal escalator that's standard in most contracts. Ask your partner to model all of these into your year-three TCO before signing." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does NetSuite offer a free trial?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oracle does not publish a self-serve free trial. Demo accounts are arranged through a partner like Inscio. The pricing calculator on this page gives you a realistic budget number in the meantime." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://inscio.com" },
+        { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://inscio.com/resources" },
+        { "@type": "ListItem", "position": 3, "name": "NetSuite Pricing Calculator", "item": "https://inscio.com/netsuite-pricing-calculator" }
+      ]
+    }
+  ]
+})} />
 
 <style>
 /* Select dropdown arrow — not expressible in Tailwind */
@@ -26,8 +111,39 @@ select {
 <section class="bg-[#0D1235] text-white py-28 px-4">
   <div class="max-w-5xl mx-auto">
     <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-6">RESOURCES → FREE TOOL</p>
-    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-8 max-w-3xl">NetSuite Project Estimator</h1>
-    <p class="text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed">Answer a few questions about your business and get a ballpark range for a new NetSuite implementation — no email required.</p>
+    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 max-w-3xl">NetSuite Pricing Calculator</h1>
+    <p class="text-blue-300 text-lg md:text-xl font-semibold mb-4 max-w-3xl">Get a realistic NetSuite license and implementation cost estimate in 60 seconds.</p>
+    <p class="text-gray-300 text-base md:text-lg max-w-2xl leading-relaxed">Answer a few questions about your business and get a ballpark range for a new NetSuite implementation — no email required. Built by an Oracle NetSuite Alliance Partner with 150+ implementations.</p>
+  </div>
+</section>
+
+<!-- What does NetSuite cost? — static SEO/LLM content block (market-context framing, no proprietary calibration exposed) -->
+<section class="bg-white py-14 px-4 border-b border-gray-200">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-[#1A1F36] mb-6">What does NetSuite cost?</h2>
+    <p class="text-gray-700 text-lg leading-relaxed mb-6">NetSuite does not publish a public price list, which is why estimating it is hard. The ranges below are what we see in the market across the 150+ NetSuite implementations Inscio has delivered. Use them as a budgeting sanity check, then run the calculator on this page for a number specific to your business.</p>
+
+    <h3 class="text-xl font-bold text-[#1A1F36] mt-8 mb-3">Annual NetSuite license cost</h3>
+    <ul class="text-gray-700 text-base leading-relaxed list-disc pl-6 space-y-2">
+      <li><strong>Small business</strong> (5–20 users, single entity, core financials): typically in the <strong>$25K–$60K per year</strong> range</li>
+      <li><strong>Mid-market</strong> (20–75 users, multi-entity, several modules): typically in the <strong>$60K–$180K per year</strong> range</li>
+      <li><strong>Enterprise / OneWorld</strong> (multi-country, broad module footprint): typically <strong>$180K+ per year</strong> with material OneWorld premiums on top of the base platform</li>
+    </ul>
+    <p class="text-gray-700 text-base leading-relaxed mt-4">License pricing has three moving parts: a base platform license (varies by industry edition and service tier), per-user fees, and optional modules like SuiteCommerce, WMS, or Revenue Management. Every contract is negotiated.</p>
+
+    <h3 class="text-xl font-bold text-[#1A1F36] mt-8 mb-3">NetSuite implementation cost (one-time)</h3>
+    <p class="text-gray-700 text-base leading-relaxed mb-3">Implementation services are quoted separately from the license and are a one-time cost. Across the market we see ranges from the <strong>low-five-figures</strong> for a light single-entity rollout to <strong>several hundred thousand dollars</strong> for complex manufacturing, multi-country, or heavily-integrated deployments. The main drivers are:</p>
+    <ul class="text-gray-700 text-base leading-relaxed list-disc pl-6 space-y-2">
+      <li>User count and the complexity that comes with more roles to design and train</li>
+      <li>Which modules you bring live (manufacturing, WMS, e-commerce, revenue management all add scope)</li>
+      <li>Data migration volume and how clean your legacy data is</li>
+      <li>The number of third-party integrations you need</li>
+      <li>How much customization, scripting, and workflow automation you'll layer on</li>
+    </ul>
+
+    <h3 class="text-xl font-bold text-[#1A1F36] mt-8 mb-3">Typical year-one NetSuite cost</h3>
+    <p class="text-gray-700 text-base leading-relaxed mb-3">For most mid-market companies, total year-one cost (license plus implementation) lands in the <strong>$100K–$300K</strong> range. Companies with manufacturing, distribution, or multi-country needs trend higher.</p>
+    <p class="text-gray-500 text-sm italic">Ranges reflect Inscio's experience across NetSuite engagements. Actual prices are negotiated with Oracle on every deal. The calculator below produces a more specific range based on the inputs you provide.</p>
   </div>
 </section>
 
@@ -218,7 +334,7 @@ select {
   </div>
 
   <!-- 5. CTA -->
-  <div class="bg-gray-50 border border-gray-200 rounded-xl p-8 flex flex-col sm:flex-row items-center justify-between gap-7">
+  <div class="bg-gray-50 border border-gray-200 rounded-xl p-8 flex flex-col sm:flex-row items-center justify-between gap-7 mb-12">
     <div>
       <h3 class="text-lg font-extrabold text-[#1A1F36] mb-1">Want a precise quote?</h3>
       <p class="text-sm text-gray-500">Talk to an Inscio advisor — we'll review your requirements and give you real numbers.</p>
@@ -226,6 +342,61 @@ select {
     <a href="javascript:void(0)" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session?hide_gdpr_banner=1'});return false;" class="flex-shrink-0 px-5 py-3.5 bg-[#1A1F36] text-white font-bold text-sm rounded-lg hover:opacity-90 transition-opacity whitespace-nowrap no-underline">
       Schedule a Free Strategy Call →
     </a>
+  </div>
+
+  <!-- 6. FAQ — static content for SEO + matches FAQPage schema above -->
+  <section class="bg-white border border-gray-200 rounded-xl p-8 mb-5">
+    <h2 class="text-2xl md:text-3xl font-bold text-[#1A1F36] mb-2">NetSuite Pricing FAQ</h2>
+    <p class="text-gray-500 text-sm mb-6">The questions we hear most often during NetSuite evaluations.</p>
+
+    <div class="space-y-6">
+      <div>
+        <h3 class="text-lg font-bold text-[#1A1F36] mb-1">How much does NetSuite cost?</h3>
+        <p class="text-gray-700 leading-relaxed">NetSuite is sold as an annual subscription. Most mid-market companies pay <strong>$60K–$180K per year</strong> for the license plus a one-time implementation that typically ranges from about <strong>$75K to $300K or more</strong>. Small businesses with fewer users and simpler needs typically come in at <strong>$25K–$60K per year</strong> in license fees plus <strong>$40K–$75K</strong> for implementation. Use the calculator above for an estimate specific to your business.</p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold text-[#1A1F36] mb-1">How is NetSuite priced?</h3>
+        <p class="text-gray-700 leading-relaxed">NetSuite pricing has three components: a base platform license that varies by industry edition and service tier, per-user fees, and optional modules. Implementation services are quoted separately and are typically a one-time cost. Oracle does not publish a price list — every contract is negotiated.</p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold text-[#1A1F36] mb-1">How much does NetSuite cost per user?</h3>
+        <p class="text-gray-700 leading-relaxed">Full users are typically priced in the low-three-figures per user per month on top of the base platform. Self-service or employee-center users cost significantly less. The total depends on your user count and access level mix — the calculator on this page factors both in.</p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold text-[#1A1F36] mb-1">How much does NetSuite implementation cost?</h3>
+        <p class="text-gray-700 leading-relaxed">Implementation is a one-time services cost separate from the license. Smaller, single-entity rollouts start in the tens of thousands of dollars. Complex deployments — manufacturing, multi-country, multiple integrations, heavy data migration — can reach several hundred thousand. The main drivers are user count, modules, data quality, integrations, and customization.</p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold text-[#1A1F36] mb-1">What is the cheapest version of NetSuite?</h3>
+        <p class="text-gray-700 leading-relaxed">The SuiteSuccess Financials configuration with a small number of users is the entry point. A small business with 5–10 users and core financials only can land in the <strong>mid-five-figure range per year</strong> in license fees, plus implementation.</p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold text-[#1A1F36] mb-1">How much does NetSuite OneWorld cost?</h3>
+        <p class="text-gray-700 leading-relaxed">NetSuite OneWorld enables multi-subsidiary and multi-country operations and adds a meaningful annual premium on top of the base platform — both a base OneWorld fee and an incremental fee per additional country. The exact figures are part of every NetSuite quote and vary by negotiation. The calculator on this page factors OneWorld into its range.</p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold text-[#1A1F36] mb-1">Are there hidden NetSuite costs?</h3>
+        <p class="text-gray-700 leading-relaxed">There are no hidden costs in the literal sense, but the line items that surprise buyers are: SuiteCloud Plus licenses for integrations, sandbox accounts, premium support, storage overages, and the 5–10% annual renewal escalator that's standard in most contracts. Ask your partner to model all of these into your year-three TCO before signing.</p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold text-[#1A1F36] mb-1">Does NetSuite offer a free trial?</h3>
+        <p class="text-gray-700 leading-relaxed">Oracle does not publish a self-serve free trial. Demo accounts are arranged through a partner like Inscio. The pricing calculator on this page gives you a realistic budget number in the meantime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Trust block -->
+  <div class="bg-[#0D1235] text-white rounded-xl p-8 text-center">
+    <p class="text-sm font-bold uppercase tracking-widest text-blue-400 mb-3">Why trust these numbers</p>
+    <p class="text-lg font-semibold mb-2">Inscio is an Oracle NetSuite Alliance Partner with 150+ NetSuite implementations delivered since 2005.</p>
+    <p class="text-sm text-gray-400">Senior consultants only. No junior staff on client projects. Headquartered in Plano, Texas.</p>
   </div>
 
 </div>
@@ -412,6 +583,17 @@ function calculate() {
   var card = document.getElementById('resultsCard');
   card.style.display = 'block';
   setTimeout(function() { card.scrollIntoView({behavior: 'smooth', block: 'start'}); }, 50);
+
+  // ── GA4 event ────────────────────────────────────────────────────────────
+  if (typeof gtag === 'function') {
+    gtag('event', 'estimator_calculate', {
+      industry: INDUSTRY_LABELS[industry],
+      users: users,
+      tier: tierLabel,
+      estimate_total_low: totalLo,
+      estimate_total_high: totalHi
+    });
+  }
 }
 </script>
 
