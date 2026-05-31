@@ -1,6 +1,6 @@
 ---
-title: "How to Build a NetSuite ROI Case Before You Talk to Oracle"
-description: "Most ERP business cases get built backwards. Here's the methodology that holds up to a CFO: four quantifiable drivers, conservative assumptions, and a model you can defend."
+title: "How to Evaluate a NetSuite ROI Claim Before You Sign Anything"
+description: "When you're evaluating a NetSuite investment, you'll be shown numbers that were built to look compelling. Here's how to run your own — and know which ones to trust."
 pubDate: 2026-05-31
 category: "ROI"
 tags: ["ROI", "Business Case", "Implementation", "Finance", "NetSuite"]
@@ -8,94 +8,96 @@ author: "Brian Gallagher"
 draft: false
 ---
 
-The business case for a NetSuite implementation almost always gets built backwards.
+When you're evaluating a NetSuite investment, you're going to be shown numbers. Payback in 14 months. ROI of 300 percent. Annual savings of $800K.
 
-A CFO asks: what does this cost? Someone runs a number. The board asks: what do we get for it? That question lands without a real answer. By the time you're in final negotiations with Oracle, the conversation is almost entirely about price. ROI becomes a hopeful footnote rather than a number anyone is willing to defend.
+The numbers will look compelling. They were built to look compelling.
 
-The implementation gets approved on a cost comparison — old system versus new system — rather than on quantified return. And then, two years later, when someone asks whether the project delivered, nobody can answer that either.
+The question isn't whether NetSuite can deliver a return — it can, and for most mid-market manufacturers and distributors it does. The question is whether the specific numbers you're being shown reflect your business, or whether they reflect what the vendor needs you to believe to close a deal.
 
-Building the ROI case first changes everything. The cost conversation changes because you have a denominator. The implementation itself gets scoped differently, because you know which value drivers you're actually trying to capture. And you have something defensible when the CFO asks the obvious question.
+This piece gives you a way to run the analysis yourself — with your own inputs, your own assumptions, and a methodology that holds up when you have to defend it.
 
-Here is a methodology that holds up.
+## Where the real return comes from
 
-## Start with the four drivers
+Every meaningful ERP ROI comes from four places. Not ten. Four. If an analysis shows you more than this, ask which ones are actually measurable and which are speculative.
 
-Every meaningful ERP ROI comes from some combination of four things. Not ten. Four.
+**Finance close time.** How long does it take your finance team to close the books each month, and what fraction of their capacity does that consume? A 10-day close on a four-person team eats roughly 10 percent of that team's annual working hours — every month. NetSuite's automated reconciliation, intercompany eliminations, and real-time ledger compress this. A 35 to 45 percent reduction in close time is what we see consistently after go-live.
 
-**Finance close time.** How long it takes your finance team to close the books each month, and what fraction of their capacity that consumes. A 10-day close on a four-person team eats roughly 10 percent of that team's annual working hours — every month. NetSuite's automated reconciliation, intercompany eliminations, and real-time ledger reduce this significantly. A 35 to 45 percent reduction in close time is the range we see consistently.
+**Inventory carrying cost.** If your business holds inventory, you're paying to carry it whether or not it shows up obviously on the P&L. Industry-standard carrying cost runs 20 to 30 percent of inventory value annually — financing, storage, obsolescence, shrinkage, insurance. Better demand visibility and tighter replenishment routinely reduce that 15 to 25 percent. For a company with $5M in inventory, that's $150K to $250K annually in recoverable cost.
 
-**Inventory carrying cost.** If your business holds inventory, you're paying to carry it whether you see it or not. Industry-standard carrying cost runs 20 to 30 percent of inventory value annually — storage, financing, obsolescence, shrinkage, insurance. Every dollar of inventory you didn't need to hold, didn't over-order, or didn't write off is margin. Better demand visibility and tighter replenishment routinely reduce carrying cost 15 to 25 percent.
+**Manual process labor.** Your finance and operations team is spending time on work that NetSuite automates: manual journal entries, report assembly, data transfer between systems, exception handling. It doesn't show up as a line item anywhere. But it's real — typically 10 to 15 percent of those teams' hours. NetSuite doesn't eliminate those roles. It frees that time for higher-value work. That's still a real return.
 
-**Manual process labor.** Finance and operations teams at companies with legacy ERPs spend 10 to 15 percent of their time on work NetSuite automates: manual journal entries, report assembly, data transfer between systems, exception handling. This isn't inefficiency that shows up obviously on an org chart. It's hours absorbed into the routine that go unreported and unmeasured — until someone maps the process.
+**Errors and rework.** Duplicate entries, billing failures, reconciliation errors, decisions made on stale data — these create margin leakage that's almost never tracked to a source. A conservative estimate is 0.3 percent of revenue. For a $30M business, that's $90K annually sitting in friction you're probably not measuring.
 
-**Errors and rework.** Duplicate entries, reconciliation failures, billing errors, decisions made on stale data — these show up as margin leakage that nobody tracks to the source. A conservative estimate is 0.3 percent of revenue. For a $30M company, that's $90K annually. For a $50M company, it's $150K.
+These four are quantifiable. Any ROI analysis worth reviewing should show you the math on each one, using your actual numbers — not industry averages plugged in to look impressive.
 
-All four of these are quantifiable. The ROI case should show the math on each one, with inputs from your actual business.
+## How to run the numbers yourself
 
-## Quantify each driver — and use the conservative number
+You don't need a consultant to do this. Here's the math for each driver:
 
-Conservative matters more than precise. A CFO who sees a $2M ROI in year one from a vendor's model will discount the entire document. A CFO who sees a $350K annual benefit from a model they can interrogate will engage with it.
+**Finance close:** Finance team headcount × loaded salary × (close days ÷ 21) × 40% reduction. Four employees at $85K loaded, 10-day close: 4 × $85K × (10/21) × 40% ≈ **$65K annually.**
 
-Here's how to size each driver:
+**Inventory:** Total inventory value × 20% carrying rate × 15% optimization. $5M inventory: $5M × 0.20 × 0.15 = **$150K annually.**
 
-**Finance close:** Take your finance team headcount, multiply by loaded salary, calculate what fraction of their month goes to close-related work (close days divided by 21 working days), apply a 40 percent reduction. Four employees at $85K loaded cost, 10-day close: 4 × $85K × (10/21) × 40% ≈ $65K annually.
+**Labor productivity:** Team headcount × loaded salary × 12% (the fraction of time on manual ERP-adjacent tasks) × 10% productivity gain. Ten people at $85K: 10 × $85K × 0.12 × 0.10 = **$102K annually.**
 
-**Inventory:** Take total inventory value, multiply by 20 percent (conservative carrying rate), apply a 15 percent optimization factor. $5M inventory × 20% × 15% = $150K. Use the lower carrying rate assumption even if yours is higher.
+**Error reduction:** Annual revenue × 0.3%. Cap this at $150K — anything higher starts to feel speculative regardless of what the formula produces. At $30M revenue: **$90K annually.**
 
-**Labor productivity:** Take your finance and operations team headcount, multiply by loaded salary, and apply a 10 percent productivity gain on the roughly 12 percent of time tied to manual ERP-adjacent tasks. For a team of 10 at $85K, that's about $100K.
+Add these up. That's your annual benefit estimate. Use the low end of every range. The goal is not the most impressive number — it's a number you believe and can defend when someone challenges it.
 
-**Error reduction:** Annual revenue × 0.3 percent. Cap this at $150K regardless of what the formula produces — for most mid-market companies, anything higher starts to feel speculative and invites pushback.
+If you want to run these inputs interactively and see payback and 3-year NPV, the [NetSuite ROI calculator](/netsuite-roi-calculator) does exactly this, with all assumptions visible and adjustable.
 
-Total these four. That is your annual benefit estimate. Run it against the [NetSuite ROI calculator](/netsuite-roi-calculator) to see what the payback and NPV look like at your inputs before you build the full model.
+## What a realistic timeline looks like — and why it matters
 
-## Build the go-live delay into the math
+One of the most common ways ROI analyses overstate the return: they start the clock at contract signing.
 
-One thing vendor ROI calculators almost universally ignore: benefits do not begin at contract signing. A typical NetSuite implementation runs four to eight months. During that window, you're paying for implementation services, your team is in configuration sessions and training, and no efficiency gains have been captured yet.
+A NetSuite implementation runs four to eight months. During that time, you're spending on services, your team is in configuration sessions and training, and no efficiency gains have been captured yet. If someone shows you a payback period of 14 months but doesn't say when go-live happens, that 14 months may actually be 20 or more from the day you sign.
 
-The business case should show cumulative cash flow going negative through the first six months — the implementation spend — then ramping as benefits begin post-go-live, then reaching a full annual run rate in year two. Payback should be measured from go-live, not from signature.
+A credible analysis shows cumulative cash flow going negative through the implementation, ramping after go-live, and reaching a full annual run rate in year two. When you review any ROI analysis from a partner or vendor, ask one question: *when does the payback clock start?*
 
-This makes the case more conservative. It also makes it more credible. A CFO who sees benefits starting at month seven and full payback at month 20 will engage with that number more seriously than one who sees payback at month 12 with no explanation of when the project actually ends.
+If the answer is anything other than go-live, the number is inflated.
 
-## The three numbers that belong in the presentation
+## The three numbers that tell you whether the deal makes sense
 
-Don't lead with ROI percent. Lead with these three.
+There are three outputs that matter when you're evaluating this investment. Everything else is noise.
 
-**Payback period.** The number of months after go-live until cumulative benefits exceed cumulative cost. For a well-scoped mid-market implementation, this runs 16 to 24 months. Under 18 is exceptional. Over 36 is a signal that either the scope is wrong or the timing is wrong.
+**Payback period** — months from go-live until cumulative benefits exceed cumulative costs. For a well-scoped mid-market implementation, 16 to 24 months is the realistic range. Under 18 is exceptional and usually means there's significant operational pain NetSuite addresses directly. Over 36 is a signal that the scope is wrong, the timing is wrong, or the value drivers aren't there for your business.
 
-**3-year ROI.** Net benefits over three years minus total three-year cost, divided by total cost. Run this with your conservative annual benefit number, deduct the annual license, and account for the go-live delay reducing year-one benefits. A 150 to 300 percent return is typical for a company with real operational pain. Below 100 percent at conservative assumptions means the scope needs to change.
+**3-year ROI** — net benefits over three years minus total three-year cost, divided by total cost. A 150 to 300 percent return is typical for a company with genuine process friction. Below 100 percent at conservative inputs means the project as scoped doesn't pencil. That's information worth having before you commit.
 
-**3-year NPV.** Present value of future net benefits discounted at your cost of capital — use 10 percent as the standard assumption. If the NPV is negative at conservative assumptions, the business case does not hold. That is useful information before you sign, not after.
+**3-year NPV** — present value of future net benefits discounted at your cost of capital. Use 10 percent as the standard assumption. If the NPV is negative at conservative assumptions, the business case doesn't hold regardless of what the ROI percentage looks like.
 
-## Why vendor ROI tools produce numbers you can't defend
+These three tell you: how fast you get your money back, what the percentage return looks like, and what the investment is actually worth in today's dollars. Ask for all three before any conversation about scope, timeline, or contract terms.
 
-Oracle, NetSuite, and most large SIs have ROI calculators. They're not built for financial analysis. They're built to justify a purchase decision.
+## Why vendor ROI tools produce numbers you can't use
 
-The structural problems are consistent: optimistic benefit realization rates (sometimes assuming 100 percent of efficiency gains captured in year one), no implementation delay, low-cost baselines that make the ROI look better by comparison, and benefit multipliers that no one can explain when pressed.
+Oracle, NetSuite, and most large implementation partners have ROI calculators. They are not financial analysis tools. They are sales tools — designed accordingly.
 
-None of this is fraud. It's sales tool design. But a CFO who sees a vendor-generated ROI case will immediately ask who built the model and whether the assumptions are defensible. If the answer is "Oracle's ROI calculator said so," the conversation ends.
+The patterns are consistent: optimistic adoption curves that assume you're capturing full efficiency gains in year one (you're not — month-one users of a new ERP are slower than they were on the old one), no implementation delay baked in, benefit multipliers that don't hold up under scrutiny, and cost assumptions calibrated to make the ROI look favorable.
 
-Use a model with visible, challengeable inputs. Show your assumptions. Use the low end of every range. A model built conservatively gets better when stress-tested — which is exactly what a good CFO will do, and exactly what you want.
+None of this is fraud. It's sales tool design. The objective of that calculator is to get you to the next meeting, not to give you an honest picture of your return.
 
-## What the actual deliverable looks like
+When any partner or vendor shows you their ROI analysis, the right question isn't whether the number looks good. It's: *show me every assumption, and let me change them.* If the numbers fall apart when you dial assumptions down to conservative, the investment doesn't work at those inputs. If they hold up — or get more interesting — under scrutiny, you have something real.
 
-A NetSuite ROI business case for a CFO is not a slide deck. It's a one-page financial summary backed by a model.
+## What to ask your partner to show you
 
-The one-page summary shows: annual benefit broken down by driver, implementation cost and annual license cost, payback period in months, 3-year ROI and NPV. That's it. One page. The model is a spreadsheet with every assumption visible and adjustable.
+A credible ROI analysis is not a slide with a highlighted percentage. It's a model with visible inputs and a one-page summary you can actually interrogate.
 
-The CFO will stress-test it. You want them to. A model that holds up when inputs are dialed down is the model that gets approved.
+Ask for: annual benefit broken down by driver — not as a single combined figure, but as four separate lines with the math shown. Implementation cost and annual license cost stated separately. Payback period measured from go-live. 3-year ROI and NPV calculated at conservative assumptions, not midpoint assumptions.
 
-If the numbers don't work at conservative assumptions, that is also information — and better to have it before the contract than after. Either the scope needs to change, the implementation timeline needs to compress, or the value drivers being targeted are the wrong ones for your business.
+Then ask: what happens to payback if go-live slips two months? What if inventory optimization comes in at 10 percent instead of 15? A model built honestly gets more interesting when you stress it. A model built to close a deal falls apart.
 
-## One thing that shifts the whole conversation
+The difference tells you a lot about the partner.
 
-Most NetSuite implementations don't start with a business case. They start with a demo. The demo leads to a proposal. The proposal leads to a negotiation. And somewhere in there, someone realizes they don't actually know what they're expecting to get back.
+## The question worth asking before you see the first demo
 
-Doing the ROI analysis before the demo changes the dynamic. You walk into the conversation knowing what operational problems you're trying to solve, what they're worth annually if solved, and what a defensible payback looks like. You can evaluate the scope against the value — and push back when the scope doesn't match it.
+Most NetSuite evaluations start with a demo. The demo leads to a proposal. The proposal leads to scope discussions and contract negotiations. At some point you realize you've been evaluating features instead of evaluating whether the investment makes financial sense for your business.
 
-A partner who has delivered hundreds of these implementations can shortcut the model significantly. We know what the benefit realization rates actually look like in the first 18 months, which drivers move most reliably, and which scope decisions kill the payback period without adding real value.
+The better sequence: run the numbers first. Not with a vendor's calculator — with your own inputs, conservative assumptions, and a clear view of which operational problems you're actually trying to solve. Know what the return looks like before you sit in a demo. Know what payback period you need the project to hit to be worth the disruption.
+
+Then evaluate the proposed scope against that. Which line items in the implementation proposal actually move the value drivers? Which ones are nice-to-haves that add cost without improving payback? A partner who has delivered hundreds of these implementations can tell you quickly — and should be willing to.
 
 ---
 
-*If you want a directional number before you build the full model, the [NetSuite ROI calculator](/netsuite-roi-calculator) runs this same four-driver methodology with adjustable assumptions and shows payback period, 3-year ROI, and NPV against your inputs. No email required.*
+*Run your own numbers first: the [NetSuite ROI calculator](/netsuite-roi-calculator) uses the four-driver methodology above with adjustable assumptions. No email required.*
 
-*If you want a business case built from your actual data — your team, your close time, your inventory — [book a free 30-minute call](https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session). We'll walk through the drivers, run the numbers, and deliver a written one-page output. No proposal at the end.*
+*If you want to work through the analysis against your actual business — your team size, your close time, your inventory — [book a free 30-minute call](https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session). We'll run the numbers, tell you honestly whether they work, and deliver a written one-page output. No proposal at the end.*
