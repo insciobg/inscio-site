@@ -138,6 +138,7 @@ select {
         <option value="lifeSciences">Life Sciences</option>
         <option value="general">General / Other</option>
       </select>
+      <div id="industry-error" class="text-xs text-red-500 mt-1" style="display:none">Please select an industry to continue.</div>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -298,8 +299,41 @@ select {
     <div id="ediNote" class="rounded-xl px-4 py-3 mt-2 text-[13px] text-white leading-relaxed" style="display:none;background:rgba(70,122,255,0.10);border:1px solid rgba(70,122,255,0.25)">
       <strong class="font-bold">EDI selected:</strong> EDI costs are not included in the estimates above. Pricing depends on the number of trading partners and required document mappings — contact us for a custom EDI assessment.
     </div>
+    <!-- 3-year TCO -->
+    <div class="rounded-xl p-4 mt-3" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12)">
+      <div class="text-[11px] font-bold uppercase tracking-widest text-white/50 mb-2.5">3-Year Cost of Ownership</div>
+      <div class="grid grid-cols-3 gap-3 text-center">
+        <div>
+          <div class="text-[11px] text-white/40 mb-1">Year 1</div>
+          <div class="text-[15px] font-bold text-white" id="tco-y1">&#8212;</div>
+          <div class="text-[10px] text-white/30 mt-0.5">License + Services</div>
+        </div>
+        <div>
+          <div class="text-[11px] text-white/40 mb-1">Year 2</div>
+          <div class="text-[15px] font-bold text-white" id="tco-y2">&#8212;</div>
+          <div class="text-[10px] text-white/30 mt-0.5">License (+7%)</div>
+        </div>
+        <div>
+          <div class="text-[11px] text-white/40 mb-1">Year 3</div>
+          <div class="text-[15px] font-bold text-white" id="tco-y3">&#8212;</div>
+          <div class="text-[10px] text-white/30 mt-0.5">License (+7%)</div>
+        </div>
+      </div>
+      <div class="mt-3 pt-2.5 border-t border-white/10 flex justify-between items-center">
+        <span class="text-[12px] text-white/50">3-year total</span>
+        <span class="text-[17px] font-extrabold text-white" id="tco-total">&#8212;</span>
+      </div>
+    </div>
+    <!-- ROI cross-link -->
+    <div class="flex items-center justify-between gap-4 mt-3 px-4 py-3 rounded-xl" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.10)">
+      <span class="text-[13px] text-white/60 leading-snug">Now that you know the cost, see what this investment returns.</span>
+      <a href="/netsuite-roi-calculator" class="flex-shrink-0 text-[13px] font-bold text-blue-300 hover:text-blue-200 whitespace-nowrap no-underline">ROI Calculator &#8594;</a>
+    </div>
     <div class="text-[12px] text-white/35 leading-relaxed mt-4">
       Estimates are ranges based on Inscio project experience and are intended as a rough order of magnitude only. Actual costs depend on your specific requirements, data quality, and final license negotiation. Schedule a strategy call for a detailed assessment.
+    </div>
+    <div class="text-right mt-2">
+      <button onclick="document.getElementById('industry').scrollIntoView({behavior:'smooth',block:'center'})" class="text-[12px] text-white/40 hover:text-white/70 bg-transparent border-none cursor-pointer underline p-0">&#8593; Edit inputs &amp; recalculate</button>
     </div>
   </div>
 
@@ -464,9 +498,11 @@ function calculate() {
   if (!industry) {
     document.getElementById('industry').focus();
     document.getElementById('industry').style.borderColor = '#E53E3E';
+    document.getElementById('industry-error').style.display = 'block';
     return;
   }
   document.getElementById('industry').style.borderColor = '';
+  document.getElementById('industry-error').style.display = 'none';
 
   var modules = [];
   document.querySelectorAll('#moduleGrid input[type="checkbox"]:checked').forEach(function(cb) {
@@ -577,6 +613,19 @@ function calculate() {
   document.getElementById('implVal').textContent = fmtRange(implLo, implHi);
   document.getElementById('implSub').textContent = 'One-time';
   document.getElementById('totalVal').textContent = fmtRange(totalLo, totalHi);
+
+  // 3-year TCO (7% annual renewal escalator on license)
+  var ESCALATOR = 0.07;
+  var y2LicLo = roundTo(licLo * (1 + ESCALATOR), 500);
+  var y2LicHi = roundTo(licHi * (1 + ESCALATOR), 500);
+  var y3LicLo = roundTo(licLo * Math.pow(1 + ESCALATOR, 2), 500);
+  var y3LicHi = roundTo(licHi * Math.pow(1 + ESCALATOR, 2), 500);
+  var tco3Lo  = totalLo + y2LicLo + y3LicLo;
+  var tco3Hi  = totalHi + y2LicHi + y3LicHi;
+  document.getElementById('tco-y1').textContent    = fmtRange(totalLo, totalHi);
+  document.getElementById('tco-y2').textContent    = fmtRange(y2LicLo, y2LicHi);
+  document.getElementById('tco-y3').textContent    = fmtRange(y3LicLo, y3LicHi);
+  document.getElementById('tco-total').textContent = fmtRange(tco3Lo,  tco3Hi);
 
   document.getElementById('ediNote').style.display = has('edi') ? 'block' : 'none';
 
