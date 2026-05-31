@@ -185,15 +185,47 @@ input[type="range"]::-moz-range-thumb {
           </div>
         </div>
 
-        <!-- Assumptions -->
-        <div class="rounded-lg bg-gray-50 border border-gray-100 px-4 py-3">
-          <div class="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2">Conservative assumptions used</div>
-          <div class="grid grid-cols-2 gap-x-4 gap-y-0.5">
-            <span class="text-[11px] text-gray-400">Close time reduction</span><span class="text-[11px] font-semibold text-gray-600">40%</span>
-            <span class="text-[11px] text-gray-400">Inventory optimization</span><span class="text-[11px] font-semibold text-gray-600">15%</span>
-            <span class="text-[11px] text-gray-400">Labor productivity</span><span class="text-[11px] font-semibold text-gray-600">10%</span>
-            <span class="text-[11px] text-gray-400">NPV discount rate</span><span class="text-[11px] font-semibold text-gray-600">10%</span>
+        <!-- Assumptions (interactive) -->
+        <div class="rounded-lg bg-gray-50 border border-gray-100 px-4 py-3" id="assumptions-box">
+          <div class="flex justify-between items-center mb-1">
+            <div class="text-[11px] font-bold text-gray-400 uppercase tracking-widest">Conservative assumptions used</div>
+            <button id="assumptions-toggle" class="text-[11px] font-semibold text-blue-600 hover:text-blue-700 focus:outline-none">Adjust &#9658;</button>
+          </div>
+          <!-- Static view -->
+          <div id="assumptions-static" class="grid grid-cols-2 gap-x-4 gap-y-0.5">
+            <span class="text-[11px] text-gray-400">Close time reduction</span><span class="text-[11px] font-semibold text-gray-600" id="as-close-lbl">40%</span>
+            <span class="text-[11px] text-gray-400">Inventory optimization</span><span class="text-[11px] font-semibold text-gray-600" id="as-inv-lbl">15%</span>
+            <span class="text-[11px] text-gray-400">Labor productivity</span><span class="text-[11px] font-semibold text-gray-600" id="as-prod-lbl">10%</span>
+            <span class="text-[11px] text-gray-400">Error &amp; rework rate</span><span class="text-[11px] font-semibold text-gray-600" id="as-err-lbl">0.3%</span>
             <span class="text-[11px] text-gray-400">Benefits begin</span><span class="text-[11px] font-semibold text-gray-600">Month 6</span>
+          </div>
+          <!-- Slider panel (hidden by default) -->
+          <div id="assumptions-panel" class="hidden mt-3 space-y-3">
+            <div>
+              <div class="flex justify-between text-[11px] mb-0.5">
+                <span class="text-gray-500">Close time reduction</span><span class="font-semibold text-gray-700" id="as-close-val">40%</span>
+              </div>
+              <input type="range" id="as-close" min="10" max="70" value="40" step="5" class="w-full cursor-pointer">
+            </div>
+            <div>
+              <div class="flex justify-between text-[11px] mb-0.5">
+                <span class="text-gray-500">Inventory optimization</span><span class="font-semibold text-gray-700" id="as-inv-val">15%</span>
+              </div>
+              <input type="range" id="as-inv" min="5" max="30" value="15" step="1" class="w-full cursor-pointer">
+            </div>
+            <div>
+              <div class="flex justify-between text-[11px] mb-0.5">
+                <span class="text-gray-500">Labor productivity</span><span class="font-semibold text-gray-700" id="as-prod-val">10%</span>
+              </div>
+              <input type="range" id="as-prod" min="3" max="25" value="10" step="1" class="w-full cursor-pointer">
+            </div>
+            <div>
+              <div class="flex justify-between text-[11px] mb-0.5">
+                <span class="text-gray-500">Error &amp; rework rate</span><span class="font-semibold text-gray-700" id="as-err-val">0.3%</span>
+              </div>
+              <input type="range" id="as-err" min="0.1" max="0.8" value="0.3" step="0.1" class="w-full cursor-pointer">
+            </div>
+            <button id="assumptions-reset" class="text-[11px] text-gray-400 hover:text-gray-600 underline">Reset to defaults</button>
           </div>
         </div>
 
@@ -213,6 +245,7 @@ input[type="range"]::-moz-range-thumb {
           <div class="rounded-xl p-4 bg-white border border-gray-200">
             <div class="text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">Payback period</div>
             <div class="text-[21px] font-extrabold text-[#1A1F36] tracking-tight leading-tight" id="payback">—</div>
+            <div class="text-[11px] font-semibold mt-0.5" id="payback-label"></div>
           </div>
           <div class="rounded-xl p-4 bg-white border border-gray-200">
             <div class="text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">3-year ROI</div>
@@ -243,7 +276,7 @@ input[type="range"]::-moz-range-thumb {
 
     <!-- Disclaimer -->
     <div class="border-t border-gray-200 px-7 py-3 bg-gray-50">
-      <p class="text-[11px] text-gray-400 leading-relaxed">Based on Nucleus Research and Panorama Consulting benchmarks: 40% finance close time reduction, 15% inventory carrying cost optimization (at 20% carrying rate), 10% productivity improvement on admin tasks, 0.3% of revenue error/rework reduction. Intended as directional estimate only. Actual results depend on current processes, data quality, and implementation execution.</p>
+      <p class="text-[11px] text-gray-400 leading-relaxed">Assumptions: 40% finance close time reduction (Nucleus Research / Panorama Consulting), 15% inventory carrying cost optimization at 20% carrying rate (Nucleus Research / Panorama Consulting), 10% productivity improvement on admin tasks (Inscio project experience), 0.3% of revenue error/rework reduction. Intended as directional estimate only. Actual results depend on current processes, data quality, and implementation execution.</p>
     </div>
   </div>
 
@@ -339,6 +372,17 @@ input[type="range"]::-moz-range-thumb {
     <p class="text-gray-700 leading-relaxed">That is why we lead with the free cost analysis rather than a headline number. The same value drivers apply differently depending on your current systems, headcount, and operational friction. The only way to know what your number is — is to calculate it from your actual data.</p>
   </section>
 
+  <!-- Second CTA -->
+  <div class="bg-blue-50 border border-blue-200 rounded-xl p-7 flex flex-col sm:flex-row items-center justify-between gap-5 mb-5">
+    <div>
+      <h3 class="text-base font-extrabold text-[#1A1F36] mb-1">Ready to see what your specific number looks like?</h3>
+      <p class="text-sm text-gray-500 max-w-md">30-minute call. Written analysis delivered. No proposal, no pressure.</p>
+    </div>
+    <a href="javascript:void(0)" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session?hide_gdpr_banner=1'});return false;" class="flex-shrink-0 px-5 py-3 bg-blue-600 text-white font-bold text-sm rounded-lg hover:opacity-90 transition-opacity whitespace-nowrap no-underline">
+      Get Your Free Analysis &#8594;
+    </a>
+  </div>
+
   <!-- FAQ -->
   <section class="bg-white border border-gray-200 rounded-xl p-8 mb-5">
     <h2 class="text-2xl md:text-3xl font-bold text-[#1A1F36] mb-2">ERP ROI FAQ</h2>
@@ -352,7 +396,7 @@ input[type="range"]::-moz-range-thumb {
 
       <div>
         <h3 class="text-lg font-bold text-[#1A1F36] mb-1">What assumptions does this calculator use?</h3>
-        <p class="text-gray-700 leading-relaxed">Four benefit drivers: (1) Finance close time — 40% reduction in close-related finance team time, using a loaded salary of $85K. (2) Inventory optimization — 15% reduction in carrying cost at a 20% annual carrying rate. (3) Labor productivity — 10% improvement on roughly 12% of labor cost tied to manual ERP-adjacent tasks. (4) Error and rework — 0.3% of revenue in recovered margin. Discount rate for NPV is 10%. All four drivers are sourced from Nucleus Research and Panorama Consulting benchmarks. These are conservative midpoints, not best-case scenarios.</p>
+        <p class="text-gray-700 leading-relaxed">Four benefit drivers: (1) Finance close time — 40% reduction in close-related finance team time, using a loaded salary of $85K. (2) Inventory optimization — 15% reduction in carrying cost at a 20% annual carrying rate. (3) Labor productivity — 10% improvement on roughly 12% of labor cost tied to manual ERP-adjacent tasks. (4) Error and rework — 0.3% of revenue in recovered margin. Discount rate for NPV is 10%. Close time reduction, inventory optimization, and error rate are sourced from Nucleus Research and Panorama Consulting benchmarks. Labor productivity is based on Inscio project experience across 300+ implementations. These are conservative midpoints, not best-case scenarios.</p>
       </div>
 
       <div>
@@ -416,6 +460,16 @@ function recalc() {
   var implCost    = parseFloat(document.getElementById('impl-cost').value)    || 0;
   var licenseCost = parseFloat(document.getElementById('license-cost').value) || 0;
 
+  // Read adjustable assumptions from sliders (if panel exists)
+  var asCloseEl = document.getElementById('as-close');
+  var asInvEl   = document.getElementById('as-inv');
+  var asProdEl  = document.getElementById('as-prod');
+  var asErrEl   = document.getElementById('as-err');
+  if (asCloseEl) CLOSE_REDUC = parseFloat(asCloseEl.value) / 100;
+  if (asInvEl)   INV_OPTIM   = parseFloat(asInvEl.value)   / 100;
+  if (asProdEl)  PROD_GAIN   = parseFloat(asProdEl.value)  / 100;
+  if (asErrEl)   ERROR_RATE  = parseFloat(asErrEl.value)   / 100;
+
   // Labels
   document.getElementById('fin-team-out').textContent  = Math.round(finTeam);
   document.getElementById('close-days-out').textContent = Math.round(closeDays);
@@ -427,7 +481,7 @@ function recalc() {
   var finClose       = finTeam * FIN_SALARY * closeMonthFrac * CLOSE_REDUC;
   var invSaving      = inventory * INV_CARRYING * INV_OPTIM;
   var laborSaving    = finTeam * LABOR_TEAM_MULT * FIN_SALARY * TASK_FRAC * PROD_GAIN;
-  var errorSaving    = revenue * ERROR_RATE;
+  var errorSaving    = Math.min(revenue * ERROR_RATE, 150000);
   var totalAnnual    = finClose + invSaving + laborSaving + errorSaving;
 
   // Payback
@@ -454,6 +508,18 @@ function recalc() {
   // Update metric cards
   document.getElementById('annual-benefit').textContent = fmt(totalAnnual);
   document.getElementById('payback').textContent = payback > 0 ? payback + ' mo' : '>72 mo';
+
+  // Payback quality label
+  var pbLabelEl = document.getElementById('payback-label');
+  if (pbLabelEl) {
+    var qlabel = '', qcolor = '';
+    if      (payback > 0 && payback <= 18) { qlabel = 'Exceptional'; qcolor = '#059669'; }
+    else if (payback > 0 && payback <= 30) { qlabel = 'Strong';      qcolor = '#2563EB'; }
+    else if (payback > 0 && payback <= 42) { qlabel = 'Acceptable';  qcolor = '#D97706'; }
+    else if (payback > 0)                  { qlabel = 'Extended';    qcolor = '#DC2626'; }
+    pbLabelEl.textContent = qlabel;
+    pbLabelEl.style.color = qcolor;
+  }
 
   var roiEl = document.getElementById('roi-pct');
   roiEl.textContent = roi + '%';
@@ -534,6 +600,52 @@ function recalc() {
 ['revenue', 'fin-team', 'close-days', 'inventory', 'impl-cost', 'license-cost'].forEach(function(id) {
   document.getElementById(id).addEventListener('input', recalc);
 });
+
+// Assumption sliders: sync display labels and retrigger recalc
+['as-close', 'as-inv', 'as-prod', 'as-err'].forEach(function(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  el.addEventListener('input', function() {
+    var v = parseFloat(el.value);
+    var display = id === 'as-err' ? v.toFixed(1) + '%' : Math.round(v) + '%';
+    var valEl = document.getElementById(id + '-val');
+    var lblEl = document.getElementById(id + '-lbl');
+    if (valEl) valEl.textContent = display;
+    if (lblEl) lblEl.textContent = display;
+    recalc();
+  });
+});
+
+// Toggle assumptions panel
+var toggleBtn = document.getElementById('assumptions-toggle');
+var assPanel  = document.getElementById('assumptions-panel');
+if (toggleBtn && assPanel) {
+  toggleBtn.addEventListener('click', function() {
+    var isHidden = assPanel.classList.contains('hidden');
+    assPanel.classList.toggle('hidden', !isHidden);
+    toggleBtn.textContent = isHidden ? '\u25c2 Close' : 'Adjust \u25ba';
+  });
+}
+
+// Reset assumptions to defaults
+var resetBtn = document.getElementById('assumptions-reset');
+if (resetBtn) {
+  resetBtn.addEventListener('click', function() {
+    var defaults = {'as-close': '40', 'as-inv': '15', 'as-prod': '10', 'as-err': '0.3'};
+    Object.keys(defaults).forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.value = defaults[id];
+      var v = parseFloat(defaults[id]);
+      var display = id === 'as-err' ? v.toFixed(1) + '%' : Math.round(v) + '%';
+      var valEl = document.getElementById(id + '-val');
+      var lblEl = document.getElementById(id + '-lbl');
+      if (valEl) valEl.textContent = display;
+      if (lblEl) lblEl.textContent = display;
+    });
+    recalc();
+  });
+}
+
 recalc();
 </script>
 
