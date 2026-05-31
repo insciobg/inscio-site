@@ -110,7 +110,7 @@ A credible answer includes which specific drivers they're modeling, what assumpt
 
 If the answer is a single number without a model behind it, that tells you something about how they'll approach the implementation itself.
 
-At Inscio, we've run this analysis across more than 300 implementations. We know which inputs are predictable and which vary significantly by industry and company size. The 30-minute call we offer isn't a sales call — it's a working session where we build your specific model and show you the range your business should expect.
+At Inscio, we've run this analysis across more than 300 implementations. We know which inputs are predictable and which vary significantly by industry and company size. The call we offer is a working session where we build your specific model and show you the range your business should expect.
 
 ## Run the numbers yourself first
 
