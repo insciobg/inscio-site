@@ -193,6 +193,7 @@ input[type="range"]::-moz-range-thumb {
             <span class="text-[11px] text-gray-400">Inventory optimization</span><span class="text-[11px] font-semibold text-gray-600">15%</span>
             <span class="text-[11px] text-gray-400">Labor productivity</span><span class="text-[11px] font-semibold text-gray-600">10%</span>
             <span class="text-[11px] text-gray-400">NPV discount rate</span><span class="text-[11px] font-semibold text-gray-600">10%</span>
+            <span class="text-[11px] text-gray-400">Benefits begin</span><span class="text-[11px] font-semibold text-gray-600">Month 6</span>
           </div>
         </div>
 
@@ -391,7 +392,8 @@ var FIN_SALARY   = 85000;
 var CLOSE_REDUC  = 0.40;
 var INV_CARRYING = 0.20;
 var INV_OPTIM    = 0.15;
-var LABOR_FRAC   = 0.15;
+var LABOR_TEAM_MULT = 3;
+var GOLIVE_MONTHS  = 6;
 var TASK_FRAC    = 0.12;
 var PROD_GAIN    = 0.10;
 var ERROR_RATE   = 0.003;
@@ -424,7 +426,7 @@ function recalc() {
   var closeMonthFrac = closeDays / 21;
   var finClose       = finTeam * FIN_SALARY * closeMonthFrac * CLOSE_REDUC;
   var invSaving      = inventory * INV_CARRYING * INV_OPTIM;
-  var laborSaving    = revenue * LABOR_FRAC * TASK_FRAC * PROD_GAIN;
+  var laborSaving    = finTeam * LABOR_TEAM_MULT * FIN_SALARY * TASK_FRAC * PROD_GAIN;
   var errorSaving    = revenue * ERROR_RATE;
   var totalAnnual    = finClose + invSaving + laborSaving + errorSaving;
 
@@ -433,7 +435,7 @@ function recalc() {
   var payback = 0;
   var cum = -implCost;
   for (var m = 1; m <= 72; m++) {
-    cum += monthlyNet;
+    if (m > GOLIVE_MONTHS) cum += monthlyNet;
     if (cum >= 0 && payback === 0) { payback = m; break; }
   }
 
@@ -443,10 +445,11 @@ function recalc() {
   var roi        = totalCost3 > 0 ? Math.round((net3 / totalCost3) * 100) : 0;
 
   // NPV
+  var annualNet = totalAnnual - licenseCost;
   var npv = -implCost;
-  for (var yr = 1; yr <= 3; yr++) {
-    npv += (totalAnnual - licenseCost) / Math.pow(1 + DISCOUNT, yr);
-  }
+  npv += annualNet * (1 - GOLIVE_MONTHS / 12) / Math.pow(1 + DISCOUNT, 1);
+  npv += annualNet / Math.pow(1 + DISCOUNT, 2);
+  npv += annualNet / Math.pow(1 + DISCOUNT, 3);
 
   // Update metric cards
   document.getElementById('annual-benefit').textContent = fmt(totalAnnual);
@@ -484,7 +487,8 @@ function recalc() {
   // Chart
   var pts = [];
   for (var i = 0; i <= 36; i++) {
-    pts.push(i === 0 ? -implCost : Math.round(-implCost + monthlyNet * i));
+    if (i <= GOLIVE_MONTHS) pts.push(-implCost);
+    else pts.push(Math.round(-implCost + monthlyNet * (i - GOLIVE_MONTHS)));
   }
   var labels = [];
   for (var j = 0; j <= 36; j++) {
