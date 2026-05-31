@@ -1,0 +1,396 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="NetSuite ROI Calculator: Free ERP Cost & Benefit Analysis | Inscio"
+  description="Calculate what your current ERP costs annually and what NetSuite delivers in return. Conservative benchmarks, transparent assumptions. No email required. Built by Inscio — 300+ NetSuite projects delivered."
+>
+
+<!-- Schema.org: SoftwareApplication + FAQPage + BreadcrumbList -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "NetSuite ROI Calculator",
+      "url": "https://inscio.com/netsuite-roi-calculator",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Free interactive calculator that estimates ERP ROI, payback period, and 3-year NPV based on your company's finance team, close time, inventory, and implementation investment.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "provider": { "@type": "Organization", "name": "Inscio", "url": "https://inscio.com" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you calculate ERP ROI?",
+          "acceptedAnswer": { "@type": "Answer", "text": "ERP ROI = (Net Benefits – Total Costs) / Total Costs × 100, measured over a defined period (typically 3 years). Net benefits include reduced finance team hours, inventory carrying cost reduction, and error elimination. Total costs include implementation services, annual license fees, and ongoing support. The metrics CFOs focus on most are payback period (months until cumulative benefits exceed cumulative costs) and NPV — the present value of future benefits minus costs, discounted at your cost of capital." }
+        },
+        {
+          "@type": "Question",
+          "name": "What assumptions does this calculator use?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Four benefit drivers: (1) Finance close time — 40% reduction in close-related finance team time based on a loaded salary of $85K. (2) Inventory optimization — 15% reduction in carrying cost at a 20% annual carrying rate. (3) Labor productivity — 10% improvement on roughly 12% of labor cost tied to manual ERP-adjacent tasks. (4) Error and rework — 0.3% of revenue in recovered margin from reduced duplicate entries and reconciliation failures. Discount rate for NPV is 10%. All sourced from Nucleus Research and Panorama Consulting benchmarks." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a realistic payback period for NetSuite?",
+          "acceptedAnswer": { "@type": "Answer", "text": "For a mid-market manufacturer or distributor with significant inventory and a legacy ERP creating real process friction, we typically see 16–24 months. Implementations with high inventory value, slow close times, or multiple manual integrations tend toward the faster end. Payback below 12 months is possible but requires significant pre-existing operational pain." }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the free ERP cost analysis include?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A 30-minute call where we review your current ERP, close process, team size, inventory, and biggest operational friction points. Following the call, we deliver a written one-page cost analysis: what your current ERP inefficiencies cost annually (broken down by driver), what a realistic NetSuite ROI looks like for your specific situation, and a rough payback range. No proposal, no follow-up pressure." }
+        },
+        {
+          "@type": "Question",
+          "name": "How is this different from NetSuite's own ROI tools?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Vendor ROI calculators are sales tools built to justify the purchase. They use optimistic adoption curves and low cost assumptions. Our calculator uses conservative benchmarks from independent research (Nucleus Research and Panorama Consulting), exposes all assumptions so you can stress-test them, and is built by a partner who has delivered 300+ ERP projects with no interest in overpromising." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is NetSuite the right fit for every company?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Companies with fewer than 10 users, simple single-entity financials, and no inventory or project complexity may be better served by lighter-weight accounting software. NetSuite's value compounds with complexity — multi-entity, multi-currency, manufacturing, distribution, and project-based businesses typically see the strongest ROI." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://inscio.com" },
+        { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://inscio.com/resources" },
+        { "@type": "ListItem", "position": 3, "name": "NetSuite ROI Calculator", "item": "https://inscio.com/netsuite-roi-calculator" }
+      ]
+    }
+  ]
+})} />
+
+<style>
+/* Range slider track */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: #E5E7EB;
+  border-radius: 4px;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #2563EB;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #2563EB;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.breakdown-bar { height: 5px; border-radius: 4px; transition: width 0.3s ease; }
+</style>
+
+<!-- Hero -->
+<section class="bg-[#0D1235] text-white py-12 sm:py-20 px-4">
+  <div class="max-w-5xl mx-auto">
+    <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-6">RESOURCES → FREE TOOL</p>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4 sm:mb-6 max-w-3xl">NetSuite ROI Calculator</h1>
+    <p class="text-blue-300 text-base sm:text-lg md:text-xl font-semibold mb-3 sm:mb-4 max-w-3xl">See what your current ERP costs annually — and what NetSuite delivers in return.</p>
+    <p class="text-gray-300 text-base md:text-lg max-w-2xl leading-relaxed">Adjust the inputs to match your business and get a live estimate of annual benefit, payback period, and 3-year NPV. Conservative benchmarks, transparent assumptions, no email required.</p>
+  </div>
+</section>
+
+<!-- Calculator -->
+<div class="max-w-5xl mx-auto px-4 sm:px-8 py-9 pb-20">
+
+  <!-- Main calculator card -->
+  <div class="bg-white border border-gray-200 rounded-xl overflow-hidden mb-5 shadow-sm">
+    <div class="grid grid-cols-1 lg:grid-cols-2">
+
+      <!-- Inputs column -->
+      <div class="p-7 border-b lg:border-b-0 lg:border-r border-gray-200">
+
+        <div class="text-base font-extrabold text-[#1A1F36] mb-5 pb-3 border-b border-gray-200">Your company</div>
+
+        <!-- Revenue -->
+        <div class="flex flex-col gap-1 mb-4">
+          <label for="revenue" class="text-xs font-bold text-[#1A1F36]">Annual revenue</label>
+          <div class="flex items-center gap-2">
+            <span class="text-sm text-gray-400">$</span>
+            <input type="number" id="revenue" value="25000000" step="1000000" min="1000000"
+              class="flex-1 px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm font-medium text-[#1A1F36] bg-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 transition-colors">
+            <span class="text-xs text-gray-400 min-w-[40px] text-right" id="revenue-display">$25M</span>
+          </div>
+        </div>
+
+        <!-- Finance team -->
+        <div class="flex flex-col gap-1 mb-4">
+          <div class="flex justify-between items-center mb-1">
+            <label for="fin-team" class="text-xs font-bold text-[#1A1F36]">Finance team size</label>
+            <span class="text-sm font-bold text-[#1A1F36]"><span id="fin-team-out">4</span> people</span>
+          </div>
+          <input type="range" id="fin-team" min="1" max="20" value="4" step="1" class="w-full cursor-pointer">
+        </div>
+
+        <!-- Close time -->
+        <div class="flex flex-col gap-1 mb-4">
+          <div class="flex justify-between items-center mb-1">
+            <label for="close-days" class="text-xs font-bold text-[#1A1F36]">Month-end close time</label>
+            <span class="text-sm font-bold text-[#1A1F36]"><span id="close-days-out">10</span> days</span>
+          </div>
+          <input type="range" id="close-days" min="3" max="20" value="10" step="1" class="w-full cursor-pointer">
+        </div>
+
+        <!-- Inventory -->
+        <div class="flex flex-col gap-1 mb-4">
+          <label for="inventory" class="text-xs font-bold text-[#1A1F36]">Inventory value</label>
+          <div class="flex items-center gap-2">
+            <span class="text-sm text-gray-400">$</span>
+            <input type="number" id="inventory" value="5000000" step="500000" min="0"
+              class="flex-1 px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm font-medium text-[#1A1F36] bg-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 transition-colors">
+          </div>
+          <div class="text-xs text-gray-500 leading-snug mt-0.5">Enter 0 if your business carries no inventory.</div>
+        </div>
+
+        <div class="text-base font-extrabold text-[#1A1F36] mb-5 pb-3 border-b border-gray-200 mt-6">NetSuite investment</div>
+
+        <!-- Implementation cost -->
+        <div class="flex flex-col gap-1 mb-4">
+          <label for="impl-cost" class="text-xs font-bold text-[#1A1F36]">Implementation cost (one-time)</label>
+          <div class="flex items-center gap-2">
+            <span class="text-sm text-gray-400">$</span>
+            <input type="number" id="impl-cost" value="150000" step="10000" min="0"
+              class="flex-1 px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm font-medium text-[#1A1F36] bg-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 transition-colors">
+          </div>
+          <div class="text-xs text-gray-500 leading-snug mt-0.5">Not sure? Use our <a href="/netsuite-pricing-calculator" class="text-blue-600 hover:underline">pricing calculator</a> to estimate this.</div>
+        </div>
+
+        <!-- License cost -->
+        <div class="flex flex-col gap-1 mb-5">
+          <label for="license-cost" class="text-xs font-bold text-[#1A1F36]">Annual software cost</label>
+          <div class="flex items-center gap-2">
+            <span class="text-sm text-gray-400">$</span>
+            <input type="number" id="license-cost" value="60000" step="5000" min="0"
+              class="flex-1 px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm font-medium text-[#1A1F36] bg-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 transition-colors">
+          </div>
+        </div>
+
+        <!-- Assumptions -->
+        <div class="rounded-lg bg-gray-50 border border-gray-100 px-4 py-3">
+          <div class="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2">Conservative assumptions used</div>
+          <div class="grid grid-cols-2 gap-x-4 gap-y-0.5">
+            <span class="text-[11px] text-gray-400">Close time reduction</span><span class="text-[11px] font-semibold text-gray-600">40%</span>
+            <span class="text-[11px] text-gray-400">Inventory optimization</span><span class="text-[11px] font-semibold text-gray-600">15%</span>
+            <span class="text-[11px] text-gray-400">Labor productivity</span><span class="text-[11px] font-semibold text-gray-600">10%</span>
+            <span class="text-[11px] text-gray-400">NPV discount rate</span><span class="text-[11px] font-semibold text-gray-600">10%</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Results column -->
+      <div class="p-7 bg-gray-50">
+
+        <div class="text-base font-extrabold text-[#1A1F36] mb-5 pb-3 border-b border-gray-200">Your estimated return</div>
+
+        <!-- Metric cards -->
+        <div class="grid grid-cols-2 gap-3 mb-5">
+          <div class="rounded-xl p-4 bg-white border border-gray-200">
+            <div class="text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">Annual benefit</div>
+            <div class="text-[21px] font-extrabold text-emerald-600 tracking-tight leading-tight" id="annual-benefit">—</div>
+          </div>
+          <div class="rounded-xl p-4 bg-white border border-gray-200">
+            <div class="text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">Payback period</div>
+            <div class="text-[21px] font-extrabold text-[#1A1F36] tracking-tight leading-tight" id="payback">—</div>
+          </div>
+          <div class="rounded-xl p-4 bg-white border border-gray-200">
+            <div class="text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">3-year ROI</div>
+            <div class="text-[21px] font-extrabold tracking-tight leading-tight" id="roi-pct">—</div>
+          </div>
+          <div class="rounded-xl p-4 bg-white border border-gray-200">
+            <div class="text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">3-year NPV</div>
+            <div class="text-[21px] font-extrabold tracking-tight leading-tight" id="npv">—</div>
+          </div>
+        </div>
+
+        <!-- Breakdown bars -->
+        <div class="bg-white border border-gray-200 rounded-xl p-4 mb-4">
+          <div class="text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-3">Benefit breakdown (annual)</div>
+          <div id="breakdown"></div>
+        </div>
+
+        <!-- Chart -->
+        <div>
+          <div class="text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-2">Cumulative cash flow — 36 months</div>
+          <div class="relative w-full" style="height:150px">
+            <canvas id="roiChart" role="img" aria-label="Line chart showing cumulative cash flow over 36 months">Cumulative cash flow over 36 months</canvas>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="border-t border-gray-200 px-7 py-3 bg-gray-50">
+      <p class="text-[11px] text-gray-400 leading-relaxed">Based on Nucleus Research and Panorama Consulting benchmarks: 40% finance close time reduction, 15% inventory carrying cost optimization (at 20% carrying rate), 10% productivity improvement on admin tasks, 0.3% of revenue error/rework reduction. Intended as directional estimate only. Actual results depend on current processes, data quality, and implementation execution.</p>
+    </div>
+  </div>
+
+  <!-- Stats strip -->
+  <div class="bg-[#1A1F36] rounded-xl p-8 mb-5 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+    <div>
+      <div class="text-3xl font-extrabold text-white mb-1.5">40%</div>
+      <div class="text-sm text-blue-300 leading-snug">Average reduction in month-end close time after NetSuite implementation</div>
+    </div>
+    <div>
+      <div class="text-3xl font-extrabold text-white mb-1.5">15–25%</div>
+      <div class="text-sm text-blue-300 leading-snug">Reduction in inventory carrying cost for manufacturers and distributors</div>
+    </div>
+    <div>
+      <div class="text-3xl font-extrabold text-white mb-1.5">16–24 mo</div>
+      <div class="text-sm text-blue-300 leading-snug">Typical payback period for a mid-market manufacturing or distribution implementation</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="bg-gray-50 border border-gray-200 rounded-xl p-8 flex flex-col sm:flex-row items-center justify-between gap-7 mb-12">
+    <div>
+      <h3 class="text-lg font-extrabold text-[#1A1F36] mb-1">The calculator gives you a direction. The free analysis gives you a number.</h3>
+      <p class="text-sm text-gray-500 max-w-lg">We'll calculate what your current ERP inefficiencies cost annually — specific to your company size, industry, and actual process gaps. Written. Delivered after a 30-minute call. No commitment required.</p>
+    </div>
+    <a href="javascript:void(0)" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session?hide_gdpr_banner=1'});return false;" class="flex-shrink-0 px-5 py-3.5 bg-[#1A1F36] text-white font-bold text-sm rounded-lg hover:opacity-90 transition-opacity whitespace-nowrap no-underline">
+      Book Your Free ERP Cost Analysis →
+    </a>
+  </div>
+
+  <!-- What ERP ROI actually looks like -->
+  <section class="bg-white border border-gray-200 rounded-xl p-8 mb-5">
+    <h2 class="text-2xl md:text-3xl font-bold text-[#1A1F36] mb-2">What ERP ROI actually looks like</h2>
+    <p class="text-gray-500 text-sm mb-6">Most companies are measuring the wrong cost.</p>
+    <p class="text-gray-700 leading-relaxed mb-5">When companies evaluate an ERP investment, they focus on the license fee and the implementation cost. Those are the visible line items. What rarely gets measured is the ongoing cost of the system they already have — the one they're used to working around.</p>
+    <p class="text-gray-700 leading-relaxed mb-5">Legacy ERP cost isn't a single line item. It shows up in four places: how long it takes your finance team to close the books each month, how much capital is tied up in inventory you can't see clearly, how many hours your team spends on manual data entry and reconciliation, and how much revenue is lost to errors and decisions made without reliable data.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+      <div class="border border-gray-200 rounded-xl p-5">
+        <div class="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center mb-3">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </div>
+        <h3 class="text-[15px] font-bold text-[#1A1F36] mb-2">Finance close time</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">A 10-day close on a 4-person finance team consumes roughly 10% of that team's annual capacity — every month. NetSuite's automated reconciliation and intercompany eliminations typically compress this by 40%.</p>
+      </div>
+      <div class="border border-gray-200 rounded-xl p-5">
+        <div class="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center mb-3">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3 class="text-[15px] font-bold text-[#1A1F36] mb-2">Inventory carrying cost</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Inventory you can't see clearly is inventory you over-order. Carrying cost typically runs 20–30% of inventory value annually. Better demand visibility routinely cuts that 15–25%.</p>
+      </div>
+      <div class="border border-gray-200 rounded-xl p-5">
+        <div class="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center mb-3">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h3 class="text-[15px] font-bold text-[#1A1F36] mb-2">Manual process labor</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">The average finance and operations team spends 10–15% of their time on tasks NetSuite automates: manual journal entries, report assembly, inter-system data transfer, and exception handling.</p>
+      </div>
+      <div class="border border-gray-200 rounded-xl p-5">
+        <div class="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center mb-3">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3 class="text-[15px] font-bold text-[#1A1F36] mb-2">Errors and rework</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Duplicate entries, manual reconciliation errors, and delayed reporting lead to decisions on stale data. This shows up as margin leakage, missed billing, and expediting costs — often 0.3–0.5% of revenue.</p>
+      </div>
+    </div>
+    <p class="text-gray-700 leading-relaxed mb-4">The ROI from NetSuite isn't automatic. It depends on how much inefficiency exists in your current process, how well the implementation is scoped to address those specific drivers, and whether the system is configured around your workflows.</p>
+    <p class="text-gray-700 leading-relaxed">The calculator above gives you a directional number based on conservative industry benchmarks. The free ERP cost analysis gives you a specific number based on your actual business.</p>
+  </section>
+
+  <!-- Case study -->
+  <section class="bg-white border border-gray-200 rounded-xl p-8 mb-5">
+    <h2 class="text-2xl md:text-3xl font-bold text-[#1A1F36] mb-2">A result from a recent Inscio implementation</h2>
+    <p class="text-gray-500 text-sm mb-6">300% ROI and $500K in annual benefit — 16-month full payback.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+      <div class="text-center"><div class="text-3xl font-extrabold text-emerald-700 mb-1">$500K</div><div class="text-sm text-emerald-600">Annual benefit</div></div>
+      <div class="text-center"><div class="text-3xl font-extrabold text-emerald-700 mb-1">300%</div><div class="text-sm text-emerald-600">3-year ROI</div></div>
+      <div class="text-center"><div class="text-3xl font-extrabold text-emerald-700 mb-1">16 mo</div><div class="text-sm text-emerald-600">Full payback</div></div>
+    </div>
+    <p class="text-gray-700 leading-relaxed mb-4">A mid-size manufacturer with a legacy ERP they had outgrown. The gains came primarily from closing the books in 4 days instead of 12, reducing inventory carrying costs by 18%, and eliminating two manual integration processes between their old ERP and their 3PL.</p>
+    <p class="text-gray-700 leading-relaxed">That is why we lead with the free ERP cost analysis rather than a case study number. A 300% ROI at their starting point may be a 120% ROI at yours, or a 400% ROI. The only way to know is to calculate it from your actual data.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-white border border-gray-200 rounded-xl p-8 mb-5">
+    <h2 class="text-2xl md:text-3xl font-bold text-[#1A1F36] mb-2">ERP ROI FAQ</h2>
+    <p class="text-gray-500 text-sm mb-6">The questions we hear most often when companies are evaluating a NetSuite investment.</p>
+    <div class="space-y-6">
+      <div><h3 class="text-lg font-bold text-[#1A1F36] mb-1">How do you calculate ERP ROI?</h3><p class="text-gray-700 leading-relaxed">ERP ROI = (Net Benefits – Total Costs) / Total Costs × 100, measured over 3 years. Net benefits include reduced finance headcount hours, inventory carrying cost reduction, and error elimination. The metrics CFOs focus on most are payback period and NPV at a 10% discount rate.</p></div>
+      <div><h3 class="text-lg font-bold text-[#1A1F36] mb-1">What assumptions does this calculator use?</h3><p class="text-gray-700 leading-relaxed">Four benefit drivers: (1) Finance close time — 40% reduction. (2) Inventory optimization — 15% reduction in carrying cost at 20% rate. (3) Labor productivity — 10% improvement on 12% of labor cost. (4) Error and rework — 0.3% of revenue. All sourced from Nucleus Research and Panorama Consulting benchmarks.</p></div>
+      <div><h3 class="text-lg font-bold text-[#1A1F36] mb-1">How is this different from NetSuite's own ROI tools?</h3><p class="text-gray-700 leading-relaxed">Vendor ROI calculators are sales tools. Ours uses conservative benchmarks from independent research, exposes all assumptions, and is built by a partner with 300+ ERP projects delivered.</p></div>
+      <div><h3 class="text-lg font-bold text-[#1A1F36] mb-1">What is a realistic payback period for NetSuite?</h3><p class="text-gray-700 leading-relaxed">For a mid-market manufacturer or distributor with significant inventory and a legacy ERP creating process friction, we typically see 16–24 months.</p></div>
+      <div><h3 class="text-lg font-bold text-[#1A1F36] mb-1">What does the free ERP cost analysis include?</h3><p class="text-gray-700 leading-relaxed">A 30-minute call followed by a written one-page cost analysis: what your current ERP inefficiencies cost annually, what a realistic ROI looks like, and a rough payback range. No proposal, no follow-up pressure.</p></div>
+      <div><h3 class="text-lg font-bold text-[#1A1F36] mb-1">Is NetSuite the right fit for every company?</h3><p class="text-gray-700 leading-relaxed">No. Companies with fewer than 10 users and simple financials may be better served by lighter software. NetSuite's value compounds with complexity — multi-entity, manufacturing, distribution, and project-based businesses see the strongest ROI.</p></div>
+    </div>
+  </section>
+
+  <!-- Trust block -->
+  <div class="bg-[#0D1235] text-white rounded-xl p-8 text-center">
+    <p class="text-sm font-bold uppercase tracking-widest text-blue-400 mb-3">Why trust these numbers</p>
+    <p class="text-lg font-semibold">Inscio is an Oracle NetSuite Solution Provider. 300+ ERP and NetSuite projects delivered, with NetSuite as our exclusive focus since 2012. Calculator benchmarks sourced from Nucleus Research and Panorama Consulting — independent of vendor input.</p>
+  </div>
+
+</div>
+
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script is:inline>
+var FIN_SALARY=85000,CLOSE_REDUC=0.40,INV_CARRYING=0.20,INV_OPTIM=0.15,LABOR_FRAC=0.15,TASK_FRAC=0.12,PROD_GAIN=0.10,ERROR_RATE=0.003,DISCOUNT=0.10;
+function fmt(n){var a=Math.abs(n),s=n<0?'-':'';if(a>=1e6)return s+'$'+(a/1e6).toFixed(1)+'M';if(a>=1000)return s+'$'+Math.round(a/1000)+'K';return s+'$'+Math.round(a);}
+var roiChart;
+function recalc(){
+  var revenue=parseFloat(document.getElementById('revenue').value)||0;
+  var finTeam=parseFloat(document.getElementById('fin-team').value)||0;
+  var closeDays=parseFloat(document.getElementById('close-days').value)||0;
+  var inventory=parseFloat(document.getElementById('inventory').value)||0;
+  var implCost=parseFloat(document.getElementById('impl-cost').value)||0;
+  var licenseCost=parseFloat(document.getElementById('license-cost').value)||0;
+  document.getElementById('fin-team-out').textContent=Math.round(finTeam);
+  document.getElementById('close-days-out').textContent=Math.round(closeDays);
+  var revLabel=revenue>=1e6?'$'+(revenue/1e6).toFixed(1)+'M':'$'+Math.round(revenue/1000)+'K';
+  document.getElementById('revenue-display').textContent=revLabel;
+  var closeMonthFrac=closeDays/21;
+  var finClose=finTeam*FIN_SALARY*closeMonthFrac*CLOSE_REDUC;
+  var invSaving=inventory*INV_CARRYING*INV_OPTIM;
+  var laborSaving=revenue*LABOR_FRAC*TASK_FRAC*PROD_GAIN;
+  var errorSaving=revenue*ERROR_RATE;
+  var totalAnnual=finClose+invSaving+laborSaving+errorSaving;
+  var monthlyNet=(totalAnnual-licenseCost)/12;
+  var payback=0,cum=-implCost;
+  for(var m=1;m<=72;m++){cum+=monthlyNet;if(cum>=0&&payback===0){payback=m;break;}}
+  var totalCost3=implCost+licenseCost*3;
+  var net3=totalAnnual*3-totalCost3;
+  var roi=totalCost3>0?Math.round((net3/totalCost3)*100):0;
+  var npv=-implCost;
+  for(var yr=1;yr<=3;yr++)npv+=(totalAnnual-licenseCost)/Math.pow(1+DISCOUNT,yr);
+  document.getElementById('annual-benefit').textContent=fmt(totalAnnual);
+  document.getElementById('payback').textContent=payback>0?payback+' mo':'>72 mo';
+  var roiEl=document.getElementById('roi-pct');roiEl.textContent=roi+'%';roiEl.style.color=roi>=0?'#059669':'#DC2626';
+  var npvEl=document.getElementById('npv');npvEl.textContent=fmt(npv);npvEl.style.color=npv>=0?'#059669':'#DC2626';
+  var items=[{name:'Finance close efficiency',value:finClose,color:'#2563EB'},{name:'Inventory optimization',value:invSaving,color:'#059669'},{name:'Labor productivity',value:laborSaving,color:'#7C3AED'},{name:'Error & rework reduction',value:errorSaving,color:'#D97706'}];
+  var maxVal=Math.max.apply(null,items.map(function(i){return i.value;}));if(maxVal<1)maxVal=1;
+  document.getElementById('breakdown').innerHTML=items.map(function(it){return '<div class="mb-2.5"><div class="flex justify-between text-[12px] mb-1"><span class="text-gray-500">'+it.name+'</span><span class="font-semibold text-[#1A1F36]">'+fmt(it.value)+'</span></div><div class="w-full bg-gray-100 rounded" style="height:5px"><div class="breakdown-bar" style="width:'+Math.round((it.value/maxVal)*100)+'%;background:'+it.color+';"></div></div></div>';}).join('');
+  var pts=[];for(var i=0;i<=36;i++)pts.push(i===0?-implCost:Math.round(-implCost+monthlyNet*i));
+  var labels=[];for(var j=0;j<=36;j++)labels.push(j%6===0?(j===0?'Now':j+' mo'):'');
+  if(roiChart){roiChart.data.labels=labels;roiChart.data.datasets[0].data=pts;roiChart.update('none');}else{roiChart=new Chart(document.getElementById('roiChart').getContext('2d'),{type:'line',data:{labels:labels,datasets:[{data:pts,borderColor:'#2563EB',backgroundColor:'rgba(37,99,235,0.06)',fill:true,tension:0.35,pointRadius:0,borderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return fmt(c.raw);}}}},scales:{x:{grid:{display:false},ticks:{font:{size:10},color:'#9CA3AF',maxRotation:0}},y:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{font:{size:10},color:'#9CA3AF',callback:function(v){return fmt(v);}}}}}});}
+}
+['revenue','fin-team','close-days','inventory','impl-cost','license-cost'].forEach(function(id){document.getElementById(id).addEventListener('input',recalc);});
+recalc();
+</script>
+
+</Layout>
