@@ -4,24 +4,32 @@ import Layout from '../layouts/Layout.astro';
 <Layout
   title="NetSuite SuiteApprovals Demo: Interactive Walkthrough | Inscio"
   description="See NetSuite's SuiteApprovals Workflow in action. An interactive demo of a real multi-level purchase approval — employee, purchasing manager, and CFO views — running live in NetSuite."
+  ogImage="https://inscio.com/images/og/netsuite-suiteapprovals-demo.png"
 >
 
   <!-- HERO -->
-  <section class="relative bg-[#0D1235] text-white py-20 px-4 overflow-hidden">
-    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, #3b82f6 0%, transparent 50%), radial-gradient(circle at 80% 20%, #1d4ed8 0%, transparent 40%);"></div>
-    <div class="relative max-w-4xl mx-auto text-center">
-      <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-4">INTERACTIVE DEMO</p>
-      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-        NetSuite Purchase Approval — Automated. Auditable. Simple.
+  <section class="bg-[#0D1235] text-white py-28 px-4">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-6">INTERACTIVE DEMO</p>
+      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-8 max-w-3xl">
+        See <span class="text-blue-400">NetSuite SuiteApprovals</span> in Action.
       </h1>
-      <p class="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto">
-        Behind the scenes, NetSuite's SuiteApprovals Workflow automatically determines who approves, in what order, and based on what rules — dollar thresholds, roles, departments. No configuration required for each new transaction. Click through the demo below to see it from every approver's perspective.
+      <p class="text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
+        An interactive walkthrough of a real multi-level purchase approval — from the employee who submits it, to the purchasing manager who reviews it, to the CFO who signs off. Live in a working NetSuite environment.
       </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#demo" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded transition-colors">
+          Launch the Demo
+        </a>
+        <a href="#vs-suiteflow" class="border border-white text-white hover:bg-white hover:text-[#0D1235] font-semibold px-8 py-4 rounded transition-colors">
+          SuiteApprovals vs SuiteFlow
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- DEMO EMBED -->
-  <section class="bg-gray-50 py-12 px-4">
+  <section id="demo" class="bg-gray-50 py-12 px-4">
     <div class="max-w-6xl mx-auto">
       <div>
         <script is:inline async src="https://js.storylane.io/js/v2/storylane.js" data-verify-origin=""></script>
@@ -100,7 +108,7 @@ SuiteApprovals Approval Workflow is a native NetSuite SuiteApp handling multi-le
   </section>
 
   <!-- SUITEAPPROVALS VS SUITEFLOW -->
-  <section class="bg-white py-20 px-4">
+  <section id="vs-suiteflow" class="bg-white py-20 px-4">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">SuiteApprovals vs. custom SuiteFlow</h2>
       <p class="text-gray-700 text-lg leading-relaxed mb-6">
