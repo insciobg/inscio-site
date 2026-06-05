@@ -1,0 +1,190 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="NetSuite SuiteApprovals Demo: Interactive Walkthrough | Inscio"
+  description="See NetSuite's SuiteApprovals Workflow in action. An interactive demo of a real multi-level purchase approval — employee, purchasing manager, and CFO views — running live in NetSuite."
+>
+
+  <!-- HERO -->
+  <section class="relative bg-[#0D1235] text-white py-20 px-4 overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, #3b82f6 0%, transparent 50%), radial-gradient(circle at 80% 20%, #1d4ed8 0%, transparent 40%);"></div>
+    <div class="relative max-w-4xl mx-auto text-center">
+      <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-4">INTERACTIVE DEMO</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+        NetSuite Purchase Approval — Automated. Auditable. Simple.
+      </h1>
+      <p class="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto">
+        Behind the scenes, NetSuite's SuiteApprovals Workflow automatically determines who approves, in what order, and based on what rules — dollar thresholds, roles, departments. No configuration required for each new transaction. Click through the demo below to see it from every approver's perspective.
+      </p>
+    </div>
+  </section>
+
+  <!-- DEMO EMBED -->
+  <section class="bg-gray-50 py-12 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div>
+        <script is:inline async src="https://js.storylane.io/js/v2/storylane.js" data-verify-origin=""></script>
+        <div class="sl-embed" style="position:relative;padding-bottom:calc(55.42% + 25px);width:100%;height:0;transform:scale(1)">
+          <iframe loading="lazy" class="sl-demo" src="https://app.storylane.io/demo/vfxkn5s12f06?embed=inline" name="sl-embed" allow="fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%!important;height:100%!important;border:1px solid rgba(63,95,172,0.35);box-shadow: 0px 0px 18px rgba(26, 19, 72, 0.15);border-radius:10px;box-sizing:border-box;"></iframe>
+        </div>
+        <div aria-hidden="true" tabindex="-1" inert style="display:none;visibility:hidden;width:1px;height:1px;">NetSuite SuiteApprovals Workflow automatically determines who approves purchase requests, in what order, and based on what rules including dollar thresholds, roles, and departments. No configuration required for each new transaction.
+The approval chain shown includes three levels: Employee submits request, Purchasing reviews, and CFO provides final approval based on dollar amount.
+Abby Kwan accesses NetSuite Employee Center to submit purchase requests, check statuses, and track expense reports. She enters a new purchase request with vendor, item, quantity, and amount details. When saved, NetSuite generates a purchase order number and starts the approval process automatically.
+The requestor sees real-time status updates showing Pending Approval and Pending Supervisor Approval directly on their home screen without follow-up required.
+Approvers receive immediate notifications with purchase order details, amounts, and Approve or Reject buttons in their email. Stella James can act from her inbox or phone without logging into NetSuite.
+When logged in, approvers see their approval queue automatically displayed in home screen Reminders showing all purchase orders requiring action. Stella opens the purchase order record to view vendor, items, amount, and department information before making a decision with one click.
+For purchase orders exceeding dollar thresholds, the workflow routes automatically to the next approval level. A $60,000 purchase order requires CFO approval after initial purchasing approval.
+Frank Davenport's CFO dashboard displays purchase orders, bills, and expense reports awaiting approval plus key financial indicators. His approval queue shows all pending purchase orders with vendor, amount, and requestor visible before opening records. He can see previous approval history including first-level approvals before making final decisions.
+After final approval, the status updates immediately to Approved by Supervisor and Pending Receipt. The complete approval chain from employee through purchasing to CFO completes automatically without email threads, manual handoffs, or spreadsheets.
+The requestor sees updated status showing Pending Receipt in their Employee Center without manual notification.
+Every step is automatically logged including who acted, when, what decision was made, and who came next. The audit trail requires no manual entry and remains available for board reviews or auditors.
+SuiteApprovals Approval Workflow is a native NetSuite SuiteApp handling multi-level approvals, dollar thresholds, role-based routing, and email notifications without custom code. NetSuite Suitelets allow building custom approval interfaces, executive dashboards, or approval portals on top of the same workflow engine using the same rules and data with tailored interfaces.</div>
+      </div>
+      <p class="text-center text-gray-500 text-sm mt-4">
+        Demo: Abby Kwan (Employee) → Stella James (Purchasing) → Frank Davenport (CFO). Live in a working NetSuite environment.
+      </p>
+    </div>
+  </section>
+
+  <!-- WHAT YOU JUST SAW -->
+  <section class="bg-white py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">What you just saw</h2>
+      <p class="text-gray-700 text-lg leading-relaxed mb-6">
+        SuiteApprovals is a free, native NetSuite SuiteApp. Once installed and configured, it routes records through multi-level approvals based on rules you define — dollar amounts, departments, roles, subsidiaries. The demo above walks through a $60,000 purchase order that requires two levels of approval because it exceeds the supervisor threshold.
+      </p>
+      <p class="text-gray-700 text-lg leading-relaxed mb-6">
+        Three people interacted with it. None of them had to think about routing.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+        <div class="bg-gray-50 rounded-xl p-6">
+          <p class="text-blue-600 text-xs font-semibold uppercase tracking-widest mb-2">Employee</p>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Abby Kwan</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">Submits the purchase request from a simplified Employee Center. Sees real-time status without sending a single follow-up email.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6">
+          <p class="text-blue-600 text-xs font-semibold uppercase tracking-widest mb-2">First Approver</p>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Stella James</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">Gets notified by email and on her phone. Approves directly from her inbox or from a pre-built reminder queue in NetSuite — her job takes seconds.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6">
+          <p class="text-blue-600 text-xs font-semibold uppercase tracking-widest mb-2">Final Approver</p>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Frank Davenport, CFO</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">Sees every PO waiting on him from his dashboard. Approves once and the PO is fully released. The audit trail is automatic.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THREE PILLARS -->
+  <section class="bg-gray-50 py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-12 text-center">Why this matters</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Automated</h3>
+          <p class="text-gray-700 leading-relaxed">No manual handoff. The moment a record is saved, NetSuite identifies the right approvers based on rules, dollar thresholds, and hierarchy — and notifies them. Multi-level escalation runs without anyone having to push it along.</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Auditable</h3>
+          <p class="text-gray-700 leading-relaxed">Every action — who approved, when, with what comment, and who came next — is logged automatically to the record's Approval History subtab. No spreadsheets. No email archeology. Always ready for an auditor or board review.</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Simple</h3>
+          <p class="text-gray-700 leading-relaxed">Approvers act from email, mobile, or a one-click reminder queue. Requestors see live status without asking. Employees use a simplified Employee Center — no NetSuite training required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUITEAPPROVALS VS SUITEFLOW -->
+  <section class="bg-white py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">SuiteApprovals vs. custom SuiteFlow</h2>
+      <p class="text-gray-700 text-lg leading-relaxed mb-6">
+        NetSuite gives you a few ways to handle approvals. The right choice depends on how complex your routing actually is.
+      </p>
+
+      <div class="space-y-6 mt-8">
+        <div class="border-l-4 border-blue-600 pl-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">SuiteApprovals SuiteApp</h3>
+          <p class="text-gray-700 leading-relaxed">A free, native SuiteApp from NetSuite. Pre-built framework with approval rules, dollar thresholds, employee limits, hierarchical or custom routing, email approvals, delegation, and an Approval History audit log. Best for organizations whose approval logic fits a rules-and-thresholds model. The demo above runs entirely on SuiteApprovals.</p>
+        </div>
+        <div class="border-l-4 border-gray-400 pl-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Custom SuiteFlow</h3>
+          <p class="text-gray-700 leading-relaxed">NetSuite's native workflow engine. More flexibility — non-sequential approvals, conditional routing, custom field manipulation, integration with other workflows. Required when approval logic doesn't fit a rules-based model or needs to coordinate with other NetSuite processes.</p>
+        </div>
+        <div class="border-l-4 border-gray-400 pl-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Native Approval Routing feature</h3>
+          <p class="text-gray-700 leading-relaxed">NetSuite's original built-in routing for purchases and expenses. Still works, but Oracle is transitioning these workflows to SuiteFlow. New implementations should generally skip this and start with SuiteApprovals or SuiteFlow.</p>
+        </div>
+      </div>
+
+      <p class="text-gray-700 text-lg leading-relaxed mt-8">
+        Most organizations get further than they expect with SuiteApprovals alone. Where it falls short, the right answer is often a SuiteFlow extension rather than rebuilding from scratch — SuiteApprovals runs on SuiteFlow under the hood.
+      </p>
+    </div>
+  </section>
+
+  <!-- BEYOND THE WORKFLOW -->
+  <section class="bg-[#0D1235] text-white py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-6">When standard isn't enough</h2>
+      <p class="text-gray-300 text-lg leading-relaxed mb-6">
+        The demo you watched is what NetSuite does out of the box. For most approval processes, that's plenty.
+      </p>
+      <p class="text-gray-300 text-lg leading-relaxed mb-6">
+        For organizations that need more — simplified approval interfaces for occasional users, executive dashboards purpose-built for the C-suite, or branded approval portals for external stakeholders — Inscio builds custom experiences on top of NetSuite's same workflow engine. Same rules, same data, tailored interface. That's where our AI and intelligent automation practice picks up.
+      </p>
+      <div class="mt-10 text-center">
+        <a href="/services/#ai" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded transition-colors mr-4">
+          See AI & Automation Services
+        </a>
+        <a href="/contact" class="inline-block border border-gray-400 text-gray-200 hover:border-blue-400 hover:text-blue-400 font-semibold px-8 py-4 rounded transition-colors">
+          Talk to a Consultant
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERNAL LINKS / RELATED -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="/services/#implementation" class="block bg-white rounded-xl p-6 hover:shadow-lg transition-shadow">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">NetSuite Implementation</h3>
+          <p class="text-gray-600 text-sm">Approval workflows are configured during implementation. See how we scope and stand them up.</p>
+        </a>
+        <a href="/services/#development" class="block bg-white rounded-xl p-6 hover:shadow-lg transition-shadow">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Development & Customization</h3>
+          <p class="text-gray-600 text-sm">SuiteScript, Suitelets, and custom workflow extensions when standard SuiteApprovals isn't enough.</p>
+        </a>
+        <a href="/netsuite-pricing-calculator" class="block bg-white rounded-xl p-6 hover:shadow-lg transition-shadow">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">NetSuite Pricing Calculator</h3>
+          <p class="text-gray-600 text-sm">Estimate your NetSuite license and implementation investment in under two minutes.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEMA -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "NetSuite SuiteApprovals Demo: Interactive Walkthrough",
+    "description": "See NetSuite's SuiteApprovals Workflow in action. An interactive demo of a real multi-level purchase approval — employee, purchasing manager, and CFO views — running live in NetSuite.",
+    "author": { "@type": "Organization", "name": "Inscio" },
+    "publisher": { "@type": "Organization", "name": "Inscio", "url": "https://inscio.com" },
+    "datePublished": "2026-06-04",
+    "dateModified": "2026-06-04",
+    "about": [
+      { "@type": "Thing", "name": "NetSuite SuiteApprovals" },
+      { "@type": "Thing", "name": "NetSuite SuiteFlow" },
+      { "@type": "Thing", "name": "Approval Workflow" }
+    ]
+  })}></script>
+
+</Layout>
