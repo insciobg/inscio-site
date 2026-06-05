@@ -18,7 +18,7 @@ Process discipline does not come from installing the software. It comes from con
 
 Most companies do neither.
 
-We have done more than 300 ERP and NetSuite projects. The pattern repeats. The ERP is in. The approvals run on email. Vendor bills get a thumbs-up in Slack. Purchase orders move through forwarded messages. Nothing is broken, exactly. But every month, ROI sits unrealized on the table.
+The pattern shows up constantly. The ERP is in. The approvals run on email. Vendor bills get a thumbs-up in Slack. Purchase orders move through forwarded messages. Nothing is broken, exactly. But every month, ROI sits unrealized on the table.
 
 The good news is that the fix is mostly already paid for.
 
