@@ -6,12 +6,12 @@ intro: "A clinical-stage radiopharma company replaced a tangle of finance and op
 industries: ["Life Sciences", "Radiopharmaceuticals", "Clinical-Stage Biotech"]
 softwareReplaced: ["Deltek Costpoint", "QuickBooks", "Multiple Point Tools and Spreadsheets"]
 modules: ["SuiteSuccess Financials First", "Advanced Financials", "Fixed Asset Management", "Inscio Life Sciences Contract Tracker", "Project Management", "Procurement", "Supply Chain", "Manufacturing", "Inventory Management", "NetSuite Connector"]
-stat1Value: "On Time"
-stat1Label: "And Under Budget"
-stat1Sub: "the initial go-live, delivered to the original plan"
-stat2Value: "2"
-stat2Label: "Entities, One Instance"
-stat2Sub: "Orano Med and Macrocyclics, finance through ecommerce"
+stat1Value: "R&D → Commercial"
+stat1Label: "On One Platform"
+stat1Sub: "the same instance grew with the business from research to manufacturing"
+stat2Value: "1 Instance"
+stat2Label: "Multi-Entity, Global Enterprise"
+stat2Sub: "diverse lines of business, finance through ecommerce, on a single NetSuite instance"
 ctaHeadline: "Running an R&D entity on a finance system built for someone else?"
 ctaBody: "If your books are being kept on a parent company's platform, or stitched together across a layer of point tools, there is a cleaner way. Let's talk about what it could look like for you."
 pubDate: 2026-06-20
