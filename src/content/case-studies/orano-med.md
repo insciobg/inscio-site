@@ -9,9 +9,9 @@ modules: ["SuiteSuccess Financials First", "Advanced Financials", "Fixed Asset M
 stat1Value: "R&D → Commercial"
 stat1Label: "On One Platform"
 stat1Sub: "the same instance grew with the business from research to manufacturing"
-stat2Value: "1 Instance"
-stat2Label: "Multi-Entity, Global Enterprise"
-stat2Sub: "diverse lines of business, finance through ecommerce, on a single NetSuite instance"
+stat2Value: "1"
+stat2Label: "Global NetSuite Instance"
+stat2Sub: "multiple entities, diverse lines of business, global enterprise"
 ctaHeadline: "Running an R&D entity on a finance system built for someone else?"
 ctaBody: "If your books are being kept on a parent company's platform, or stitched together across a layer of point tools, there is a cleaner way. Let's talk about what it could look like for you."
 pubDate: 2026-06-20
