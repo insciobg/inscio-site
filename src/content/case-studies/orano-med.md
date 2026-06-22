@@ -1,8 +1,8 @@
 ---
-title: "How Orano Med Took Control of Their Own Books and Kept Building on the Same Foundation"
+title: "How a Clinical-Stage Radiopharma Company Built One NetSuite Foundation That Scaled From R&D to Global Manufacturing"
 company: "Orano Med"
-subheading: "From a Pre-Revenue R&D Entity to Multi-Entity Manufacturing, Distribution, and Ecommerce on One Instance"
-intro: "A clinical-stage radiopharma company replaced a tangle of finance and operations tools with one NetSuite platform, then kept building on it. The same instance now runs two related entities, from financial reporting through clinical trial accounting through manufacturing and ecommerce."
+subheading: "Real Finance Control for a Clinical-Stage Biotech Subsidiary, Built for Trial Accounting, Spend Visibility, and the Pipeline Ahead"
+intro: "A clinical-stage radiopharma subsidiary replaced its parent's finance stack with one NetSuite foundation built for R&D spend tracking, clinical trial accounting, and the controls their next phase required. That same instance has carried them ever since."
 industries: ["Life Sciences", "Radiopharmaceuticals", "Clinical-Stage Biotech"]
 softwareReplaced: ["Deltek Costpoint", "QuickBooks", "Multiple Point Tools and Spreadsheets"]
 modules: ["SuiteSuccess Financials First", "Advanced Financials", "Fixed Asset Management", "Inscio Life Sciences Contract Tracker", "Project Management", "Procurement", "Supply Chain", "Manufacturing", "Inventory Management", "NetSuite Connector"]
