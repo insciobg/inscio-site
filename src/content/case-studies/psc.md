@@ -2,8 +2,8 @@
 title: "How a 3,500-Person Industrial Services Carve-Out Got Off Oracle and Onto NetSuite in Under Nine Months"
 company: "PSC Group"
 subheading: "A PE-Backed Spinout From SGS. A Gulf Coast Plant and Terminal Business. One NetSuite Foundation That Later Carried Railcar Repair and a Recycling Manufacturing Line."
-intro: "In 2019, Petroleum Service Corporation was bought out of SGS by a private equity sponsor and had to be off the parent's Oracle environment on a fixed clock. Inscio designed and implemented a NetSuite foundation that replaced Oracle Financials and Project Accounting for 3,500 employees across more than 100 sites, integrated the marine division on AS/400 instead of replacing it, and went on to support new lines of business as PSC expanded."
-industries: ["Industrial Services", "Chemicals, Refining & Midstream", "Marine Logistics", "Rail Services", "Recycling & Sustainability"]
+intro: "A 2019 carve-out from SGS gave PSC a fixed clock to be off Oracle. Inscio replaced Oracle Financials and Project Accounting for 3,500 employees on a NetSuite foundation that later carried PSC into Railcar Repair and recycling manufacturing."
+industries: ["Oil & Gas Services", "Chemicals, Refining & Midstream", "Marine Logistics", "Rail Services", "Recycling & Sustainability"]
 softwareReplaced: ["Oracle Financials", "Oracle Project Accounting"]
 modules: ["NetSuite Financials", "SuiteProjects / Project Management", "Procurement", "AP Automation", "Manufacturing", "SuiteFlow Workflows", "Employee Center", "Custom Integrations"]
 stat1Value: "<9 Months"
