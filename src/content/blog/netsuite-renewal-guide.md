@@ -1,5 +1,5 @@
 ---
-title: "The NetSuite Renewal Guide: How It Works, When to Start, and What You Can Actually Change"
+title: "The NetSuite Renewal Guide: How It Works and When to Start"
 description: "How NetSuite renewals actually work: auto-renewal, co-terming, renewal caps, discount erosion, and why the process should start four months before your date."
 pubDate: 2026-07-08
 category: "Pricing"
