@@ -1,0 +1,382 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// ---------------------------------------------------------------------------
+// STRIPE PAYMENT LINK
+// Paste the live Stripe Payment Link URL here to turn on checkout.
+// While this is null, both buy buttons fall back to booking a call, so the
+// page is never broken. Nothing else needs to change.
+// ---------------------------------------------------------------------------
+const STRIPE_URL: string | null = null;
+
+const CALENDLY = 'https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session?hide_gdpr_banner=1';
+const buyHref = STRIPE_URL ?? 'javascript:void(0)';
+const buyIsStripe = STRIPE_URL !== null;
+
+const timeline = [
+  { rel: '2026.2', now: true,  what: 'SuiteScript 2.1 becomes the standard scripting model. In-product warnings begin.' },
+  { rel: '2027.1', now: false, what: 'SuiteScript 1.0 enters end-of-life support. Critical issues only. Anything else requires converting the script to 2.1 first.' },
+  { rel: '2028.1', now: false, what: 'SuiteScript 1.0 can no longer be deployed in new accounts. SuiteScript 2.0 and 2.x scripts run as 2.1 by default.' },
+  { rel: '2028.2', now: false, what: 'All new and existing scripts must use SuiteScript 2.1.' },
+];
+
+const contents = [
+  { n: '01', t: 'Your script inventory', d: 'Every deployed script, by type and API version. How many are 1.0, how many are 2.0 or 2.x, and how many are already on 2.1.' },
+  { n: '02', t: 'What is actually running', d: 'Execution history, so you can see which scripts do real work and which have not fired in years. This is usually the most surprising page.' },
+  { n: '03', t: 'What you can delete', d: 'Scripts that are dead, duplicated, or superseded. Every one of these is work you do not have to pay anyone to convert.' },
+  { n: '04', t: 'What is not yours to fix', d: 'Vendor and bundle-owned scripts, flagged early. These need the vendor, not a developer, and finding out late is how schedules slip.' },
+  { n: '05', t: 'Records and dependencies', d: 'Which records each script touches, which scripts call shared libraries, and where the chains run. This is what makes a realistic sequence possible.' },
+  { n: '06', t: 'The conversion scope', d: 'Scripts grouped by complexity, with the effort each group carries. The number you need to budget, and the order to work in.' },
+];
+
+const steps = [
+  { n: '01', t: 'Buy the plan',   d: 'Card, on this page. A few questions about your account, then checkout.', when: 'Two minutes', hl: true },
+  { n: '02', t: 'Grant access',   d: 'Your administrator creates a read-level role for us. We send the exact permissions after checkout.', when: 'Your admin, same week', hl: true },
+  { n: '03', t: 'We analyze',     d: 'We read the account directly. No workshops, no discovery calls, no questionnaire for your team to fill out.', when: 'Us, not you', hl: false },
+  { n: '04', t: 'Plan delivered', d: 'The document lands, with your script inventory, your scope, and your conversion quote already calculated.', when: 'Us, not you', hl: false },
+  { n: '05', t: 'Review call',    d: 'We walk the findings together and answer what a document cannot. Booked when you buy, not chased afterward.', when: 'Scheduled up front', hl: false },
+];
+
+const phases = [
+  { n: '01', t: 'Setup and analyze', d: 'Sandbox confirmed, scripts imported and version-controlled, baseline tagged. Nothing is touched before there is a copy to return to.' },
+  { n: '02', t: 'Convert',          d: 'Each script rebuilt in 2.1 and peer reviewed. Same behavior, modern framework, with a plain-language record of every change we made.' },
+  { n: '03', t: 'Test',             d: 'A test document per script, written around what that script does for your business rather than what the code does. Your team signs off before anything goes live.' },
+  { n: '04', t: 'Deliver',          d: 'The 2.1 versions go live and the legacy 1.0 records are retired cleanly. You keep the full documentation.' },
+];
+
+const who = [
+  { t: 'You have no idea what is in there', d: 'Years of customization by people who have moved on. Nobody currently at the company can tell you what the scripts do or whether they still run.' },
+  { t: 'Your implementer is gone',          d: 'The firm that built your account is out of business, acquired, or unreachable. You have no documentation and nobody to call.' },
+  { t: 'You need a number for a budget',    d: 'You know the deadline is coming and you have been asked what it costs. You need something defensible, not a guess.' },
+];
+
+const faqs = [
+  { q: 'What access do you need?', a: 'Read-level access to your NetSuite account sufficient to inventory scripts and deployments. We do not need to change anything to produce the plan.' },
+  { q: 'What if I have no SuiteScript 1.0 at all?', a: 'You still have a 2028.2 deadline. Scripts on 2.0 and on the 2.x annotation have to move to 2.1 as well. That work is much lighter, and the plan tells you how light.' },
+  { q: 'Will my scripts stop working before 2028.2?', a: 'No. SuiteScript 1.0 keeps running until then. What changes sooner is support: from 2027.1, NetSuite addresses critical issues only on 1.0.' },
+  { q: 'Can my own developer do the conversion?', a: 'Yes, and the plan is written so they can. It says what each script does, what has to change, and in what order.' },
+  { q: 'What does the conversion itself cost?', a: 'It is priced per script, in complexity bands, with the criteria printed in your plan so you can check the math. Your plan includes the count and the scope, which is what the price is built from.' },
+  { q: 'Why only $500?', a: 'Because most of the analysis is automated, and because a plan that costs enough to require an approval process is a plan most companies never get around to buying.' },
+];
+---
+
+<Layout
+  title="SuiteScript 2.1 Conversion | Inscio"
+  description="NetSuite requires SuiteScript 2.1 by release 2028.2. Get a conversion plan built from your own account for $500, yours to execute with us or anyone else."
+  canonical="https://inscio.com/suitescript-2-1-conversion"
+>
+
+  <!-- Hero -->
+  <section class="bg-[#0D1235] text-white py-24 md:py-28 px-4">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-6">SuiteScript 2.1 Conversion</p>
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-8 max-w-4xl">
+        NetSuite requires SuiteScript 2.1 by release 2028.2.<br class="hidden md:block"/>
+        <span class="text-blue-400">Find out what that means for your account.</span>
+      </h1>
+      <p class="text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
+        We analyze your NetSuite account and hand you a conversion plan. What you have, what has to change, and what it will take.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href={buyHref}
+           onclick={buyIsStripe ? undefined : `Calendly.initPopupWidget({url: '${CALENDLY}'});return false;`}
+           class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded transition-colors">
+          {buyIsStripe ? 'Get your conversion plan, $500' : 'Talk to us about your conversion plan'}
+        </a>
+        <a href="#anywhere" class="border border-white text-white hover:bg-white hover:text-[#0D1235] font-semibold px-8 py-4 rounded transition-colors">
+          Why we let you take it anywhere
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deadline -->
+  <section id="deadline" class="bg-gray-50 border-y border-gray-200 py-20 md:py-24 px-4">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-3">The deadline</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nothing breaks today. That is exactly why it gets ignored.</h2>
+      <p class="text-gray-600 text-lg max-w-2xl mb-8">
+        Your SuiteScript 1.0 scripts keep running right now. NetSuite has published the schedule for when that stops, and the first real change lands well before the final one.
+      </p>
+
+      <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b-2 border-gray-200">
+              <th class="text-left px-5 py-4 font-semibold text-gray-900 uppercase tracking-wide text-xs w-32">Release</th>
+              <th class="text-left px-5 py-4 font-semibold text-gray-900 uppercase tracking-wide text-xs">What changes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {timeline.map(row => (
+              <tr class={`border-b border-gray-200 last:border-0 ${row.now ? 'bg-blue-50' : ''}`}>
+                <td class="px-5 py-4 font-bold text-[#0D1235] whitespace-nowrap align-top">
+                  {row.rel}
+                  {row.now && <span class="ml-2 inline-block bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full align-middle">NOW</span>}
+                </td>
+                <td class="px-5 py-4 text-gray-600 align-top">{row.what}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-gray-500 text-sm mt-4">Source: NetSuite SuiteAnswers ID 1047412.</p>
+      <p class="text-gray-600 mt-7 max-w-2xl">
+        The date that matters most is not the last one. At 2027.1 your 1.0 scripts stop getting fixed. If something breaks after that, the answer from NetSuite is to convert it first.
+      </p>
+    </div>
+  </section>
+
+  <!-- What you get -->
+  <section id="plan" class="bg-white py-20 md:py-24 px-4">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-3">What you get</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">A conversion plan, built from your actual account.</h2>
+      <p class="text-gray-600 text-lg max-w-2xl mb-10">
+        Not a questionnaire and not an estimate. We read the account itself and give you a document that tells you where you stand.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {contents.map(c => (
+          <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+            <p class="text-blue-600 text-xs font-bold tracking-widest mb-3">{c.n}</p>
+            <h3 class="font-bold text-gray-900 mb-2">{c.t}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{c.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="bg-gray-50 border-y border-gray-200 py-20 md:py-24 px-4">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-3">How this works</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Five steps, and only one of them is yours.</h2>
+      <p class="text-gray-600 text-lg max-w-2xl mb-12">
+        You pay, you grant access, and we handle the rest. The access step is the one that takes real time on your side, so start it the same day.
+      </p>
+      <div class="grid md:grid-cols-5 gap-6 md:gap-5">
+        {steps.map(s => (
+          <div class={`pt-6 border-t-2 ${s.hl ? 'border-blue-600' : 'border-gray-300'}`}>
+            <p class={`text-xs font-extrabold tracking-widest mb-3 ${s.hl ? 'text-blue-600' : 'text-gray-400'}`}>{s.n}</p>
+            <h3 class="font-bold text-gray-900 mb-2 text-base">{s.t}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{s.d}</p>
+            <p class={`text-xs font-semibold mt-3 ${s.hl ? 'text-blue-600' : 'text-gray-400'}`}>{s.when}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Take it anywhere -->
+  <section id="anywhere" class="bg-[#16225A] text-white py-20 md:py-24 px-4">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-6">No strings</p>
+      <p class="text-2xl md:text-3xl font-bold leading-snug max-w-4xl mb-6">
+        Your plan. Your call. Execute it with us, with your own developer, or with another firm entirely.
+      </p>
+      <p class="text-indigo-100 text-lg max-w-2xl mb-8">
+        We are not going to hold your own account data hostage to win the work. This is not a handshake. It is written into the terms you agree to at checkout, so you can read it before you pay.
+      </p>
+      <ul class="grid gap-3 max-w-2xl mb-8">
+        {[
+          'A permanent license to use, copy, and share your plan, stated in writing',
+          'Free to hand it to any developer or firm, including firms that compete with us',
+          'Written so an outside developer can pick it up and work from it',
+          'The facts about your account are yours. We claim nothing in them.',
+          'No credit, no clawback, no obligation to convert with us',
+          'No access retained after delivery beyond what you choose to keep open',
+        ].map(item => (
+          <li class="relative pl-8 text-blue-100">
+            <span class="absolute left-0 top-3 w-3.5 h-0.5 bg-blue-400"></span>{item}
+          </li>
+        ))}
+      </ul>
+      <p class="text-blue-300 max-w-2xl">
+        We think most companies will ask us to do the work once they see the plan. If yours does not, you still got what you paid for.
+        <a href="/suitescript-conversion-plan-terms" class="text-white underline font-semibold whitespace-nowrap ml-1">Read the terms</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- If you convert with us -->
+  <section class="bg-white py-20 md:py-24 px-4">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-3">If you convert with us</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Four phases, with something in your hands at every one.</h2>
+      <p class="text-gray-600 text-lg max-w-2xl mb-8">The plan tells you what has to happen. This is how we do it.</p>
+
+      <div class="max-w-3xl">
+        {phases.map(p => (
+          <div class="flex gap-5 py-6 border-b border-gray-200 last:border-0">
+            <div class="flex-none w-12 h-12 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-extrabold">{p.n}</div>
+            <div>
+              <h3 class="font-bold text-gray-900 mb-1.5">{p.t}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{p.d}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="border border-gray-200 border-l-4 border-l-blue-600 rounded-r-xl p-7 mt-9 max-w-3xl">
+        <h3 class="font-bold text-gray-900 mb-3">Your quote is already in the plan</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+          Conversion is priced per script, in complexity bands, with the criteria printed in your plan so you can check our math. Because the plan counts your scripts and bands them, the price comes out of the document itself. Nothing to wait for and no proposal cycle.
+        </p>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          If you want us to do the work, the review call is where you say so. We start from a short engagement letter against the scope already in your plan. You do not pay for a discovery phase twice.
+        </p>
+      </div>
+
+      <div class="bg-gray-50 border-l-4 border-gray-400 rounded-r-xl p-7 mt-6 max-w-3xl">
+        <h3 class="font-bold text-gray-900 mb-3">What the plan does not cover</h3>
+        <ul class="list-disc pl-5 text-gray-600 text-sm space-y-2.5">
+          <li><strong class="text-gray-900">Vendor and bundle-owned scripts.</strong> We will identify them, but a SuiteApp publisher has to update their own code. We cannot convert it for them.</li>
+          <li><strong class="text-gray-900">Integration authentication changes.</strong> NetSuite is retiring older integration authentication on a separate schedule from SuiteScript. Related work, different deadline, and we will say so rather than bundle them.</li>
+          <li><strong class="text-gray-900">Anything outside your NetSuite account.</strong> Middleware, external systems, and third-party platforms that call into NetSuite are their own scope.</li>
+        </ul>
+        <p class="text-gray-600 text-sm mt-4">
+          Two known exceptions worth flagging early: SuiteTax currently requires SuiteScript 2.0 for full functionality, and Scriptable Cart does not support 2.1 client scripts. If either applies to you, the plan says so.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who this is for -->
+  <section class="bg-gray-50 border-y border-gray-200 py-20 md:py-24 px-4">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-3">Who this is for</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-10">Three situations this solves.</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        {who.map(w => (
+          <div class="bg-white border border-gray-200 rounded-lg p-6">
+            <h3 class="font-bold text-gray-900 mb-2">{w.t}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{w.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-white py-20 md:py-24 px-4">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-3">Questions</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Before you buy.</h2>
+      {faqs.map(f => (
+        <div class="border-b border-gray-200 last:border-0 py-6">
+          <h3 class="font-bold text-gray-900 mb-2">{f.q}</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">{f.a}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Credibility -->
+  <section class="bg-[#16225A] text-white py-16 px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        {[
+          { v: '20+',  l: 'Years ERP experience' },
+          { v: '200+', l: 'Companies supported' },
+          { v: '300+', l: 'Projects delivered' },
+          { v: '2012', l: 'NetSuite focus begins' },
+        ].map(s => (
+          <div>
+            <div class="text-3xl md:text-4xl font-extrabold">{s.v}</div>
+            <div class="text-blue-300 text-sm mt-1.5">{s.l}</div>
+          </div>
+        ))}
+      </div>
+      <p class="text-indigo-100 text-center max-w-xl mx-auto mt-8">
+        NetSuite is all we do. Your conversion is handled by people who have worked inside these accounts since 2012.
+      </p>
+    </div>
+  </section>
+
+  <!-- Buy -->
+  <section id="buy" class="bg-gray-50 border-t border-gray-200 py-20 md:py-24 px-4">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-3">Get started</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Know what you are sitting on.</h2>
+      <p class="text-gray-600 text-lg max-w-2xl mb-10">
+        {buyIsStripe
+          ? 'Checkout takes about two minutes. We send the access instructions immediately afterward.'
+          : 'Checkout is opening shortly. In the meantime, book a call and we will size your account with you.'}
+      </p>
+
+      <div class="grid lg:grid-cols-[minmax(0,30rem)_minmax(0,1fr)] gap-10 items-start">
+
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+          <div class="flex items-baseline gap-2.5">
+            <span class="text-5xl font-extrabold text-[#0D1235] tracking-tight">$500</span>
+            <span class="text-gray-500">one time</span>
+          </div>
+          <p class="text-gray-500 text-sm mt-1 mb-6">SuiteScript Conversion Plan, built from your account.</p>
+
+          <ul class="text-sm text-gray-600 space-y-2.5 mb-7">
+            <li class="flex gap-2.5"><span class="text-blue-600 font-bold">&check;</span> Full script inventory and conversion scope</li>
+            <li class="flex gap-2.5"><span class="text-blue-600 font-bold">&check;</span> Your conversion quote, already calculated</li>
+            <li class="flex gap-2.5"><span class="text-blue-600 font-bold">&check;</span> A review call with the consultant who ran it</li>
+            <li class="flex gap-2.5"><span class="text-blue-600 font-bold">&check;</span> Yours to execute with anyone</li>
+          </ul>
+
+          <a href={buyHref}
+             onclick={buyIsStripe ? undefined : `Calendly.initPopupWidget({url: '${CALENDLY}'});return false;`}
+             class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded transition-colors">
+            {buyIsStripe ? 'Continue to payment' : 'Book a call to get started'}
+          </a>
+
+          <p class="text-gray-600 text-sm text-center mt-4 leading-relaxed">
+            If we cannot produce a plan for your account, we refund you in full. No conditions.
+          </p>
+          <p class="text-gray-500 text-sm text-center mt-5 pt-5 border-t border-gray-200">
+            By purchasing you accept the <a href="/suitescript-conversion-plan-terms" class="text-blue-600 font-semibold">Conversion Plan Terms of Service</a>.
+          </p>
+        </div>
+
+        <div>
+          <div class="bg-blue-50 border border-blue-200 rounded-xl p-7">
+            <h3 class="font-bold text-gray-900 mb-3">Start the access request today</h3>
+            <p class="text-gray-600 text-sm mb-3">
+              This is the only step that takes real time on your side, and it runs in parallel with everything else. Your administrator will need to:
+            </p>
+            <ul class="list-disc pl-5 text-gray-600 text-sm space-y-2">
+              <li>Create a read-level role with permission to view scripts, script deployments, and bundles</li>
+              <li>Assign it to the user we name after checkout</li>
+              <li>Confirm whether we should look at production, a sandbox, or both</li>
+            </ul>
+            <p class="text-blue-700 text-sm font-semibold mt-4">
+              We send the exact permission list the moment you pay, so you can forward it straight to your admin.
+            </p>
+          </div>
+
+          <div class="pt-8 px-1">
+            <h3 class="font-bold text-gray-900 mb-2">Not sure this is you?</h3>
+            <p class="text-gray-600 mb-5">
+              If your account is unusually large, heavily integrated, or you are not sure the standard analysis fits, talk to us first. We would rather tell you the plan is wrong for your situation than sell you one.
+            </p>
+            <a href="javascript:void(0)"
+               onclick={`Calendly.initPopupWidget({url: '${CALENDLY}'});return false;`}
+               class="inline-block border border-gray-300 hover:border-blue-600 hover:text-blue-600 text-gray-800 font-semibold px-6 py-3 rounded transition-colors">
+              Book a call instead
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <section class="bg-[#0D1235] text-white py-16 px-4 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">2028.2 is a fixed date. What is in your account is not a mystery.</h2>
+      <p class="text-gray-300 text-lg mb-8">Find out for $500, and take the answer wherever you want.</p>
+      <a href="#buy" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded transition-colors">
+        Get your conversion plan
+      </a>
+    </div>
+  </section>
+
+</Layout>

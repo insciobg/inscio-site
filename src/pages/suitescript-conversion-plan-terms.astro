@@ -1,0 +1,191 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const sections = [
+  {
+    id: 's1', n: '1', t: 'Acceptance', key: false,
+    body: [
+      'By checking the acceptance box and completing payment, you agree to these Terms on behalf of your company, and you represent that you are authorized to do so. If you are not authorized to bind your company, do not complete the purchase.',
+      'We keep a record of your acceptance, including the version of these Terms in effect, the date and time, and the email address used. The version of these Terms in effect at the time of your purchase governs that purchase. We may change these Terms for future purchases at any time.',
+    ],
+  },
+  {
+    id: 's2', n: '2', t: 'What the Plan Is', key: false,
+    body: ['The Plan is a written analysis of the SuiteScript footprint in the NetSuite account you identify at purchase. It is delivered as a document. Subject to the access you provide and the information available in your account, the Plan includes:'],
+    list: [
+      'An inventory of deployed scripts by script type and SuiteScript API version',
+      'Script execution history, to the extent available, identifying scripts that appear inactive',
+      'Candidates for decommissioning rather than conversion',
+      'Identification of scripts owned by third-party vendors or delivered in bundles or SuiteApps',
+      'Records touched and dependencies between scripts, to the extent determinable',
+      'A conversion scope, with scripts grouped by complexity, and Inscio pricing for the conversion work',
+    ],
+    after: ['The Plan is an analysis and a recommendation. It is not a warranty, a certification, or a guarantee of any particular outcome, cost, or schedule. You remain responsible for decisions you make about your NetSuite account.'],
+  },
+  {
+    id: 's3', n: '3', t: 'What the Plan Does Not Include', key: false,
+    body: ['The Plan does not include any of the following, and the fee does not cover them:'],
+    list: [
+      'Any change to your NetSuite account. Producing the Plan is a read-only exercise.',
+      'Conversion, remediation, testing, or deployment of any script',
+      'Conversion of scripts owned by third parties, including bundle and SuiteApp publishers. We identify them. Only the publisher can update them.',
+      'Analysis of integration authentication, middleware, external systems, or any platform outside your NetSuite account',
+      'Legal, tax, accounting, or audit advice of any kind',
+    ],
+  },
+  {
+    id: 's4', n: '4', t: 'Fee and Payment', key: false,
+    body: [
+      'The fee for the Plan is $500 (United States dollars), payable in full at the time of purchase. Payment is processed by our third-party payment processor, and your use of that processor is subject to its own terms. We do not receive or store your full payment card details.',
+      'The fee covers one Plan for one NetSuite account. Additional accounts, including separate production and sandbox accounts analyzed as distinct engagements, require separate purchases.',
+      'Where you and Inscio agree to payment by invoice rather than by card, payment is due within thirty (30) days of the invoice date, and work on the Plan begins on receipt of payment unless we agree otherwise in writing.',
+    ],
+  },
+  {
+    id: 's5', n: '5', t: 'Refund', key: false,
+    body: [
+      'If we determine that we cannot produce a Plan for your account, we will refund your fee in full. This includes cases where your account cannot be accessed, where the necessary information is unavailable, or where we conclude the standard analysis does not fit your account.',
+      'If you do not provide the access described in Section 6 within sixty (60) days of purchase, we may cancel the purchase and refund your fee.',
+      'Once the Plan has been delivered to you, the fee is not refundable. The Plan is a completed work product, and it is yours to use under Section 8 whether or not you engage us for any further work.',
+    ],
+  },
+  {
+    id: 's6', n: '6', t: 'Access to Your NetSuite Account', key: false,
+    body: [
+      'To produce the Plan we require access to the NetSuite account you identify. After purchase we will send the specific permissions required. Access is read-level and sufficient to inventory scripts, script deployments, and bundles.',
+      'You are responsible for creating and assigning that access, and for the control and security of all access points into your systems. You represent that you have the authority to grant us this access and that doing so does not breach any agreement between you and a third party, including your agreement with Oracle NetSuite.',
+      'We will use the access only to produce the Plan. You may revoke it at any time. Revoking access before the Plan is delivered may prevent us from completing it, in which case Section 5 applies.',
+    ],
+  },
+  {
+    id: 's7', n: '7', t: 'Your Responsibilities', key: false,
+    body: [
+      'You are responsible for maintaining backups of your data. Although producing the Plan does not involve changing your account, we are not liable for loss of data or for business interruption arising from your systems, your software, or your hardware.',
+      'You are responsible for the accuracy of the information you provide at purchase, including the NetSuite account identifier. A Plan produced against an account you identified incorrectly is still a delivered Plan.',
+      'You acknowledge that the Plan reflects the state of your account at the time of analysis. Scripts added, changed, or removed afterward are not reflected in it.',
+    ],
+  },
+  {
+    id: 's8', n: '8', t: 'Ownership and Use of the Plan', key: true,
+    body: [
+      'Inscio owns the Plan, including its structure, format, and template, and all copyright in it. Inscio also owns the tools, scripts, methods, and know-how used to produce it.',
+      'On payment in full, Inscio grants you a perpetual, irrevocable, worldwide, royalty-free license to use, copy, modify, and share the Plan for your own business purposes. This expressly includes giving the Plan to your employees, your contractors, and any third-party service provider, including service providers who compete with Inscio, so that they can plan or perform a SuiteScript conversion or any other work on your NetSuite account. You do not need our permission and you owe us nothing further for doing so.',
+      'The license does not permit reproducing the format or template of the Plan to produce similar reports for anyone other than you, reselling the Plan, or distributing it as part of a commercial offering. Where you provide the Plan to a third party, their permitted use extends to work performed for you, and not to their own products or services.',
+      'Nothing in this Section restricts your use of your own information. The facts about your NetSuite account are yours, and Inscio claims no ownership in them.',
+    ],
+  },
+  {
+    id: 's9', n: '9', t: 'Confidentiality and Your Data', key: false,
+    body: [
+      'We treat information we obtain from your NetSuite account, and the contents of your Plan, as your confidential information. We will not disclose either to any third party, and we will not publish, quote, or reference your Plan, your company name, or your account, without your prior written consent.',
+      'We may use anonymized and aggregated information that does not identify you, your company, or your account, to improve our services and our published materials.',
+      'We retain a copy of your Plan and the working files behind it so that we can support you later. You may ask us in writing to delete them, and we will do so within a reasonable period, subject to any records we are required to keep.',
+    ],
+  },
+  {
+    id: 's10', n: '10', t: 'Software Warranties', key: false,
+    body: ['Inscio does not develop, manufacture, maintain, or sell software or hardware. Warranties for your software and hardware, including NetSuite, are provided by their manufacturers. Inscio offers no warranties, express or implied, regarding the functionality or capabilities of any software or hardware you use. All software you license is subject solely to the terms of its own license agreement and is not warranted or guaranteed in any way by Inscio.'],
+  },
+  {
+    id: 's11', n: '11', t: 'No Other Warranty', key: false,
+    body: [
+      'The Plan is provided as is. Except as expressly stated in these Terms, Inscio makes no warranties of any kind, express or implied, including any implied warranty of merchantability, fitness for a particular purpose, or non-infringement.',
+      'We do not guarantee that the Plan identifies every script in your account, that execution history is complete, or that the conversion effort described in it will match the effort ultimately required. Those depend on the access granted, the information NetSuite makes available, and changes made to your account after the analysis.',
+    ],
+  },
+  {
+    id: 's12', n: '12', t: 'Limitation of Liability', key: false,
+    body: [
+      'In no event shall Inscio be liable to you for more than the fee you paid for the Plan.',
+      'Inscio shall not be liable for any lost profits, lost savings, loss of data, business interruption, or any incidental, indirect, special, punitive, or consequential damages arising out of or related to the Plan or these Terms, whether in contract, tort, or otherwise, and whether or not Inscio was advised of the possibility of such damages.',
+      'These limits apply to the fullest extent permitted by law and survive termination of these Terms.',
+    ],
+  },
+  {
+    id: 's13', n: '13', t: 'Conversion Services Are Separate', key: false,
+    body: [
+      'These Terms govern the Plan only. Any conversion, remediation, development, testing, support, or other professional services Inscio performs for you are governed by a separate written agreement between us. Nothing in these Terms obligates you to purchase further services, and nothing in these Terms obligates Inscio to perform them.',
+      'Pricing quoted inside your Plan is an offer to perform conversion services on the terms stated in that separate agreement. It is not a binding commitment by either party until that agreement is executed.',
+    ],
+  },
+  {
+    id: 's14', n: '14', t: 'Term', key: false,
+    body: ['These Terms apply to your purchase and continue for as long as necessary to give effect to the provisions that by their nature survive delivery, including Sections 8, 9, 11, 12, and 15.'],
+  },
+];
+
+const general = [
+  ['Governing law and venue.', 'These Terms are governed by the laws of the State of Texas. Venue shall be Collin County, Texas or the Eastern District of Texas.'],
+  ['Relationship of the parties.', 'Inscio is an independent contractor. Neither Inscio nor its consultants are employees of Customer, and neither has authority to act as an officer of Customer or to represent or obligate Customer.'],
+  ['Severability.', 'If any provision of these Terms is held void, unlawful, or unenforceable, it shall be severed in the most limited manner possible and the remaining provisions shall continue in full force.'],
+  ['Assignment.', 'You may not assign these Terms without our prior written consent. Any attempt to do so is void.'],
+  ['Waiver.', 'A failure to insist on strict compliance with any term is not a waiver of that term or of any right or power at any other time.'],
+  ['Force majeure.', 'Neither party is liable for delay or failure in performance due to causes beyond its reasonable control.'],
+  ['Entire agreement.', 'These Terms are the complete and exclusive statement of the agreement between you and Inscio regarding the Plan, and supersede all prior proposals, negotiations, and representations, oral or written, relating to it. Where you and Inscio have a separate signed Professional Services Agreement in effect, that agreement governs services performed under it, and these Terms govern the Plan.'],
+  ['Notices.', 'Written notices to Inscio may be sent to Inscio Business Solutions, LLC, 5830 Granite Pkwy STE 100, Plano, TX 75024. Notices to you may be sent to the email address provided at purchase.'],
+];
+---
+
+<Layout
+  title="Conversion Plan Terms of Service | Inscio"
+  description="Terms of service governing the purchase of an Inscio SuiteScript Conversion Plan."
+  canonical="https://inscio.com/suitescript-conversion-plan-terms"
+>
+
+  <section class="bg-[#0D1235] text-white py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <a href="/suitescript-2-1-conversion" class="inline-block text-blue-300 hover:text-white text-sm font-semibold mb-6 transition-colors">&larr; Back to SuiteScript 2.1 Conversion</a>
+      <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-4">Terms of Service</p>
+      <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-5">SuiteScript Conversion Plan</h1>
+      <p class="text-gray-300 text-lg max-w-2xl">These terms govern your purchase of a Conversion Plan. They are short on purpose. Read them before you buy.</p>
+      <p class="text-blue-300 text-sm mt-7 pt-6 border-t border-white/15">Version 1.0 &middot; Last updated 22 September 2026</p>
+    </div>
+  </section>
+
+  <section class="bg-white py-14 md:py-16 px-4">
+    <div class="max-w-3xl mx-auto">
+
+      <p class="text-gray-600 mb-4">
+        These Terms of Service ("Terms") govern your purchase of a SuiteScript Conversion Plan (the "Plan") from Inscio Business Solutions, LLC, a Texas limited liability company doing business as Inscio ("Inscio", "we", "us"). "You" and "Customer" mean the company on whose behalf the Plan is purchased.
+      </p>
+      <p class="text-gray-600 mb-10">These Terms take effect when you check the acceptance box and complete payment.</p>
+
+      <nav class="bg-gray-50 border border-gray-200 rounded-xl p-7 mb-12">
+        <p class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">Contents</p>
+        <ol class="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-sm">
+          {sections.map(s => (
+            <li><a href={`#${s.id}`} class="text-blue-600 hover:underline">{s.n}. {s.t}</a></li>
+          ))}
+          <li><a href="#s15" class="text-blue-600 hover:underline">15. General</a></li>
+        </ol>
+      </nav>
+
+      {sections.map(s => (
+        <section id={s.id} class={`mb-10 scroll-mt-24 ${s.key ? 'border-l-4 border-blue-600 bg-blue-50/40 rounded-r-xl p-6 -ml-1' : ''}`}>
+          <h2 class="text-xl font-bold text-[#0D1235] mb-3">{s.n}. {s.t}</h2>
+          {s.body.map(para => <p class="text-gray-600 mb-4 last:mb-0">{para}</p>)}
+          {s.list && (
+            <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+              {s.list.map(li => <li>{li}</li>)}
+            </ul>
+          )}
+          {s.after && s.after.map(para => <p class="text-gray-600 mb-4 last:mb-0">{para}</p>)}
+        </section>
+      ))}
+
+      <section id="s15" class="mb-10 scroll-mt-24">
+        <h2 class="text-xl font-bold text-[#0D1235] mb-3">15. General</h2>
+        {general.map(([label, text]) => (
+          <p class="text-gray-600 mb-4"><strong class="text-gray-900">{label}</strong> {text}</p>
+        ))}
+      </section>
+
+      <div class="border-t border-gray-200 pt-8 text-gray-500 text-sm">
+        <p class="mb-1.5">Inscio Business Solutions, LLC &middot; 5830 Granite Pkwy STE 100, Plano, TX 75024</p>
+        <p><a href="/suitescript-2-1-conversion" class="text-blue-600 hover:underline">Back to SuiteScript 2.1 Conversion</a></p>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

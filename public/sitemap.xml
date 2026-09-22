@@ -29,6 +29,10 @@
   <url><loc>https://inscio.com/blog/beyond-erp-ai-operational-transformation/</loc><priority>0.6</priority></url>
   <url><loc>https://inscio.com/blog/saas-apocalypse-what-survives/</loc><priority>0.6</priority></url>
 
+  <!-- SuiteScript 2.1 Conversion -->
+  <url><loc>https://inscio.com/suitescript-2-1-conversion</loc><priority>0.9</priority></url>
+  <url><loc>https://inscio.com/suitescript-conversion-plan-terms</loc><priority>0.3</priority></url>
+
   <!-- Contact + legal -->
   <url><loc>https://inscio.com/contact</loc><priority>0.7</priority></url>
   <url><loc>https://inscio.com/privacy</loc><priority>0.4</priority></url>
