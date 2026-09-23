@@ -1,8 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const CALENDLY = 'https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session?hide_gdpr_banner=1';
-
 // ---------------------------------------------------------------------------
 // NETSUITE ACCESS REQUEST
 // STILL TO CONFIRM: the exact NetSuite permission labels required to deploy
@@ -36,7 +34,7 @@ const steps = [
   {
     n: '04',
     t: 'We walk it together',
-    d: 'A 30-minute call to go through the findings and answer what a document cannot. Book it now so it is already on the calendar when the plan lands.',
+    d: 'A 30-minute call to go through the findings and answer what a document cannot. We send you a booking link once the plan is delivered.',
   },
 ];
 ---
@@ -105,16 +103,11 @@ const steps = [
   <!-- Book the review call -->
   <section class="bg-[#16225A] text-white py-16 px-4">
     <div class="max-w-3xl mx-auto">
-      <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-4">While you are here</p>
-      <h2 class="text-2xl md:text-3xl font-bold mb-4">Book your review call now</h2>
-      <p class="text-indigo-100 text-lg mb-8 max-w-2xl">
-        Every plan includes a 30-minute call to walk the findings together. Booking it now means it is already scheduled when your plan lands, instead of becoming another thing to chase.
+      <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-4">The review call</p>
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">Your 30-minute review call</h2>
+      <p class="text-indigo-100 text-lg max-w-2xl">
+        Every plan includes a 30-minute call to walk the findings together. We will send you a link to book a meeting when your plan is ready, so the call happens with the findings already in front of you.
       </p>
-      <a href="javascript:void(0)"
-         onclick={`Calendly.initPopupWidget({url: '${CALENDLY}'});return false;`}
-         class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded transition-colors">
-        Schedule the review call
-      </a>
     </div>
   </section>
 
