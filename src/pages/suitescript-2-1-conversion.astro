@@ -56,7 +56,6 @@ const faqs = [
   { q: 'Will my scripts stop working before 2028.2?', a: 'No. SuiteScript 1.0 keeps running until then. What changes sooner is support: from 2027.1, NetSuite addresses critical issues only on 1.0.' },
   { q: 'Can my own developer do the conversion?', a: 'Yes, and the plan is written so they can. It says what each script does, what has to change, and in what order.' },
   { q: 'What does the conversion itself cost?', a: 'It is priced per script, in complexity bands, with the criteria printed in your plan so you can check the math. Your plan includes the count and the scope, which is what the price is built from.' },
-  { q: 'Why only $500?', a: 'Because most of the analysis is automated, and because a plan that costs enough to require an approval process is a plan most companies never get around to buying.' },
 ];
 ---
 
@@ -78,13 +77,12 @@ const faqs = [
         We analyze your NetSuite account and hand you a conversion plan. What you have, what has to change, and what it will take.
       </p>
       <div class="flex flex-wrap gap-4">
-        <a href={buyHref}
-           onclick={buyIsStripe ? undefined : `Calendly.initPopupWidget({url: '${CALENDLY}'});return false;`}
+        <a href="#buy"
            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded transition-colors">
-          {buyIsStripe ? 'Get your conversion plan, $500' : 'Talk to us about your conversion plan'}
+          Get your conversion plan, $500
         </a>
         <a href="#anywhere" class="border border-white text-white hover:bg-white hover:text-[#0D1235] font-semibold px-8 py-4 rounded transition-colors">
-          Why we let you take it anywhere
+          Take it anywhere
         </a>
       </div>
     </div>
@@ -188,9 +186,9 @@ const faqs = [
   <section class="bg-gray-50 border-y border-gray-200 py-20 md:py-24 px-4">
     <div class="max-w-6xl mx-auto">
       <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-3">How this works</p>
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Five steps, and only one of them is yours.</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Five steps, and only one to-do for you.</h2>
       <p class="text-gray-600 text-lg max-w-2xl mb-12">
-        You pay, you grant access, and we handle the rest. The access step is the one that takes real time on your side, so start it the same day.
+        You grant access, and we handle the rest. The access step is the one that takes real time on your side, so start it the same day.
       </p>
       <div class="grid md:grid-cols-5 gap-6 md:gap-5">
         {steps.map(s => (
@@ -335,7 +333,7 @@ const faqs = [
   <section id="buy" class="bg-gray-50 border-t border-gray-200 py-20 md:py-24 px-4">
     <div class="max-w-6xl mx-auto">
       <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-3">Get started</p>
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Know what you are sitting on.</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Know where you stand.</h2>
       <p class="text-gray-600 text-lg max-w-2xl mb-10">
         {buyIsStripe
           ? 'Checkout takes about two minutes. We send the access instructions immediately afterward.'
@@ -364,9 +362,6 @@ const faqs = [
             {buyIsStripe ? 'Continue to payment' : 'Book a call to get started'}
           </a>
 
-          <p class="text-gray-600 text-sm text-center mt-4 leading-relaxed">
-            If we cannot produce a plan for your account, we refund you in full. No conditions.
-          </p>
           <p class="text-gray-500 text-sm text-center mt-5 pt-5 border-t border-gray-200">
             By purchasing you accept the <a href="/suitescript-conversion-plan-terms" class="text-blue-600 font-semibold">Conversion Plan Terms of Service</a>.
           </p>
