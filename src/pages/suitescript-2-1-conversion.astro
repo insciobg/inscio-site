@@ -30,7 +30,7 @@ const contents = [
 ];
 
 const steps = [
-  { n: '01', t: 'Buy the plan',   d: 'Card checkout through Stripe. Name, company, card. Nothing about your NetSuite account yet.', when: 'Two minutes', hl: true },
+  { n: '01', t: 'Get started',    d: 'Checkout takes about two minutes.', when: 'Today', hl: true, href: '#buy', linkText: 'Buy the plan' },
   { n: '02', t: 'Grant access',   d: 'Your administrator gives us access to deploy our analyzer. We send the exact permissions after checkout.', when: 'Your admin, same week', hl: true },
   { n: '03', t: 'We analyze',     d: 'Our analyzer runs inside your account and reads your script records directly. No workshops, no discovery calls, nothing for your team to fill out.', when: 'Us, not you', hl: false },
   { n: '04', t: 'Plan delivered', d: 'The document lands, with your script inventory, your scope, and your conversion quote already calculated.', when: 'Us, not you', hl: false },
@@ -196,6 +196,11 @@ const faqs = [
             <p class={`text-xs font-extrabold tracking-widest mb-3 ${s.hl ? 'text-blue-600' : 'text-gray-400'}`}>{s.n}</p>
             <h3 class="font-bold text-gray-900 mb-2 text-base">{s.t}</h3>
             <p class="text-gray-600 text-sm leading-relaxed">{s.d}</p>
+            {s.href && (
+              <a href={s.href} class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 mt-2 transition-colors">
+                {s.linkText} <span aria-hidden="true">&rarr;</span>
+              </a>
+            )}
             <p class={`text-xs font-semibold mt-3 ${s.hl ? 'text-blue-600' : 'text-gray-400'}`}>{s.when}</p>
           </div>
         ))}
