@@ -54,7 +54,7 @@ const faqs = [
   { q: 'What access do you need, and do you install anything?', a: 'We deploy our analyzer into your account as a Suitelet. It reads script records, deployments, bundles, and execution logs. It does not read transactions, customers, employees, or financial data, and it changes none of your existing scripts, records, or configuration. It stays for the engagement so you can look at the assessment, and we remove it thirty days after your plan is delivered. Your exports are yours to keep.' },
   { q: 'What if I have no SuiteScript 1.0 at all?', a: 'You still have a 2028.2 deadline. Scripts on 2.0 and on the 2.x annotation have to move to 2.1 as well. That work is much lighter, and the plan tells you how light.' },
   { q: 'Will my scripts stop working before 2028.2?', a: 'No. SuiteScript 1.0 keeps running until then. What changes sooner is support: from 2027.1, NetSuite addresses critical issues only on 1.0.' },
-  { q: 'Can my own developer do the conversion?', a: 'Yes, and the plan is written so they can. It says what each script does, what has to change, and in what order.' },
+  { q: 'Can my own developer do the conversion?', a: 'Yes, and so can another firm. The plan is written so they can pick it up: what each script does, what has to change, and in what order.' },
   { q: 'What does the conversion itself cost?', a: 'It is priced per script, in complexity bands, with the criteria printed in your plan so you can check the math. Your plan includes the count and the scope, which is what the price is built from.' },
 ];
 ---
@@ -81,8 +81,8 @@ const faqs = [
            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded transition-colors">
           Get your conversion plan
         </a>
-        <a href="#anywhere" class="border border-white text-white hover:bg-white hover:text-[#0D1235] font-semibold px-8 py-4 rounded transition-colors">
-          Take it anywhere
+        <a href="#what-it-looks-like" class="border border-white text-white hover:bg-white hover:text-[#0D1235] font-semibold px-8 py-4 rounded transition-colors">
+          See what you get
         </a>
       </div>
     </div>
@@ -146,7 +146,7 @@ const faqs = [
   </section>
 
   <!-- What it looks like -->
-  <section class="bg-[#16225A] text-white py-20 md:py-24 px-4">
+  <section id="what-it-looks-like" class="bg-[#16225A] text-white py-20 md:py-24 px-4">
     <div class="max-w-6xl mx-auto">
       <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-3">What it looks like</p>
       <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">We bring the tool. You keep the findings.</h2>
@@ -205,37 +205,6 @@ const faqs = [
           </div>
         ))}
       </div>
-    </div>
-  </section>
-
-  <!-- Take it anywhere -->
-  <section id="anywhere" class="bg-[#16225A] text-white py-20 md:py-24 px-4">
-    <div class="max-w-6xl mx-auto">
-      <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-6">No strings</p>
-      <p class="text-2xl md:text-3xl font-bold leading-snug max-w-4xl mb-6">
-        Your plan. Your call. Execute it with us, with your own developer, or with another firm entirely.
-      </p>
-      <p class="text-indigo-100 text-lg max-w-2xl mb-8">
-        We are not going to hold your own account data hostage to win the work. This is not a handshake. It is written into the terms you agree to at checkout, so you can read it before you pay.
-      </p>
-      <ul class="grid gap-3 max-w-2xl mb-8">
-        {[
-          'A permanent license to use, copy, and share your plan, stated in writing',
-          'Free to hand it to any developer or firm, including firms that compete with us',
-          'Written so an outside developer can pick it up and work from it',
-          'The facts about your account are yours. We claim nothing in them.',
-          'No credit, no clawback, no obligation to convert with us',
-          'No access retained after delivery beyond what you choose to keep open',
-        ].map(item => (
-          <li class="relative pl-8 text-blue-100">
-            <span class="absolute left-0 top-3 w-3.5 h-0.5 bg-blue-400"></span>{item}
-          </li>
-        ))}
-      </ul>
-      <p class="text-blue-300 max-w-2xl">
-        We think most companies will ask us to do the work once they see the plan. If yours does not, you still got what you paid for.
-        <a href="/suitescript-conversion-plan-terms" class="text-white underline font-semibold whitespace-nowrap ml-1">Read the terms</a>
-      </p>
     </div>
   </section>
 
