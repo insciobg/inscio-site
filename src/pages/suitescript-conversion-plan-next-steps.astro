@@ -5,15 +5,15 @@ const CALENDLY = 'https://calendly.com/brian-gallagher-inscio/netsuite-strategy-
 
 // ---------------------------------------------------------------------------
 // NETSUITE ACCESS REQUEST
-// The exact permission names below need to come from Nick / the SDF project
-// spec before this page is used as the Stripe redirect. The functional
-// descriptions are accurate; the specific NetSuite permission labels are not
-// yet confirmed and should be made precise here.
+// STILL TO CONFIRM: the exact NetSuite permission labels required to deploy
+// and run the analyzer Suitelet. The functional descriptions below are
+// accurate; the specific permission names need to come from Nick / the SDF
+// project spec before this page carries real weight with an administrator.
 // ---------------------------------------------------------------------------
 const permissions = [
-  'View access to Scripts',
-  'View access to Script Deployments',
-  'View access to Installed Bundles / SuiteApps',
+  'Permission to deploy a SuiteCloud / SDF project into the account',
+  'View access to Scripts and Script Deployments',
+  'View access to Installed Bundles and SuiteApps',
   'View access to Script Execution Logs',
 ];
 
@@ -26,12 +26,12 @@ const steps = [
   {
     n: '02',
     t: 'We analyze your account',
-    d: 'We read the account directly. No workshops, no discovery calls, and nothing for your team to fill out. We do not change anything.',
+    d: 'Our analyzer runs inside your account and reads your script records directly. No workshops, no discovery calls, and nothing for your team to fill out.',
   },
   {
     n: '03',
     t: 'Your plan is delivered',
-    d: 'Script inventory, execution history, decommission candidates, vendor-owned exclusions, and your conversion scope with pricing already calculated.',
+    d: 'Script inventory, execution history, decommission candidates, vendor-owned exclusions, and your conversion scope with pricing already calculated. You get it as a dashboard in your own account, plus CSV and PDF exports.',
   },
   {
     n: '04',
@@ -69,7 +69,7 @@ const steps = [
       <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-3">Do this first</p>
       <h2 class="text-3xl font-bold text-gray-900 mb-4">Send this to your NetSuite administrator</h2>
       <p class="text-gray-600 text-lg mb-8">
-        We need read-level access to the account. We do not need to change anything to produce your plan, and you can revoke the access the moment it is delivered.
+        We deploy our analyzer into your account and it builds the assessment in place. It reads script records, deployments, bundles, and execution logs. It does not touch transactions, customers, or financial data, and it changes none of your existing scripts or configuration.
       </p>
 
       <div class="bg-gray-50 border border-gray-200 rounded-xl p-7 mb-6">
@@ -82,7 +82,7 @@ const steps = [
         </div>
         <div id="permText">
           <p class="text-gray-600 text-sm mb-3">
-            Create a role with view-only permission to the following, and assign it to the Inscio user named in your email:
+            Grant the Inscio user named in your email a role with the following, so we can deploy and run the SuiteScript 1.0 Migration Analyzer:
           </p>
           <ul class="list-disc pl-5 text-gray-700 space-y-2 text-sm">
             {permissions.map(p => <li>{p}</li>)}
@@ -93,6 +93,9 @@ const steps = [
         </div>
       </div>
 
+      <p class="text-gray-600 mb-4">
+        The analyzer stays in your account afterwards so you can open the assessment and re-run it whenever you want. Ask us and we will remove it, or your administrator can remove it themselves.
+      </p>
       <p class="text-gray-500 text-sm">
         If your administrator would rather talk it through before granting anything, that is fine. Reply to your receipt and we will get on a call with them.
       </p>

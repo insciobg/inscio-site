@@ -11,7 +11,7 @@ const sections = [
   },
   {
     id: 's2', n: '2', t: 'What the Plan Is', key: false,
-    body: ['The Plan is a written analysis of the SuiteScript footprint in the NetSuite account you identify at purchase. It is delivered as a document. Subject to the access you provide and the information available in your account, the Plan includes:'],
+    body: ['The Plan is an analysis of the SuiteScript footprint in the NetSuite account you identify at purchase. We produce it by deploying our analyzer into that account, as described in Section 6. It is delivered as an assessment you can view in your own account, together with CSV and PDF exports. Subject to the access you provide and the information available in your account, the Plan includes:'],
     list: [
       'An inventory of deployed scripts by script type and SuiteScript API version',
       'Script execution history, to the extent available, identifying scripts that appear inactive',
@@ -26,7 +26,7 @@ const sections = [
     id: 's3', n: '3', t: 'What the Plan Does Not Include', key: false,
     body: ['The Plan does not include any of the following, and the fee does not cover them:'],
     list: [
-      'Any change to your NetSuite account. Producing the Plan is a read-only exercise.',
+      'Any change to your existing scripts, records, workflows, or configuration. The only thing we add to your account is our analyzer, and we remove it on request after delivery.',
       'Conversion, remediation, testing, or deployment of any script',
       'Conversion of scripts owned by third parties, including bundle and SuiteApp publishers. We identify them. Only the publisher can update them.',
       'Analysis of integration authentication, middleware, external systems, or any platform outside your NetSuite account',
@@ -52,15 +52,17 @@ const sections = [
   {
     id: 's6', n: '6', t: 'Access to Your NetSuite Account', key: false,
     body: [
-      'To produce the Plan we require access to the NetSuite account you identify. After purchase we will send the specific permissions required. Access is read-level and sufficient to inventory scripts, script deployments, and bundles.',
-      'You are responsible for creating and assigning that access, and for the control and security of all access points into your systems. You represent that you have the authority to grant us this access and that doing so does not breach any agreement between you and a third party, including your agreement with Oracle NetSuite.',
+      'To produce the Plan we deploy our analyzer, a Suitelet, into the NetSuite account you identify, and we require access sufficient to deploy and run it. After purchase we will send the specific permissions required.',
+      'The analyzer reads script records, script deployments, installed bundles and SuiteApps, and script execution logs. It does not read transaction, customer, employee, or financial data. It does not create, modify, or delete any of your existing scripts, records, workflows, or configuration.',
+      'The analyzer remains in your account so that you can view and re-run the assessment. We will remove it at any time on your written request, and you may remove it yourself.',
+      'You are responsible for creating and assigning that access, and for the control and security of all access points into your systems. You represent that you have the authority to grant us this access and to permit this deployment, and that doing so does not breach any agreement between you and a third party, including your agreement with Oracle NetSuite.',
       'We will use the access only to produce the Plan. You may revoke it at any time. Revoking access before the Plan is delivered may prevent us from completing it, in which case Section 5 applies.',
     ],
   },
   {
     id: 's7', n: '7', t: 'Your Responsibilities', key: false,
     body: [
-      'You are responsible for maintaining backups of your data. Although producing the Plan does not involve changing your account, we are not liable for loss of data or for business interruption arising from your systems, your software, or your hardware.',
+      'You are responsible for maintaining backups of your data. Although the analyzer does not modify your existing scripts, records, or data, we are not liable for loss of data or for business interruption arising from your systems, your software, or your hardware.',
       'You are responsible for the accuracy of the information you provide at purchase, including the NetSuite account identifier. A Plan produced against an account you identified incorrectly is still a delivered Plan.',
       'You acknowledge that the Plan reflects the state of your account at the time of analysis. Scripts added, changed, or removed afterward are not reflected in it.',
     ],
@@ -68,7 +70,7 @@ const sections = [
   {
     id: 's8', n: '8', t: 'Ownership and Use of the Plan', key: true,
     body: [
-      'Inscio owns the Plan, including its structure, format, and template, and all copyright in it. Inscio also owns the tools, scripts, methods, and know-how used to produce it.',
+      'Inscio owns the Plan, including its structure, format, and template, and all copyright in it. Inscio also owns the analyzer and the tools, scripts, methods, and know-how used to produce the Plan. The analyzer is licensed to you for use in your own account and is not covered by the license granted below, which applies to the Plan.',
       'On payment in full, Inscio grants you a perpetual, irrevocable, worldwide, royalty-free license to use, copy, modify, and share the Plan for your own business purposes. This expressly includes giving the Plan to your employees, your contractors, and any third-party service provider, including service providers who compete with Inscio, so that they can plan or perform a SuiteScript conversion or any other work on your NetSuite account. You do not need our permission and you owe us nothing further for doing so.',
       'The license does not permit reproducing the format or template of the Plan to produce similar reports for anyone other than you, reselling the Plan, or distributing it as part of a commercial offering. Where you provide the Plan to a third party, their permitted use extends to work performed for you, and not to their own products or services.',
       'Nothing in this Section restricts your use of your own information. The facts about your NetSuite account are yours, and Inscio claims no ownership in them.',
@@ -138,7 +140,7 @@ const general = [
       <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-4">Terms of Service</p>
       <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-5">SuiteScript Conversion Plan</h1>
       <p class="text-gray-300 text-lg max-w-2xl">These terms govern your purchase of a Conversion Plan. They are short on purpose. Read them before you buy.</p>
-      <p class="text-blue-300 text-sm mt-7 pt-6 border-t border-white/15">Version 1.0 &middot; Last updated 22 September 2026</p>
+      <p class="text-blue-300 text-sm mt-7 pt-6 border-t border-white/15">Version 1.1 &middot; Last updated 22 September 2026</p>
     </div>
   </section>
 

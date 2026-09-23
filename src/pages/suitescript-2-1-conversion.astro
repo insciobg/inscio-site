@@ -31,8 +31,8 @@ const contents = [
 
 const steps = [
   { n: '01', t: 'Buy the plan',   d: 'Card, on this page. A few questions about your account, then checkout.', when: 'Two minutes', hl: true },
-  { n: '02', t: 'Grant access',   d: 'Your administrator creates a read-level role for us. We send the exact permissions after checkout.', when: 'Your admin, same week', hl: true },
-  { n: '03', t: 'We analyze',     d: 'We read the account directly. No workshops, no discovery calls, no questionnaire for your team to fill out.', when: 'Us, not you', hl: false },
+  { n: '02', t: 'Grant access',   d: 'Your administrator gives us access to deploy our analyzer. We send the exact permissions after checkout.', when: 'Your admin, same week', hl: true },
+  { n: '03', t: 'We analyze',     d: 'Our analyzer runs inside your account and reads your script records directly. No workshops, no discovery calls, nothing for your team to fill out.', when: 'Us, not you', hl: false },
   { n: '04', t: 'Plan delivered', d: 'The document lands, with your script inventory, your scope, and your conversion quote already calculated.', when: 'Us, not you', hl: false },
   { n: '05', t: 'Review call',    d: 'We walk the findings together and answer what a document cannot. Booked when you buy, not chased afterward.', when: 'Scheduled up front', hl: false },
 ];
@@ -51,7 +51,7 @@ const who = [
 ];
 
 const faqs = [
-  { q: 'What access do you need?', a: 'Read-level access to your NetSuite account sufficient to inventory scripts and deployments. We do not need to change anything to produce the plan.' },
+  { q: 'What access do you need, and do you install anything?', a: 'We deploy our analyzer into your account as a Suitelet. It reads script records, deployments, bundles, and execution logs. It does not read transactions, customers, employees, or financial data, and it changes none of your existing scripts, records, or configuration. We remove it after delivery whenever you ask.' },
   { q: 'What if I have no SuiteScript 1.0 at all?', a: 'You still have a 2028.2 deadline. Scripts on 2.0 and on the 2.x annotation have to move to 2.1 as well. That work is much lighter, and the plan tells you how light.' },
   { q: 'Will my scripts stop working before 2028.2?', a: 'No. SuiteScript 1.0 keeps running until then. What changes sooner is support: from 2027.1, NetSuite addresses critical issues only on 1.0.' },
   { q: 'Can my own developer do the conversion?', a: 'Yes, and the plan is written so they can. It says what each script does, what has to change, and in what order.' },
@@ -143,6 +143,43 @@ const faqs = [
             <p class="text-gray-600 text-sm leading-relaxed">{c.d}</p>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What it looks like -->
+  <section class="bg-[#0D1235] text-white py-20 md:py-24 px-4">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">What it looks like</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">A dashboard in your own account, not a PDF in your inbox.</h2>
+      <p class="text-gray-300 text-lg max-w-2xl mb-10">
+        We deploy our analyzer into your NetSuite account and it builds the assessment in place. You can open it yourself, re-run it, and export the whole thing to CSV or PDF.
+      </p>
+
+      <figure class="rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+        <img
+          src="/images/suitescript-analyzer-dashboard.png"
+          alt="The Inscio SuiteScript 1.0 Migration Analyzer, showing a completed conversion assessment with script counts by API version, publisher scope, bundle coverage and unmapped APIs"
+          width="1800" height="912"
+          loading="lazy" decoding="async"
+          class="w-full h-auto block"
+        />
+      </figure>
+      <figcaption class="text-gray-400 text-sm mt-4">Sample assessment. Figures shown are from a single account and are not typical of any particular footprint.</figcaption>
+
+      <div class="grid sm:grid-cols-3 gap-6 mt-12 max-w-4xl">
+        <div>
+          <h3 class="font-bold text-white mb-2">The number that matters</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Not how many 1.0 scripts you have. How many you can actually do something about.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-white mb-2">Export everything</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">CSV for your own analysis, PDF for the people who need a document. Both are yours.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-white mb-2">Run it again</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Each run is kept, so you can see the footprint change as work gets done.</p>
+        </div>
       </div>
     </div>
   </section>
