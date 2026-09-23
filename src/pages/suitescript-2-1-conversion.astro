@@ -7,7 +7,7 @@ import Layout from '../layouts/Layout.astro';
 // While this is null, both buy buttons fall back to booking a call, so the
 // page is never broken. Nothing else needs to change.
 // ---------------------------------------------------------------------------
-const STRIPE_URL: string | null = null;
+const STRIPE_URL: string | null = 'https://buy.stripe.com/fZuaEWcEQdkvbhp3uJ4ZG00';
 
 const CALENDLY = 'https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session?hide_gdpr_banner=1';
 const buyHref = STRIPE_URL ?? 'javascript:void(0)';
