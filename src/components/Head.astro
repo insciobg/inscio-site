@@ -4,12 +4,14 @@ interface Props {
   description: string;
   canonical?: string;
   ogImage?: string;
+  noindex?: boolean;
 }
 
 const {
   title,
   description,
   canonical,
+  noindex = false,
   ogImage = 'https://cdn.prod.website-files.com/670669af02de9c68ed0ce9aa/6706a1ab7db7ccba08a1eb0b_Inscio%20Logo%20Light%20Background.svg',
 } = Astro.props;
 
@@ -23,6 +25,7 @@ const fullTitle = title.includes('Inscio') ? title : `${title} | Inscio`;
 
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Open Graph -->

@@ -1,0 +1,169 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const CALENDLY = 'https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session?hide_gdpr_banner=1';
+
+// ---------------------------------------------------------------------------
+// NETSUITE ACCESS REQUEST
+// The exact permission names below need to come from Nick / the SDF project
+// spec before this page is used as the Stripe redirect. The functional
+// descriptions are accurate; the specific NetSuite permission labels are not
+// yet confirmed and should be made precise here.
+// ---------------------------------------------------------------------------
+const permissions = [
+  'View access to Scripts',
+  'View access to Script Deployments',
+  'View access to Installed Bundles / SuiteApps',
+  'View access to Script Execution Logs',
+];
+
+const steps = [
+  {
+    n: '01',
+    t: 'Grant us read-level access',
+    d: 'This is the only thing we need from you, and it is the one step that takes real time on your side. Send the permissions below to whoever administers your NetSuite account.',
+  },
+  {
+    n: '02',
+    t: 'We analyze your account',
+    d: 'We read the account directly. No workshops, no discovery calls, and nothing for your team to fill out. We do not change anything.',
+  },
+  {
+    n: '03',
+    t: 'Your plan is delivered',
+    d: 'Script inventory, execution history, decommission candidates, vendor-owned exclusions, and your conversion scope with pricing already calculated.',
+  },
+  {
+    n: '04',
+    t: 'We walk it together',
+    d: 'A call to go through the findings and answer what a document cannot. Book it now so it is already on the calendar when the plan lands.',
+  },
+];
+---
+
+<Layout
+  title="Next Steps | Inscio"
+  description="Your SuiteScript Conversion Plan is confirmed. Here is what happens next and the NetSuite access we need to begin."
+  noindex={true}
+>
+
+  <!-- Confirmation -->
+  <section class="bg-[#0D1235] text-white py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <div class="inline-flex items-center gap-2.5 bg-green-500/15 border border-green-400/40 rounded-full px-4 py-1.5 mb-7">
+        <span class="text-green-400 font-bold">&check;</span>
+        <span class="text-green-300 text-sm font-semibold">Payment received</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+        Thanks. Here is what happens next.
+      </h1>
+      <p class="text-gray-300 text-lg max-w-2xl">
+        Your receipt is on its way by email. There is one thing we need from you to start, and it is worth doing today rather than tomorrow.
+      </p>
+    </div>
+  </section>
+
+  <!-- The access request -->
+  <section class="bg-white py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-3">Do this first</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Send this to your NetSuite administrator</h2>
+      <p class="text-gray-600 text-lg mb-8">
+        We need read-level access to the account. We do not need to change anything to produce your plan, and you can revoke the access the moment it is delivered.
+      </p>
+
+      <div class="bg-gray-50 border border-gray-200 rounded-xl p-7 mb-6">
+        <div class="flex items-start justify-between gap-4 mb-5">
+          <h3 class="font-bold text-gray-900">Access required</h3>
+          <button
+            id="copyBtn"
+            class="flex-none text-sm font-semibold text-blue-600 hover:text-blue-700 border border-gray-300 hover:border-blue-600 rounded px-3 py-1.5 transition-colors"
+          >Copy</button>
+        </div>
+        <div id="permText">
+          <p class="text-gray-600 text-sm mb-3">
+            Create a role with view-only permission to the following, and assign it to the Inscio user named in your email:
+          </p>
+          <ul class="list-disc pl-5 text-gray-700 space-y-2 text-sm">
+            {permissions.map(p => <li>{p}</li>)}
+          </ul>
+          <p class="text-gray-600 text-sm mt-4">
+            Please also confirm whether we should analyze production, a sandbox, or both.
+          </p>
+        </div>
+      </div>
+
+      <p class="text-gray-500 text-sm">
+        If your administrator would rather talk it through before granting anything, that is fine. Reply to your receipt and we will get on a call with them.
+      </p>
+    </div>
+  </section>
+
+  <!-- Book the review call -->
+  <section class="bg-[#16225A] text-white py-16 px-4">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-4">While you are here</p>
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">Book your review call now</h2>
+      <p class="text-indigo-100 text-lg mb-8 max-w-2xl">
+        Every plan includes a call to walk the findings together. Booking it now means it is already scheduled when your plan lands, instead of becoming another thing to chase.
+      </p>
+      <a href="javascript:void(0)"
+         onclick={`Calendly.initPopupWidget({url: '${CALENDLY}'});return false;`}
+         class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded transition-colors">
+        Schedule the review call
+      </a>
+    </div>
+  </section>
+
+  <!-- What happens -->
+  <section class="bg-white py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-3">The whole process</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-10">Four steps, and you have already done the hard one.</h2>
+      {steps.map(s => (
+        <div class="flex gap-5 py-6 border-b border-gray-200 last:border-0">
+          <div class="flex-none w-12 h-12 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-extrabold">{s.n}</div>
+          <div>
+            <h3 class="font-bold text-gray-900 mb-1.5">{s.t}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{s.d}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Footer help -->
+  <section class="bg-gray-50 border-t border-gray-200 py-14 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-xl font-bold text-gray-900 mb-3">Questions before we start?</h2>
+      <p class="text-gray-600 mb-6">
+        Reply to your receipt, or email <a href="mailto:brian@inscio.com" class="text-blue-600 font-semibold">brian@inscio.com</a>. If anything about your account turns out to make the standard analysis a bad fit, we will tell you and refund you in full.
+      </p>
+      <p class="text-gray-500 text-sm">
+        <a href="/suitescript-conversion-plan-terms" class="text-blue-600">Conversion Plan Terms of Service</a>
+        <span class="mx-2">&middot;</span>
+        <a href="/suitescript-2-1-conversion" class="text-blue-600">Back to SuiteScript 2.1 Conversion</a>
+      </p>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      var btn = document.getElementById('copyBtn');
+      var src = document.getElementById('permText');
+      if (!btn || !src) return;
+      btn.addEventListener('click', function () {
+        var text = src.innerText.replace(/\n{3,}/g, '\n\n').trim();
+        navigator.clipboard.writeText(text).then(function () {
+          var original = btn.textContent;
+          btn.textContent = 'Copied';
+          setTimeout(function () { btn.textContent = original; }, 2000);
+        }).catch(function () {
+          btn.textContent = 'Press Cmd+C';
+          setTimeout(function () { btn.textContent = 'Copy'; }, 2000);
+        });
+      });
+    })();
+  </script>
+
+</Layout>
