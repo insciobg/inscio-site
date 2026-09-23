@@ -51,7 +51,7 @@ const who = [
 ];
 
 const faqs = [
-  { q: 'What access do you need, and do you install anything?', a: 'We deploy our analyzer into your account as a Suitelet. It reads script records, deployments, bundles, and execution logs. It does not read transactions, customers, employees, or financial data, and it changes none of your existing scripts, records, or configuration. We remove it after delivery whenever you ask.' },
+  { q: 'What access do you need, and do you install anything?', a: 'We deploy our analyzer into your account as a Suitelet. It reads script records, deployments, bundles, and execution logs. It does not read transactions, customers, employees, or financial data, and it changes none of your existing scripts, records, or configuration. It stays for the engagement so you can look at the assessment, and we remove it thirty days after your plan is delivered. Your exports are yours to keep.' },
   { q: 'What if I have no SuiteScript 1.0 at all?', a: 'You still have a 2028.2 deadline. Scripts on 2.0 and on the 2.x annotation have to move to 2.1 as well. That work is much lighter, and the plan tells you how light.' },
   { q: 'Will my scripts stop working before 2028.2?', a: 'No. SuiteScript 1.0 keeps running until then. What changes sooner is support: from 2027.1, NetSuite addresses critical issues only on 1.0.' },
   { q: 'Can my own developer do the conversion?', a: 'Yes, and the plan is written so they can. It says what each script does, what has to change, and in what order.' },
@@ -151,9 +151,9 @@ const faqs = [
   <section class="bg-[#16225A] text-white py-20 md:py-24 px-4">
     <div class="max-w-6xl mx-auto">
       <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-3">What it looks like</p>
-      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">A dashboard in your own account, not a PDF in your inbox.</h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">We bring the tool. You keep the findings.</h2>
       <p class="text-indigo-100 text-lg max-w-2xl mb-10">
-        We deploy our analyzer into your NetSuite account and it builds the assessment in place. You can open it yourself, re-run it, and export the whole thing to CSV or PDF.
+        We deploy our analyzer into your NetSuite account and it builds the assessment in place. You can open it yourself and have it in front of you on the review call. Thirty days after your plan is delivered we take the analyzer back out. The findings, the CSV, and the PDF are yours to keep.
       </p>
 
       <figure class="rounded-xl overflow-hidden ring-1 ring-white/25 shadow-2xl">
@@ -174,11 +174,11 @@ const faqs = [
         </div>
         <div>
           <h3 class="font-bold text-white mb-2">Export everything</h3>
-          <p class="text-indigo-100/80 text-sm leading-relaxed">CSV for your own analysis, PDF for the people who need a document. Both are yours.</p>
+          <p class="text-indigo-100/80 text-sm leading-relaxed">CSV for your own analysis, PDF for the people who need a document. Both are yours permanently.</p>
         </div>
         <div>
-          <h3 class="font-bold text-white mb-2">Run it again</h3>
-          <p class="text-indigo-100/80 text-sm leading-relaxed">Each run is kept, so you can see the footprint change as work gets done.</p>
+          <h3 class="font-bold text-white mb-2">We clean up after ourselves</h3>
+          <p class="text-indigo-100/80 text-sm leading-relaxed">Our code comes back out when the engagement ends. You should expect that from anyone who deploys into your production account.</p>
         </div>
       </div>
     </div>
