@@ -88,23 +88,31 @@ const steps = [
         </div>
         <div id="permText">
           <p class="text-gray-600 text-sm mb-5">
-            Two things, so we can install and run the SuiteScript 1.0 Migration Analyzer:
+            Inscio is producing a SuiteScript conversion plan for our NetSuite account. To do that they install an analyzer that reads script records only. Three things:
           </p>
 
-          <p class="font-semibold text-gray-900 text-sm mb-1.5">1. Enable these features</p>
+          <p class="font-semibold text-gray-900 text-sm mb-1.5">1. Create the user</p>
+          <p class="text-gray-600 text-sm mb-5">
+            Set up an employee record for the Inscio consultant, using the name and email address in the message above.
+          </p>
+
+          <p class="font-semibold text-gray-900 text-sm mb-1.5">2. Enable these features</p>
           <p class="text-gray-600 text-sm mb-2">Setup &gt; Company &gt; Enable Features &gt; SuiteCloud</p>
           <ul class="list-disc pl-5 text-gray-700 space-y-1.5 text-sm mb-5">
             {features.map(f => <li>{f}</li>)}
           </ul>
 
-          <p class="font-semibold text-gray-900 text-sm mb-1.5">2. Grant this access</p>
-          <p class="text-gray-600 text-sm mb-2">Assign the Inscio user named in your email a role with:</p>
-          <ul class="list-disc pl-5 text-gray-700 space-y-1.5 text-sm">
+          <p class="font-semibold text-gray-900 text-sm mb-1.5">3. Create a role and assign it</p>
+          <p class="text-gray-600 text-sm mb-2">Simplest path is to copy the Developer role, then confirm it has:</p>
+          <ul class="list-disc pl-5 text-gray-700 space-y-1.5 text-sm mb-3">
             {permissions.map(p => <li>{p}</li>)}
           </ul>
+          <p class="text-gray-600 text-sm">
+            Assign that role to the user from step 1.
+          </p>
 
           <p class="text-gray-600 text-sm mt-5">
-            Please also confirm whether we should analyze production, a sandbox, or both.
+            When it is done, email support@inscio.com and tell us whether to analyze production, a sandbox, or both.
           </p>
         </div>
       </div>
