@@ -40,7 +40,7 @@ Every system had its own version of the customer, the order, and the number. Mon
 
 That is a big reason unified platforms like NetSuite exist. Companies got tired of paying people to make their systems agree with each other.
 
-The new way is the old way with better tools. It recreates the same problem.
+The new way is the old way with better tools. The integrations are better. The problem of ten versions of the truth is not gone.
 
 ## Why stitched-together systems break
 
@@ -88,13 +88,13 @@ NetSuite runs finance, inventory, orders, purchasing, and customers on one datab
 
 Workflow and approvals are built into the platform. So is the audit trail. Permissions are managed in one place.
 
-That is not a legacy idea. It is exactly what AI needs. And it is why Oracle is building AI directly into NetSuite instead of asking customers to bolt it on from the outside. The AI works across the same records your team already uses.
+That is not a legacy idea. It is the foundation AI needs. And it is why Oracle is building AI directly into NetSuite instead of asking customers to bolt it on from the outside. The AI works across the same records your team already uses.
 
 ## Where specialist tools still fit
 
 This is not an argument against every tool that is not NetSuite.
 
-Plenty of specialist tools add real value. Expense management, payments, tax calculation, and AP capture are good examples. The best ones plug into NetSuite, write back to it, and treat it as the system of record.
+Plenty of specialist tools add real value. Expense management, payments, tax calculation, and AP capture are good examples. Most NetSuite customers connect a few of them, and that is healthy. The best ones plug into NetSuite, write back to it, and treat it as the system of record.
 
 That is the test. A good tool makes your core system more complete. A risky one asks you to make it smaller.
 
