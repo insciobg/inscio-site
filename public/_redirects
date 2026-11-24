@@ -107,3 +107,7 @@
 # Project Estimator → NetSuite Pricing Calculator rename (May 2026)
 /estimator                      /netsuite-pricing-calculator               301
 /estimator/                     /netsuite-pricing-calculator               301
+
+# Inscio U video page folded into /videos (2026-11-23)
+/inscio-u/the-system-underneath-ai /videos#inscio-u 301
+/inscio-u/the-system-underneath-ai/ /videos#inscio-u 301

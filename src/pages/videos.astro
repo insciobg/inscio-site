@@ -129,6 +129,8 @@ const inscioU = {
   uploadDate: '2026-11-23',
 };
 
+const shareUrl = 'https://inscio.com/videos#inscio-u';
+
 const videoSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoObject',
@@ -154,6 +156,7 @@ const walkthroughs = [
 <Layout
   title="NetSuite Videos: Inscio U Explainers and Product Demos | Inscio"
   description="Short Inscio U explainers on NetSuite and AI, plus NetSuite product demos covering financials, analytics, supply chain, CRM, integrations, and industry solutions."
+  ogImage="https://inscio.com/images/og/inscio-u-system-underneath-ai.jpg"
 >
 
 <style is:inline>
@@ -259,12 +262,14 @@ const walkthroughs = [
       </div>
       <div class="lg:col-span-2">
         <p class="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-3">AI &amp; NetSuite &middot; 1:18</p>
-        <h3 class="text-3xl font-extrabold text-gray-900 leading-tight mb-4"><a href="/inscio-u/the-system-underneath-ai" class="hover:text-blue-600 transition-colors">{inscioU.title}</a></h3>
+        <h3 class="text-3xl font-extrabold text-gray-900 leading-tight mb-4">{inscioU.title}</h3>
         <p class="text-gray-600 leading-relaxed mb-6">{inscioU.description}</p>
-        <div class="flex flex-wrap gap-6">
-          <a href="/inscio-u/the-system-underneath-ai" class="text-blue-600 font-semibold hover:text-blue-700">Transcript and share &rarr;</a>
-          <a href="/blog/new-finance-stack-old-problem" class="text-blue-600 font-semibold hover:text-blue-700">Read the full post &rarr;</a>
+        <div class="flex flex-wrap items-center gap-3 mb-6">
+          <button id="share-copy" type="button" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded transition-colors">Copy link</button>
+          <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`} target="_blank" rel="noopener" class="border border-gray-300 hover:border-gray-500 text-gray-800 text-sm font-semibold px-4 py-2 rounded transition-colors">Share on LinkedIn</a>
+          <a href={`mailto:?subject=${encodeURIComponent('Worth 78 seconds: ' + inscioU.title)}&body=${encodeURIComponent(shareUrl)}`} class="border border-gray-300 hover:border-gray-500 text-gray-800 text-sm font-semibold px-4 py-2 rounded transition-colors">Email</a>
         </div>
+        <a href="/blog/new-finance-stack-old-problem" class="text-blue-600 font-semibold hover:text-blue-700">Read the full post &rarr;</a>
       </div>
     </div>
   </div>
@@ -343,6 +348,12 @@ function closeLightbox(e) {
   document.getElementById('video-lightbox').classList.remove('open');
   document.body.style.overflow = '';
 }
+document.getElementById('share-copy').addEventListener('click', function () {
+  var btn = this, url = 'https://inscio.com/videos#inscio-u';
+  var done = function () { btn.textContent = 'Link copied'; setTimeout(function () { btn.textContent = 'Copy link'; }, 2000); };
+  if (navigator.clipboard) { navigator.clipboard.writeText(url).then(done, function () { window.prompt('Copy this link:', url); }); }
+  else { window.prompt('Copy this link:', url); }
+});
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeLightbox();
 });
