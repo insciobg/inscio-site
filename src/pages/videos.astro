@@ -284,7 +284,7 @@ const walkthroughs = [
             <p class="text-xs text-gray-500 mt-1 leading-snug">{v.description}</p>
             <div class="flex items-center gap-4 mt-2 text-xs font-semibold">
               <button type="button" class="text-blue-600 hover:text-blue-700" onclick={`copyVideoLink(this, '${v.slug}')`}>Copy link</button>
-              <a class="text-blue-600 hover:text-blue-700" href={`mailto:?subject=${encodeURIComponent('Worth ' + v.length + ': ' + v.title)}&body=${encodeURIComponent('https://inscio.com/videos#' + v.slug)}`}>Email</a>
+              <button type="button" class="text-blue-600 hover:text-blue-700" onclick={`emailVideoLink('${v.slug}')`}>Email</button>
             </div>
           </div>
         ))}
@@ -379,6 +379,11 @@ function openInscioVideo(slug) {
   document.body.style.overflow = 'hidden';
   if (location.hash !== '#' + slug) history.replaceState(null, '', '#' + slug);
   var p = vid.play(); if (p && p.catch) p.catch(function () {});
+}
+function emailVideoLink(slug) {
+  var v = INSCIO[slug]; if (!v) return;
+  var url = 'https://inscio.com/videos#' + slug;
+  window.location.href = 'mai' + 'lto:?subject=' + encodeURIComponent('Worth a quick watch: ' + v.title) + '&body=' + encodeURIComponent(url);
 }
 function copyVideoLink(btn, slug) {
   var url = 'https://inscio.com/videos#' + slug;
