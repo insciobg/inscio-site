@@ -14,6 +14,7 @@
   <!-- Resources hubs -->
   <url><loc>https://inscio.com/resources</loc><priority>0.7</priority></url>
   <url><loc>https://inscio.com/videos</loc><priority>0.7</priority></url>
+  <url><loc>https://inscio.com/inscio-u/the-system-underneath-ai</loc><priority>0.6</priority></url>
   <url><loc>https://inscio.com/library</loc><priority>0.7</priority></url>
 
   <!-- Blog -->

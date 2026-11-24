@@ -1,0 +1,114 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const video = {
+  title: 'The System Underneath AI',
+  description: "Everyone wants to know what AI can do for their business. Almost no one asks what AI needs. In 78 seconds, here's why the first line item on your AI plan probably isn't AI.",
+  src: '/videos/inscio-u/netsuite-ai-explainer.mp4',
+  poster: '/videos/inscio-u/netsuite-ai-explainer-poster.jpg',
+  ogImage: 'https://inscio.com/images/og/inscio-u-system-underneath-ai.jpg',
+  url: 'https://inscio.com/inscio-u/the-system-underneath-ai',
+};
+
+const transcript = [
+  'Everyone wants to know what AI can do for their business.',
+  'Almost no one asks what AI needs.',
+  'AI runs on data. Clean. Connected. In one place.',
+  "Lately, there's a lot of vendors pitching a lightweight ledger. An AI tool for every job. Agents to connect them. Pick the best tool for every task. Skip the big ERP.",
+  "We've been here before. It used to be called best-of-breed.",
+  'Every system had its own version of the truth. Month-end became a reconciliation project. The real source of truth was a spreadsheet.',
+  "That's why companies moved to unified platforms like NetSuite.",
+  'The new stack is the old problem. Better tools. Same trap.',
+  "Integrations are not a source of truth. They're translations.",
+  'In the old world, an accountant caught the mistakes. The new stack replaces that person with an agent. Agents are fast. They act on whatever data they can see.',
+  'Fragmented data used to cost you time. With AI, it costs you decisions.',
+  "NetSuite runs everything on one database. One sales order. One customer. One truth. Nothing to reconcile, because there's no between.",
+  "That's the foundation AI needs.",
+  "If AI is on your plan, the first line item probably isn't AI.",
+  "It's the system underneath it.",
+  "That's what Inscio helps you get right.",
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoObject',
+  name: video.title,
+  description: video.description,
+  thumbnailUrl: `https://inscio.com${video.poster}`,
+  contentUrl: `https://inscio.com${video.src}`,
+  embedUrl: video.url,
+  uploadDate: '2026-11-23',
+  duration: 'PT1M18S',
+  transcript: transcript.join(' '),
+  publisher: { '@type': 'Organization', name: 'Inscio', url: 'https://inscio.com' },
+};
+---
+
+<Layout
+  title="The System Underneath AI | Inscio U"
+  description={video.description}
+  ogImage={video.ogImage}
+>
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+
+<!-- Hero + video -->
+<section class="bg-[#0D1235] text-white pt-20 pb-24 px-4">
+  <div class="max-w-5xl mx-auto">
+    <a href="/videos#inscio-u" class="text-blue-400 text-sm font-semibold uppercase tracking-widest hover:text-blue-300">Inscio U</a>
+    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mt-4 mb-6 max-w-3xl">{video.title}</h1>
+    <p class="text-gray-300 text-lg md:text-xl max-w-3xl leading-relaxed mb-10">{video.description}</p>
+    <video
+      class="w-full aspect-video rounded-xl shadow-2xl bg-black"
+      src={video.src}
+      poster={video.poster}
+      controls
+      playsinline
+      preload="metadata"
+      aria-label={video.title}
+    ></video>
+    <div class="flex flex-wrap items-center gap-4 mt-8">
+      <button id="copy-link" type="button" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded transition-colors">Copy link</button>
+      <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(video.url)}`} target="_blank" rel="noopener" class="border border-white/40 hover:border-white text-white font-semibold px-6 py-3 rounded transition-colors">Share on LinkedIn</a>
+      <a href={`mailto:?subject=${encodeURIComponent('Worth 78 seconds: The System Underneath AI')}&body=${encodeURIComponent(video.url)}`} class="border border-white/40 hover:border-white text-white font-semibold px-6 py-3 rounded transition-colors">Email</a>
+    </div>
+  </div>
+</section>
+
+<!-- Transcript + related -->
+<section class="py-20 bg-white">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Transcript</h2>
+    <div class="space-y-4 text-gray-700 leading-relaxed">
+      {transcript.map((line) => <p>{line}</p>)}
+    </div>
+    <div class="mt-12 pt-8 border-t border-gray-100 flex flex-wrap gap-6">
+      <a href="/blog/new-finance-stack-old-problem" class="text-blue-600 font-semibold hover:text-blue-700">Read the full post &rarr;</a>
+      <a href="/videos" class="text-blue-600 font-semibold hover:text-blue-700">More videos &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-gray-50 py-16">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-bold text-gray-900 mb-4">Is your system ready for AI?</h2>
+    <p class="text-gray-500 mb-8">Let's talk about where your data lives today and what it would take to get it in one place.</p>
+    <a href="javascript:void(0)" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/brian-gallagher-inscio/netsuite-strategy-session?hide_gdpr_banner=1'});return false;"
+      class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded transition-colors">
+      Book a Free Strategy Call
+    </a>
+  </div>
+</section>
+
+<script is:inline>
+document.getElementById('copy-link').addEventListener('click', function () {
+  var btn = this;
+  var url = 'https://inscio.com/inscio-u/the-system-underneath-ai';
+  var done = function () { btn.textContent = 'Link copied'; setTimeout(function () { btn.textContent = 'Copy link'; }, 2000); };
+  if (navigator.clipboard) { navigator.clipboard.writeText(url).then(done, function () { window.prompt('Copy this link:', url); }); }
+  else { window.prompt('Copy this link:', url); }
+});
+</script>
+
+</Layout>
