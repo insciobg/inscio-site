@@ -120,6 +120,27 @@ const categories = [
   },
 ];
 
+const inscioU = {
+  title: 'The System Underneath AI',
+  description: "Everyone wants to know what AI can do for their business. Almost no one asks what AI needs. In 78 seconds, here's why the first line item on your AI plan probably isn't AI.",
+  src: '/videos/inscio-u/netsuite-ai-explainer.mp4',
+  poster: '/videos/inscio-u/netsuite-ai-explainer-poster.jpg',
+  duration: 'PT1M18S',
+  uploadDate: '2026-11-23',
+};
+
+const videoSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoObject',
+  name: inscioU.title,
+  description: inscioU.description,
+  thumbnailUrl: `https://inscio.com${inscioU.poster}`,
+  contentUrl: `https://inscio.com${inscioU.src}`,
+  uploadDate: inscioU.uploadDate,
+  duration: inscioU.duration,
+  publisher: { '@type': 'Organization', name: 'Inscio', url: 'https://inscio.com' },
+};
+
 const walkthroughs = [
   {
     title: 'NetSuite SuiteApprovals Workflow',
@@ -131,8 +152,8 @@ const walkthroughs = [
 ---
 
 <Layout
-  title="NetSuite Product Demo Videos | Inscio"
-  description="Watch NetSuite product demos covering financials, analytics, AI, supply chain, CRM, integrations, and industry solutions — curated by Inscio."
+  title="NetSuite Videos: Inscio U Explainers and Product Demos | Inscio"
+  description="Short Inscio U explainers on NetSuite and AI, plus NetSuite product demos covering financials, analytics, supply chain, CRM, integrations, and industry solutions."
 >
 
 <style is:inline>
@@ -207,10 +228,42 @@ const walkthroughs = [
 <section class="bg-[#0D1235] text-white py-28 px-4">
   <div class="max-w-5xl mx-auto">
     <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-6">VIDEO LIBRARY</p>
-    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-8 max-w-3xl">NetSuite product demos — see it in action.</h1>
+    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-8 max-w-3xl">See NetSuite in action.</h1>
     <p class="text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed">
-      Official NetSuite product demonstrations. Click any video to play.
+      Short Inscio U explainers, plus official NetSuite product demos. Click any video to play.
     </p>
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(videoSchema)}></script>
+
+<!-- Inscio U -->
+<section id="inscio-u" class="py-20 bg-gray-50 border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center gap-3 mb-3">
+      <h2 class="text-2xl font-bold text-gray-900">Inscio U</h2>
+      <span class="bg-blue-600 text-white text-xs font-semibold px-2.5 py-1 rounded uppercase tracking-wide">New</span>
+    </div>
+    <p class="text-gray-500 mb-10">Short explainers on NetSuite topics, built for owners and CFOs.</p>
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
+      <div class="lg:col-span-3">
+        <video
+          class="w-full aspect-video rounded-xl shadow-lg bg-black"
+          src={inscioU.src}
+          poster={inscioU.poster}
+          controls
+          playsinline
+          preload="none"
+          aria-label={inscioU.title}
+        ></video>
+      </div>
+      <div class="lg:col-span-2">
+        <p class="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-3">AI &amp; NetSuite &middot; 1:18</p>
+        <h3 class="text-3xl font-extrabold text-gray-900 leading-tight mb-4">{inscioU.title}</h3>
+        <p class="text-gray-600 leading-relaxed mb-6">{inscioU.description}</p>
+        <a href="/blog/new-finance-stack-old-problem" class="text-blue-600 font-semibold hover:text-blue-700">Read the full post &rarr;</a>
+      </div>
+    </div>
   </div>
 </section>
 
