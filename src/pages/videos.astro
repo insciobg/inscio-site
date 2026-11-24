@@ -120,28 +120,33 @@ const categories = [
   },
 ];
 
-const inscioU = {
-  title: 'The System Underneath AI',
-  description: "Everyone wants to know what AI can do for their business. Almost no one asks what AI needs. In 78 seconds, here's why the first line item on your AI plan probably isn't AI.",
-  src: '/videos/inscio-u/netsuite-ai-explainer.mp4',
-  poster: '/videos/inscio-u/netsuite-ai-explainer-poster.jpg',
-  duration: 'PT1M18S',
-  uploadDate: '2026-11-23',
-};
+const inscioVideos = [
+  {
+    slug: 'the-system-underneath-ai',
+    title: 'The System Underneath AI',
+    description: "Everyone wants to know what AI can do for their business. Almost no one asks what AI needs. Here's why the first line item on your AI plan probably isn't AI.",
+    src: '/videos/inscio-u/netsuite-ai-explainer.mp4',
+    poster: '/videos/inscio-u/netsuite-ai-explainer-poster.jpg',
+    length: '1:18',
+    duration: 'PT1M18S',
+    uploadDate: '2026-11-23',
+  },
+];
 
-const shareUrl = 'https://inscio.com/videos#inscio-u';
+const inscioMap = Object.fromEntries(inscioVideos.map((v) => [v.slug, { title: v.title, src: v.src, poster: v.poster }]));
 
-const videoSchema = {
+const videoSchema = inscioVideos.map((v) => ({
   '@context': 'https://schema.org',
   '@type': 'VideoObject',
-  name: inscioU.title,
-  description: inscioU.description,
-  thumbnailUrl: `https://inscio.com${inscioU.poster}`,
-  contentUrl: `https://inscio.com${inscioU.src}`,
-  uploadDate: inscioU.uploadDate,
-  duration: inscioU.duration,
+  name: v.title,
+  description: v.description,
+  thumbnailUrl: `https://inscio.com${v.poster}`,
+  contentUrl: `https://inscio.com${v.src}`,
+  embedUrl: `https://inscio.com/videos#${v.slug}`,
+  uploadDate: v.uploadDate,
+  duration: v.duration,
   publisher: { '@type': 'Organization', name: 'Inscio', url: 'https://inscio.com' },
-};
+}));
 
 const walkthroughs = [
   {
@@ -195,6 +200,13 @@ const walkthroughs = [
   width: 100%; max-width: 960px;
   aspect-ratio: 16/9;
 }
+#lightbox-video {
+  display: none;
+  width: 100%; height: 100%;
+  border-radius: 0.75rem; background: #000;
+}
+#lightbox-inner.mp4 iframe { display: none; }
+#lightbox-inner.mp4 #lightbox-video { display: block; }
 #lightbox-inner iframe {
   width: 100%; height: 100%;
   border: none; border-radius: 0.75rem;
@@ -223,6 +235,7 @@ const walkthroughs = [
   <div id="lightbox-inner">
     <button id="lightbox-close" onclick="closeLightbox()">✕</button>
     <iframe id="lightbox-iframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <video id="lightbox-video" controls playsinline preload="none"></video>
     <div id="lightbox-title"></div>
   </div>
 </div>
@@ -240,44 +253,44 @@ const walkthroughs = [
 
 <script type="application/ld+json" set:html={JSON.stringify(videoSchema)}></script>
 
-<!-- Inscio U -->
-<section id="inscio-u" class="py-20 bg-gray-50 border-b border-gray-100">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center gap-3 mb-3">
-      <h2 class="text-2xl font-bold text-gray-900">Inscio U</h2>
-      <span class="bg-blue-600 text-white text-xs font-semibold px-2.5 py-1 rounded uppercase tracking-wide">New</span>
-    </div>
-    <p class="text-gray-500 mb-10">Short explainers on NetSuite topics, built for owners and CFOs.</p>
-    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
-      <div class="lg:col-span-3">
-        <video
-          class="w-full aspect-video rounded-xl shadow-lg bg-black"
-          src={inscioU.src}
-          poster={inscioU.poster}
-          controls
-          playsinline
-          preload="none"
-          aria-label={inscioU.title}
-        ></video>
-      </div>
-      <div class="lg:col-span-2">
-        <p class="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-3">AI &amp; NetSuite &middot; 1:18</p>
-        <h3 class="text-3xl font-extrabold text-gray-900 leading-tight mb-4">{inscioU.title}</h3>
-        <p class="text-gray-600 leading-relaxed mb-6">{inscioU.description}</p>
-        <div class="flex flex-wrap items-center gap-3 mb-6">
-          <button id="share-copy" type="button" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded transition-colors">Copy link</button>
-          <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`} target="_blank" rel="noopener" class="border border-gray-300 hover:border-gray-500 text-gray-800 text-sm font-semibold px-4 py-2 rounded transition-colors">Share on LinkedIn</a>
-          <a href={`mailto:?subject=${encodeURIComponent('Worth 78 seconds: ' + inscioU.title)}&body=${encodeURIComponent(shareUrl)}`} class="border border-gray-300 hover:border-gray-500 text-gray-800 text-sm font-semibold px-4 py-2 rounded transition-colors">Email</a>
-        </div>
-        <a href="/blog/new-finance-stack-old-problem" class="text-blue-600 font-semibold hover:text-blue-700">Read the full post &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
+<script type="application/json" id="inscio-videos" set:html={JSON.stringify(inscioMap)}></script>
 
 <!-- Video Categories -->
 <section class="py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+    <!-- Inscio U -->
+    <div id="inscio-u">
+      <h2 class="text-2xl font-bold text-gray-900 mb-3 pb-1">Inscio U</h2>
+      <p class="text-gray-500 mb-8 pb-4 border-b border-gray-100">Short explainers on NetSuite topics, built for owners and CFOs.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {inscioVideos.map((v) => (
+          <div id={v.slug} class="scroll-mt-28">
+            <div class="video-thumb mb-3" onclick={`openInscioVideo('${v.slug}')`}>
+              <img src={v.poster} alt={v.title} loading="lazy" />
+              <div class="absolute top-3 left-3">
+                <span class="bg-blue-600 text-white text-xs font-semibold px-2.5 py-1 rounded uppercase tracking-wide">Inscio U</span>
+              </div>
+              <div class="absolute bottom-3 right-3">
+                <span class="bg-black/70 text-white text-xs font-semibold px-2 py-0.5 rounded">{v.length}</span>
+              </div>
+              <div class="play-btn">
+                <svg viewBox="0 0 68 68" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="34" cy="34" r="34" fill="#2563EB"/>
+                  <path d="M27 21 49 34 27 47z" fill="#fff"/>
+                </svg>
+              </div>
+            </div>
+            <p class="text-sm font-semibold text-gray-900 leading-snug">{v.title}</p>
+            <p class="text-xs text-gray-500 mt-1 leading-snug">{v.description}</p>
+            <div class="flex items-center gap-4 mt-2 text-xs font-semibold">
+              <button type="button" class="text-blue-600 hover:text-blue-700" onclick={`copyVideoLink(this, '${v.slug}')`}>Copy link</button>
+              <a class="text-blue-600 hover:text-blue-700" href={`mailto:?subject=${encodeURIComponent('Worth ' + v.length + ': ' + v.title)}&body=${encodeURIComponent('https://inscio.com/videos#' + v.slug)}`}>Email</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
     {categories.map((cat) => (
       <div>
         <h2 class="text-2xl font-bold text-gray-900 mb-8 pb-4 border-b border-gray-100">{cat.title}</h2>
@@ -336,7 +349,9 @@ const walkthroughs = [
 </section>
 
 <script is:inline>
+var INSCIO = JSON.parse(document.getElementById('inscio-videos').textContent);
 function openLightbox(videoId, title) {
+  document.getElementById('lightbox-inner').classList.remove('mp4');
   document.getElementById('lightbox-iframe').src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
   document.getElementById('lightbox-title').textContent = title;
   document.getElementById('video-lightbox').classList.add('open');
@@ -345,15 +360,42 @@ function openLightbox(videoId, title) {
 function closeLightbox(e) {
   if (e && e.target !== document.getElementById('video-lightbox') && e.target !== document.getElementById('lightbox-close')) return;
   document.getElementById('lightbox-iframe').src = '';
+  var vid = document.getElementById('lightbox-video');
+  vid.pause(); vid.removeAttribute('src'); vid.load();
+  document.getElementById('lightbox-inner').classList.remove('mp4');
   document.getElementById('video-lightbox').classList.remove('open');
+  if (INSCIO[location.hash.slice(1)]) history.replaceState(null, '', location.pathname + location.search);
   document.body.style.overflow = '';
 }
-document.getElementById('share-copy').addEventListener('click', function () {
-  var btn = this, url = 'https://inscio.com/videos#inscio-u';
+function openInscioVideo(slug) {
+  var v = INSCIO[slug];
+  if (!v) return;
+  var vid = document.getElementById('lightbox-video');
+  vid.poster = v.poster;
+  vid.src = v.src;
+  document.getElementById('lightbox-inner').classList.add('mp4');
+  document.getElementById('lightbox-title').textContent = v.title;
+  document.getElementById('video-lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  if (location.hash !== '#' + slug) history.replaceState(null, '', '#' + slug);
+  var p = vid.play(); if (p && p.catch) p.catch(function () {});
+}
+function copyVideoLink(btn, slug) {
+  var url = 'https://inscio.com/videos#' + slug;
   var done = function () { btn.textContent = 'Link copied'; setTimeout(function () { btn.textContent = 'Copy link'; }, 2000); };
   if (navigator.clipboard) { navigator.clipboard.writeText(url).then(done, function () { window.prompt('Copy this link:', url); }); }
   else { window.prompt('Copy this link:', url); }
-});
+}
+function openFromHash() {
+  var slug = location.hash.slice(1);
+  if (INSCIO[slug]) {
+    var el = document.getElementById(slug);
+    if (el) el.scrollIntoView({ block: 'center' });
+    openInscioVideo(slug);
+  }
+}
+window.addEventListener('hashchange', openFromHash);
+openFromHash();
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeLightbox();
 });
