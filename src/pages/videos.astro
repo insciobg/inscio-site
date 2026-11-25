@@ -452,6 +452,30 @@ function closeLightbox(e) {
   if (INSCIO[location.hash.slice(1)]) history.replaceState(null, '', location.pathname + location.search);
   document.body.style.overflow = '';
 }
+var currentInscio = null;
+function trackInscio(name, params) {
+  if (typeof window.gtag === 'function') window.gtag('event', name, params);
+}
+(function () {
+  var vid = document.getElementById('lightbox-video');
+  var marks = {};
+  vid.addEventListener('play', function () {
+    if (!currentInscio || currentInscio.started) return;
+    currentInscio.started = true; marks = {};
+    trackInscio('video_start', { video_title: currentInscio.title, video_slug: currentInscio.slug, video_provider: 'inscio_u', video_url: location.origin + '/videos#' + currentInscio.slug });
+  });
+  vid.addEventListener('timeupdate', function () {
+    if (!currentInscio || !vid.duration) return;
+    var pct = vid.currentTime / vid.duration * 100;
+    [25, 50, 75].forEach(function (m) {
+      if (pct >= m && !marks[m]) { marks[m] = true; trackInscio('video_progress', { video_title: currentInscio.title, video_slug: currentInscio.slug, video_provider: 'inscio_u', video_percent: m }); }
+    });
+  });
+  vid.addEventListener('ended', function () {
+    if (!currentInscio) return;
+    trackInscio('video_complete', { video_title: currentInscio.title, video_slug: currentInscio.slug, video_provider: 'inscio_u', video_percent: 100 });
+  });
+})();
 function openInscioVideo(slug) {
   var v = INSCIO[slug];
   if (!v) return;
@@ -463,14 +487,17 @@ function openInscioVideo(slug) {
   document.getElementById('video-lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
   if (location.hash !== '#' + slug) history.replaceState(null, '', '#' + slug);
+  currentInscio = { slug: slug, title: v.title, started: false };
   var p = vid.play(); if (p && p.catch) p.catch(function () {});
 }
 function emailVideoLink(slug) {
   var v = INSCIO[slug]; if (!v) return;
+  trackInscio('share', { method: 'email', content_type: 'video', item_id: slug });
   var url = 'https://inscio.com/videos#' + slug;
   window.location.href = 'mai' + 'lto:?subject=' + encodeURIComponent('Worth a quick watch: ' + v.title) + '&body=' + encodeURIComponent(url);
 }
 function copyVideoLink(btn, slug) {
+  trackInscio('share', { method: 'copy_link', content_type: 'video', item_id: slug });
   var url = 'https://inscio.com/videos#' + slug;
   var done = function () { btn.textContent = 'Link copied'; setTimeout(function () { btn.textContent = 'Copy link'; }, 2000); };
   if (navigator.clipboard) { navigator.clipboard.writeText(url).then(done, function () { window.prompt('Copy this link:', url); }); }
