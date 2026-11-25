@@ -123,6 +123,8 @@ const categories = [
 const inscioVideos = [
   {
     slug: 'revenue-recognition',
+    topic: 'Revenue Recognition',
+    seoTitle: 'What Is Revenue Recognition? Cash vs. Revenue | NetSuite Explained',
     transcript: [
       "A customer signs a one-year service contract, $24,000 paid up front. The check clears in January, so January looks like your best month ever. It isn't.",
       "You haven't earned that money. You've been paid to keep a promise, 12 months of service. One month in, you've earned $2,000. The other $22,000, you still owe it. In work.",
@@ -142,6 +144,8 @@ const inscioVideos = [
   },
   {
     slug: 'standard-cost-variances',
+    topic: 'Standard Cost Variances',
+    seoTitle: 'Standard Cost Variances Explained: Price vs. Quantity | NetSuite',
     transcript: [
       "You plan to build 1,000 units at $50 each. $50,000. The job closed at $62,000. $12,000, gone. And your P&L doesn't say why.",
       "No name, no reason, so you ask around. Purchasing blames the supplier. The shop blames the material. Everyone has a theory. Nobody has a number.",
@@ -161,6 +165,8 @@ const inscioVideos = [
   },
   {
     slug: 'landed-cost',
+    topic: 'Landed Cost',
+    seoTitle: 'What Is Landed Cost? Why Your Margin Is Wrong | NetSuite Explained',
     transcript: [
       "You bought a part for $60. You sold it for $100. 40% margin. Nice work. Except it's not true.",
       "That part didn't teleport to your dock. It rode a ship. It cleared customs. It got insured, trucked, and unloaded. Freight. Duty. Insurance. 14 more dollars per part. Your real cost is $74. Your real margin is 26%.",
@@ -180,6 +186,8 @@ const inscioVideos = [
   },
   {
     slug: 'the-system-underneath-ai',
+    topic: 'AI & NetSuite',
+    seoTitle: 'Is Your Data Ready for AI? The System Underneath AI | NetSuite',
     transcript: [
       "Everyone wants to know what AI can do for their business. Almost no one asks what AI needs. AI runs on data. Clean. Connected. In one place.",
       "Lately, there's a lot of vendors pitching a lightweight ledger. An AI tool for every job. Agents to connect them. Pick the best tool for every task. Skip the big ERP.",
@@ -204,7 +212,8 @@ const inscioMap = Object.fromEntries(inscioVideos.map((v) => [v.slug, { title: v
 const videoSchema = inscioVideos.map((v) => ({
   '@context': 'https://schema.org',
   '@type': 'VideoObject',
-  name: v.title,
+  name: v.seoTitle,
+  alternateName: v.title,
   description: v.description,
   thumbnailUrl: `https://inscio.com${v.poster}`,
   contentUrl: `https://inscio.com${v.src}`,
@@ -347,6 +356,7 @@ const walkthroughs = [
                 </svg>
               </div>
             </div>
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-blue-600 mb-1">{v.topic}</p>
             <p class="text-sm font-semibold text-gray-900 leading-snug">{v.title}</p>
             <p class="text-xs text-gray-500 mt-1 leading-snug">{v.description}</p>
             <div class="flex items-center gap-4 mt-2 text-xs font-semibold">
